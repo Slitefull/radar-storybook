@@ -1,0 +1,80 @@
+export const WHITE = '#FFFFFF';
+export const BLACK = '#000000';
+export const GREY = '#BDBABE';
+export const GAINSBORO = '#DCDDDE';
+export const DARK_LIVER = '#4A4A4A';
+export const DAVY_GREY = '#555555';
+export const CERULEAN_BLUE = '#2544DA';
+export const AZURE = '#007EE5';
+export const VENETIAN_RED = '#D0021B'
+export const SPANISH_GREY = '#999999'
+
+export const VIOLET = '#240754';
+export const PERSIAN_INDIGO = '#34126F';
+export const MIDNIGHT_INDIGO = '#34126F';
+export const KSU_PURPLE = '#51279B';
+export const PLUMP_PURPLE = '#653CAD';
+export const ROYAL_PURPLE = '#724BB7';
+export const MEDIUM_PURPLE = '#8662C7';
+export const LAVENDER = '#A081D9';
+export const LAVENDER_BLUE = '#CFBCF2';
+export const LAVENDER_WEB = '#EAE2F8';
+export const MAGNOLIA = '#F7F4FE';
+
+export const EERIE_BLACK = '#181818';
+export const RAISIN_BLACK = '#27241D';
+export const DARK_LAVA = '#423D33';
+export const RIFLE_GREEN = '#504A40';
+export const EBONY = '#625D52';
+export const ROCKET_METALLIC = '#857F72';
+export const DARK_GREY = '#A39E93';
+export const BLACK_SHADOWS = '#B8B2A7';
+export const LIGHT_GREY = '#D3CEC4';
+export const PLATINUM = '#E8E6E1';
+export const SNOW = '#FAF9F7';
+
+export const MIDNIGHT_GREEN = '#044E54';
+export const TEAL = '#0A6C74';
+export const METALLIC_SEAWEED = '#0E7C86';
+export const VIRIDIAN_GREEN = '#14919B';
+export const MAXIMUM_BLUE_GREEN = '#2CB1BC';
+export const TURQUOISE = '#38BEC9';
+export const MEDIUM_TURQUOISE = '#54D1DB';
+export const ELECTRIC_BLUE = '#87EAF2';
+export const CELESTE = '#BEF8FD';
+export const LIGHT_CYAN = '#E0FCFF';
+
+export const ROSEWOOD = '#610316';
+export const BURGUNDY = '#8A041A';
+export const RUBY_RED = '#AB091E';
+export const LAVA = '#CF1124';
+export const CRIMSON = '#E12D39';
+export const TART_ORANGE = '#EF4E4E';
+export const BITTERSWEET = '#F86A6A';
+export const SALMON_PINK = '#FF9B9B';
+export const LIGHT_PINK = '#FFBDBD';
+export const MISTY_ROSE = '#FFE3E3';
+
+export const SEAL_BROWN = '#513C06';
+export const BROWN = '#7C5E10';
+export const BISTRE_BROWN = '#A27C1A';
+export const GOLDENROD = '#C99A2E';
+export const SATIN_SHEEN_GOLD = '#C99A2E';
+export const CRAYOLA = '#F7D070';
+export const BUFF = '#F9DA8B';
+export const MEDIUM_CHAMPAGNE = '#F8E3A3';
+export const BLANCHED_ALMOND = '#FCEFC7';
+export const COSMIC_LATTE = '#FFFAEB';
+
+export const FOREST_GREEN = '#014807';
+export const DARK_GREEN = '#07600E';
+export const INDIA_GREEN = '#0E7817';
+export const GREEN = '#0F8613';
+export const FOREST_GREEN_WEB = '#18981D';
+export const LIME_GREEN = '#31B237';
+export const EMERALD = '#51CA58';
+export const LIGHT_GREEN = '#91E697';
+export const TEA_GREEN = '#C1F2C7';
+export const NYANZA = '#E3F9E5';
+
+export const TRANSPARENT = "transparent";

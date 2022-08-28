@@ -1,0 +1,24 @@
+Add This conf in /etc/nginx/nginx.conf file within server:
+    location /onboarding/ {
+      rewrite ^/onboarding/$ /onboarding/index.html;
+    }
+
+Goto react directory and build it:
+npm run build
+
+Create directories in nginx root directory as follows:
+mkdir onboarding
+mkdir onboarding/images
+mkdir onboarding/public
+mkdir static
+mkdir static/css
+mkdir static/js
+mkdir static/media
+
+Now copy the generated assets from react directory to nginx directory as follows:
+cp ${react_root}build/index.html ${nginx_root}/onboarding/
+cp ${react_root}build/images/* ${nginx_root}/onboarding/images/
+cp ${react_root}build/public/* ${nginx_root}/onboarding/public/
+cp ${react_root}build/static/js/* ${nginx_root}/static/js/
+cp ${react_root}build/static/css/* ${nginx_root}/static/css/
+cp ${react_root}build/static/media/* ${nginx_root}/static/media/
