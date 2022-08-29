@@ -1,22 +1,15 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import {
-  DropdownBodyProps,
-  DropdownHeaderProps,
-  DropdownHeaderTextProps,
-  DropdownItemDotProps,
-  DropdownItemLabelProps,
-  IconWrapperProps,
-} from "./types";
+import { DropdownBodyProps, DropdownHeaderProps, DropdownItemLabelProps, IconWrapperProps, } from "./types";
 
 
 export const Row = styled.div` && {
   ${({ theme }) => css`${theme.components.dropdown.Row}`}
 }`
 
-export const StyledDropdown = styled.div` && {
-  ${({ theme }) => css`${theme.components.dropdown.StyledDropdown}`}
+export const SDropdown = styled.div` && {
+  ${({ theme }) => css`${theme.components.dropdown.SDropdown}`}
 }`
 
 export const Label = styled.div` && {

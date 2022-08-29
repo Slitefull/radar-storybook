@@ -1,9 +1,10 @@
 import { FC, lazy, useCallback, useMemo } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import { useSetRecoilState } from "recoil";
+import { mockMonitorChangesElements } from "@/pages/monitor-changes/__mock__/data";
 import { isDisabledNextSlideState, isDisabledPrevSlideState } from "@/entity/atoms/monitor-changes/slider";
 
-import { StyledSwiper } from "./styled";
+import { SSwiper } from "./styled";
 
 
 const MonitorChangesCard = lazy(() => import("@/ui-kit/components/cards/monitor-changes/monitor-changes"));
@@ -17,36 +18,7 @@ const CardsSection: FC = (): JSX.Element => {
   const setIsDisabledNext = useSetRecoilState(isDisabledNextSlideState);
 
   const monitorChangesElements = useMemo(
-    () => [
-      {
-        cardLink: { title: "yahoo.com", link: "https://yahoo.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-      {
-        cardLink: { title: "amazon.com", link: "https://amazon.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-      {
-        cardLink: { title: "washington", link: "https://washingtonpost.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-      {
-        cardLink: { title: "domain.com", link: "https://domain.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-      {
-        cardLink: { title: "seoradar.com", link: "https://seoradar.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-      {
-        cardLink: { title: "test.com", link: "https://seoradar.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-      {
-        cardLink: { title: "test.com", link: "https://seoradar.com" },
-        total: { count: 10, percentage: 5, isPositive: true }
-      },
-    ],
+    () => mockMonitorChangesElements,
     []
   );
 
@@ -71,7 +43,7 @@ const CardsSection: FC = (): JSX.Element => {
   );
 
   return (
-    <StyledSwiper
+    <SSwiper
       spaceBetween={SLIDERS_SPACE_BETWEEN}
       slidesPerView={SLIDERS_PER_VIEW}
       onReachBeginning={onReachBeginningHandler}
@@ -90,7 +62,7 @@ const CardsSection: FC = (): JSX.Element => {
           />
         </SwiperSlide>
       ))}
-    </StyledSwiper>
+    </SSwiper>
   );
 };
 

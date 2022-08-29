@@ -34,7 +34,7 @@ const ToastContainer = css<ToastContainerProps>`
   }
 `
 
-const StyledNotification = css<NotificationProps>`
+const SNotification = css<NotificationProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -85,7 +85,7 @@ const NotificationImage = css`
 
 export const notifications = {
   ToastContainer,
-  StyledNotification,
+  SNotification,
   NotificationTextWrapper,
   NotificationTitle,
   NotificationDescription,

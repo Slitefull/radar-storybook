@@ -1,6 +1,6 @@
 import { SimpleInterpolation } from "styled-components";
 import { css } from "styled-components/macro";
-import { PLATINUM, RAISIN_BLACK, VENETIAN_RED } from "../../../../../constants/colors";
+import { PLATINUM, RAISIN_BLACK, VENETIAN_RED } from "@/ui-kit/constants/colors";
 
 
 const TextInputWrapper: ReadonlyArray<SimpleInterpolation> = css` && {
@@ -24,7 +24,7 @@ const WithIconWrapper: ReadonlyArray<SimpleInterpolation> = css` && {
   padding: 0 12px;
 }`
 
-const StyledFormInput: ReadonlyArray<SimpleInterpolation> = css` && {
+const SFormInput: ReadonlyArray<SimpleInterpolation> = css` && {
   height: 100%;
   width: 100%;
   border: none;
@@ -41,6 +41,6 @@ const HelperText: ReadonlyArray<SimpleInterpolation> = css` && {
 export const textInput = {
   TextInputWrapper,
   WithIconWrapper,
-  StyledFormInput,
+  SFormInput,
   HelperText,
 }

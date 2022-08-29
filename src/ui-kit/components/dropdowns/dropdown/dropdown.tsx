@@ -1,4 +1,5 @@
 import { BaseSyntheticEvent, FC, lazy, memo, Ref, useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 import useClickOutside from "@/ui-kit/hooks/useClickOutside";
 import useHover from "@/ui-kit/hooks/useHover";
 import { DARK_LAVA, PLUMP_PURPLE, WHITE } from "@/ui-kit/constants/colors";
@@ -12,7 +13,7 @@ import {
   IconWrapper,
   Label,
   Row,
-  StyledDropdown
+  SDropdown
 } from "./styled";
 
 
@@ -60,6 +61,7 @@ const Dropdown: FC<DropdownProps> = memo((
     label
   }
 ): JSX.Element => {
+  const { t } = useTranslation();
   const [isOpen, setOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<string>('');
   const [hoverRef, isHovered] = useHover<HTMLDivElement>();
@@ -84,7 +86,7 @@ const Dropdown: FC<DropdownProps> = memo((
   return (
     <Row>
       {label && <Label>{label}</Label>}
-      <StyledDropdown ref={ref}>
+      <SDropdown ref={ref}>
         <DropdownHeader
           ref={hoverRef}
           color={color}
@@ -93,7 +95,7 @@ const Dropdown: FC<DropdownProps> = memo((
           isOpen={isOpen}
           onClick={openToggle}
         >
-          {selectedItem ? elements.find((item: Element) => item.key === selectedItem)?.label : "Select"}
+          {selectedItem ? elements.find((item: Element) => item.key === selectedItem)?.label : t("select")}
           <IconWrapper size={size}>
             <ArrowIcon
               rotation={isOpen ? "right" : "bottom"}
@@ -122,7 +124,7 @@ const Dropdown: FC<DropdownProps> = memo((
             </DropdownItem>
           ))}
         </DropdownBody>
-      </StyledDropdown>
+      </SDropdown>
     </Row>
   )
 });

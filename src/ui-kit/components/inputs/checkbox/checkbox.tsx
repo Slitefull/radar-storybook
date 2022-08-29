@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { CheckboxLabel, Indicator, LabelText, StyledCheckbox } from "./styled";
+import { CheckboxLabel, Indicator, LabelText, SCheckbox } from "./styled";
 
 
 interface CheckboxProps {
@@ -23,7 +23,7 @@ const Checkbox: FC<CheckboxProps> = memo((
   return (
     <CheckboxLabel isDisabled={isDisabled}>
       {label && <LabelText>{label}</LabelText>}
-      <StyledCheckbox
+      <SCheckbox
         type="checkbox"
         name={name}
         disabled={isDisabled}

@@ -10,7 +10,7 @@ import {
   NotificationImageContainer,
   NotificationTextWrapper,
   NotificationTitle,
-  StyledNotification,
+  SNotification,
   ToastContainer
 } from './styled';
 
@@ -73,7 +73,7 @@ const Notifications: FC<NotificationsProps> = memo((
     createPortal(
       <ToastContainer {...getCoordinates(position!)}>
         {notifications.map((toast, i) =>
-          <StyledNotification
+          <SNotification
             key={i}
             type={toast.type || ToastTypes.Success}
           >
@@ -93,7 +93,7 @@ const Notifications: FC<NotificationsProps> = memo((
                 </NotificationDescription>
               )}
             </NotificationTextWrapper>
-          </StyledNotification>
+          </SNotification>
         )}
       </ToastContainer>,
       document.getElementById("notifications") || document.createElement('div'))

@@ -24,7 +24,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "High",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -40,7 +40,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "Critical",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -56,7 +56,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "Medium",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -72,7 +72,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "High",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -88,7 +88,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "High",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -96,7 +96,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "Critical",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -120,7 +120,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "High",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -128,7 +128,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "Critical",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -144,7 +144,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "Critical",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -160,7 +160,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "Medium",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
   {
@@ -176,7 +176,7 @@ export const mockData: TableData[] = [
     url: "amazon.com/r/audit/template.html",
     severity: "High",
     changes: "Meta description tag changed",
-    status: "Unresolved",
+    status: "Resolved",
     group_by_date: 'Group by date'
   },
 ]

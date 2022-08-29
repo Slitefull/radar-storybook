@@ -1,7 +1,7 @@
 export type LinkColor = "default" | "text" | "gray";
 export type LinkSize = "default" | "small";
 
-export interface StyledLinkProps {
+export interface SLinkProps {
   color?: LinkColor;
   size?: LinkSize;
 }

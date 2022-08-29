@@ -1,7 +1,8 @@
 import { DefaultTheme, FlattenInterpolation, SimpleInterpolation, ThemedStyledProps } from "styled-components";
 import { css, FlattenSimpleInterpolation } from "styled-components/macro";
 import { DARK_LAVA, LAVENDER, PLUMP_PURPLE, ROCKET_METALLIC, TRANSPARENT } from "@/ui-kit/constants/colors";
-import { LinkColor, LinkSize, StyledLinkProps, WithIconWrapperProps } from "../../types";
+
+import { LinkColor, LinkSize, SLinkProps, WithIconWrapperProps } from "../../types";
 
 
 const DEFAULT_COLOR = 'default';
@@ -80,7 +81,7 @@ const LinkBordersRecord: Record<LinkColor, FlattenSimpleInterpolation> = {
   ["gray"]: grayBorders,
 };
 
-const StyledLink: FlattenInterpolation<ThemedStyledProps<StyledLinkProps, DefaultTheme>> = css<StyledLinkProps>`
+const SLink: FlattenInterpolation<ThemedStyledProps<SLinkProps, DefaultTheme>> = css<SLinkProps>`
   border: none;
   background: TRANSPARENT;
   letter-spacing: -0.02em;
@@ -100,7 +101,7 @@ const WithIconWrapper = css<WithIconWrapperProps>`
   transition: .2s border-bottom ease-out, .2s opacity;
 
   ${({ color }) => css`${LinkBordersRecord[color || DEFAULT_COLOR]}`};
-  
+
   &:hover {
     opacity: .8;
     transition: .2s border-bottom ease-out, .2s opacity;
@@ -108,6 +109,6 @@ const WithIconWrapper = css<WithIconWrapperProps>`
 `
 
 export const link = {
-  StyledLink,
+  SLink,
   WithIconWrapper,
 };

@@ -2,7 +2,7 @@ import { DefaultTheme, FlattenInterpolation, ThemedStyledProps } from "styled-co
 import { css } from "styled-components/macro";
 import { DARK_LAVA } from "@/ui-kit/constants/colors";
 
-import { StyledColoredTextProps } from "../../types";
+import { SColoredTextProps } from "../../types";
 
 
 type Size = "default" | "small";
@@ -21,7 +21,7 @@ const FontWeightRecord: Record<Weight, number> = {
   ["bold"]: 700,
 };
 
-const StyledColoredText: FlattenInterpolation<ThemedStyledProps<StyledColoredTextProps, DefaultTheme>> = css<StyledColoredTextProps>`
+const SColoredText: FlattenInterpolation<ThemedStyledProps<SColoredTextProps, DefaultTheme>> = css<SColoredTextProps>`
   font-family: 'Menlo', serif;
   font-weight: ${({ weight }) => FontWeightRecord[weight || DEFAULT_WEIGHT]};
   font-size: ${({ size }) => FontSizeRecord[size || DEFAULT_SIZE]};
@@ -31,5 +31,5 @@ const StyledColoredText: FlattenInterpolation<ThemedStyledProps<StyledColoredTex
 `
 
 export const coloredText = {
-  StyledColoredText,
+  SColoredText,
 }

@@ -2,16 +2,16 @@ import { FC, lazy, memo, useMemo, } from "react";
 import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import faker from 'faker';
+import { mockChartsInfo } from "./__mock__/data";
+
 import {
   CRIMSON,
   DARK_GREY,
   LAVENDER,
   LAVENDER_BLUE,
-  MEDIUM_PURPLE,
   PLATINUM,
   ROYAL_PURPLE,
   SALMON_PINK,
-  TART_ORANGE,
   VIOLET
 } from "@/ui-kit/constants/colors";
 
@@ -105,52 +105,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ cardLink, total 
   };
 
   const chartsInfo = useMemo(
-    () => [
-      {
-        label: "RED",
-        countBullet: {
-          count: faker.datatype.number({ min: 10, max: 50 }),
-          color: TART_ORANGE as Color,
-        },
-        percentage: {
-          count: faker.datatype.number({ min: 0, max: 100 }),
-          isPositive: faker.datatype.boolean(),
-        }
-      },
-      {
-        label: "CRI",
-        countBullet: {
-          count: faker.datatype.number({ min: 10, max: 50 }),
-          color: VIOLET as Color,
-        },
-        percentage: {
-          count: faker.datatype.number({ min: 0, max: 100 }),
-          isPositive: faker.datatype.boolean(),
-        }
-      },
-      {
-        label: "HIG",
-        countBullet: {
-          count: faker.datatype.number({ min: 10, max: 50 }),
-          color: MEDIUM_PURPLE as Color,
-        },
-        percentage: {
-          count: faker.datatype.number({ min: 0, max: 100 }),
-          isPositive: faker.datatype.boolean(),
-        }
-      },
-      {
-        label: "MED",
-        countBullet: {
-          count: faker.datatype.number({ min: 10, max: 50 }),
-          color: DARK_GREY as Color,
-        },
-        percentage: {
-          count: faker.datatype.number({ min: 0, max: 100 }),
-          isPositive: faker.datatype.boolean(),
-        }
-      },
-    ],
+    () => mockChartsInfo,
     []
   );
 

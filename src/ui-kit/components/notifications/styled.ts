@@ -8,8 +8,8 @@ export const ToastContainer = styled.div<ToastContainerProps>` && {
   ${({ theme }) => css`${theme.components.notifications.ToastContainer}`}
 }`
 
-export const StyledNotification = styled.div<NotificationProps>` && {
-  ${({ theme }) => css`${theme.components.notifications.StyledNotification}`}
+export const SNotification = styled.div<NotificationProps>` && {
+  ${({ theme }) => css`${theme.components.notifications.SNotification}`}
 }`
 
 export const NotificationTextWrapper = styled.div` && {

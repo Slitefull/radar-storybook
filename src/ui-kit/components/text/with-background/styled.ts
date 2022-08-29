@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import { StyledWithBackgroundTextProps } from "./types";
+import { SWithBackgroundTextProps } from "./types";
 
 
-export const StyledWithBackgroundText = styled.p<StyledWithBackgroundTextProps>` && {
-  ${({ theme }) => css`${theme.components.withBackgroundText.StyledWithBackgroundText}`}
+export const SWithBackgroundText = styled.p<SWithBackgroundTextProps>` && {
+  ${({ theme }) => css`${theme.components.withBackgroundText.SWithBackgroundText}`}
 }`

@@ -2,10 +2,10 @@ import { css } from "styled-components/macro";
 import { DefaultTheme, FlattenInterpolation, ThemedStyledProps } from "styled-components";
 import { TART_ORANGE, WHITE } from "@/ui-kit/constants/colors";
 
-import { StyledWithBackgroundTextProps } from "../../types";
+import { SWithBackgroundTextProps } from "../../types";
 
 
-const StyledWithBackgroundText: FlattenInterpolation<ThemedStyledProps<StyledWithBackgroundTextProps, DefaultTheme>> = css<StyledWithBackgroundTextProps>`
+const SWithBackgroundText: FlattenInterpolation<ThemedStyledProps<SWithBackgroundTextProps, DefaultTheme>> = css<SWithBackgroundTextProps>`
   font-family: 'Menlo', serif;
   background: ${({ background }) => background || TART_ORANGE};
   font-weight: 400;
@@ -19,5 +19,5 @@ const StyledWithBackgroundText: FlattenInterpolation<ThemedStyledProps<StyledWit
 `
 
 export const withBackgroundText = {
-  StyledWithBackgroundText,
+  SWithBackgroundText,
 }

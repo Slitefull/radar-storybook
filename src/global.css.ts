@@ -1,10 +1,7 @@
 import styled, { createGlobalStyle, DefaultTheme } from 'styled-components'
-import fonts from './ui-kit/fonts/fonts';
 
 
 export default createGlobalStyle<{ theme: DefaultTheme }>` && {
-  ${fonts};
-
   * {
     box-sizing: border-box;
     margin: 0;
@@ -29,5 +26,5 @@ export const BodyWrapper = styled.div` && {
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
-  padding: 0 0 0 90px;
+  padding: 0 0 0 80px;
 }`

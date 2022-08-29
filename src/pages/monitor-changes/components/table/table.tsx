@@ -3,6 +3,7 @@ import { DARK_GREY, MEDIUM_PURPLE, VIOLET } from "@/ui-kit/constants/colors";
 import { mockData } from "./__mock__/data";
 
 import { SMonitorTable, TControls, TDropdowns } from "./styled";
+import { useTranslation } from "react-i18next";
 
 
 type Severities = "Critical" | "High" | "Medium";
@@ -39,16 +40,18 @@ const SeverityColorsRecord: Record<Severities, Color> = {
 };
 
 const MonitorTable: FC = (): JSX.Element => {
+  const { t } = useTranslation();
+
   const columns = useMemo(
     () => [
       {
-        Header: 'Target URL',
+        Header: t("target_url"),
         accessor: ({ url }: TableData) => url,
         width: TARGET_URL_CELL_WIDTH,
       },
       {
-        Header: 'Severity',
-        accessor: 'severity',
+        Header: t("severity"),
+        accessor: ({ severity }: TableData) => severity,
         Cell: ({ value }: SeveritiesCell) => (
           <WithBackgroundText background={SeverityColorsRecord[value]}>
             {value}
@@ -57,17 +60,17 @@ const MonitorTable: FC = (): JSX.Element => {
         width: SEVERITY_CELL_WIDTH,
       },
       {
-        Header: 'Changes',
+        Header: t("changes"),
         accessor: ({ changes }: TableData) => changes,
         width: CHANGES_CELL_WIDTH,
       },
       {
-        Header: 'Status',
+        Header: t("status"),
         accessor: ({ status }: TableData) => status,
         width: STATUS_CELL_WIDTH,
       },
       {
-        Header: 'Group by date',
+        Header: t("group_by_date"),
         accessor: ({ group_by_date }: TableData) => group_by_date,
         width: GROUP_BY_DATE_CELL_WIDTH,
       },
@@ -81,7 +84,7 @@ const MonitorTable: FC = (): JSX.Element => {
   );
 
   const dropdownElements = useMemo(
-    () => [{ key: "all_filters", label: "All filters" }],
+    () => [{ key: "all_filters", label: t("all_filters") }],
     []
   );
 
@@ -103,7 +106,7 @@ const MonitorTable: FC = (): JSX.Element => {
           <Fragment>
             <Input
               withIcon
-              placeholder={"Search"}
+              placeholder={t("search")}
               onChange={(event) => onChangeInputHandler(event.target.value)}
             />
           </Fragment>

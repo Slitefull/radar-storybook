@@ -1,7 +1,3 @@
-export interface StyledSidebarProps {
-  isHovered: boolean;
-}
-
 export interface SidebarLinkProps {
   isHovered: boolean;
   isChecked: boolean;
@@ -13,12 +9,4 @@ export interface LinkTitleProps {
 
 export interface IconContainerProps {
   isChecked: boolean;
-}
-
-export interface SidebarLogoExpandedProps {
-  isHovered: boolean;
-}
-
-export interface SidebarLogoCollapsedProps {
-  isHovered: boolean;
 }

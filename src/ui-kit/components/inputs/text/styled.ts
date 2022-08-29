@@ -10,8 +10,8 @@ export const WithIconWrapper = styled.div` && {
   ${({ theme }) => css`${theme.components.textInput.WithIconWrapper}`}
 }`
 
-export const StyledFormInput = styled.input` && {
-  ${({ theme }) => css`${theme.components.textInput.StyledFormInput}`}
+export const SFormInput = styled.input` && {
+  ${({ theme }) => css`${theme.components.textInput.SFormInput}`}
 }`
 
 export const HelperText = styled.span` && {

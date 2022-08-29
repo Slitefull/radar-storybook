@@ -14,7 +14,7 @@ import {
   NotificationImageContainer,
   NotificationTextWrapper,
   NotificationTitle,
-  StyledNotification
+  SNotification
 } from "../styled";
 
 
@@ -43,7 +43,7 @@ const Template: Story<Notification> = (
   }
 ) => {
   return (
-    <StyledNotification type={type}>
+    <SNotification type={type}>
       <NotificationImageContainer>
         <NotificationImage src={icon} alt="Toast"/>
       </NotificationImageContainer>
@@ -55,7 +55,7 @@ const Template: Story<Notification> = (
           {description}
         </NotificationDescription>
       </NotificationTextWrapper>
-    </StyledNotification>
+    </SNotification>
   );
 };
 

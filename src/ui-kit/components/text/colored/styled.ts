@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import { StyledColoredTextProps } from "./types";
+import { SColoredTextProps } from "./types";
 
 
-export const StyledColoredText = styled.p<StyledColoredTextProps>` && {
-  ${({ theme }) => css`${theme.components.coloredText.StyledColoredText}`}
+export const SColoredText = styled.p<SColoredTextProps>` && {
+  ${({ theme }) => css`${theme.components.coloredText.SColoredText}`}
 }`

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import { StyledLinkProps, WithIconWrapperProps } from "./types";
+import { SLinkProps, WithIconWrapperProps } from "./types";
 
 
-export const StyledLink = styled.button<StyledLinkProps>` && {
-  ${({ theme }) => css`${theme.components.link.StyledLink}`}
+export const SLink = styled.button<SLinkProps>` && {
+  ${({ theme }) => css`${theme.components.link.SLink}`}
 }`
 
 export const WithIconWrapper = styled.div<WithIconWrapperProps>` && {

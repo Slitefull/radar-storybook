@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo, ReactNode } from 'react';
 import { ButtonColors, ButtonSizes } from "./types";
 
-import { StyledButton } from "./styled";
+import { SButton } from "./styled";
 
 
 type DefaultButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
@@ -20,12 +20,12 @@ const Button: FC<ButtonProps> = memo((
   }
 ): JSX.Element => {
   return (
-    <StyledButton
+    <SButton
       color={color}
       size={size}
     >
       {children}
-    </StyledButton>
+    </SButton>
   );
 });
 

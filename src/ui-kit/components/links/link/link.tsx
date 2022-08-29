@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo, ReactNode, useCallba
 import { useNavigate } from "react-router-dom";
 
 import { LinkColor, LinkSize } from "./types";
-import { StyledLink, WithIconWrapper } from "./styled";
+import { SLink, WithIconWrapper } from "./styled";
 
 
 type DefaultLinkProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
@@ -37,12 +37,12 @@ const Link: FC<LinkProps> = memo((
       onClick={onRedirectHandler}
     >
       {icon}
-      <StyledLink
+      <SLink
         color={color}
         size={size}
       >
         {children}
-      </StyledLink>
+      </SLink>
     </WithIconWrapper>
   );
 });

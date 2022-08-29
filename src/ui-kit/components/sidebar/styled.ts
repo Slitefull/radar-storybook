@@ -1,30 +1,19 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import {
-  IconContainerProps,
-  LinkTitleProps,
-  SidebarLinkProps,
-  SidebarLogoCollapsedProps,
-  SidebarLogoExpandedProps,
-  StyledSidebarProps
-} from "./types";
+import { IconContainerProps, LinkTitleProps, SidebarLinkProps } from "./types";
 
 
-export const StyledSidebar = styled.nav<StyledSidebarProps>` && {
-  ${({ theme }) => css`${theme.components.sidebar.StyledSidebar}`}
+export const SSidebar = styled.nav` && {
+  ${({ theme }) => css`${theme.components.sidebar.SSidebar}`}
 }`;
 
 export const LogosWrapper = styled.div` && {
   ${({ theme }) => css`${theme.components.sidebar.LogosWrapper}`}
 }`
 
-export const SidebarLogoExpanded = styled.img<SidebarLogoExpandedProps>` && {
+export const SidebarLogoExpanded = styled.img` && {
   ${({ theme }) => css`${theme.components.sidebar.SidebarLogoExpanded}`}
-}`;
-
-export const SidebarLogoCollapsed = styled.img<SidebarLogoCollapsedProps>` && {
-  ${({ theme }) => css`${theme.components.sidebar.SidebarLogoCollapsed}`}
 }`;
 
 export const LinksWrapper = styled.div` && {

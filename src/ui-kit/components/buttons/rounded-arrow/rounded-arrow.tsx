@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC, lazy, memo } from "react";
 
-import { StyledRoundedArrowButton } from "./styled";
+import { SRoundedArrowButton } from "./styled";
 
 
 type DefaultButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
@@ -26,7 +26,7 @@ const RoundedArrowButton: FC<RoundedArrowButtonProps> = memo((
   }
 ): JSX.Element => {
   return (
-    <StyledRoundedArrowButton
+    <SRoundedArrowButton
       background={background}
       onClick={onClick}
       disabled={disabled}
@@ -36,7 +36,7 @@ const RoundedArrowButton: FC<RoundedArrowButtonProps> = memo((
         rotation={rotation}
         size={14}
       />
-    </StyledRoundedArrowButton>
+    </SRoundedArrowButton>
   );
 });
 

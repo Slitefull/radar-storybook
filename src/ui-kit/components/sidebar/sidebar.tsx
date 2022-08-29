@@ -1,9 +1,9 @@
 import { FC, lazy, memo, ReactNode, useCallback, useMemo } from 'react';
+import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { currentMenuItemLS } from "@/constants/local-storage";
 import useHover from "@/ui-kit/hooks/useHover";
 import { currentMenuItemState } from "@/entity/atoms/currentMenuItem";
-import logoCollapsed from "@/ui-kit/icons/logo-primary-collapsed.svg";
 import logoExpanded from "@/ui-kit/icons/logo-primary-expanded.svg";
 import { WHITE } from "@/ui-kit/constants/colors";
 
@@ -13,9 +13,8 @@ import {
   LinkTitle,
   LogosWrapper,
   SidebarLink,
-  SidebarLogoCollapsed,
   SidebarLogoExpanded,
-  StyledSidebar
+  SSidebar
 } from "./styled";
 
 
@@ -38,6 +37,7 @@ const BookOpenIcon = lazy(() => import("@/ui-kit/customized-icons/book-open/book
 const HelpCircleIcon = lazy(() => import("@/ui-kit/customized-icons/help-circle/help-circle"));
 
 const Sidebar: FC = memo((): JSX.Element => {
+  const { t } = useTranslation();
   const [hoverRef, isHovered] = useHover<HTMLDivElement>();
   const [currentMenuItem, setCurrentMenuItem] = useRecoilState<MenuElements | null>(currentMenuItemState);
 
@@ -46,50 +46,50 @@ const Sidebar: FC = memo((): JSX.Element => {
       {
         key: "monitoring",
         link: '/',
-        icon: <ActivityIcon color={currentMenuItem === "monitoring" ? WHITE : ""}/>,
-        title: 'Monitoring',
+        icon: <ActivityIcon size={25} color={currentMenuItem === "monitoring" ? WHITE : ""}/>,
+        title: t("monitoring"),
         isChecked: currentMenuItem === "monitoring"
       },
       {
         key: "domains",
         link: '/',
-        icon: <AtSignIcon color={currentMenuItem === "domains" ? WHITE : ""}/>,
-        title: 'Domains',
+        icon: <AtSignIcon size={25} color={currentMenuItem === "domains" ? WHITE : ""}/>,
+        title: t("domains"),
         isChecked: currentMenuItem === "domains"
       },
       {
         key: "competitions",
         link: '/',
-        icon: <TargetIcon color={currentMenuItem === "competitions" ? WHITE : ""}/>,
-        title: 'Competitions',
+        icon: <TargetIcon size={25} color={currentMenuItem === "competitions" ? WHITE : ""}/>,
+        title: t("competitions"),
         isChecked: currentMenuItem === "competitions"
       },
       {
         key: "seoAudit",
         link: '/',
-        icon: <BarChartIcon color={currentMenuItem === "seoAudit" ? WHITE : ""}/>,
-        title: 'SEO Audit',
+        icon: <BarChartIcon size={25} color={currentMenuItem === "seoAudit" ? WHITE : ""}/>,
+        title: t("seo_audit"),
         isChecked: currentMenuItem === "seoAudit"
       },
       {
         key: "tools",
         link: '/',
-        icon: <ToolIcon color={currentMenuItem === "tools" ? WHITE : ""}/>,
-        title: 'Tools',
+        icon: <ToolIcon size={25} color={currentMenuItem === "tools" ? WHITE : ""}/>,
+        title: t("tools"),
         isChecked: currentMenuItem === "tools"
       },
       {
         key: "reports",
         link: '/',
-        icon: <BookOpenIcon color={currentMenuItem === "reports" ? WHITE : ""}/>,
-        title: 'Reports',
+        icon: <BookOpenIcon size={25} color={currentMenuItem === "reports" ? WHITE : ""}/>,
+        title: t("reports"),
         isChecked: currentMenuItem === "reports"
       },
       {
         key: "help",
         link: '/',
-        icon: <HelpCircleIcon color={currentMenuItem === "help" ? WHITE : ""}/>,
-        title: 'Help',
+        icon: <HelpCircleIcon size={25} color={currentMenuItem === "help" ? WHITE : ""}/>,
+        title: t("help"),
         isChecked: currentMenuItem === "help"
       }
     ],
@@ -105,19 +105,9 @@ const Sidebar: FC = memo((): JSX.Element => {
   );
 
   return (
-    <StyledSidebar
-      ref={hoverRef}
-      isHovered={isHovered}
-    >
+    <SSidebar ref={hoverRef}>
       <LogosWrapper>
-        <SidebarLogoCollapsed
-          src={logoCollapsed}
-          isHovered={isHovered}
-        />
-        <SidebarLogoExpanded
-          src={logoExpanded}
-          isHovered={isHovered}
-        />
+        <SidebarLogoExpanded src={logoExpanded}/>
       </LogosWrapper>
       <LinksWrapper>
         {menu.map((element) => (
@@ -136,7 +126,7 @@ const Sidebar: FC = memo((): JSX.Element => {
           </SidebarLink>
         ))}
       </LinksWrapper>
-    </StyledSidebar>
+    </SSidebar>
   );
 });
 

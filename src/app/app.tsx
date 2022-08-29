@@ -8,6 +8,7 @@ import { currentMenuItemLS } from "@/constants/local-storage";
 import { authSelector } from "@/entity/selectors/auth";
 import { currentMenuItemState } from "@/entity/atoms/currentMenuItem";
 import { CHANGE_PASSWORD_PAGE, RESET_PASSWORD_PAGE, ROOT_PAGE, SIGN_IN_PAGE, SIGN_UP_PAGE } from "@/constants/routes";
+import "../infrastructure/i18n";
 
 import GlobalCSS, { BodyWrapper } from "@/global.css";
 
@@ -28,6 +29,7 @@ type MenuElements = "monitoring" | "domains" | "competitions" | "seoAudit" | "to
 const themesMap = {
   light,
 }
+
 
 const DEFAULT_MENU_ITEM = "monitoring";
 

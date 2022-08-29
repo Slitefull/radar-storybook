@@ -9,6 +9,7 @@ import { button } from "./ui-kit/components/buttons/button/theme/light/button";
 import { sidebar } from "./ui-kit/components/sidebar/theme/light/light";
 import { link } from "./ui-kit/components/links/link/theme/light/link";
 import { header } from "./ui-kit/components/header/theme/light/header";
+import { footer } from "./ui-kit/components/footer/theme/light/footer";
 import { dropdown } from "./ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 import { notifications } from "./ui-kit/components/notifications/theme/notifications";
 import { bellIcon } from "./ui-kit/customized-icons/bell/theme/light/bell";
@@ -19,11 +20,12 @@ import { table } from "@/ui-kit/components/table/theme/light/light";
 
 export interface Components {
   header: ReturnType<typeof header>;
+  footer: ReturnType<typeof footer>;
+  sidebar: ReturnType<typeof sidebar>;
   notifications: ReturnType<typeof notifications>;
   button: ReturnType<typeof button>;
   roundedArrowButton: ReturnType<typeof roundedArrowButton>;
   link: ReturnType<typeof link>;
-  sidebar: ReturnType<typeof sidebar>;
   coloredText: ReturnType<typeof coloredText>;
   withBackgroundText: ReturnType<typeof withBackgroundText>;
   textInput: ReturnType<typeof textInput>;

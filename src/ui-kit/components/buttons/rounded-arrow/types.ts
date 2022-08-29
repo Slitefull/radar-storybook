@@ -1,4 +1,4 @@
-export interface StyledRoundedArrowButtonProps {
+export interface SRoundedArrowButtonProps {
   background?: Color;
   disabled?: boolean;
 }

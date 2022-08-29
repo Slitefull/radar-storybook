@@ -109,7 +109,7 @@ const Label = css`
   color: ${DARK_LAVA};
 `
 
-const StyledDropdown = css`
+const SDropdown = css`
   position: relative;
   z-index: 999;
 `
@@ -169,7 +169,7 @@ const DropdownItemLabel = css<DropdownItemLabelProps>`
 export const dropdown = {
   Row,
   Label,
-  StyledDropdown,
+  SDropdown,
   DropdownHeader,
   DropdownBody,
   DropdownItem,

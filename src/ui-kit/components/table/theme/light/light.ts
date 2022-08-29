@@ -26,6 +26,9 @@ const TFooter = css`
 `
 
 const THeaderRow = css`
+  display: flex;
+  width: 100% !important;
+  justify-content: space-between;
 `
 
 const THeaderElement = css`
@@ -39,6 +42,7 @@ const THeaderElement = css`
 
 const TRow = css`
   width: 100% !important;
+  justify-content: space-between;
   padding: 20px;
   word-break: break-all;
 

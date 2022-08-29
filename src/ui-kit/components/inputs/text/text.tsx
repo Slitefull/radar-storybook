@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, InputHTMLAttributes, lazy, memo, } from "react";
 
-import { HelperText, StyledFormInput, TextInputWrapper, WithIconWrapper } from "./styled";
+import { HelperText, SFormInput, TextInputWrapper, WithIconWrapper } from "./styled";
 
 
 const SearchIcon = lazy(() => import("../../../customized-icons/search/search"));
@@ -23,7 +23,7 @@ const Input: FC<TextInputProps> = memo((
   return (
     <TextInputWrapper>
       <WithIconWrapper>
-        <StyledFormInput
+        <SFormInput
           onChange={onChange}
           placeholder={placeholder}
           {...props}

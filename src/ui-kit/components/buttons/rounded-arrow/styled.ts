@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import { StyledRoundedArrowButtonProps } from "./types";
+import { SRoundedArrowButtonProps } from "./types";
 
 
-export const StyledRoundedArrowButton = styled.button<StyledRoundedArrowButtonProps>` && {
-  ${({ theme }) => css`${theme.components.roundedArrowButton.StyledRoundedArrowButton}`}
+export const SRoundedArrowButton = styled.button<SRoundedArrowButtonProps>` && {
+  ${({ theme }) => css`${theme.components.roundedArrowButton.SRoundedArrowButton}`}
 }`

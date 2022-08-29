@@ -2,7 +2,7 @@ export type ButtonColors = "primary" | "secondary" | "ghost";
 
 export type ButtonSizes = "default" | "small";
 
-export interface StyledButtonProps {
+export interface SButtonProps {
   size?: ButtonSizes;
   color?: ButtonColors;
 }

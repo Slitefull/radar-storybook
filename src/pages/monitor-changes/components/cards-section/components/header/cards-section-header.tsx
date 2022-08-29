@@ -1,5 +1,6 @@
 import { FC, Fragment, lazy, memo, useCallback, useMemo, useState } from 'react';
 import { useRecoilValue } from "recoil";
+import { useTranslation } from "react-i18next";
 import { isLockedSliderSelector } from "@/entity/selectors/monitor-changes/slider";
 import { MISTY_ROSE, PLUMP_PURPLE } from '@/ui-kit/constants/colors';
 
@@ -14,6 +15,7 @@ const SwiperPrevButton = lazy(() => import("../../../swiper-prev-button/swiper-p
 const SwiperNextButton = lazy(() => import("../../../swiper-next-button/swiper-next-button"));
 
 const RedAlertsOnlySwitcher: FC = memo((): JSX.Element => {
+  const { t } = useTranslation();
   const [isCheckedRedAlertsOnly, setIsCheckedRedAlertsOnly] = useState(false);
 
   const toggleRedAlertsOnly = useCallback(
@@ -26,14 +28,16 @@ const RedAlertsOnlySwitcher: FC = memo((): JSX.Element => {
       isChecked={isCheckedRedAlertsOnly}
       onChange={toggleRedAlertsOnly}
       backgroundColor={MISTY_ROSE}
-      label={"Red Alerts only"}
+      label={t("red_alerts_only")}
     />
   )
 });
 
 const LeftSide: FC = memo((): JSX.Element => {
+  const { t } = useTranslation();
+
   const changesSinceElements = useMemo(
-    () => [{ key: "last_visit", label: "last visit" }],
+    () => [{ key: "last_visit", label: t("last_visit") }],
     []
   );
 
@@ -57,10 +61,11 @@ const LeftSide: FC = memo((): JSX.Element => {
 });
 
 const RightSide: FC = memo((): JSX.Element => {
+  const { t } = useTranslation();
   const isLockedSlider = useRecoilValue(isLockedSliderSelector);
 
   const sortByElements = useMemo(
-    () => [{ key: "number_of_changes", label: "number of changes" }],
+    () => [{ key: "number_of_changes", label: t("number_of_changes") }],
     []
   );
 
@@ -69,12 +74,12 @@ const RightSide: FC = memo((): JSX.Element => {
       <Dropdown
         color={"ghost"}
         elements={sortByElements}
-        label={"Sort by:"}
+        label={`${t("sort_by")}:`}
       />
       {!isLockedSlider && (
         <Fragment>
-          <SwiperPrevButton>Prev</SwiperPrevButton>
-          <SwiperNextButton>Next</SwiperNextButton>
+          <SwiperPrevButton>{t("prev")}</SwiperPrevButton>
+          <SwiperNextButton>{t("next")}</SwiperNextButton>
         </Fragment>
       )}
     </HeaderSideWrapper>

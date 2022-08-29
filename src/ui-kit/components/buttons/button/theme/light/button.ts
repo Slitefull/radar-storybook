@@ -2,7 +2,7 @@ import { DefaultTheme, FlattenInterpolation, SimpleInterpolation, ThemedStyledPr
 import { css, FlattenSimpleInterpolation } from "styled-components/macro";
 import { DARK_LAVA, PLATINUM, PLUMP_PURPLE, TRANSPARENT, WHITE } from "@/ui-kit/constants/colors";
 
-import { ButtonColors, ButtonSizes, StyledButtonProps } from "../../types";
+import { ButtonColors, ButtonSizes, SButtonProps } from "../../types";
 
 
 const DEFAULT_COLOR = "primary";
@@ -71,7 +71,7 @@ const ButtonColorsRecord: Record<ButtonColors, FlattenSimpleInterpolation> = {
   ["ghost"]: ghost,
 };
 
-const StyledButton: FlattenInterpolation<ThemedStyledProps<StyledButtonProps, DefaultTheme>> = css<StyledButtonProps>`
+const SButton: FlattenInterpolation<ThemedStyledProps<SButtonProps, DefaultTheme>> = css<SButtonProps>`
   padding: 5px 25px;
   border-radius: 4px;
   cursor: pointer;
@@ -88,5 +88,5 @@ const StyledButton: FlattenInterpolation<ThemedStyledProps<StyledButtonProps, De
 `
 
 export const button = {
-  StyledButton,
+  SButton,
 }

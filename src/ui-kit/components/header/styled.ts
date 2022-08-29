@@ -17,3 +17,7 @@ export const HeaderWrapper = styled.header` && {
 export const HeaderTitle = styled.span` && {
   ${({ theme }) => css`${theme.components.header.HeaderTitle}`}
 }`;
+
+export const Username = styled.span` && {
+  ${({ theme }) => css`${theme.components.header.Username}`}
+}`;

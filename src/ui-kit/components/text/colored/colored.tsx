@@ -1,6 +1,6 @@
 import { FC, memo, ReactNode } from 'react';
 
-import { StyledColoredText } from "./styled";
+import { SColoredText } from "./styled";
 
 
 type Size = "default" | "small";
@@ -22,13 +22,13 @@ const ColoredText: FC<ColoredTextProps> = memo((
   }
 ): JSX.Element => {
   return (
-    <StyledColoredText
+    <SColoredText
       color={color}
       size={size}
       weight={weight}
     >
       {children}
-    </StyledColoredText>
+    </SColoredText>
   );
 });
 

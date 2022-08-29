@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 import { CheckboxLabelProps } from "./types";
 
 
-export const StyledCheckbox = styled.input` && {
-  ${({ theme }) => css`${theme.components.checkboxInput.StyledCheckbox}`}
+export const SCheckbox = styled.input` && {
+  ${({ theme }) => css`${theme.components.checkboxInput.SCheckbox}`}
 }`;
 
 export const CheckboxLabel = styled.label<CheckboxLabelProps>` && {

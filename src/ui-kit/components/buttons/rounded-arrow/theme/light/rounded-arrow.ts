@@ -1,11 +1,11 @@
 import { css } from "styled-components/macro";
 import { DefaultTheme, FlattenInterpolation, ThemedStyledProps } from "styled-components";
-
-import { StyledRoundedArrowButtonProps } from "../../types";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
+import { SRoundedArrowButtonProps } from "../../types";
 
-const StyledRoundedArrowButton: FlattenInterpolation<ThemedStyledProps<StyledRoundedArrowButtonProps, DefaultTheme>> = css<StyledRoundedArrowButtonProps>`
+
+const SRoundedArrowButton: FlattenInterpolation<ThemedStyledProps<SRoundedArrowButtonProps, DefaultTheme>> = css<SRoundedArrowButtonProps>`
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -25,5 +25,5 @@ const StyledRoundedArrowButton: FlattenInterpolation<ThemedStyledProps<StyledRou
 `
 
 export const roundedArrowButton = {
-  StyledRoundedArrowButton
+  SRoundedArrowButton
 }

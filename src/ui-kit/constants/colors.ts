@@ -13,6 +13,7 @@ export const VIOLET = '#240754';
 export const PERSIAN_INDIGO = '#34126F';
 export const MIDNIGHT_INDIGO = '#34126F';
 export const KSU_PURPLE = '#51279B';
+export const KSU_PURPLE_LIGHT = '#51279BBF';
 export const PLUMP_PURPLE = '#653CAD';
 export const ROYAL_PURPLE = '#724BB7';
 export const MEDIUM_PURPLE = '#8662C7';

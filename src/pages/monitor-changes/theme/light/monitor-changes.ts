@@ -1,6 +1,6 @@
 import { css } from "styled-components/macro";
 
-const StyledSwiper = css`
+const SSwiper = css`
   display: flex;
   flex-direction: column-reverse;
 `
@@ -40,7 +40,7 @@ const TControls = css`
 `
 
 export const monitorChangesPage = {
-  StyledSwiper,
+  SSwiper,
   CardsSectionHeaderWrapper,
   HeaderSideWrapper,
   SMonitorTable,

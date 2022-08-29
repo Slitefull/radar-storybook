@@ -3,7 +3,7 @@ import { css } from "styled-components/macro";
 import { PLATINUM, RAISIN_BLACK, SNOW } from "@/ui-kit/constants/colors";
 
 import { CheckboxLabelProps } from "../../types";
-import { CheckboxLabel as CheckboxLabelElement, StyledCheckbox as StyledCheckboxElement } from "../../styled";
+import { CheckboxLabel as CheckboxLabelElement, SCheckbox as SCheckboxElement } from "../../styled";
 
 
 const rotate = keyframes`
@@ -17,7 +17,7 @@ const rotate = keyframes`
   }
 `;
 
-const StyledCheckbox: ReadonlyArray<SimpleInterpolation> = css` && {
+const SCheckbox: ReadonlyArray<SimpleInterpolation> = css` && {
   height: 20px;
   width: 20px;
   opacity: 0;
@@ -45,7 +45,7 @@ const Indicator: ReadonlyArray<SimpleInterpolation> = css` && {
   border-radius: 4px;
   transition: 0.2s background;
 
-  ${StyledCheckboxElement}:not(:disabled):checked & {
+  ${SCheckboxElement}:not(:disabled):checked & {
     background: ${PLATINUM};
     transition: 0.2s background;
   }
@@ -61,7 +61,7 @@ const Indicator: ReadonlyArray<SimpleInterpolation> = css` && {
     display: none;
   }
 
-  ${StyledCheckboxElement}:checked + &::after {
+  ${SCheckboxElement}:checked + &::after {
     display: block;
     top: 0.1em;
     left: 0.35em;
@@ -80,7 +80,7 @@ const Indicator: ReadonlyArray<SimpleInterpolation> = css` && {
 }`
 
 export const checkboxInput = {
-  StyledCheckbox,
+  SCheckbox,
   CheckboxLabel,
   LabelText,
   Indicator,

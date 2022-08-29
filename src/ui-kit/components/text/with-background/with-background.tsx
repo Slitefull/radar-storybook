@@ -1,6 +1,6 @@
 import { FC, memo, ReactNode } from 'react';
 
-import { StyledWithBackgroundText } from "./styled";
+import { SWithBackgroundText } from "./styled";
 
 
 interface WithBackgroundTextProps {
@@ -19,13 +19,13 @@ const WithBackgroundText: FC<WithBackgroundTextProps> = memo((
   }
 ): JSX.Element => {
   return (
-    <StyledWithBackgroundText
+    <SWithBackgroundText
       background={background}
       color={color}
       rounded={rounded}
     >
       {children}
-    </StyledWithBackgroundText>
+    </SWithBackgroundText>
   );
 });
 

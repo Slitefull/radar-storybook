@@ -14,12 +14,15 @@ import { bellIcon } from "@/ui-kit/customized-icons/bell/theme/light/bell";
 import { monitorChangesCard } from "@/ui-kit/components/cards/monitor-changes/theme/light/monitor-changes";
 import { monitorChangesPage } from "@/pages/monitor-changes/theme/light/monitor-changes";
 import { table } from "@/ui-kit/components/table/theme/light/light";
+import { footer } from "@/ui-kit/components/footer/theme/light/footer";
 
 import { Components } from "@/styled";
 
 
 export const components: Components = {
   header,
+  footer,
+  sidebar,
   textInput,
   notifications,
   button,
@@ -28,7 +31,6 @@ export const components: Components = {
   switcherInput,
   coloredText,
   withBackgroundText,
-  sidebar,
   checkboxInput,
   dropdown,
   bellIcon,

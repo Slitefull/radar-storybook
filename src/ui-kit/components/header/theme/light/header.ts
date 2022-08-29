@@ -1,7 +1,7 @@
 import { css } from "styled-components/macro";
 import { media } from "@/ui-kit/helpers/media";
 import { breakpoints } from "@/ui-kit/constants/breakpoints";
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
+import { DARK_LAVA, MEDIUM_PURPLE, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 const LeftSide = css`
@@ -41,9 +41,24 @@ const HeaderTitle = css`
   color: ${DARK_LAVA};
 `
 
+const Username = css`
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: ${PLUMP_PURPLE};
+  white-space: nowrap;
+  cursor: pointer;
+  
+  &:hover {
+    color: ${MEDIUM_PURPLE};
+  }
+`
+
 export const header = {
   LeftSide,
   RightSide,
   HeaderWrapper,
   HeaderTitle,
+  Username,
 }
