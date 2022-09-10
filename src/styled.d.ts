@@ -10,28 +10,32 @@ import { sidebar } from "./ui-kit/components/sidebar/theme/light/light";
 import { link } from "./ui-kit/components/links/link/theme/light/link";
 import { header } from "./ui-kit/components/header/theme/light/header";
 import { footer } from "./ui-kit/components/footer/theme/light/footer";
-import { dropdown } from "./ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 import { notifications } from "./ui-kit/components/notifications/theme/notifications";
 import { bellIcon } from "./ui-kit/customized-icons/bell/theme/light/bell";
 import { monitorChangesCard } from "./ui-kit/components/cards/monitor-changes/theme/light/monitor-changes";
 import { monitorChangesPage } from "./pages/monitor-changes/theme/light/monitor-changes";
 import { table } from "@/ui-kit/components/table/theme/light/light";
+import { pagination } from "@/ui-kit/components/pagination/theme/light/light";
+import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textarea";
+import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 
 
 export interface Components {
   header: ReturnType<typeof header>;
   footer: ReturnType<typeof footer>;
   sidebar: ReturnType<typeof sidebar>;
+  pagination: ReturnType<typeof pagination>;
   notifications: ReturnType<typeof notifications>;
   button: ReturnType<typeof button>;
+  dropdown: ReturnType<typeof dropdown>;
   roundedArrowButton: ReturnType<typeof roundedArrowButton>;
   link: ReturnType<typeof link>;
   coloredText: ReturnType<typeof coloredText>;
   withBackgroundText: ReturnType<typeof withBackgroundText>;
   textInput: ReturnType<typeof textInput>;
+  textarea: ReturnType<typeof textarea>;
   switcherInput: ReturnType<typeof switcherInput>;
   checkboxInput: ReturnType<typeof checkboxInput>;
-  dropdown: ReturnType<typeof dropdown>;
   bellIcon: ReturnType<typeof bellIcon>;
   monitorChangesCard: ReturnType<typeof monitorChangesCard>;
   table: ReturnType<typeof table>;
