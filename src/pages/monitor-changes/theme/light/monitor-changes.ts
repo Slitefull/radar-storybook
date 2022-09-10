@@ -1,5 +1,6 @@
 import { css } from "styled-components/macro";
 
+
 const SSwiper = css`
   display: flex;
   flex-direction: column-reverse;
@@ -39,6 +40,17 @@ const TControls = css`
   margin: 0 0 20px;
 `
 
+const SCardsSectionFallback = css`
+  display: flex;
+  flex-direction: column;
+`
+
+const FallbackRow = css`
+  display: flex;
+  flex-direction: row;
+  gap: 0 15px;
+`
+
 export const monitorChangesPage = {
   SSwiper,
   CardsSectionHeaderWrapper,
@@ -46,4 +58,6 @@ export const monitorChangesPage = {
   SMonitorTable,
   TControls,
   TDropdowns,
+  SCardsSectionFallback,
+  FallbackRow,
 }

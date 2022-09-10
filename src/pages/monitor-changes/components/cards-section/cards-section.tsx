@@ -1,14 +1,13 @@
-import { FC, lazy, useCallback, useMemo } from 'react';
+import { FC, useCallback, useMemo } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import { useSetRecoilState } from "recoil";
 import { mockMonitorChangesElements } from "@/pages/monitor-changes/__mock__/data";
 import { isDisabledNextSlideState, isDisabledPrevSlideState } from "@/entity/atoms/monitor-changes/slider";
+import CardsSectionHeader from "./components/header/cards-section-header";
+import MonitorChangesCard from "@/ui-kit/components/cards/monitor-changes/monitor-changes";
 
-import { SSwiper } from "./styled";
+import { SSwiper } from '../../styled';
 
-
-const MonitorChangesCard = lazy(() => import("@/ui-kit/components/cards/monitor-changes/monitor-changes"));
-const CardsSectionHeader = lazy(() => import("./components/header/cards-section-header"));
 
 const SLIDERS_PER_VIEW = "auto";
 const SLIDERS_SPACE_BETWEEN = 16;
@@ -57,7 +56,7 @@ const CardsSection: FC = (): JSX.Element => {
           style={{ width: "fit-content" }}
         >
           <MonitorChangesCard
-            cardLink={element.cardLink}
+            name={element.name}
             total={element.total}
           />
         </SwiperSlide>

@@ -1,30 +1,30 @@
 export const mockMonitorChangesElements = [
   {
-    cardLink: { title: "yahoo", link: "https://yahoo.com" },
+    name: "yahoo",
     total: { count: 10, percentage: 5, isPositive: true }
   },
   {
-    cardLink: { title: "amazon.com", link: "https://amazon.com" },
+    name: "amazon.com",
     total: { count: 10, percentage: 5, isPositive: true }
   },
   {
-    cardLink: { title: "washington", link: "https://washingtonpost.com" },
+    name: "washington",
     total: { count: 10, percentage: 5, isPositive: true }
   },
   {
-    cardLink: { title: "domain.com", link: "https://domain.com" },
+    name: "domain.com",
     total: { count: 10, percentage: 5, isPositive: true }
   },
   {
-    cardLink: { title: "seoradar.com", link: "https://seoradar.com" },
+    name: "seoradar.com",
     total: { count: 10, percentage: 5, isPositive: true }
   },
   {
-    cardLink: { title: "test.com", link: "https://seoradar.com" },
+    name: "test.com",
     total: { count: 10, percentage: 5, isPositive: true }
   },
   {
-    cardLink: { title: "test.com", link: "https://seoradar.com" },
+    name: "test.com",
     total: { count: 10, percentage: 5, isPositive: true }
   },
 ]

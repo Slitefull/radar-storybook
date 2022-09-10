@@ -1,13 +1,19 @@
-import { FC, Fragment, lazy, Suspense, useCallback, useMemo } from 'react';
+import { FC, Fragment, useCallback, useMemo } from 'react';
+import { useTranslation } from "react-i18next";
 import { DARK_GREY, MEDIUM_PURPLE, VIOLET } from "@/ui-kit/constants/colors";
 import { mockData } from "./__mock__/data";
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
+import Input from "@/ui-kit/components/inputs/text/text";
+import Table from "@/ui-kit/components/table/table";
+import WithBackgroundText from "@/ui-kit/components/text/with-background/with-background";
 
-import { SMonitorTable, TControls, TDropdowns } from "./styled";
-import { useTranslation } from "react-i18next";
+import { SMonitorTable, TControls, TDropdowns } from '../../styled';
+import SearchIcon from "@/ui-kit/customized-icons/search/search";
 
 
 type Severities = "Critical" | "High" | "Medium";
 type Statuses = "Resolved" | "Unresolved";
+type SelectOption = { value: string | number; label: string | number };
 
 interface SeveritiesCell {
   value: Severities;
@@ -21,11 +27,6 @@ interface TableData {
   status: Statuses;
   group_by_date: string;
 }
-
-const Table = lazy(() => import('@/ui-kit/components/table/table'));
-const Dropdown = lazy(() => import("@/ui-kit/components/dropdowns/dropdown/dropdown"));
-const Input = lazy(() => import("@/ui-kit/components/inputs/text/text"));
-const WithBackgroundText = lazy(() => import("@/ui-kit/components/text/with-background/with-background"));
 
 const TARGET_URL_CELL_WIDTH = 300;
 const SEVERITY_CELL_WIDTH = 110;
@@ -75,7 +76,7 @@ const MonitorTable: FC = (): JSX.Element => {
         width: GROUP_BY_DATE_CELL_WIDTH,
       },
     ],
-    []
+    [t]
   );
 
   const data: TableData[] = useMemo(
@@ -84,8 +85,8 @@ const MonitorTable: FC = (): JSX.Element => {
   );
 
   const dropdownElements = useMemo(
-    () => [{ key: "all_filters", label: t("all_filters") }],
-    []
+    () => [{ value: "all_filters", label: t("all_filters") }],
+    [t]
   );
 
   const onChangeInputHandler = useCallback(
@@ -93,31 +94,53 @@ const MonitorTable: FC = (): JSX.Element => {
     []
   );
 
+  const onChangeSelect = useCallback(
+    (option: SelectOption) => console.log(option, 'option'),
+    []
+  );
+
   return (
-    <Suspense fallback={<div>Table loading...</div>}>
-      <SMonitorTable>
-        <TControls>
-          <TDropdowns>
-            <Dropdown elements={dropdownElements} color={"ghost"}/>
-            <Dropdown elements={dropdownElements} color={"ghost"} rounded/>
-            <Dropdown elements={dropdownElements} color={"ghost"} rounded/>
-            <Dropdown elements={dropdownElements} color={"ghost"} rounded/>
-          </TDropdowns>
-          <Fragment>
-            <Input
-              withIcon
-              placeholder={t("search")}
-              onChange={(event) => onChangeInputHandler(event.target.value)}
-            />
-          </Fragment>
-        </TControls>
-        <Table
-          columns={columns}
-          data={data}
-          withPagination
-        />
-      </SMonitorTable>
-    </Suspense>
+    <SMonitorTable>
+      <TControls>
+        <TDropdowns>
+          <Dropdown
+            color={"ghost"}
+            options={dropdownElements}
+            onChange={onChangeSelect}
+          />
+          <Dropdown
+            color={"ghost"}
+            options={dropdownElements}
+            onChange={onChangeSelect}
+            rounded
+          />
+          <Dropdown
+            color={"ghost"}
+            options={dropdownElements}
+            onChange={onChangeSelect}
+            rounded
+          />
+          <Dropdown
+            color={"ghost"}
+            options={dropdownElements}
+            onChange={onChangeSelect}
+            rounded
+          />
+        </TDropdowns>
+        <Fragment>
+          <Input
+            icon={<SearchIcon size={16}/>}
+            placeholder={t("search")}
+            onChange={(event) => onChangeInputHandler(event.target.value)}
+          />
+        </Fragment>
+      </TControls>
+      <Table
+        columns={columns}
+        data={data}
+        withPagination
+      />
+    </SMonitorTable>
   );
 };
 

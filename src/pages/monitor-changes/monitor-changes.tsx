@@ -1,18 +1,24 @@
-import { FC, lazy, memo, Suspense } from 'react';
+import { FC, memo } from 'react';
+import loadable from "@loadable/component";
+import PageContainer from "@/ui-kit/components/page-container/page-container";
+import CardsSectionFallback from "@/pages/monitor-changes/components/cards-section/fallback/fallback";
+import MonitorTableFallback from "@/pages/monitor-changes/components/table/fallback/fallback";
 
 
-const PageContainer = lazy(() => import("@/ui-kit/components/page-container/page-container"));
-const CardsSection = lazy(() => import("./components/cards-section/cards-section"));
-const MonitorTable = lazy(() => import("./components/table/table"));
+const CardsSection = loadable(() => import("./components/cards-section/cards-section"), {
+  fallback: <CardsSectionFallback/>
+});
+
+const MonitorTable = loadable(() => import("./components/table/table"), {
+  fallback: <MonitorTableFallback/>
+});
 
 const MonitorChangesPage: FC = memo((): JSX.Element => {
   return (
-    <Suspense fallback={<div>MonitorChangesPage component loading...</div>}>
-      <PageContainer>
-        <CardsSection/>
-        <MonitorTable/>
-      </PageContainer>
-    </Suspense>
+    <PageContainer>
+      <CardsSection/>
+      <MonitorTable/>
+    </PageContainer>
   );
 });
 

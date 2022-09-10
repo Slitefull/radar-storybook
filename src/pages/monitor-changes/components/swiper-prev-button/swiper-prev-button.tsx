@@ -1,14 +1,13 @@
-import { FC, lazy, memo, ReactNode, useCallback } from "react";
+import { FC, memo, ReactNode, useCallback } from "react";
 import { useSwiper } from "swiper/react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { isDisabledNextSlideState, isDisabledPrevSlideState } from "@/entity/atoms/monitor-changes/slider";
+import RoundedArrow from "@/ui-kit/components/buttons/rounded-arrow/rounded-arrow";
 
 
 interface SwiperPrevButtonProps {
   children: ReactNode;
 }
-
-const RoundedArrow = lazy(() => import("@/ui-kit/components/buttons/rounded-arrow/rounded-arrow"));
 
 const SwiperPrevButton: FC<SwiperPrevButtonProps> = memo(({ children }) => {
   const swiper = useSwiper();

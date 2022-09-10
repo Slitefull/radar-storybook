@@ -1,18 +1,18 @@
-import { FC, Fragment, lazy, memo, useCallback, useMemo, useState } from 'react';
+import { FC, Fragment, memo, useCallback, useMemo, useState } from 'react';
 import { useRecoilValue } from "recoil";
 import { useTranslation } from "react-i18next";
 import { isLockedSliderSelector } from "@/entity/selectors/monitor-changes/slider";
-import { MISTY_ROSE, PLUMP_PURPLE } from '@/ui-kit/constants/colors';
+import { MISTY_ROSE } from '@/ui-kit/constants/colors';
+import Switcher from "@/ui-kit/components/inputs/switcher/switcher";
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
+import SwiperPrevButton from "@/pages/monitor-changes/components/swiper-prev-button/swiper-prev-button";
+import SwiperNextButton from "@/pages/monitor-changes/components/swiper-next-button/swiper-next-button";
+import HelpCircle from "@/ui-kit/customized-icons/help-circle/help-circle";
 
-import { CardsSectionHeaderWrapper, HeaderSideWrapper } from "./styled";
+import { CardsSectionHeaderWrapper, HeaderSideWrapper } from '../../../../styled';
 
 
-const ColoredText = lazy(() => import("@/ui-kit/components/text/colored/colored"));
-const Dropdown = lazy(() => import("@/ui-kit/components/dropdowns/dropdown/dropdown"));
-const HelpCircle = lazy(() => import("@/ui-kit/customized-icons/help-circle/help-circle"));
-const Switcher = lazy(() => import("@/ui-kit/components/inputs/switcher/switcher"));
-const SwiperPrevButton = lazy(() => import("../../../swiper-prev-button/swiper-prev-button"));
-const SwiperNextButton = lazy(() => import("../../../swiper-next-button/swiper-next-button"));
+type SelectOption = { value: string | number; label: string | number };
 
 const RedAlertsOnlySwitcher: FC = memo((): JSX.Element => {
   const { t } = useTranslation();
@@ -37,22 +37,22 @@ const LeftSide: FC = memo((): JSX.Element => {
   const { t } = useTranslation();
 
   const changesSinceElements = useMemo(
-    () => [{ key: "last_visit", label: t("last_visit") }],
+    () => [{ value: "last_visit", label: t("last_visit") }],
+    [t]
+  );
+
+  const onChangeSelect = useCallback(
+    (option: SelectOption) => console.log(option, 'option'),
     []
   );
 
   return (
     <HeaderSideWrapper>
-      <ColoredText
-        color={PLUMP_PURPLE}
-        weight={"bold"}
-      >
-        Changes since
-      </ColoredText>
-
       <Dropdown
         color={"ghost"}
-        elements={changesSinceElements}
+        options={changesSinceElements}
+        label={"Changes since"}
+        onChange={onChangeSelect}
       />
       <RedAlertsOnlySwitcher/>
       <HelpCircle/>
@@ -65,7 +65,12 @@ const RightSide: FC = memo((): JSX.Element => {
   const isLockedSlider = useRecoilValue(isLockedSliderSelector);
 
   const sortByElements = useMemo(
-    () => [{ key: "number_of_changes", label: t("number_of_changes") }],
+    () => [{ value: "number_of_changes", label: t("number_of_changes") }],
+    [t]
+  );
+
+  const onChangeSelect = useCallback(
+    (option: SelectOption) => console.log(option, 'option'),
     []
   );
 
@@ -73,8 +78,9 @@ const RightSide: FC = memo((): JSX.Element => {
     <HeaderSideWrapper>
       <Dropdown
         color={"ghost"}
-        elements={sortByElements}
+        options={sortByElements}
         label={`${t("sort_by")}:`}
+        onChange={onChangeSelect}
       />
       {!isLockedSlider && (
         <Fragment>
