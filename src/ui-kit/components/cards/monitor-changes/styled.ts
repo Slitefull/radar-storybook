@@ -15,8 +15,8 @@ export const RightSide = styled.div` && {
   ${({ theme }) => css`${theme.components.monitorChangesCard.RightSide}`}
 }`
 
-export const CardLink = styled.a` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.CardLink}`}
+export const CardName = styled.span` && {
+  ${({ theme }) => css`${theme.components.monitorChangesCard.CardName}`}
 }`
 
 export const TotalText = styled.p` && {

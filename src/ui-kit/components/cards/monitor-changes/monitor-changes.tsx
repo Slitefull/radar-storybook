@@ -1,8 +1,9 @@
-import { FC, lazy, memo, useMemo, } from "react";
+import { FC, memo, useMemo, } from "react";
 import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import faker from 'faker';
 import { mockChartsInfo } from "./__mock__/data";
+import WithBackgroundText from "@/ui-kit/components/text/with-background/with-background";
 
 import {
   CRIMSON,
@@ -16,7 +17,7 @@ import {
 } from "@/ui-kit/constants/colors";
 
 import {
-  CardLink,
+  CardName,
   CardWrapper,
   ChartInfo,
   ChartInfoText,
@@ -30,12 +31,11 @@ import {
 } from "./styled";
 
 
-type CardLinkType = { title: string; link: string };
-type Total = { count: number; percentage: number; isPositive: boolean; };
+type Total = { count: number; percentage: number; isPositive: boolean };
 type Label = 'RED' | 'CRI' | 'HIG' | "MED";
 
 interface MonitorChangesCardProps {
-  cardLink: CardLinkType;
+  name: string;
   total: Total;
 }
 
@@ -47,16 +47,14 @@ ChartJS.register(
   BarElement,
 );
 
-const WithBackgroundText = lazy(() => import("@/ui-kit/components/text/with-background/with-background"));
-
 const BAR_WIDTH = 110;
 
-const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ cardLink, total }): JSX.Element => {
+const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): JSX.Element => {
   const options = {
     indexAxis: 'y' as const,
     responsive: true,
-    categoryPercentage: 0.6,
-    barPercentage: 0.8,
+    categoryPercentage: 0.5,
+    barPercentage: 0.5,
     scales: {
       x: {
         display: true,
@@ -112,12 +110,9 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ cardLink, total 
   return (
     <CardWrapper>
       <LeftSide>
-        <CardLink
-          href={cardLink.link}
-          target="_blank"
-        >
-          {cardLink.title}
-        </CardLink>
+        <CardName>
+          {name}
+        </CardName>
 
         <ChartInfoWrapper>
           {chartsInfo.map((element, index) => (

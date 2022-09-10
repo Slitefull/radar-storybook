@@ -29,7 +29,9 @@ const CheckboxLabel = css<CheckboxLabelProps>` && {
   flex-direction: row;
   align-items: center;
   width: fit-content;
+  transition: .2s opacity ease-in;
   cursor: ${({ isDisabled }) => isDisabled ? "not-allowed" : "pointer"};
+  opacity: ${({ isDisabled }) => isDisabled ? .3 : 1};
 }`
 
 const LabelText = css` && {

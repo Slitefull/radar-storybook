@@ -67,7 +67,7 @@ const Notifications: FC<NotificationsProps> = memo((
     return () => {
       clearInterval(interval);
     }
-  }, [notifications, autoDelete, autoDeleteTime]);
+  }, [notifications, autoDelete, autoDeleteTime, setNotifications]);
 
   return (
     createPortal(

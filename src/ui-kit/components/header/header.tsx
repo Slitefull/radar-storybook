@@ -1,14 +1,15 @@
-import { FC, Fragment, lazy, memo, useCallback, useMemo } from "react";
+import { FC, Fragment, memo, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
+import Link from "@/ui-kit/components/links/link/link";
+import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle/plus-circle";
+import SettingsIcon from "@/ui-kit/customized-icons/settings/settings";
+import BellIcon from "@/ui-kit/customized-icons/bell/bell";
 
 import { HeaderTitle, HeaderWrapper, LeftSide, RightSide, Username } from "./styled";
 
 
-const Dropdown = lazy(() => import("../dropdowns/dropdown/dropdown"));
-const Link = lazy(() => import("../links/link/link"));
-const PlusCircleIcon = lazy(() => import("@/ui-kit/customized-icons/plus-circle/plus-circle"));
-const SettingsIcon = lazy(() => import("@/ui-kit/customized-icons/settings/settings"));
-const BellIcon = lazy(() => import("@/ui-kit/customized-icons/bell/bell"));
+type SelectOption = { value: string | number; label: string | number };
 
 const UserProfile: FC = memo((): JSX.Element => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Header: FC = memo((): JSX.Element => {
   const navigate = useNavigate();
 
   const dropdownData = useMemo(
-    () => [{ key: 'all_domains', label: "All domains" }],
+    () => [{ value: 'all_domains', label: "All domains" }],
     []
   );
 
@@ -43,23 +44,35 @@ const Header: FC = memo((): JSX.Element => {
     [navigate]
   );
 
+  const onChangeSelect = useCallback(
+    (option: SelectOption) => console.log(option, 'option'),
+    []
+  );
+
   return (
     <HeaderWrapper>
       <LeftSide>
         <HeaderTitle>Monitor changes</HeaderTitle>
-        <Dropdown elements={dropdownData}/>
+        <Dropdown
+          options={dropdownData}
+          onChange={onChangeSelect}
+        />
         <Link
           color={"text"}
           redirectTo={"/"}
-          icon={<PlusCircleIcon size={20}/>}
+          icon={<PlusCircleIcon size={25}/>}
         >
           Add domains
         </Link>
       </LeftSide>
 
       <RightSide>
-        <SettingsIcon onClick={onClickSettingsHandler}/>
+        <SettingsIcon
+          size={25}
+          onClick={onClickSettingsHandler}
+        />
         <BellIcon
+          size={25}
           itemsCount={20}
           onClick={onClickBellHandler}
         />

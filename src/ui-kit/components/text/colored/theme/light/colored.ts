@@ -12,13 +12,13 @@ const DEFAULT_SIZE = "default";
 const DEFAULT_WEIGHT = "default";
 
 const FontSizeRecord: Record<Size, string> = {
-  ["default"]: "14px",
-  ["small"]: "12px",
+  "default": "14px",
+  "small": "12px",
 };
 
 const FontWeightRecord: Record<Weight, number> = {
-  ["default"]: 400,
-  ["bold"]: 700,
+  "default": 400,
+  "bold": 700,
 };
 
 const SColoredText: FlattenInterpolation<ThemedStyledProps<SColoredTextProps, DefaultTheme>> = css<SColoredTextProps>`

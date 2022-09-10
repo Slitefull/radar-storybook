@@ -29,4 +29,5 @@ export const BodyWrapper = styled.div` && {
   width: 100%;
   overflow-y: auto;
   padding: 0 0 0 80px;
+  background: #F5F5F5;
 }`

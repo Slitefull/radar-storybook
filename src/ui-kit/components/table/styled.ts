@@ -6,6 +6,10 @@ export const STable = styled.table` && {
   ${({ theme }) => css`${theme.components.table.STable}`}
 }`;
 
+export const DropdownWrapper = styled.div` && {
+  ${({ theme }) => css`${theme.components.table.DropdownWrapper}`}
+}`
+
 export const THeader = styled.div` && {
   ${({ theme }) => css`${theme.components.table.THeader}`}
 }`;

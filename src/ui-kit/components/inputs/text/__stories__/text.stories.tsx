@@ -1,16 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Input from "../text";
+import SearchIcon from "@/ui-kit/customized-icons/search/search";
 
 
 export default {
   title: 'inputs/Text',
   component: Input,
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1505%3A3905",
-    },
-  }
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
@@ -19,5 +14,64 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Placeholder',
   helperText: "Error",
-  withIcon: false,
+  disabled: false,
+  icon: <SearchIcon size={15}/>,
+  iconPosition: "start",
 };
+
+Default.argTypes = {
+  placeholder: {
+    name: 'placeholder',
+    table: {
+      type: { summary: 'Placeholder for input' },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  helperText: {
+    name: 'helperText',
+    table: {
+      type: { summary: 'Helper text for error/warning/success' },
+      defaultValue: {
+        summary: "error",
+      },
+    },
+  },
+  disabled: {
+    name: 'disabled',
+    table: {
+      type: { summary: 'Set is field is disabled' },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  icon: {
+    name: 'icon',
+    table: {
+      type: { summary: 'Set icon for the input' },
+      defaultValue: {
+        summary: '<SearchIcon/>',
+      },
+    },
+  },
+  iconPosition: {
+    name: 'iconPosition',
+    options: ["start", "end"],
+    control: { type: 'radio' },
+    table: {
+      type: { summary: 'Set position for the icon' },
+      defaultValue: {
+        summary: "start",
+      },
+    },
+  },
+};
+
+Default.parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1505%3A3905",
+  },
+}

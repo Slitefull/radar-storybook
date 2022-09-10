@@ -1,8 +1,13 @@
-import { FC, Fragment, memo } from 'react';
+import { FC, Fragment, memo, useMemo } from 'react';
+import { useTranslation } from "react-i18next";
 import { Column, useBlockLayout, usePagination, useTable } from 'react-table'
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
+import Pagination from "@/ui-kit/components/pagination/pagination";
 
-import { STable, TBody, TCell, TFooter, THeader, THeaderElement, THeaderRow, TRow } from './styled';
+import { DropdownWrapper, STable, TBody, TCell, TFooter, THeader, THeaderElement, THeaderRow, TRow } from './styled';
 
+
+type Option = { value: string; label: string; }
 
 interface TableProps {
   columns: Array<Column<any>>;
@@ -10,7 +15,11 @@ interface TableProps {
   withPagination?: boolean;
 }
 
+const DEFAULT_PAGE_SIZE = 10;
+
 const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Element => {
+  const { t } = useTranslation();
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -19,7 +28,6 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
     page,
     canPreviousPage,
     canNextPage,
-    pageOptions,
     pageCount,
     gotoPage,
     nextPage,
@@ -30,10 +38,20 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
     {
       columns,
       data,
+      initialState: { pageSize: DEFAULT_PAGE_SIZE },
     },
     useBlockLayout,
     usePagination,
   )
+
+  const paginationOptions = useMemo(
+    () => [
+      { value: "5", label: "5" },
+      { value: "10", label: "10" },
+      { value: "15", label: "15" },
+    ],
+    []
+  );
 
   return (
     <Fragment>
@@ -55,7 +73,7 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
             prepareRow(row)
             return (
               <TRow {...row.getRowProps()} key={i}>
-                {row.cells.map(cell => (
+                {row.cells.map((cell) => (
                   <TCell {...cell.getCellProps()}>
                     {cell.render('Cell')}
                   </TCell>
@@ -65,55 +83,31 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
           })}
         </TBody>
 
-        <TFooter>
-          {withPagination && (
-            <div className="pagination">
-              <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-                {'<<'}
-              </button>
-              {' '}
-              <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-                {'<'}
-              </button>
-              {' '}
-              <button onClick={() => nextPage()} disabled={!canNextPage}>
-                {'>'}
-              </button>
-              {' '}
-              <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-                {'>>'}
-              </button>
-              {' '}
-              <span>
-          Page{' '}
-                <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
-        </span>
-              <span>
-          | Go to page:{' '}
-                <input
-                  type="number"
-                  defaultValue={pageIndex + 1}
-                  onChange={e => {
-                    const page = e.target.value ? Number(e.target.value) - 1 : 0
-                    gotoPage(page)
-                  }}
-                />
-        </span>{' '}
-              <select
-                value={pageSize}
-                onChange={e => setPageSize(Number(e.target.value))}
-              >
-                {[5, 10, 20, 50].map(pageSize => (
-                  <option key={pageSize} value={pageSize}>
-                    Show {pageSize}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
-        </TFooter>
+        {withPagination && (
+          <TFooter>
+            <DropdownWrapper>
+              <Dropdown
+                options={paginationOptions}
+                onChange={(option) => setPageSize(option.value)}
+                label={t("changes_per_page")}
+                labelPosition={"right"}
+                defaultValue={{ value: DEFAULT_PAGE_SIZE, label: DEFAULT_PAGE_SIZE }}
+              />
+            </DropdownWrapper>
+
+            <Pagination
+              onPageChange={(page) => gotoPage((page as number) - 1)}
+              currentPage={pageIndex + 1}
+              onPrevious={previousPage}
+              onNext={nextPage}
+              canPreviousPage={canPreviousPage}
+              canNextPage={canNextPage}
+              pageSize={pageSize}
+              totalCount={pageSize * pageCount}
+              siblingCount={1}
+            />
+          </TFooter>
+        )}
       </STable>
     </Fragment>
   )

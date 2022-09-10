@@ -1,33 +1,6 @@
-export type DropdownColors = "primary" | "secondary" | "ghost";
-export type DropdownSizes = "default" | "small";
+type LabelPosition = "left" | "right";
 
-export interface DropdownHeaderProps {
-  color?: DropdownColors;
-  size?: DropdownSizes;
-  rounded?: boolean;
-  isOpen: boolean;
-}
-
-export interface DropdownHeaderTextProps {
-  size?: DropdownSizes;
-  color?: DropdownColors;
-}
-
-export interface DropdownBodyProps {
-  isOpen: boolean;
-  color?: DropdownColors;
-}
-
-export interface DropdownItemDotProps {
-  isSelected: boolean;
-  color?: DropdownColors;
-}
-
-export interface IconWrapperProps {
-  size?: DropdownSizes;
-}
-
-export interface DropdownItemLabelProps {
-  color?: DropdownColors;
-  isSelected: boolean;
+export interface WithLabelWrapperProps {
+  labelPosition?: LabelPosition;
+  withLabel?: boolean;
 }

@@ -8,13 +8,13 @@ export const SSidebar = styled.nav` && {
   ${({ theme }) => css`${theme.components.sidebar.SSidebar}`}
 }`;
 
+export const SFallback = styled.nav` && {
+  ${({ theme }) => css`${theme.components.sidebar.SFallback}`}
+}`;
+
 export const LogosWrapper = styled.div` && {
   ${({ theme }) => css`${theme.components.sidebar.LogosWrapper}`}
 }`
-
-export const SidebarLogoExpanded = styled.img` && {
-  ${({ theme }) => css`${theme.components.sidebar.SidebarLogoExpanded}`}
-}`;
 
 export const LinksWrapper = styled.div` && {
   ${({ theme }) => css`${theme.components.sidebar.LinksWrapper}`}

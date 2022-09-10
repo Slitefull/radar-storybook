@@ -21,13 +21,19 @@ const SSidebar = css`
   }
 `
 
-const LogosWrapper = css`
-  margin: 35px 20px 50px;
+const SFallback = css`
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999999;
+  overflow: hidden;
+  align-items: center;
 `
 
-const SidebarLogoExpanded = css`
-  width: 190px;
-  transition: .3s opacity ease-in;
+const LogosWrapper = css`
+  margin: 35px 20px 50px;
 `
 
 const LinksWrapper = css`
@@ -44,7 +50,9 @@ const SidebarLink = css<SidebarLinkProps>`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  gap: 0 25px;
+  gap: ${({ isHovered }) => isHovered ? "0 15px" : "0 25px" };
+  text-transform: capitalize;
+  transition: .1s gap ease-in;
 
   > span {
     color: ${({ isChecked }) => isChecked ? PLUMP_PURPLE : ROCKET_METALLIC};
@@ -73,8 +81,8 @@ const LinkTitle = css<LinkTitleProps>`
 
 export const sidebar = {
   SSidebar,
+  SFallback,
   LogosWrapper,
-  SidebarLogoExpanded,
   LinksWrapper,
   SidebarLink,
   IconContainer,

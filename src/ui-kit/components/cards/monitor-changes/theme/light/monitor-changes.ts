@@ -26,7 +26,7 @@ const RightSide = css`
   grid-template-rows: 40px auto;
 `
 
-const CardLink = css`
+const CardName = css`
   font-family: 'Menlo', serif;
   display: inline;
   width: fit-content;
@@ -105,7 +105,7 @@ export const monitorChangesCard = {
   CardWrapper,
   LeftSide,
   RightSide,
-  CardLink,
+  CardName,
   TotalText,
   TotalNumbers,
   Percentage,

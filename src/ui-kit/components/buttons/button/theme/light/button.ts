@@ -61,14 +61,14 @@ const smallSize: ReadonlyArray<SimpleInterpolation> = css`
 `
 
 const ButtonSizesRecord: Record<ButtonSizes, FlattenSimpleInterpolation> = {
-  ["default"]: defaultSize,
-  ["small"]: smallSize,
+  "default": defaultSize,
+  "small": smallSize,
 };
 
 const ButtonColorsRecord: Record<ButtonColors, FlattenSimpleInterpolation> = {
-  ["primary"]: primary,
-  ["secondary"]: secondary,
-  ["ghost"]: ghost,
+  "primary": primary,
+  "secondary": secondary,
+  "ghost": ghost,
 };
 
 const SButton: FlattenInterpolation<ThemedStyledProps<SButtonProps, DefaultTheme>> = css<SButtonProps>`

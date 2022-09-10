@@ -1,131 +1,381 @@
-import { BaseSyntheticEvent, FC, lazy, memo, Ref, useCallback, useState } from "react";
+import { FC, memo } from "react";
+import { CSSObject } from "styled-components";
 import { useTranslation } from "react-i18next";
-import useClickOutside from "@/ui-kit/hooks/useClickOutside";
-import useHover from "@/ui-kit/hooks/useHover";
-import { DARK_LAVA, PLUMP_PURPLE, WHITE } from "@/ui-kit/constants/colors";
+import Select, { StylesConfig } from "react-select";
+import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicator";
+import { DARK_LAVA, EBONY, PLATINUM, PLUMP_PURPLE, TRANSPARENT, WHITE } from "@/ui-kit/constants/colors";
 
-import { DropdownColors, DropdownSizes } from "./types";
-import {
-  DropdownBody,
-  DropdownHeader,
-  DropdownItem,
-  DropdownItemLabel,
-  IconWrapper,
-  Label,
-  Row,
-  SDropdown
-} from "./styled";
+import { Label, WithLabelWrapper } from "./styled";
 
 
-interface Element {
-  key: string;
-  label: string;
-}
+type Option = { value: string | number, label: string | number };
+type Colors = "primary" | "secondary" | "ghost";
+type LabelPosition = "left" | "right";
 
-interface DropdownProps {
-  elements: Element[];
+//TODO SEARCHABLE LABEL COLOR
+
+interface SelectProps {
+  color?: Colors;
+  options: Option[];
+  isSearchable?: boolean;
+  closeMenuOnSelect?: boolean;
+  hideSelectedOptions?: boolean;
+  placeholder?: string;
+  disabled?: boolean;
+  onChange: (option: any) => void;
+  defaultValue?: Option;
   rounded?: boolean;
-  color?: DropdownColors;
-  size?: DropdownSizes;
   label?: string;
+  labelPosition?: LabelPosition;
 }
-
-const ArrowIcon = lazy(() => import("@/ui-kit/customized-icons/arrow/arrow"));
-
-const IconColorsRecord: Record<DropdownColors, Color> = {
-  "primary": WHITE,
-  "secondary": PLUMP_PURPLE,
-  "ghost": DARK_LAVA,
-};
-
-const IconHoveredColorsRecord: Record<DropdownColors, Color> = {
-  "primary": PLUMP_PURPLE,
-  "secondary": WHITE,
-  "ghost": DARK_LAVA,
-};
-
-const IconSizeRecord: Record<DropdownSizes, number> = {
-  "default": 12,
-  "small": 10,
-};
 
 const DEFAULT_COLOR = "primary";
-const DEFAULT_SIZE = "default";
 
-const Dropdown: FC<DropdownProps> = memo((
+const baseControlStyles: CSSObject = {
+  minWidth: 130,
+  maxWidth: 180,
+  height: 40,
+  transition: '.2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out',
+  padding: '0 10px',
+  cursor: "pointer",
+  gap: '0 10px',
+  boxShadow: "none",
+  borderColor: TRANSPARENT,
+
+  "&:hover": {
+    transition: '.2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out',
+  },
+
+  "&:focus": {
+    border: `1px solid ${TRANSPARENT}`,
+  },
+};
+
+const baseOptionStyles: CSSObject = {
+  fontFamily: "Menlo",
+  fontSize: 14,
+  fontWeight: 900,
+  color: EBONY,
+  cursor: 'pointer',
+  padding: '2px 0',
+  background: "none",
+  transition: '.2s opacity ease-in-out',
+
+  "&:hover": {
+    opacity: .7,
+    transition: '.2s opacity ease-in-out',
+  },
+
+  "&:active": {
+    backgroundColor: 'transparent',
+  }
+};
+
+const baseValueContainerStyles: CSSObject = {
+  padding: '5px 0',
+};
+
+const basePlaceholderStyles: CSSObject = {
+  fontSize: 14,
+  fontWeight: 700,
+  lineHeight: '24px',
+  letterSpacing: '-0.02em',
+};
+
+const baseSingleValueStyles: CSSObject = {
+  fontSize: 14,
+  fontWeight: 700,
+  lineHeight: '24px',
+  letterSpacing: '-0.02em',
+};
+
+const baseMenuStyles: CSSObject = {
+  margin: 0,
+  padding: 10,
+  display: "flex",
+  width: "100%",
+  flexDirection: "column",
+  gap: '0 10px',
+  borderRadius: "0 0 5px 5px",
+  boxShadow: "none",
+};
+
+const baseMenuListStyles: CSSObject = {
+  display: 'flex',
+  flexDirection: "column",
+  gap: "10px 0",
+};
+
+const ControlColorsRecord: Record<Colors, CSSObject> = {
+  "primary": {
+    ...baseControlStyles,
+    background: PLUMP_PURPLE,
+
+    ".arrow > path": {
+      stroke: WHITE,
+    },
+
+    "&:hover": {
+      background: WHITE,
+      border: `1px solid ${PLUMP_PURPLE}`,
+
+      ".custom-select__placeholder": {
+        color: PLUMP_PURPLE,
+      },
+
+      ".custom-select__single-value": {
+        color: PLUMP_PURPLE,
+      },
+
+      ".arrow > path": {
+        stroke: PLUMP_PURPLE,
+      },
+    },
+  },
+  "secondary": {
+    ...baseControlStyles,
+    background: WHITE,
+    border: `1px solid ${PLUMP_PURPLE}`,
+
+    ".arrow > path": {
+      stroke: PLUMP_PURPLE,
+    },
+
+    "&:hover": {
+      background: PLUMP_PURPLE,
+      border: `1px solid ${TRANSPARENT}`,
+
+      ".custom-select__placeholder": {
+        color: WHITE,
+      },
+
+      ".custom-select__single-value": {
+        color: WHITE,
+      },
+
+      ".arrow > path": {
+        stroke: WHITE,
+      },
+    },
+  },
+  "ghost": {
+    ...baseControlStyles,
+    background: WHITE,
+    border: `1px solid ${PLATINUM}`,
+    height: 36,
+
+    ".arrow > path": {
+      stroke: DARK_LAVA,
+    },
+
+    "&:hover": {
+      background: WHITE,
+      border: `1px solid ${PLUMP_PURPLE}`,
+
+      ".custom-select__placeholder": {
+        color: DARK_LAVA,
+      },
+
+      ".custom-select__single-value": {
+        color: DARK_LAVA,
+      },
+
+      ".arrow > path": {
+        stroke: DARK_LAVA,
+      },
+    }
+  },
+};
+
+const OptionColorsRecord: Record<Colors, CSSObject> = {
+  "primary": { ...baseOptionStyles, fontFamily: 'FreightSans Pro' },
+  "secondary": { ...baseOptionStyles, fontFamily: 'FreightSans Pro' },
+  "ghost": {
+    ...baseOptionStyles,
+    fontFamily: 'Menlo',
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
+
+const ValueContainerColorsRecord: Record<Colors, CSSObject> = {
+  "primary": { ...baseValueContainerStyles },
+  "secondary": { ...baseValueContainerStyles },
+  "ghost": { ...baseValueContainerStyles },
+};
+
+const SingleValueColorsRecord: Record<Colors, CSSObject> = {
+  "primary": {
+    ...baseSingleValueStyles,
+    color: WHITE,
+    fontFamily: 'FreightSans Pro',
+  },
+  "secondary": {
+    ...baseSingleValueStyles,
+    color: PLUMP_PURPLE,
+    fontFamily: 'FreightSans Pro',
+  },
+  "ghost": {
+    ...baseSingleValueStyles,
+    fontFamily: 'Menlo',
+    color: DARK_LAVA,
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
+
+const PlaceholderColorsRecord: Record<Colors, CSSObject> = {
+  "primary": {
+    ...basePlaceholderStyles,
+    color: WHITE,
+    fontFamily: 'FreightSans Pro',
+
+    "&:hover": {
+      color: PLUMP_PURPLE,
+    },
+  },
+  "secondary": {
+    ...basePlaceholderStyles,
+    color: PLUMP_PURPLE,
+
+    "&:hover": {
+      color: WHITE,
+    },
+    fontFamily: 'FreightSans Pro',
+  },
+  "ghost": {
+    ...basePlaceholderStyles,
+    color: DARK_LAVA,
+    fontFamily: 'Menlo',
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
+
+const MenuColorsRecord: Record<Colors, CSSObject> = {
+  "primary": {
+    ...baseMenuStyles,
+    color: WHITE,
+    border: `1px solid ${PLUMP_PURPLE}`,
+    borderTop: "none",
+  },
+  "secondary": {
+    ...baseMenuStyles,
+    color: PLUMP_PURPLE,
+    border: `1px solid ${PLUMP_PURPLE}`,
+    borderTop: "none",
+  },
+  "ghost": {
+    ...baseMenuStyles,
+    color: DARK_LAVA,
+    border: `1px solid ${PLATINUM}`,
+    borderTop: "none",
+  },
+};
+
+const MenuListColorsRecord: Record<Colors, CSSObject> = {
+  "primary": {
+    ...baseMenuListStyles,
+    color: WHITE,
+  },
+  "secondary": {
+    ...baseMenuListStyles,
+    color: PLUMP_PURPLE,
+  },
+  "ghost": {
+    ...baseMenuListStyles,
+    color: DARK_LAVA,
+  },
+}
+
+const Dropdown: FC<SelectProps> = memo((
   {
-    elements,
-    rounded,
     color,
-    size,
-    label
+    options,
+    isSearchable,
+    closeMenuOnSelect,
+    hideSelectedOptions,
+    placeholder,
+    disabled,
+    onChange,
+    defaultValue,
+    rounded,
+    label,
+    labelPosition,
   }
 ): JSX.Element => {
   const { t } = useTranslation();
-  const [isOpen, setOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<string>('');
-  const [hoverRef, isHovered] = useHover<HTMLDivElement>();
-  const ref: Ref<HTMLDivElement> = useClickOutside(() => setOpen(false));
 
-  const handleItemClick = useCallback(
-    (key: string) => {
-      if (selectedItem === key) {
-        setSelectedItem('');
-        return;
+  const getControlBR = (rounded: boolean | undefined, isOpen: boolean): string => {
+    if (isOpen) {
+      if (rounded) {
+        return "20px 20px 0 0 ";
       }
-      setSelectedItem(key);
-    },
-    [selectedItem]
-  );
+      return "4px 4px 0 0";
+    }
 
-  const openToggle = useCallback(
-    () => setOpen(!isOpen),
-    [isOpen]
-  )
+    if (rounded) {
+      return "35px";
+    }
+
+    return "4px";
+  }
+
+  const customStyles: StylesConfig<Option, true> = {
+    control: (provided, state) => ({
+      ...provided,
+      ...ControlColorsRecord[color || DEFAULT_COLOR],
+      borderRadius: getControlBR(rounded, state.selectProps.menuIsOpen),
+      opacity: disabled ? .3 : 1,
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      ...OptionColorsRecord[color || DEFAULT_COLOR],
+      opacity: state.isSelected ? .7 : 1,
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      ...SingleValueColorsRecord[color || DEFAULT_COLOR],
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      ...ValueContainerColorsRecord[color || DEFAULT_COLOR],
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      ...PlaceholderColorsRecord[color || DEFAULT_COLOR],
+    }),
+    menu: (provided) => ({
+      ...provided,
+      ...MenuColorsRecord[color || DEFAULT_COLOR],
+    }),
+    menuList: (provided) => ({
+      ...provided,
+      ...MenuListColorsRecord[color || DEFAULT_COLOR],
+    }),
+    indicatorSeparator: () => ({ display: "none" }),
+  }
 
   return (
-    <Row>
+    <WithLabelWrapper labelPosition={labelPosition} withLabel={!!label}>
       {label && <Label>{label}</Label>}
-      <SDropdown ref={ref}>
-        <DropdownHeader
-          ref={hoverRef}
-          color={color}
-          size={size}
-          rounded={rounded}
-          isOpen={isOpen}
-          onClick={openToggle}
-        >
-          {selectedItem ? elements.find((item: Element) => item.key === selectedItem)?.label : t("select")}
-          <IconWrapper size={size}>
-            <ArrowIcon
-              rotation={isOpen ? "right" : "bottom"}
-              color={isHovered
-                ? IconHoveredColorsRecord[color || DEFAULT_COLOR]
-                : IconColorsRecord[color || DEFAULT_COLOR]
-              }
-              size={IconSizeRecord[size || DEFAULT_SIZE]}
-            />
-          </IconWrapper>
-        </DropdownHeader>
-        <DropdownBody
-          isOpen={isOpen}
-          color={color}
-        >
-          {elements.map((element: Element) => (
-            <DropdownItem key={element.key}>
-              <DropdownItemLabel
-                id={element.key}
-                color={color}
-                onClick={(e: BaseSyntheticEvent) => handleItemClick(e.target.id)}
-                isSelected={element.key === selectedItem}
-              >
-                {element.label}
-              </DropdownItemLabel>
-            </DropdownItem>
-          ))}
-        </DropdownBody>
-      </SDropdown>
-    </Row>
+      <Select
+        classNamePrefix={"custom-select"}
+        isDisabled={disabled}
+        isSearchable={isSearchable || false}
+        placeholder={placeholder || t("search")}
+        closeMenuOnSelect={closeMenuOnSelect}
+        hideSelectedOptions={hideSelectedOptions}
+        options={options}
+        styles={customStyles}
+        onChange={(option) => onChange(option)}
+        defaultValue={defaultValue}
+        components={{ DropdownIndicator }}
+      />
+    </WithLabelWrapper>
   )
 });
 

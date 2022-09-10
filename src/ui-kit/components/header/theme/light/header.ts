@@ -49,7 +49,7 @@ const Username = css`
   color: ${PLUMP_PURPLE};
   white-space: nowrap;
   cursor: pointer;
-  
+
   &:hover {
     color: ${MEDIUM_PURPLE};
   }

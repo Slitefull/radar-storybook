@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC, lazy, memo } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo } from "react";
+import ArrowIcon from "@/ui-kit/customized-icons/arrow/arrow";
 
 import { SRoundedArrowButton } from "./styled";
 
@@ -13,8 +14,6 @@ interface RoundedArrowButtonProps extends DefaultButtonProps {
   onClick?: VoidFunction;
   disabled?: boolean;
 }
-
-const ArrowIcon = lazy(() => import("@/ui-kit/customized-icons/arrow/arrow"));
 
 const RoundedArrowButton: FC<RoundedArrowButtonProps> = memo((
   {

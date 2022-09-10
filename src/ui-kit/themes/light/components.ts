@@ -9,12 +9,14 @@ import { coloredText } from "@/ui-kit/components/text/colored/theme/light/colore
 import { withBackgroundText } from "@/ui-kit/components/text/with-background/theme/light/with-background";
 import { sidebar } from "@/ui-kit/components/sidebar/theme/light/light";
 import { checkboxInput } from "@/ui-kit/components/inputs/checkbox/theme/light/checkbox";
-import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 import { bellIcon } from "@/ui-kit/customized-icons/bell/theme/light/bell";
 import { monitorChangesCard } from "@/ui-kit/components/cards/monitor-changes/theme/light/monitor-changes";
 import { monitorChangesPage } from "@/pages/monitor-changes/theme/light/monitor-changes";
 import { table } from "@/ui-kit/components/table/theme/light/light";
 import { footer } from "@/ui-kit/components/footer/theme/light/footer";
+import { pagination } from "@/ui-kit/components/pagination/theme/light/light";
+import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textarea";
+import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 
 import { Components } from "@/styled";
 
@@ -23,8 +25,11 @@ export const components: Components = {
   header,
   footer,
   sidebar,
+  dropdown,
   textInput,
+  textarea,
   notifications,
+  pagination,
   button,
   roundedArrowButton,
   link,
@@ -32,7 +37,6 @@ export const components: Components = {
   coloredText,
   withBackgroundText,
   checkboxInput,
-  dropdown,
   bellIcon,
   monitorChangesCard,
   monitorChangesPage,

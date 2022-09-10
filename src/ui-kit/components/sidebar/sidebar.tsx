@@ -1,21 +1,20 @@
-import { FC, lazy, memo, ReactNode, useCallback, useMemo } from 'react';
+import { FC, memo, ReactNode, useCallback, useMemo } from 'react';
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { currentMenuItemLS } from "@/constants/local-storage";
 import useHover from "@/ui-kit/hooks/useHover";
 import { currentMenuItemState } from "@/entity/atoms/currentMenuItem";
-import logoExpanded from "@/ui-kit/icons/logo-primary-expanded.svg";
 import { WHITE } from "@/ui-kit/constants/colors";
+import ActivityIcon from "@/ui-kit/customized-icons/activity/activity";
+import AtSignIcon from "@/ui-kit/customized-icons/at-sign/at-sign";
+import TargetIcon from "@/ui-kit/customized-icons/target/target";
+import BarChartIcon from "@/ui-kit/customized-icons/bar-chart/bar-chart";
+import ToolIcon from "@/ui-kit/customized-icons/tool/tool";
+import BookOpenIcon from "@/ui-kit/customized-icons/book-open/book-open";
+import HelpCircleIcon from "@/ui-kit/customized-icons/help-circle/help-circle";
+import LogoExpanded from "@/ui-kit/customized-icons/logo-expanded/logo-expanded";
 
-import {
-  IconContainer,
-  LinksWrapper,
-  LinkTitle,
-  LogosWrapper,
-  SidebarLink,
-  SidebarLogoExpanded,
-  SSidebar
-} from "./styled";
+import { IconContainer, LinksWrapper, LinkTitle, LogosWrapper, SidebarLink, SSidebar } from "./styled";
 
 
 type MenuElements = "monitoring" | "domains" | "competitions" | "seoAudit" | "tools" | "reports" | "help";
@@ -27,14 +26,6 @@ interface Menu {
   title: string;
   isChecked: boolean;
 }
-
-const ActivityIcon = lazy(() => import("@/ui-kit/customized-icons/activity/activity"));
-const AtSignIcon = lazy(() => import("@/ui-kit/customized-icons/at-sign/at-sign"));
-const TargetIcon = lazy(() => import("@/ui-kit/customized-icons/target/target"));
-const BarChartIcon = lazy(() => import("@/ui-kit/customized-icons/bar-chart/bar-chart"));
-const ToolIcon = lazy(() => import("@/ui-kit/customized-icons/tool/tool"));
-const BookOpenIcon = lazy(() => import("@/ui-kit/customized-icons/book-open/book-open"));
-const HelpCircleIcon = lazy(() => import("@/ui-kit/customized-icons/help-circle/help-circle"));
 
 const Sidebar: FC = memo((): JSX.Element => {
   const { t } = useTranslation();
@@ -93,7 +84,7 @@ const Sidebar: FC = memo((): JSX.Element => {
         isChecked: currentMenuItem === "help"
       }
     ],
-    [currentMenuItem]
+    [currentMenuItem, t]
   );
 
   const onClickLinkHandler = useCallback(
@@ -107,7 +98,7 @@ const Sidebar: FC = memo((): JSX.Element => {
   return (
     <SSidebar ref={hoverRef}>
       <LogosWrapper>
-        <SidebarLogoExpanded src={logoExpanded}/>
+        <LogoExpanded width={200}/>
       </LogosWrapper>
       <LinksWrapper>
         {menu.map((element) => (

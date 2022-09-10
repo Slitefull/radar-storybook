@@ -1,42 +1,95 @@
-import { SimpleInterpolation } from "styled-components";
+import { DefaultTheme, FlattenInterpolation, SimpleInterpolation, ThemedStyledProps } from "styled-components";
 import { css } from "styled-components/macro";
-import { PLATINUM, RAISIN_BLACK, VENETIAN_RED } from "@/ui-kit/constants/colors";
+import {
+  DARK_LAVA,
+  LIGHT_GREY,
+  PLUMP_PURPLE,
+  RAISIN_BLACK,
+  TART_ORANGE,
+  VENETIAN_RED,
+  WHITE
+} from "@/ui-kit/constants/colors";
+
+import { TextInputWrapperProps, WithIconWrapperProps } from "../../types";
 
 
-const TextInputWrapper: ReadonlyArray<SimpleInterpolation> = css` && {
+type IconPosition = "start" | "end";
+
+enum InputStates {
+  default = "default",
+  hover = "hover",
+  active = "active",
+  error = "error",
+}
+
+const InputStatesRecord: Record<InputStates, string> = {
+  [InputStates.default]: LIGHT_GREY,
+  [InputStates.hover]: DARK_LAVA,
+  [InputStates.active]: PLUMP_PURPLE,
+  [InputStates.error]: TART_ORANGE,
+};
+
+const IconPositionRecord: Record<IconPosition, string> = {
+  "start": "row",
+  "end": "row-reverse",
+};
+
+const DEFAULT_ICON_POSITION = "start";
+
+const getInputState = (isHovered: boolean, hasError: boolean) => {
+  if (isHovered) {
+    return InputStatesRecord[InputStates.hover];
+  }
+  if (hasError) {
+    return InputStatesRecord[InputStates.error];
+  }
+
+  return InputStatesRecord[InputStates.default];
+}
+
+const TextInputWrapper = css<TextInputWrapperProps>`
   display: flex;
   flex-direction: column;
-  gap: 5px 0;
-}`
+  pointer-events: ${({ disabled }) => disabled ? "none" : "auto"};
+  opacity: ${({ disabled }) => disabled ? .3 : 1};
+  transition: .2s opacity ease-in;
+  max-width: 350px;
+`
 
-const WithIconWrapper: ReadonlyArray<SimpleInterpolation> = css` && {
-  font-family: 'Menlo', serif;
+const WithIconWrapper = css<WithIconWrapperProps>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ iconPosition }) => IconPositionRecord[iconPosition || DEFAULT_ICON_POSITION]};
   align-items: center;
+  border: 1px solid ${({ isHovered, hasError }) => getInputState(isHovered, hasError)};
+  background: ${WHITE};
+  transition: .2s border ease-in;
+  border-radius: 8px;
+  padding: 0 10px;
+
+  &:focus-within {
+    border: 1px solid ${({ hasError }) => InputStatesRecord[hasError ? InputStates.error : InputStates.active]};
+  }
+`
+
+const SFormInput = css`
+  font-family: 'Menlo', serif;
   font-size: 14px;
   font-weight: 400;
   color: ${RAISIN_BLACK};
-  border: 1px solid ${PLATINUM};
+  outline: none;
   width: auto;
-  height: 35px;
-  border-radius: 8px;
   padding: 0 12px;
-}`
-
-const SFormInput: ReadonlyArray<SimpleInterpolation> = css` && {
-  height: 100%;
-  width: 100%;
+  height: 35px;
   border: none;
   border-radius: 8px;
-  outline: none;
-}`
+  width: 100%;
+`
 
-const HelperText: ReadonlyArray<SimpleInterpolation> = css` && {
+const HelperText: ReadonlyArray<SimpleInterpolation> = css`
   font-size: 11px;
   font-weight: 400;
   color: ${VENETIAN_RED};
-}`
+`
 
 export const textInput = {
   TextInputWrapper,

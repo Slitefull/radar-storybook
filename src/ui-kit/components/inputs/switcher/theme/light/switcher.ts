@@ -33,7 +33,7 @@ const SwitchLabel: FlattenInterpolation<ThemedStyledProps<SwitchLabelProps, Defa
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  width: 40px;
+  width: 36px;
   height: 20px;
   border-radius: 100px;
   background: ${({ backgroundColor }) => backgroundColor || PLATINUM};

@@ -30,12 +30,6 @@ const SeverityColorsRecord: Record<Severities, Color> = {
 export default {
   title: 'ui-kit/Table',
   component: Table,
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/6HhomvxbGrw7P6EX03KM7i/Final-designs-14.07?node-id=667%3A20124",
-    },
-  }
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args}/>;
@@ -76,4 +70,11 @@ Default.args = {
   ],
   data: mockData,
   withPagination: true,
+};
+
+Default.parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/6HhomvxbGrw7P6EX03KM7i/Final-designs-14.07?node-id=237%3A7832",
+  },
 };

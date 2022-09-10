@@ -23,6 +23,10 @@ const TFooter = css`
   margin: 0 20px;
   padding: 20px 0;
   border-top: 1px solid ${PLATINUM};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 `
 
 const THeaderRow = css`
@@ -60,6 +64,11 @@ const TCell = css`
   color: ${DARK_LAVA};
 `
 
+const DropdownWrapper = css` 
+  position: absolute;
+  left: 0;
+`
+
 export const table = {
   STable,
   THeader,
@@ -69,4 +78,5 @@ export const table = {
   THeaderElement,
   TRow,
   TCell,
+  DropdownWrapper,
 }

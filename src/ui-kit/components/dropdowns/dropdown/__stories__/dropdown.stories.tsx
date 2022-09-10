@@ -1,90 +1,127 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Dropdown from "../dropdown";
+import { mockDropdownData } from "../__mock__/data";
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
 
 
 export default {
   title: 'dropdowns/Default',
   component: Dropdown,
-  parameters: {
-    docs: {
-      description: {
-        component: 'Button with arrow and 4 rotations',
-      },
-    },
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1414%3A3826",
-    },
-  },
-  argTypes: {
-    elements: {
-      name: 'elements',
-      table: {
-        type: { summary: 'elements' },
-        defaultValue: {
-          summary: [
-            {
-              key: "istanbul",
-              label: "Istanbul, TR (AHL)"
-            },
-            {
-              key: "paris",
-              label: "Paris, FR (CDG)"
-            }
-          ]
-        },
-      },
-    },
-    rounded: {
-      name: 'rounded',
-      table: {
-        type: { summary: 'rounded' },
-        defaultValue: {
-          summary: false,
-        },
-      },
-    },
-    color: {
-      name: 'color',
-      options: ["primary", "secondary", "ghost"],
-      control: { type: 'radio' },
-      table: {
-        type: { summary: 'color' },
-        defaultValue: {
-          summary: "primary",
-        },
-      },
-    },
-    size: {
-      name: 'size',
-      options: ["default", "small"],
-      control: { type: 'radio' },
-      table: {
-        type: { summary: 'size' },
-        defaultValue: {
-          summary: "default",
-        },
-      },
-    },
-  },
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Label",
-  elements: [
-    {
-      key: "option_1",
-      label: "Option 1"
-    },
-    {
-      key: "option_2",
-      label: "Option 2"
-    }
-  ],
-  rounded: false,
   color: "primary",
-  size: "default",
+  options: mockDropdownData,
+  isSearchable: false,
+  closeMenuOnSelect: false,
+  hideSelectedOptions: true,
+  placeholder: "Search",
+  disabled: false,
+  rounded: false,
+  defaultValue: { value: "option", label: "option" },
+  label: "Label",
 };
+
+Default.argTypes = {
+  color: {
+    name: "color",
+    options: ["primary", "secondary", "ghost"],
+    control: { type: 'radio' },
+    table: {
+      type: { summary: 'Dropdown color' },
+      defaultValue: {
+        summary: "primary"
+      },
+    },
+  },
+  options: {
+    name: 'options',
+    table: {
+      type: { summary: 'Array of options that populate the select menu' },
+      defaultValue: {
+        summary: `[
+          { value: 'purple', label: 'Purple' }
+        ]`
+      },
+    },
+  },
+  closeMenuOnSelect: {
+    name: 'closeMenuOnSelect',
+    table: {
+      type: { summary: 'Close the select menu when the user selects an option' },
+      defaultValue: { summary: false },
+    },
+  },
+  placeholder: {
+    name: 'placeholder',
+    table: {
+      type: { summary: 'Set placeholder for select' },
+      defaultValue: { summary: "Search" },
+    },
+  },
+  isSearchable: {
+    name: 'isSearchable',
+    table: {
+      type: { summary: 'Set is select is searchable' },
+      defaultValue: { summary: false },
+    },
+  },
+  hideSelectedOptions: {
+    name: 'hideSelectedOptions',
+    table: {
+      type: { summary: 'Hide the selected option from the menu' },
+      defaultValue: { summary: true },
+    },
+  },
+  rounded: {
+    name: 'rounded',
+    table: {
+      type: { summary: 'Set is select rounded' },
+      defaultValue: { summary: false },
+    },
+  },
+  disabled: {
+    name: 'disabled',
+    table: {
+      type: { summary: 'Set is select disabled' },
+      defaultValue: { summary: false },
+    },
+  },
+  defaultValue: {
+    name: 'defaultValue',
+    table: {
+      type: { summary: 'Set default value for the select' },
+      defaultValue: { summary: `{ value: "option", label: "option" }` },
+    },
+  },
+  label: {
+    name: 'label',
+    table: {
+      type: { summary: 'Set label for the select' },
+      defaultValue: { summary: `Label` },
+    },
+  },
+  labelPosition: {
+    name: 'labelPosition',
+    options: ["left", "right"],
+    control: { type: 'radio' },
+    table: {
+      type: { summary: 'Position of the label' },
+      defaultValue: { summary: "left" },
+    },
+  },
+};
+
+Default.parameters = {
+  docs: {
+    description: {
+      component: 'Default dropdown with 2 sizes and 3 colors',
+    },
+  },
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1414%3A3826",
+  },
+}

@@ -35,6 +35,7 @@ const ArrowIcon: FC<ArrowIconProps> = memo(({ color, size, rotation }): JSX.Elem
 
   return (
     <svg
+      className={"arrow"}
       style={{ ...getRotation(), transition: '.2s ease-in' }}
       width={size || 20}
       height={size || 20}

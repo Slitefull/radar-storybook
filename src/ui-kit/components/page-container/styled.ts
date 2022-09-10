@@ -4,7 +4,7 @@ import { breakpoints } from "@/ui-kit/constants/breakpoints";
 
 
 export const Container = styled.section` && {
-  padding: 0 60px 50px;
+  padding: 0 60px 120px;
 
   ${media("padding", "px", [
     { [breakpoints.md]: "0 40" },

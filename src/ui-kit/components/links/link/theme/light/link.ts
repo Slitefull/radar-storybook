@@ -65,20 +65,20 @@ const smallSize: ReadonlyArray<SimpleInterpolation> = css`
 `
 
 const LinkColorsRecord: Record<LinkColor, FlattenSimpleInterpolation> = {
-  ["default"]: defaultLink,
-  ["text"]: text,
-  ["gray"]: gray,
+  "default": defaultLink,
+  "text": text,
+  "gray": gray,
 };
 
 const LinkSizesRecord: Record<LinkSize, FlattenSimpleInterpolation> = {
-  ["default"]: defaultSize,
-  ["small"]: smallSize,
+  "default": defaultSize,
+  "small": smallSize,
 };
 
 const LinkBordersRecord: Record<LinkColor, FlattenSimpleInterpolation> = {
-  ["default"]: defaultLinkBorders,
-  ["text"]: textBorders,
-  ["gray"]: grayBorders,
+  "default": defaultLinkBorders,
+  "text": textBorders,
+  "gray": grayBorders,
 };
 
 const SLink: FlattenInterpolation<ThemedStyledProps<SLinkProps, DefaultTheme>> = css<SLinkProps>`
