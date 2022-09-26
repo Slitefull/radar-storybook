@@ -9,3 +9,7 @@ export interface WithIconWrapperProps {
   isHovered: boolean;
   hasError: boolean;
 }
+
+export interface LabelProps {
+  withLabel: boolean;
+}

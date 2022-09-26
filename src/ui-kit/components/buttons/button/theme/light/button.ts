@@ -73,17 +73,22 @@ const ButtonColorsRecord: Record<ButtonColors, FlattenSimpleInterpolation> = {
 
 const SButton: FlattenInterpolation<ThemedStyledProps<SButtonProps, DefaultTheme>> = css<SButtonProps>`
   padding: 5px 25px;
-  border-radius: 4px;
+  border-radius: ${({ rounded }) => rounded ? "35px" : "4px"};
   cursor: pointer;
   outline: none;
   text-align: center;
-  transition: 0.2s background ease-out, 0.2s border ease-in, 0.2s color ease-in;
+  transition: 0.2s background ease-out, 0.2s border ease-in, 0.2s color ease-in, 0.2s border-radius ease-in;
 
   ${({ color }) => css`${ButtonColorsRecord[color || DEFAULT_COLOR]}`};
   ${({ size }) => css`${ButtonSizesRecord[size || DEFAULT_SIZE]}`};
 
+  &:disabled {
+    pointer-events: none;
+    opacity: .3;
+  }
+
   &:hover {
-    transition: 0.2s background ease-out, 0.2s border ease-in, 0.2s color ease-in;
+    transition: 0.2s background ease-out, 0.2s border ease-in, 0.2s color ease-in, 0.2s border-radius ease-in;
   }
 `
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import { TextInputWrapperProps, WithIconWrapperProps } from "./types";
+import { LabelProps, TextInputWrapperProps, WithIconWrapperProps } from "./types";
 
 
 export const TextInputWrapper = styled.div<TextInputWrapperProps>` && {
@@ -10,6 +10,14 @@ export const TextInputWrapper = styled.div<TextInputWrapperProps>` && {
 
 export const SFormInput = styled.input` && {
   ${({ theme }) => css`${theme.components.textInput.SFormInput}`}
+}`
+
+export const Label = styled.label<LabelProps>` && {
+  ${({ theme }) => css`${theme.components.textInput.Label}`}
+}`
+
+export const LabelText = styled.label` && {
+  ${({ theme }) => css`${theme.components.textInput.LabelText}`}
 }`
 
 export const HelperText = styled.span` && {

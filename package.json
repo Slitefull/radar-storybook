@@ -1,6 +1,6 @@
 {
   "name": "seoradar",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.5",
@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@types/loadable__component": "^5.13.4",
     "chart.js": "^3.9.1",
+    "date-fns": "^2.29.3",
     "eslint": "^8.20.0",
     "eslint-import-resolver-typescript": "^3.3.0",
     "eslint-plugin-import": "^2.26.0",
@@ -21,6 +22,7 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-content-loader": "^6.2.0",
+    "react-day-picker": "^8.2.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.33.1",
     "react-i18next": "^11.18.5",

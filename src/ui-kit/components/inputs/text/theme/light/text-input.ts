@@ -1,4 +1,4 @@
-import { DefaultTheme, FlattenInterpolation, SimpleInterpolation, ThemedStyledProps } from "styled-components";
+import { SimpleInterpolation } from "styled-components";
 import { css } from "styled-components/macro";
 import {
   DARK_LAVA,
@@ -10,7 +10,7 @@ import {
   WHITE
 } from "@/ui-kit/constants/colors";
 
-import { TextInputWrapperProps, WithIconWrapperProps } from "../../types";
+import { LabelProps, TextInputWrapperProps, WithIconWrapperProps } from "../../types";
 
 
 type IconPosition = "start" | "end";
@@ -77,12 +77,17 @@ const SFormInput = css`
   font-weight: 400;
   color: ${RAISIN_BLACK};
   outline: none;
-  width: auto;
   padding: 0 12px;
   height: 35px;
   border: none;
   border-radius: 8px;
   width: 100%;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
 `
 
 const HelperText: ReadonlyArray<SimpleInterpolation> = css`
@@ -91,9 +96,26 @@ const HelperText: ReadonlyArray<SimpleInterpolation> = css`
   color: ${VENETIAN_RED};
 `
 
+const Label = css<LabelProps>`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ withLabel }) => withLabel ? "5px 0" : 0};
+`
+
+const LabelText = css`
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: ${RAISIN_BLACK};
+  margin: 0 0 0 10px;
+`
+
 export const textInput = {
   TextInputWrapper,
   WithIconWrapper,
   SFormInput,
+  Label,
+  LabelText,
   HelperText,
 }

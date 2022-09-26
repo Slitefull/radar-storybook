@@ -17,6 +17,8 @@ Default.args = {
   disabled: false,
   icon: <SearchIcon size={15}/>,
   iconPosition: "start",
+  value: "",
+  label: "Label",
 };
 
 Default.argTypes = {
@@ -64,6 +66,24 @@ Default.argTypes = {
       type: { summary: 'Set position for the icon' },
       defaultValue: {
         summary: "start",
+      },
+    },
+  },
+  value: {
+    name: 'value',
+    table: {
+      type: { summary: 'Set value for input' },
+      defaultValue: {
+        summary: "",
+      },
+    },
+  },
+  label: {
+    name: 'label',
+    table: {
+      type: { summary: 'Input`s label' },
+      defaultValue: {
+        summary: "Label",
       },
     },
   },

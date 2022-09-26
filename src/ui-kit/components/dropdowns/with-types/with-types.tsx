@@ -4,10 +4,13 @@ import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicato
 import Control from "./components/control/control";
 import MultiValueRemove from ".//components/multivalue-remove/multivalue-remove";
 import { DARK_LAVA, EBONY, LIGHT_GREY, PLATINUM, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { CSSObject } from "styled-components";
 
 
 type Option = { value: string | number, label: string | number }
-type SelectTypes = "searchable" | "multi";
+type SelectOptions = "searchable" | "multi";
+
+type SelectTypes = "single" | "multi";
 
 interface SelectWithTypesProps {
   options: Option[];
@@ -17,9 +20,182 @@ interface SelectWithTypesProps {
   isDisabled?: boolean;
   onChange?: (newValue: string, actionMeta: InputActionMeta) => void;
   defaultValue?: Option;
-  types: SelectTypes[];
+  types: SelectOptions[];
   icon?: ReactNode;
 }
+
+const baseControlStyles: CSSObject = {
+  background: '#FFFFFF',
+  width: 350,
+  minHeight: 40,
+  transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
+  padding: '0 10px',
+  cursor: "pointer",
+  gap: '0 10px',
+  boxShadow: "none",
+
+  "&:focus": {
+    border: `1px solid ${PLUMP_PURPLE}`,
+    transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
+  },
+
+  "&:hover": {
+    border: `1px solid ${DARK_LAVA}`,
+    transition: '.2s border ease-in-out',
+  }
+}
+
+const baseOptionStyles: CSSObject = {
+  fontFamily: "Menlo",
+  fontSize: 14,
+  fontWeight: 900,
+  color: EBONY,
+  cursor: 'pointer',
+  padding: '2px 0',
+  background: "none",
+  transition: '.2s opacity ease-in-out',
+
+  "&:hover": {
+    opacity: .7,
+    transition: '.2s opacity ease-in-out',
+  },
+
+  "&:active": {
+    backgroundColor: 'transparent',
+  }
+}
+
+const baseValueContainerStyles: CSSObject = {
+  padding: '5px 0',
+}
+
+const baseSingleValueStyles: CSSObject = {
+  fontSize: 14,
+}
+
+const basePlaceholderStyles: CSSObject = {
+  fontFamily: 'Menlo',
+  fontWeight: 400,
+  fontSize: 14,
+  lineHeight: '16px',
+  letterSpacing: '-0.02em',
+  color: '#423D33',
+}
+
+const baseMenuStyles: CSSObject = {
+  margin: 0,
+  padding: 10,
+  display: "flex",
+  width: "100%",
+  flexDirection: "column",
+  gap: '0 10px',
+  borderRadius: "0 0 5px 5px",
+}
+
+const baseMenuListStyles: CSSObject = {
+  display: 'flex',
+  flexDirection: "column",
+  gap: "10px 0",
+}
+
+const baseMultiValueStyles: CSSObject = {
+  background: PLATINUM,
+  borderRadius: 4,
+  fontFamily: 'Menlo',
+  fontWeight: 400,
+  fontSize: 10,
+  letterSpacing: '-0.02em',
+  color: DARK_LAVA,
+  alignItems: "center",
+}
+
+const baseMultiValueRemoveStyles: CSSObject = {
+  transition: '.2s background ease-in-out',
+
+  "&:hover": {
+    transition: '.2s background ease-in-out',
+    background: PLATINUM,
+  }
+}
+
+const baseInputStyles: CSSObject = {
+  fontWeight: 400,
+  fontSize: 14,
+};
+
+const ControlColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseControlStyles },
+  "multi": { ...baseControlStyles },
+};
+
+const OptionColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseOptionStyles },
+  "multi": {
+    ...baseOptionStyles,
+    fontFamily: 'Menlo',
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
+
+const ValueContainerColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseValueContainerStyles },
+  "multi": { ...baseValueContainerStyles },
+};
+
+const SingleValueRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseSingleValueStyles },
+  "multi": {
+    ...baseSingleValueStyles,
+    fontFamily: 'Menlo',
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
+
+const PlaceholderColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...basePlaceholderStyles },
+  "multi": {
+    ...basePlaceholderStyles,
+    fontFamily: 'Menlo',
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
+
+const MenuColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseMenuStyles },
+  "multi": { ...baseMenuStyles },
+};
+
+const MenuListColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseMenuListStyles },
+  "multi": { ...baseMenuListStyles },
+};
+
+const MultiValueColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseMultiValueStyles },
+  "multi": { ...baseMultiValueStyles },
+};
+
+const MultiValueRemoveColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseMultiValueRemoveStyles },
+  "multi": { ...baseMultiValueRemoveStyles },
+};
+
+const InputColorsRecord: Record<SelectTypes, CSSObject> = {
+  "single": { ...baseInputStyles },
+  "multi": {
+    ...baseInputStyles,
+    fontFamily: 'Menlo',
+    fontWeight: 400,
+    fontSize: 12,
+    letterSpacing: '-0.02em',
+  },
+};
 
 const SelectWithTypes: FC<SelectWithTypesProps> = memo((
   {
@@ -34,105 +210,58 @@ const SelectWithTypes: FC<SelectWithTypesProps> = memo((
     icon,
   }
 ): JSX.Element => {
+  const getSelectType = (types: SelectOptions[]): SelectTypes => {
+    if (types.includes("multi")) {
+      return "multi";
+    }
+    return "single";
+  }
+
   const customStyles: StylesConfig<Option, true> = {
-    control: (provided, state) => ({
+    control: (provided, { isFocused, selectProps }) => ({
       ...provided,
-      background: '#FFFFFF',
-      border: state.isFocused ? `1px solid ${PLUMP_PURPLE}` : `1px solid ${LIGHT_GREY}`,
-      width: 350,
-      minHeight: 40,
-      borderRadius: state.selectProps.menuIsOpen ? '8px 8px 0 0' : 8,
-      transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
-      padding: '0 10px',
-      cursor: "pointer",
-      gap: '0 10px',
-      opacity: state.selectProps.isDisabled ? .3 : 1,
-      pointerEvents: state.selectProps.isDisabled ? "none" : "auto",
-      boxShadow: "none",
-
-      "&:focus": {
-        border: `1px solid ${PLUMP_PURPLE}`,
-        transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
-      },
-
-      "&:hover": {
-        border: `1px solid ${DARK_LAVA}`,
-        transition: '.2s border ease-in-out',
-      }
+      ...ControlColorsRecord[getSelectType(types)],
+      border: isFocused ? `1px solid ${PLUMP_PURPLE}` : `1px solid ${LIGHT_GREY}`,
+      borderRadius: selectProps.menuIsOpen ? '8px 8px 0 0' : 8,
+      opacity: selectProps.isDisabled ? .3 : 1,
+      pointerEvents: selectProps.isDisabled ? "none" : "auto",
     }),
-    option: (provided, state) => ({
+    option: (provided, { isSelected }) => ({
       ...provided,
-      fontFamily: "Menlo",
-      fontSize: 14,
-      fontWeight: 900,
-      color: EBONY,
-      cursor: 'pointer',
-      padding: '2px 0',
-      opacity: state.isSelected ? .7 : 1,
-      background: "none",
-      transition: '.2s opacity ease-in-out',
-
-      "&:hover": {
-        opacity: .7,
-        transition: '.2s opacity ease-in-out',
-      },
-
-      "&:active": {
-        backgroundColor: 'transparent',
-      }
+      ...OptionColorsRecord[getSelectType(types)],
+      opacity: isSelected ? .7 : 1,
     }),
     valueContainer: (provided) => ({
       ...provided,
-      padding: '5px 0',
+      ...ValueContainerColorsRecord[getSelectType(types)],
     }),
     singleValue: (provided) => ({
       ...provided,
-      fontSize: 14,
+      ...SingleValueRecord[getSelectType(types)],
     }),
     placeholder: (provided) => ({
       ...provided,
-      fontFamily: 'Menlo',
-      fontWeight: 400,
-      fontSize: 14,
-      lineHeight: '16px',
-      letterSpacing: '-0.02em',
-      color: '#423D33',
+      ...PlaceholderColorsRecord[getSelectType(types)],
     }),
     menu: (provided) => ({
       ...provided,
-      margin: 0,
-      padding: 10,
-      display: "flex",
-      width: "100%",
-      flexDirection: "column",
-      gap: '0 10px',
-      borderRadius: "0 0 5px 5px",
+      ...MenuColorsRecord[getSelectType(types)],
     }),
     menuList: (provided) => ({
       ...provided,
-      display: 'flex',
-      flexDirection: "column",
-      gap: "10px 0",
+      ...MenuListColorsRecord[getSelectType(types)],
     }),
     multiValue: (provided) => ({
       ...provided,
-      background: PLATINUM,
-      borderRadius: 4,
-      fontFamily: 'Menlo',
-      fontWeight: 400,
-      fontSize: 10,
-      letterSpacing: '-0.02em',
-      color: DARK_LAVA,
-      alignItems: "center",
+      ...MultiValueColorsRecord[getSelectType(types)],
     }),
     multiValueRemove: (provided) => ({
       ...provided,
-      transition: '.2s background ease-in-out',
-
-      "&:hover": {
-        transition: '.2s background ease-in-out',
-        background: PLATINUM,
-      }
+      ...MultiValueRemoveColorsRecord[getSelectType(types)],
+    }),
+    input: (provided) => ({
+      ...provided,
+      ...InputColorsRecord[getSelectType(types)]
     }),
     indicatorSeparator: () => ({ display: "none" }),
   }

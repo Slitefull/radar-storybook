@@ -13,6 +13,7 @@ export const Default = Template.bind({});
 Default.args = {
   color: "primary",
   size: "default",
+  rounded: false,
 };
 
 Default.argTypes = {
@@ -32,6 +33,13 @@ Default.argTypes = {
     table: {
       type: { summary: 'Button sizes' },
       defaultValue: { summary: 'default' },
+    },
+  },
+  rounded: {
+    name: 'rounded',
+    table: {
+      type: { summary: 'Set is button rounded' },
+      defaultValue: { summary: 'false' },
     },
   },
 };

@@ -1,7 +1,7 @@
 import { FC, memo } from "react"
 import ColoredTextFallback from "@/ui-kit/components/text/colored/fallback/fallback";
 import DropdownFallback from "@/ui-kit/components/dropdowns/dropdown/fallback/fallback";
-import LinkFallback from "@/ui-kit/components/links/link/fallback/fallback";
+import LinkFallback from "@/ui-kit/components/buttons/link/fallback/fallback";
 import IconFallback from "@/ui-kit/customized-icons/fallback/fallback";
 
 import { HeaderWrapper, LeftSide, RightSide } from "../styled";

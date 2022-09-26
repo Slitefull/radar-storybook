@@ -7,8 +7,6 @@ import Pagination from "@/ui-kit/components/pagination/pagination";
 import { DropdownWrapper, STable, TBody, TCell, TFooter, THeader, THeaderElement, THeaderRow, TRow } from './styled';
 
 
-type Option = { value: string; label: string; }
-
 interface TableProps {
   columns: Array<Column<any>>;
   data: Array<object>;
@@ -87,6 +85,7 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
           <TFooter>
             <DropdownWrapper>
               <Dropdown
+                color={"ghost"}
                 options={paginationOptions}
                 onChange={(option) => setPageSize(option.value)}
                 label={t("changes_per_page")}
