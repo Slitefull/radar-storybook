@@ -16,6 +16,8 @@
   "group_by_date": "Group by date",
   "prev": "prev",
   "next": "next",
+  "cancel": "Cancel",
+  "apply": "Apply",
   "select": "Select",
   "monitoring": "Monitoring",
   "domains": "Domains",
@@ -23,5 +25,12 @@
   "seo_audit": "SEO Audit",
   "tools": "Tools",
   "reports": "Reports",
-  "help": "Help"
+  "help": "Help",
+  "changes_per_page": "changes per page",
+  "last_week": "Last week",
+  "last_month": "Last month",
+  "last_days_count": "Last {{count}} days",
+  "selected_days": "Selected days",
+  "custom_range": "Custom range",
+  "choose_the_date": "Choose the date"
 }

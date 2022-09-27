@@ -1,5 +1,4 @@
 import { create } from '@storybook/theming';
-// @ts-ignore
 import brandImage from "../src/ui-kit/icons/logo-primary-expanded.svg"
 
 export default create({
