@@ -44,6 +44,7 @@ const ListView: FC<ButtonViewProps> = memo(({ isActive }): JSX.Element => {
       isHovered={isHovered}
       ref={hoverRef}
     >
+
       <ListIcon
         size={24}
         color={getIconColor(isActive, isHovered)}
