@@ -14,6 +14,7 @@ const fonts = css`
     font-weight: normal;
     font-style: normal;
   }
+  
   @font-face {
     font-family: 'FreightSans Pro';
     src: url(${freightSansProBlack}) format('woff');
