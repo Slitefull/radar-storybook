@@ -23,6 +23,7 @@ import { tab } from "@/ui-kit/components/tabs/tab/theme/light/light";
 import { tabs } from "@/ui-kit/components/tabs/tabs/theme/light/light";
 import { tabPanel } from "@/ui-kit/components/tabs/tab-panel/theme/light/light";
 import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
+import { rangeDatepicker } from "@/ui-kit/components/datepickers/range/theme/light/range";
 
 import { Components } from "@/styled";
 
@@ -53,4 +54,5 @@ export const components: Components = {
   listGridView,
   collapsibleCard,
   stepper,
+  rangeDatepicker,
 }
