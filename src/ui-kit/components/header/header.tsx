@@ -1,12 +1,12 @@
 import { FC, Fragment, memo, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
-import Link from "@/ui-kit/components/links/link/link";
 import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle/plus-circle";
 import SettingsIcon from "@/ui-kit/customized-icons/settings/settings";
 import BellIcon from "@/ui-kit/customized-icons/bell/bell";
 
 import { HeaderTitle, HeaderWrapper, LeftSide, RightSide, Username } from "./styled";
+import Link from "../buttons/link/link";
 
 
 type SelectOption = { value: string | number; label: string | number };
@@ -59,8 +59,8 @@ const Header: FC = memo((): JSX.Element => {
         />
         <Link
           color={"text"}
-          redirectTo={"/"}
           icon={<PlusCircleIcon size={25}/>}
+          onClick={() => console.log("qwe")}
         >
           Add domains
         </Link>
