@@ -11,6 +11,8 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "@types/loadable__component": "^5.13.4",
+    "date-fns": "^2.29.3",
+    "react-day-picker": "^8.2.1",
     "chart.js": "^3.9.1",
     "eslint": "^8.20.0",
     "eslint-import-resolver-typescript": "^3.3.0",
