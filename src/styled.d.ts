@@ -20,7 +20,9 @@ import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textar
 import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 import { listGridView } from "@/ui-kit/components/buttons/list-grid-view/theme/light/list-grid-view";
 import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/light/collapsible";
-
+import { tab } from "@/ui-kit/components/tabs/tab/theme/light/light";
+import { tabs } from "@/ui-kit/components/tabs/tabs/theme/light/light";
+import { tabPanel } from "@/ui-kit/components/tabs/tab-panel/theme/light/light";
 
 export interface Components {
   header: ReturnType<typeof header>;
@@ -43,7 +45,9 @@ export interface Components {
   table: ReturnType<typeof table>;
   listGridView: ReturnType<typeof listGridView>;
   collapsibleCard: ReturnType<typeof collapsibleCard>;
-
+  tab: ReturnType<typeof tab>;
+  tabs: ReturnType<typeof tabs>;
+  tabPanel: ReturnType<typeof tabPanel>;
   monitorChangesPage: ReturnType<typeof monitorChangesPage>;
 }
 
