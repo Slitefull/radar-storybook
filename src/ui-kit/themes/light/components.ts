@@ -17,6 +17,7 @@ import { footer } from "@/ui-kit/components/footer/theme/light/footer";
 import { pagination } from "@/ui-kit/components/pagination/theme/light/light";
 import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textarea";
 import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
+import { listGridView } from "@/ui-kit/components/buttons/list-grid-view/theme/light/list-grid-view";
 
 import { Components } from "@/styled";
 
@@ -41,4 +42,5 @@ export const components: Components = {
   monitorChangesCard,
   monitorChangesPage,
   table,
+  listGridView,
 }

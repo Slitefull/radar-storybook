@@ -18,6 +18,7 @@ import { table } from "@/ui-kit/components/table/theme/light/light";
 import { pagination } from "@/ui-kit/components/pagination/theme/light/light";
 import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textarea";
 import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
+import { listGridView } from "@/ui-kit/components/buttons/list-grid-view/theme/light/list-grid-view";
 
 
 export interface Components {
@@ -39,6 +40,7 @@ export interface Components {
   bellIcon: ReturnType<typeof bellIcon>;
   monitorChangesCard: ReturnType<typeof monitorChangesCard>;
   table: ReturnType<typeof table>;
+  listGridView: ReturnType<typeof listGridView>;
 
   monitorChangesPage: ReturnType<typeof monitorChangesPage>;
 }
