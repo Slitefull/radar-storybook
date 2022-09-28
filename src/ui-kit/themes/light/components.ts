@@ -1,7 +1,7 @@
 import { header } from "@/ui-kit/components/header/theme/light/header";
 import { textInput } from "@/ui-kit/components/inputs/text/theme/light/text-input";
 import { notifications } from "@/ui-kit/components/notifications/theme/notifications";
-import { link } from "@/ui-kit/components/links/link/theme/light/link";
+import { link } from "@/ui-kit/components/buttons/link/theme/light/link";
 import { button } from "@/ui-kit/components/buttons/button/theme/light/button";
 import { roundedArrowButton } from "@/ui-kit/components/buttons/rounded-arrow/theme/light/rounded-arrow";
 import { switcherInput } from "@/ui-kit/components/inputs/switcher/theme/light/switcher";

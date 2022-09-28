@@ -6,8 +6,8 @@ import { coloredText } from "./ui-kit/components/text/colored/theme/light/colore
 import { withBackgroundText } from "./ui-kit/components/text/with-background/theme/light/with-background";
 import { roundedArrowButton } from "./ui-kit/components/buttons/rounded-arrow/theme/light/rounded-arrow";
 import { button } from "./ui-kit/components/buttons/button/theme/light/button";
+import { link } from "./ui-kit/components/buttons/link/theme/light/link";
 import { sidebar } from "./ui-kit/components/sidebar/theme/light/light";
-import { link } from "./ui-kit/components/links/link/theme/light/link";
 import { header } from "./ui-kit/components/header/theme/light/header";
 import { footer } from "./ui-kit/components/footer/theme/light/footer";
 import { notifications } from "./ui-kit/components/notifications/theme/notifications";
@@ -32,9 +32,9 @@ export interface Components {
   pagination: ReturnType<typeof pagination>;
   notifications: ReturnType<typeof notifications>;
   button: ReturnType<typeof button>;
+  link: ReturnType<typeof link>;
   dropdown: ReturnType<typeof dropdown>;
   roundedArrowButton: ReturnType<typeof roundedArrowButton>;
-  link: ReturnType<typeof link>;
   coloredText: ReturnType<typeof coloredText>;
   withBackgroundText: ReturnType<typeof withBackgroundText>;
   textInput: ReturnType<typeof textInput>;

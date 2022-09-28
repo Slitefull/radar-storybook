@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import LinkFallback from "@/ui-kit/components/links/link/fallback/fallback";
+import LinkFallback from "@/ui-kit/components/buttons/link/fallback/fallback";
 
 
 export default {
-  title: 'ui-kit/Link',
+  title: 'buttons/Link',
   component: LinkFallback,
 } as ComponentMeta<typeof LinkFallback>;
 

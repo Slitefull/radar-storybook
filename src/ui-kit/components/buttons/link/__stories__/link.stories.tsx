@@ -5,7 +5,7 @@ import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle/plus-circle";
 
 
 export default {
-  title: 'ui-kit/Link',
+  title: 'buttons/Link',
   component: Link,
 } as ComponentMeta<typeof Link>;
 
@@ -13,22 +13,12 @@ const Template: ComponentStory<typeof Link> = (args) => <Link {...args}>Link</Li
 
 export const Default = Template.bind({});
 Default.args = {
-  redirectTo: '/',
   icon: <PlusCircleIcon size={14}/>,
   color: 'default',
   size: 'default',
 };
 
 Default.argTypes = {
-  redirectTo: {
-    name: 'redirectTo',
-    table: {
-      type: { summary: 'OnClick event redirect' },
-      defaultValue: {
-        summary: '/',
-      },
-    },
-  },
   icon: {
     name: 'icon',
     table: {
@@ -61,8 +51,13 @@ Default.argTypes = {
 };
 
 Default.parameters = {
+  docs: {
+    description: {
+      component: 'Button type "Link" with 2 sizes',
+    },
+  },
   design: {
-    type: "Default link with 3 colors and 2 sizes",
+    type: "figma",
     url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1414%3A3826",
   },
 };
