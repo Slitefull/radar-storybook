@@ -19,6 +19,7 @@ import { pagination } from "@/ui-kit/components/pagination/theme/light/light";
 import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textarea";
 import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
 import { listGridView } from "@/ui-kit/components/buttons/list-grid-view/theme/light/list-grid-view";
+import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/light/collapsible";
 
 
 export interface Components {
@@ -41,6 +42,7 @@ export interface Components {
   monitorChangesCard: ReturnType<typeof monitorChangesCard>;
   table: ReturnType<typeof table>;
   listGridView: ReturnType<typeof listGridView>;
+  collapsibleCard: ReturnType<typeof collapsibleCard>;
 
   monitorChangesPage: ReturnType<typeof monitorChangesPage>;
 }
