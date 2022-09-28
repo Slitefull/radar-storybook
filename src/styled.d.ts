@@ -23,6 +23,7 @@ import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/lig
 import { tab } from "@/ui-kit/components/tabs/tab/theme/light/light";
 import { tabs } from "@/ui-kit/components/tabs/tabs/theme/light/light";
 import { tabPanel } from "@/ui-kit/components/tabs/tab-panel/theme/light/light";
+import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
 
 export interface Components {
   header: ReturnType<typeof header>;
@@ -49,6 +50,7 @@ export interface Components {
   tabs: ReturnType<typeof tabs>;
   tabPanel: ReturnType<typeof tabPanel>;
   monitorChangesPage: ReturnType<typeof monitorChangesPage>;
+  stepper: ReturnType<typeof stepper>;
 }
 
 declare module 'styled-components' {

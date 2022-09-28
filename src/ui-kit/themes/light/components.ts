@@ -22,6 +22,7 @@ import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/lig
 import { tab } from "@/ui-kit/components/tabs/tab/theme/light/light";
 import { tabs } from "@/ui-kit/components/tabs/tabs/theme/light/light";
 import { tabPanel } from "@/ui-kit/components/tabs/tab-panel/theme/light/light";
+import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
 
 import { Components } from "@/styled";
 
@@ -50,5 +51,6 @@ export const components: Components = {
   monitorChangesPage,
   table,
   listGridView,
-  collapsibleCard
+  collapsibleCard,
+  stepper,
 }
