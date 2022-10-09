@@ -9,3 +9,11 @@ export interface WithIconWrapperProps {
   isHovered: boolean;
   hasError: boolean;
 }
+
+export interface LabelProps {
+  withLabel: boolean;
+}
+
+export interface SFormInputProps {
+  iconPosition: IconPosition;
+}

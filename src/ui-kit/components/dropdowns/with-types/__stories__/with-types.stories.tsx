@@ -17,7 +17,10 @@ Default.args = {
   options: mockDropdownData,
   closeMenuOnSelect: false,
   hideSelectedOptions: true,
-  icon: <CalendarIcon size={20}/>
+  icon: <CalendarIcon size={20}/>,
+  placeholder: "placeholder",
+  isDisabled: false,
+  onChange: (value) => console.log(value, "value"),
 };
 
 Default.argTypes = {
@@ -65,6 +68,33 @@ Default.argTypes = {
       type: { summary: 'Dropdown icon' },
     },
   },
+  placeholder: {
+    name: 'placeholder',
+    table: {
+      type: { summary: 'Set input`s placeholder' },
+      defaultValue: { summary: "placeholder" },
+    },
+  },
+  isDisabled: {
+    name: 'isDisabled',
+    table: {
+      type: { summary: 'Set is disabled input' },
+      defaultValue: { summary: false },
+    },
+  },
+  onChange: {
+    name: 'onChange',
+    table: {
+      type: { summary: 'On change input handler' },
+      defaultValue: { summary: (value: string) => console.log(value, "value") },
+    },
+  },
+  defaultValue: {
+    name: 'defaultValue',
+    table: {
+      type: { summary: 'Default value of the input' }
+    },
+  },
 };
 
 Default.parameters = {
@@ -75,6 +105,6 @@ Default.parameters = {
   },
   design: {
     type: "figma",
-    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1414%3A3826",
+    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1505%3A3905",
   },
 }

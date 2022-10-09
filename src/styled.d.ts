@@ -25,6 +25,11 @@ import { tabs } from "@/ui-kit/components/tabs/tabs/theme/light/light";
 import { tabPanel } from "@/ui-kit/components/tabs/tab-panel/theme/light/light";
 import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
 import { rangeDatepicker } from "@/ui-kit/components/datepickers/range/theme/light/range";
+import { favoriteRating } from "@/ui-kit/components/ratings/favorite/theme/light/light";
+import { hotRating } from "@/ui-kit/components/ratings/hot/theme/light/light";
+import { freshRating } from "@/ui-kit/components/ratings/fresh/theme/light/light";
+import { dayBullet } from "@/ui-kit/components/days/day/theme/light/light";
+import { ranking } from "@/ui-kit/components/ranking/theme/light/light";
 
 
 export interface Components {
@@ -54,6 +59,11 @@ export interface Components {
   monitorChangesPage: ReturnType<typeof monitorChangesPage>;
   stepper: ReturnType<typeof stepper>;
   rangeDatepicker: ReturnType<typeof rangeDatepicker>;
+  favoriteRating: ReturnType<typeof favoriteRating>;
+  hotRating: ReturnType<typeof hotRating>;
+  freshRating: ReturnType<typeof freshRating>;
+  dayBullet: ReturnType<typeof dayBullet>;
+  ranking: ReturnType<typeof ranking>;
 }
 
 declare module 'styled-components' {

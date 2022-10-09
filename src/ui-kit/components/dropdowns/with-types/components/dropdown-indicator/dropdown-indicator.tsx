@@ -8,7 +8,7 @@ const DropdownIndicator: FC = ({ selectProps }: any): JSX.Element => {
   return (
     <ArrowIcon
       size={12}
-      rotation={menuIsOpen ? "right" : "bottom"}
+      rotation={menuIsOpen ? "top" : "bottom"}
       color={PLUMP_PURPLE}
     />
   );

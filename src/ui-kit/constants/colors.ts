@@ -21,6 +21,7 @@ export const LAVENDER = '#A081D9';
 export const LAVENDER_BLUE = '#CFBCF2';
 export const LAVENDER_WEB = '#EAE2F8';
 export const MAGNOLIA = '#F7F4FE';
+export const GHOST_WHITE = '#F6F0FF';
 
 export const EERIE_BLACK = '#181818';
 export const RAISIN_BLACK = '#27241D';

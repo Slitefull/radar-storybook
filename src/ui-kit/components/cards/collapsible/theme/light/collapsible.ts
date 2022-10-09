@@ -7,7 +7,14 @@ const SCollapsible = css`
 `
 
 const CHeader = css`
-  padding: 15px 0; 
+  padding: 15px 0;
+  cursor: pointer;
+  transition: .2s opacity ease-in;
+  
+  &:hover {
+    opacity: .8;
+    transition: .2s opacity ease-in;
+  }
 `
 
 const CTitle = css`

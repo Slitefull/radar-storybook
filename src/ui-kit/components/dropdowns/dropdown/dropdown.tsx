@@ -325,16 +325,16 @@ const Dropdown: FC<SelectProps> = memo((
   }
 
   const customStyles: StylesConfig<Option, true> = {
-    control: (provided, state) => ({
+    control: (provided, { selectProps }) => ({
       ...provided,
       ...ControlColorsRecord[color || DEFAULT_COLOR],
-      borderRadius: getControlBR(rounded, state.selectProps.menuIsOpen),
+      borderRadius: getControlBR(rounded, selectProps.menuIsOpen),
       opacity: disabled ? .3 : 1,
     }),
-    option: (provided, state) => ({
+    option: (provided, { isSelected }) => ({
       ...provided,
       ...OptionColorsRecord[color || DEFAULT_COLOR],
-      opacity: state.isSelected ? .7 : 1,
+      opacity: isSelected ? .7 : 1,
     }),
     singleValue: (provided) => ({
       ...provided,
