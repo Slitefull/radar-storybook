@@ -1,3 +1,4 @@
+//TODO group elements
 import { header } from "@/ui-kit/components/header/theme/light/header";
 import { textInput } from "@/ui-kit/components/inputs/text/theme/light/text-input";
 import { notifications } from "@/ui-kit/components/notifications/theme/notifications";
@@ -17,13 +18,14 @@ import { footer } from "@/ui-kit/components/footer/theme/light/footer";
 import { pagination } from "@/ui-kit/components/pagination/theme/light/light";
 import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light/textarea";
 import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light/dropdown";
-import { listGridView } from "@/ui-kit/components/buttons/list-grid-view/theme/light/list-grid-view";
-import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/light/collapsible";
+import { radio } from "@/ui-kit/components/inputs/radio/theme/light/radio";
 import { tab } from "@/ui-kit/components/tabs/tab/theme/light/light";
 import { tabs } from "@/ui-kit/components/tabs/tabs/theme/light/light";
 import { tabPanel } from "@/ui-kit/components/tabs/tab-panel/theme/light/light";
-import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
+import { listGridView } from "@/ui-kit/components/buttons/list-grid-view/theme/light/list-grid-view";
 import { rangeDatepicker } from "@/ui-kit/components/datepickers/range/theme/light/range";
+import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/light/collapsible";
+import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
 import { favoriteRating } from "@/ui-kit/components/ratings/favorite/theme/light/light";
 import { hotRating } from "@/ui-kit/components/ratings/hot/theme/light/light";
 import { freshRating } from "@/ui-kit/components/ratings/fresh/theme/light/light";
@@ -39,6 +41,7 @@ export const components: Components = {
   sidebar,
   dropdown,
   textInput,
+  radio,
   textarea,
   notifications,
   pagination,
@@ -50,16 +53,16 @@ export const components: Components = {
   withBackgroundText,
   checkboxInput,
   bellIcon,
-  tab,
-  tabs,
-  tabPanel,
   monitorChangesCard,
   monitorChangesPage,
   table,
+  tab,
+  tabs,
+  tabPanel,
   listGridView,
+  rangeDatepicker,
   collapsibleCard,
   stepper,
-  rangeDatepicker,
   favoriteRating,
   hotRating,
   freshRating,
