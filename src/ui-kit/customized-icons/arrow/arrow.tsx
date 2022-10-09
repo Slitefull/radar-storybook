@@ -43,19 +43,11 @@ const ArrowIcon: FC<ArrowIconProps> = memo((
     }
   };
 
-  const getWithClickStyles = (): CSSObject => {
-    if (onClick) {
-      return { cursor: "pointer" };
-    }
-
-    return { cursor: "auto" };
-  };
-
   return (
     <svg
       className={"arrow"}
       onClick={onClick}
-      style={{ ...getRotation(rotation), ...getWithClickStyles(), transition: '.2s ease-in' }}
+      style={{ ...getRotation(rotation), cursor: "pointer", transition: '.2s ease-in' }}
       width={size}
       height={size}
       viewBox="0 0 8 14"
