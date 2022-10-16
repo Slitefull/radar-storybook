@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { mockDropdownData } from "../__mock__/data";
 import CalendarIcon from "@/ui-kit/customized-icons/calendar/calendar";
-import SelectWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
+import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
 
 
 export default {
   title: 'dropdowns/With Types',
-  component: SelectWithTypes,
-} as ComponentMeta<typeof SelectWithTypes>;
+  component: DropdownWithTypes,
+} as ComponentMeta<typeof DropdownWithTypes>;
 
-const Template: ComponentStory<typeof SelectWithTypes> = (args) => <SelectWithTypes {...args}/>;
+const Template: ComponentStory<typeof DropdownWithTypes> = (args) => <DropdownWithTypes {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {

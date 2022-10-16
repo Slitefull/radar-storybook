@@ -1,13 +1,21 @@
 import { css } from "styled-components/macro";
+import { DARK_LAVA, PLATINUM, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 const SCollapsible = css`
   margin: 10px;
-  border-bottom: 1px solid #E8E6E1;
+  border-bottom: 1px solid ${PLATINUM};
 `
 
 const CHeader = css`
-  padding: 15px 0; 
+  padding: 15px 0;
+  cursor: pointer;
+  transition: .2s opacity ease-in;
+
+  &:hover {
+    opacity: .8;
+    transition: .2s opacity ease-in;
+  }
 `
 
 const CTitle = css`
@@ -16,14 +24,14 @@ const CTitle = css`
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  color: #653CAD;
+  color: ${PLUMP_PURPLE};
 `
 
 const CSubtitle = css`
   font-weight: 350;
   font-size: 14px;
   line-height: 18px;
-  color: #423D33;
+  color: ${DARK_LAVA};
 `
 
 const Content = css`

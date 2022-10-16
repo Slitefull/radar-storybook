@@ -82,19 +82,11 @@ const global = `
   .rdp {
     margin: 0;
   }
-
-  .rdp-cell:first-child > button {
-    border-radius: 50% 0 0 50%;
-  }
   
   .rdp-cell:first-child:hover > button {
     border-radius: 50%;
   }
-  
-  .rdp-cell:last-child > button {
-    border-radius: 0 50% 50% 0;
-  }
-  
+
   .rdp-cell:last-child:hover > button {
     border-radius: 50%;
   }

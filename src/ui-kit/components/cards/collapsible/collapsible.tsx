@@ -50,13 +50,15 @@ const Collapsible: FC<MonitorChangesCardProps> = memo((
 
   return (
     <SCollapsible>
-      <CHeader>
-        <Row align={"baseline"} gap={10}>
+      <CHeader onClick={handleFilterOpening}>
+        <Row
+          align={"baseline"}
+          gap={10}
+        >
           <ArrowIcon
             size={14}
             color={PLUMP_PURPLE}
             rotation={isOpen ? "top" : "bottom"}
-            onClick={handleFilterOpening}
           />
           <Column gap={5}>
             <CTitle>{title}</CTitle>

@@ -2,10 +2,23 @@
   "name": "seoradar",
   "version": "0.3.0",
   "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
+    "build:production": "env-cmd -f ./.env.production npm run-script build",
+    "build:staging": "env-cmd -f ./.env.staging npm run-script build",
+    "build:dev": "dotenv -e .env.development react-scripts build",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "cypress": "npx cypress open --component"
+  },
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@hookform/resolvers": "^2.9.6",
     "@loadable/component": "^5.15.2",
+    "@storybook/addon-controls": "^6.5.12",
     "@storybook/addon-storysource": "^6.5.10",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -70,20 +83,9 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
+    "postcss": "^8.4.18",
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "craco eject",
-    "build:production": "env-cmd -f ./.env.production npm run-script build",
-    "build:staging": "env-cmd -f ./.env.staging npm run-script build",
-    "build:dev": "dotenv -e .env.development react-scripts build",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "cypress": "npx cypress open --component"
   },
   "eslintConfig": {
     "extends": [

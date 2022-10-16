@@ -10,10 +10,10 @@ import {
   WHITE
 } from "@/ui-kit/constants/colors";
 
-import { LabelProps, TextInputWrapperProps, WithIconWrapperProps } from "../../types";
+import { LabelProps, SFormInputProps, TextInputWrapperProps, WithIconWrapperProps } from "../../types";
 
 
-type IconPosition = "start" | "end";
+type IconPositions = "start" | "end";
 
 enum InputStates {
   default = "default",
@@ -29,12 +29,10 @@ const InputStatesRecord: Record<InputStates, string> = {
   [InputStates.error]: TART_ORANGE,
 };
 
-const IconPositionRecord: Record<IconPosition, string> = {
+const IconPositionRecord: Record<IconPositions, string> = {
   "start": "row",
   "end": "row-reverse",
 };
-
-const DEFAULT_ICON_POSITION = "start";
 
 const getInputState = (isHovered: boolean, hasError: boolean) => {
   if (isHovered) {
@@ -47,6 +45,20 @@ const getInputState = (isHovered: boolean, hasError: boolean) => {
   return InputStatesRecord[InputStates.default];
 }
 
+const getInputPadding = (withIcon: boolean, iconPosition: IconPositions): string => {
+  if (withIcon) {
+    if (iconPosition === "start") {
+      return "0 0 0 12px";
+    }
+
+    if (iconPosition === "end") {
+      return "0 12px 0 0";
+    }
+  }
+
+  return "0"
+}
+
 const TextInputWrapper = css<TextInputWrapperProps>`
   display: flex;
   flex-direction: column;
@@ -54,30 +66,31 @@ const TextInputWrapper = css<TextInputWrapperProps>`
   opacity: ${({ disabled }) => disabled ? .3 : 1};
   transition: .2s opacity ease-in;
   max-width: 350px;
+  width: 100%;
 `
 
 const WithIconWrapper = css<WithIconWrapperProps>`
   display: flex;
-  flex-direction: ${({ iconPosition }) => IconPositionRecord[iconPosition || DEFAULT_ICON_POSITION]};
+  flex-direction: ${({ iconPosition }) => IconPositionRecord[iconPosition]};
   align-items: center;
   border: 1px solid ${({ isHovered, hasError }) => getInputState(isHovered, hasError)};
   background: ${WHITE};
   transition: .2s border ease-in;
   border-radius: 8px;
-  padding: 0 10px;
+  padding: 0 12px;
 
   &:focus-within {
     border: 1px solid ${({ hasError }) => InputStatesRecord[hasError ? InputStates.error : InputStates.active]};
   }
 `
 
-const SFormInput = css`
+const SFormInput = css<SFormInputProps>`
   font-family: 'Menlo', serif;
   font-size: 14px;
   font-weight: 400;
   color: ${RAISIN_BLACK};
   outline: none;
-  padding: 0 12px;
+  padding: ${({ iconPosition, withIcon }) => getInputPadding(withIcon, iconPosition)};
   height: 35px;
   border: none;
   border-radius: 8px;
@@ -102,20 +115,10 @@ const Label = css<LabelProps>`
   gap: ${({ withLabel }) => withLabel ? "5px 0" : 0};
 `
 
-const LabelText = css`
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
-  margin: 0 0 0 10px;
-`
-
 export const textInput = {
   TextInputWrapper,
   WithIconWrapper,
   SFormInput,
   Label,
-  LabelText,
   HelperText,
 }

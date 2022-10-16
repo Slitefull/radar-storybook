@@ -10,8 +10,8 @@ import { authState } from "@/entity/atoms/auth";
 import { RESET_PASSWORD_PAGE, SIGN_UP_PAGE } from "@/constants/routes";
 import { signInAPI } from "@/api/auth/auth";
 import { useNotification } from "@/ui-kit/hooks/useNotification";
-import PageContainer from "@/ui-kit/components/page-container/page-container";
 import { ToastTypes } from "@/ui-kit/components/notifications/types";
+import PageContainer from "@/ui-kit/components/page-container/simple/simple";
 
 import {
   AdditionalText,

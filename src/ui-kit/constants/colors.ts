@@ -33,6 +33,7 @@ export const BLACK_SHADOWS = '#B8B2A7';
 export const LIGHT_GREY = '#D3CEC4';
 export const PLATINUM = '#E8E6E1';
 export const SNOW = '#FAF9F7';
+export const GHOST_WHITE = '#F6F0FF';
 
 export const MIDNIGHT_GREEN = '#044E54';
 export const TEAL = '#0A6C74';

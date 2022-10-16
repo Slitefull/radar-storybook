@@ -4,21 +4,28 @@ import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 import { WithLabelWrapperProps } from "../../types";
 
 
-type LabelPosition = "left" | "right";
+type LabelPositions = "top" | "right" | "bottom" | "left";
 
-const DEFAULT_LABEL_POSITION = "left";
-
-const LabelPositionRecord: Record<LabelPosition, string> = {
-  "left": "row",
+const LabelPositionRecord: Record<LabelPositions, string> = {
+  "top": "column",
   "right": "row-reverse",
-}
+  "bottom": "column-reverse",
+  "left": "row",
+};
+
+const LabelPositionAlignRecord: Record<LabelPositions, string> = {
+  "top": "flex-start",
+  "right": "center",
+  "bottom": "flex-start",
+  "left": "center",
+};
 
 const WithLabelWrapper = css<WithLabelWrapperProps>`
   display: inline-flex;
-  flex-direction: ${({ labelPosition }) => LabelPositionRecord[labelPosition || DEFAULT_LABEL_POSITION]};
-  align-items: center;
+  flex-direction: ${({ labelPosition}) => LabelPositionRecord[labelPosition]};
+  align-items: ${({ labelPosition }) => LabelPositionAlignRecord[labelPosition]};
   gap: ${({ withLabel }) => withLabel ? "0 20px" : "0"};
-  width: fit-content;
+  width: ${({ width = "fit-content" }) => width};
 `
 
 const Label = css`

@@ -5,9 +5,16 @@ import useHover from "@/ui-kit/hooks/useHover";
 interface CloseIconProps {
   color?: Color;
   size?: number;
+  onClick?: VoidFunction;
 }
 
-const CloseIcon: FC<CloseIconProps> = memo(({ color, size }): JSX.Element => {
+const CloseIcon: FC<CloseIconProps> = memo((
+  {
+    color,
+    size,
+    onClick
+  }
+): JSX.Element => {
   const [hoverRef, isHovered] = useHover<HTMLDivElement>();
 
   const style = {
@@ -17,7 +24,10 @@ const CloseIcon: FC<CloseIconProps> = memo(({ color, size }): JSX.Element => {
   }
 
   return (
-    <div ref={hoverRef}>
+    <div
+      ref={hoverRef}
+      onClick={onClick}
+    >
       <svg
         style={isHovered ? { ...style, opacity: '.7' } : style}
         width={size || 20} height={size || 20} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

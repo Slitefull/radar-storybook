@@ -1,8 +1,9 @@
 import { FC, memo, ReactNode, useCallback, useMemo } from 'react';
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
-import { currentMenuItemLS } from "@/constants/local-storage";
+import { useNavigate } from "react-router-dom";
 import useHover from "@/ui-kit/hooks/useHover";
+import { currentMenuItemLS } from "@/constants/local-storage";
 import { currentMenuItemState } from "@/entity/atoms/currentMenuItem";
 import { WHITE } from "@/ui-kit/constants/colors";
 import ActivityIcon from "@/ui-kit/customized-icons/activity/activity";
@@ -29,6 +30,7 @@ interface Menu {
 
 const Sidebar: FC = memo((): JSX.Element => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [hoverRef, isHovered] = useHover<HTMLDivElement>();
   const [currentMenuItem, setCurrentMenuItem] = useRecoilState<MenuElements | null>(currentMenuItemState);
 
@@ -43,42 +45,42 @@ const Sidebar: FC = memo((): JSX.Element => {
       },
       {
         key: "domains",
-        link: '/',
+        link: '/domains',
         icon: <AtSignIcon size={25} color={currentMenuItem === "domains" ? WHITE : ""}/>,
         title: t("domains"),
         isChecked: currentMenuItem === "domains"
       },
       {
         key: "competitions",
-        link: '/',
+        link: '/competitions',
         icon: <TargetIcon size={25} color={currentMenuItem === "competitions" ? WHITE : ""}/>,
         title: t("competitions"),
         isChecked: currentMenuItem === "competitions"
       },
       {
         key: "seoAudit",
-        link: '/',
+        link: '/seo-audit',
         icon: <BarChartIcon size={25} color={currentMenuItem === "seoAudit" ? WHITE : ""}/>,
         title: t("seo_audit"),
         isChecked: currentMenuItem === "seoAudit"
       },
       {
         key: "tools",
-        link: '/',
+        link: '/tools',
         icon: <ToolIcon size={25} color={currentMenuItem === "tools" ? WHITE : ""}/>,
         title: t("tools"),
         isChecked: currentMenuItem === "tools"
       },
       {
         key: "reports",
-        link: '/',
+        link: '/reports',
         icon: <BookOpenIcon size={25} color={currentMenuItem === "reports" ? WHITE : ""}/>,
         title: t("reports"),
         isChecked: currentMenuItem === "reports"
       },
       {
         key: "help",
-        link: '/',
+        link: '/help',
         icon: <HelpCircleIcon size={25} color={currentMenuItem === "help" ? WHITE : ""}/>,
         title: t("help"),
         isChecked: currentMenuItem === "help"
@@ -88,9 +90,10 @@ const Sidebar: FC = memo((): JSX.Element => {
   );
 
   const onClickLinkHandler = useCallback(
-    (menuItem: MenuElements) => {
-      setCurrentMenuItem(menuItem);
-      localStorage.setItem(currentMenuItemLS, menuItem);
+    (menuItem: Menu) => {
+      navigate(menuItem.link);
+      setCurrentMenuItem(menuItem.key);
+      localStorage.setItem(currentMenuItemLS, menuItem.key);
     },
     [setCurrentMenuItem]
   );
@@ -106,7 +109,7 @@ const Sidebar: FC = memo((): JSX.Element => {
             key={element.key}
             isHovered={isHovered}
             isChecked={element.isChecked}
-            onClick={() => onClickLinkHandler(element.key)}
+            onClick={() => onClickLinkHandler(element)}
           >
             <IconContainer isChecked={element.isChecked}>
               {element.icon}

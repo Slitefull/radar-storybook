@@ -1,16 +1,19 @@
 import { FC, memo } from "react";
 import { CSSObject } from "styled-components";
 import { useTranslation } from "react-i18next";
+import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import Select, { StylesConfig } from "react-select";
 import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicator";
+import Label from "@/ui-kit/components/label/label";
 import { DARK_LAVA, EBONY, PLATINUM, PLUMP_PURPLE, TRANSPARENT, WHITE } from "@/ui-kit/constants/colors";
 
-import { Label, WithLabelWrapper } from "./styled";
+import { WithLabelWrapper } from "./styled";
 
 
 type Option = { value: string | number, label: string | number };
 type Colors = "primary" | "secondary" | "ghost";
-type LabelPosition = "left" | "right";
+type LabelPosition = "top" | "right" | "bottom" | "left";
+type LabelColors = "primary" | "ghost" | "subtly";
 
 //TODO SEARCHABLE LABEL COLOR
 
@@ -27,16 +30,17 @@ interface SelectProps {
   rounded?: boolean;
   label?: string;
   labelPosition?: LabelPosition;
+  labelColor?: LabelColors;
+  width?: string;
 }
 
 const DEFAULT_COLOR = "primary";
 
 const baseControlStyles: CSSObject = {
   minWidth: 130,
-  maxWidth: 180,
   height: 40,
   transition: '.2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out',
-  padding: '0 10px',
+  padding: '0 12px',
   cursor: "pointer",
   gap: '0 10px',
   boxShadow: "none",
@@ -304,7 +308,9 @@ const Dropdown: FC<SelectProps> = memo((
     defaultValue,
     rounded,
     label,
-    labelPosition,
+    labelPosition = "left",
+    labelColor,
+    width = "fit-content",
   }
 ): JSX.Element => {
   const { t } = useTranslation();
@@ -330,6 +336,10 @@ const Dropdown: FC<SelectProps> = memo((
       ...ControlColorsRecord[color || DEFAULT_COLOR],
       borderRadius: getControlBR(rounded, selectProps.menuIsOpen),
       opacity: disabled ? .3 : 1,
+    }),
+    container: (provided) => ({
+      ...provided,
+      width: '100%',
     }),
     option: (provided, { isSelected }) => ({
       ...provided,
@@ -360,13 +370,17 @@ const Dropdown: FC<SelectProps> = memo((
   }
 
   return (
-    <WithLabelWrapper labelPosition={labelPosition} withLabel={!!label}>
-      {label && <Label>{label}</Label>}
+    <WithLabelWrapper
+      labelPosition={labelPosition}
+      withLabel={!!label}
+      width={width}
+    >
+      {label && <Label color={labelColor}>{label}</Label>}
       <Select
         classNamePrefix={"custom-select"}
         isDisabled={disabled}
         isSearchable={isSearchable || false}
-        placeholder={placeholder || t("search")}
+        placeholder={placeholder || capitalizeFirstLetter(t("search"))}
         closeMenuOnSelect={closeMenuOnSelect}
         hideSelectedOptions={hideSelectedOptions}
         options={options}

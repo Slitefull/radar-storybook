@@ -1,13 +1,13 @@
 import { FC, Fragment, memo, useCallback, useMemo, useState } from 'react';
 import { useRecoilValue } from "recoil";
 import { useTranslation } from "react-i18next";
+import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import { isLockedSliderSelector } from "@/entity/selectors/monitor-changes/slider";
 import { MISTY_ROSE } from '@/ui-kit/constants/colors';
 import Switcher from "@/ui-kit/components/inputs/switcher/switcher";
 import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
 import SwiperPrevButton from "@/pages/monitor-changes/components/swiper-prev-button/swiper-prev-button";
 import SwiperNextButton from "@/pages/monitor-changes/components/swiper-next-button/swiper-next-button";
-import HelpCircle from "@/ui-kit/customized-icons/help-circle/help-circle";
 
 import { CardsSectionHeaderWrapper, HeaderSideWrapper } from '../../../../styled';
 
@@ -28,7 +28,9 @@ const RedAlertsOnlySwitcher: FC = memo((): JSX.Element => {
       isChecked={isCheckedRedAlertsOnly}
       onChange={toggleRedAlertsOnly}
       backgroundColor={MISTY_ROSE}
-      label={t("red_alerts_only")}
+      label={capitalizeFirstLetter(t("red_alerts_only"))}
+      labelColor={"subtly"}
+      tooltip={<>Tooltip text</>}
     />
   )
 });
@@ -51,11 +53,10 @@ const LeftSide: FC = memo((): JSX.Element => {
       <Dropdown
         color={"ghost"}
         options={changesSinceElements}
-        label={"Changes since"}
+        label={capitalizeFirstLetter(t("changes_since"))}
         onChange={onChangeSelect}
       />
       <RedAlertsOnlySwitcher/>
-      <HelpCircle/>
     </HeaderSideWrapper>
   )
 });
@@ -79,13 +80,18 @@ const RightSide: FC = memo((): JSX.Element => {
       <Dropdown
         color={"ghost"}
         options={sortByElements}
-        label={`${t("sort_by")}:`}
+        label={`${capitalizeFirstLetter(t("sort_by"))}:`}
+        labelColor={"subtly"}
         onChange={onChangeSelect}
       />
       {!isLockedSlider && (
         <Fragment>
-          <SwiperPrevButton>{t("prev")}</SwiperPrevButton>
-          <SwiperNextButton>{t("next")}</SwiperNextButton>
+          <SwiperPrevButton>
+            {t("prev")}
+          </SwiperPrevButton>
+          <SwiperNextButton>
+            {t("next")}
+          </SwiperNextButton>
         </Fragment>
       )}
     </HeaderSideWrapper>

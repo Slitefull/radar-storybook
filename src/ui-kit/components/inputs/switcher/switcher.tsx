@@ -1,7 +1,12 @@
-import { FC, Fragment, memo } from "react";
+import { FC, Fragment, memo, ReactNode } from "react";
+import Label from "@/ui-kit/components/label/label";
+import Tooltip from "@/ui-kit/components/tooltips/tooltip/tooltip";
 
-import { Label, Row, SwitchButton, SwitchInput, SwitchLabel } from "./styled";
+import { Row } from "@/global.css";
+import { SwitchButton, SwitchInput, SwitchLabel } from "./styled";
 
+
+type LabelColors = "primary" | "ghost" | "subtly";
 
 interface SwitcherProps {
   isChecked: boolean;
@@ -10,6 +15,8 @@ interface SwitcherProps {
   backgroundColor?: Color;
   pointColor?: Color;
   label?: string;
+  labelColor?: LabelColors;
+  tooltip?: ReactNode;
 }
 
 const Switcher: FC<SwitcherProps> = memo((
@@ -20,11 +27,15 @@ const Switcher: FC<SwitcherProps> = memo((
     backgroundColor,
     pointColor,
     label,
+    labelColor,
+    tooltip,
   }
 ): JSX.Element => {
   return (
-    <Row>
-      {label && <Label>{label}</Label>}
+    <Row gap={5} align={"center"}>
+      <Row align={"center"} gap={10}>
+        {label && <Label color={labelColor}>{label}</Label>}
+      </Row>
       <Fragment>
         <SwitchInput
           type="checkbox"
@@ -40,6 +51,7 @@ const Switcher: FC<SwitcherProps> = memo((
           <SwitchButton pointColor={pointColor}/>
         </SwitchLabel>
       </Fragment>
+      {tooltip && <Tooltip>{tooltip}</Tooltip>}
     </Row>
   );
 });

@@ -27,6 +27,19 @@ import { singleDatepicker } from "@/ui-kit/components/datepickers/single/theme/l
 import { rangeDatepicker } from "@/ui-kit/components/datepickers/range/theme/light/range";
 import { swiperText } from "@/ui-kit/components/sliders/theme/light/light";
 import { collapsibleCard } from "@/ui-kit/components/cards/collapsible/theme/light/collapsible";
+import { stepper } from "@/ui-kit/components/stepper/theme/light/light";
+import { favoriteRating } from "@/ui-kit/components/ratings/favorite/theme/light/light";
+import { hotRating } from "@/ui-kit/components/ratings/hot/theme/light/light";
+import { freshRating } from "@/ui-kit/components/ratings/fresh/theme/light/light";
+import { dayBullet } from "@/ui-kit/components/days/day/theme/light/light";
+import { ranking } from "@/ui-kit/components/ranking/theme/light/light";
+import { modalPageContainer } from "@/ui-kit/components/page-container/modal/theme/light/light";
+import { addDomainPage } from "@/pages/add-domain/theme/light/light";
+import { label } from "@/ui-kit/components/label/theme/light/light";
+import { radarLoader } from "@/ui-kit/components/loaders/radar/theme/light/light";
+import { dropdownWithTypes } from "@/ui-kit/components/dropdowns/with-types/theme/light/light";
+import { tooltip } from "@/ui-kit/components/tooltips/tooltip/theme/light/light";
+import { lineSeparator } from "@/ui-kit/components/separators/line/theme/light/light";
 
 import { Components } from "@/styled";
 
@@ -60,4 +73,17 @@ export const components: Components = {
   rangeDatepicker,
   swiperText,
   collapsibleCard,
+  stepper,
+  favoriteRating,
+  hotRating,
+  freshRating,
+  dayBullet,
+  ranking,
+  modalPageContainer,
+  addDomainPage,
+  label,
+  radarLoader,
+  dropdownWithTypes,
+  tooltip,
+  lineSeparator,
 }

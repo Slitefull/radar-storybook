@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import loadable from "@loadable/component";
-import PageContainer from "@/ui-kit/components/page-container/page-container";
+import PageContainer from "@/ui-kit/components/page-container/simple/simple";
 import CardsSectionFallback from "@/pages/monitor-changes/components/cards-section/fallback/fallback";
 import MonitorTableFallback from "@/pages/monitor-changes/components/table/fallback/fallback";
 import Collapsible from "@/ui-kit/components/cards/collapsible/collapsible";
@@ -14,7 +14,7 @@ const MonitorTable = loadable(() => import("./components/table/table"), {
   fallback: <MonitorTableFallback/>
 });
 
-const MonitorChangesPage: FC = memo((): JSX.Element => {
+const MonitorChanges: FC = memo((): JSX.Element => {
   return (
     <PageContainer>
       <CardsSection/>
@@ -28,4 +28,4 @@ const MonitorChangesPage: FC = memo((): JSX.Element => {
   );
 });
 
-export default MonitorChangesPage;
+export default MonitorChanges;

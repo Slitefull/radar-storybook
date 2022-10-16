@@ -1,16 +1,20 @@
 import { FC, memo, ReactNode } from "react";
+import { CSSObject } from "styled-components";
 import Select, { InputActionMeta, StylesConfig } from "react-select";
 import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicator";
 import Control from "./components/control/control";
 import MultiValueRemove from ".//components/multivalue-remove/multivalue-remove";
-import { DARK_LAVA, EBONY, LIGHT_GREY, PLATINUM, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
-import { CSSObject } from "styled-components";
+import { DARK_LAVA, EBONY, LIGHT_GREY, PLATINUM, PLUMP_PURPLE, ROYAL_PURPLE } from "@/ui-kit/constants/colors";
+import Label from "@/ui-kit/components/label/label";
+
+import { WithLabelWrapper } from "./styled";
 
 
 type Option = { value: string | number, label: string | number }
 type SelectOptions = "searchable" | "multi";
-
 type SelectTypes = "single" | "multi";
+type LabelColors = "primary" | "ghost"
+type LabelPosition = "top" | "right" | "bottom" | "left";
 
 interface SelectWithTypesProps {
   options: Option[];
@@ -22,6 +26,10 @@ interface SelectWithTypesProps {
   defaultValue?: Option;
   types: SelectOptions[];
   icon?: ReactNode;
+  label?: string;
+  labelPosition?: LabelPosition;
+  labelColor?: LabelColors;
+  width?: string;
 }
 
 const baseControlStyles: CSSObject = {
@@ -29,7 +37,7 @@ const baseControlStyles: CSSObject = {
   width: 350,
   minHeight: 40,
   transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
-  padding: '0 10px',
+  padding: '0 20px 0 10px',
   cursor: "pointer",
   gap: '0 10px',
   boxShadow: "none",
@@ -48,8 +56,7 @@ const baseControlStyles: CSSObject = {
 const baseOptionStyles: CSSObject = {
   fontFamily: "Menlo",
   fontSize: 14,
-  fontWeight: 900,
-  color: EBONY,
+  fontWeight: 500,
   cursor: 'pointer',
   padding: '2px 0',
   background: "none",
@@ -71,6 +78,7 @@ const baseValueContainerStyles: CSSObject = {
 
 const baseSingleValueStyles: CSSObject = {
   fontSize: 14,
+  fontFamily: "Menlo",
 }
 
 const basePlaceholderStyles: CSSObject = {
@@ -197,7 +205,7 @@ const InputColorsRecord: Record<SelectTypes, CSSObject> = {
   },
 };
 
-const SelectWithTypes: FC<SelectWithTypesProps> = memo((
+const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
   {
     types,
     options,
@@ -208,6 +216,10 @@ const SelectWithTypes: FC<SelectWithTypesProps> = memo((
     onChange,
     defaultValue,
     icon,
+    label,
+    labelPosition = "left",
+    labelColor,
+    width = "fit-content",
   }
 ): JSX.Element => {
   const getSelectType = (types: SelectOptions[]): SelectTypes => {
@@ -229,7 +241,7 @@ const SelectWithTypes: FC<SelectWithTypesProps> = memo((
     option: (provided, { isSelected }) => ({
       ...provided,
       ...OptionColorsRecord[getSelectType(types)],
-      opacity: isSelected ? .7 : 1,
+      color: isSelected ? ROYAL_PURPLE : EBONY,
     }),
     valueContainer: (provided) => ({
       ...provided,
@@ -272,22 +284,29 @@ const SelectWithTypes: FC<SelectWithTypesProps> = memo((
   }
 
   return (
-    <Select
-      // @ts-ignore
-      icon={icon}
-      isSearchable={types.includes("searchable")}
-      isMulti={types.includes("multi") || undefined}
-      isDisabled={isDisabled}
-      placeholder={placeholder || "Search"}
-      closeMenuOnSelect={closeMenuOnSelect}
-      hideSelectedOptions={hideSelectedOptions}
-      options={options}
-      styles={customStyles}
-      components={getComponents(icon)}
-      onInputChange={onChange}
-      defaultValue={defaultValue}
-    />
+    <WithLabelWrapper
+      labelPosition={labelPosition}
+      withLabel={!!label}
+      width={width}
+    >
+      {label && <Label color={labelColor}>{label}</Label>}
+      <Select
+        // @ts-ignore
+        icon={icon}
+        isSearchable={types.includes("searchable")}
+        isMulti={types.includes("multi") || undefined}
+        isDisabled={isDisabled}
+        placeholder={placeholder || "Search"}
+        closeMenuOnSelect={closeMenuOnSelect}
+        hideSelectedOptions={hideSelectedOptions}
+        options={options}
+        styles={customStyles}
+        components={getComponents(icon)}
+        onInputChange={onChange}
+        defaultValue={defaultValue}
+      />
+    </WithLabelWrapper>
   )
 });
 
-export default SelectWithTypes;
+export default DropdownWithTypes;

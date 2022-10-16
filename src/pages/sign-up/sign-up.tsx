@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import PageContainer from "@/ui-kit/components/page-container/page-container";
+import PageContainer from "@/ui-kit/components/page-container/simple/simple";
 
 
 const SignUpPage: FC = (): JSX.Element => {

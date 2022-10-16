@@ -5,7 +5,7 @@ import { STabProps } from "./types";
 
 
 export const inactiveTab = {
-  opacity: 0.65
+  opacity: 1,
 };
 
 export const STab = styled.button<STabProps>`

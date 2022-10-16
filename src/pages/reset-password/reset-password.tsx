@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { email } from "@/ui-kit/helpers/validators";
 import { FormsTextInput } from "@/ui-kit/components/forms/text-input/forms-text-input";
-import PageContainer from "@/ui-kit/components/page-container/page-container";
+import PageContainer from "@/ui-kit/components/page-container/simple/simple";
 
 import {
   ResetPasswordButton,

@@ -6,22 +6,6 @@ import { SwitchButtonProps, SwitchLabelProps } from "../../types";
 import { SwitchInput as SwitchInputElement, SwitchLabel as SwitchLabelElement } from "../../styled";
 
 
-const Row = css`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0 5px;
-`
-
-const Label = css`
-  font-family: 'Menlo',serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.02em;
-  color: ${DARK_LAVA};
-`
-
 const SwitchInput: ReadonlyArray<SimpleInterpolation> = css`
   height: 0;
   width: 0;
@@ -64,8 +48,6 @@ const SwitchButton: FlattenInterpolation<ThemedStyledProps<SwitchButtonProps, De
 `
 
 export const switcherInput = {
-  Row,
-  Label,
   SwitchInput,
   SwitchLabel,
   SwitchButton,

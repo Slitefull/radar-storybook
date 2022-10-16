@@ -50,9 +50,15 @@ const SidebarLink = css<SidebarLinkProps>`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  gap: ${({ isHovered }) => isHovered ? "0 15px" : "0 25px" };
+  gap: ${({ isHovered }) => isHovered ? "0 15px" : "0 25px"};
   text-transform: capitalize;
   transition: .1s gap ease-in;
+
+  &:hover {
+    > span {
+      color: ${PLUMP_PURPLE};
+    }
+  }
 
   > span {
     color: ${({ isChecked }) => isChecked ? PLUMP_PURPLE : ROCKET_METALLIC};
