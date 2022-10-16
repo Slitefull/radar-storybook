@@ -87,6 +87,9 @@
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0"
   },
+  "engines": {
+    "node": "16.14.0"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
