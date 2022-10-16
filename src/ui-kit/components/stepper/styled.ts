@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 
-import { SNumberProps } from "./types";
+import { SLabelProps, SNumberProps, SIndicatorProps } from "./types";
 
 
 export const SStepper = styled.div` && {
   ${({ theme }) => css`${theme.components.stepper.SStepper}`}
 }`;
 
-export const SIndicator = styled.div` && {
+export const SIndicator = styled.div<SIndicatorProps>` && {
   ${({ theme }) => css`${theme.components.stepper.SIndicator}`}
 }`;
 
@@ -20,7 +20,7 @@ export const SNumber = styled.div<SNumberProps>` && {
   ${({ theme }) => css`${theme.components.stepper.SNumber}`}
 }`;
 
-export const SLabel = styled.div` && {
+export const SLabel = styled.p<SLabelProps>` && {
   ${({ theme }) => css`${theme.components.stepper.SLabel}`}
 }`;
 

@@ -5,11 +5,11 @@ import { useSetRecoilState } from "recoil";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { confirmPassword, password } from "@/ui-kit/helpers/validators";
 import { FormsTextInput } from "@/ui-kit/components/forms/text-input/forms-text-input";
-import PageContainer from "@/ui-kit/components/page-container/page-container";
 import { changePasswordAPI } from "@/api/auth/auth";
 import { ToastTypes } from "@/ui-kit/components/notifications/types";
 import { authState } from "@/entity/atoms/auth";
 import { useNotification } from "@/ui-kit/hooks/useNotification";
+import PageContainer from "@/ui-kit/components/page-container/simple/simple";
 
 import {
   ChangePasswordButton,

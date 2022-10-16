@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Pagination from "@/ui-kit/components/pagination/pagination";
-import Stepper from "@/ui-kit/components/stepper/stepper";
+import Stepper from "../stepper";
 
 
 export default {
@@ -35,6 +34,7 @@ const steps = [
 Default.args = {
   steps,
   onFinish: () => console.log("finish"),
+  isClickable: false,
 };
 
 Default.argTypes = {
@@ -46,6 +46,11 @@ Default.argTypes = {
   onFinish: {
     table: {
       type: { summary: 'On finish handler' },
+    },
+  },
+  isClickable: {
+    table: {
+      type: { summary: 'Set is clickable stepper' },
     },
   },
 };

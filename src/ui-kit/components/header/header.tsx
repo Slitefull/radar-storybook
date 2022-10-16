@@ -1,12 +1,13 @@
 import { FC, Fragment, memo, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { ADD_DOMAIN_PAGE } from "@/constants/routes";
 import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
+import ButtonLink from "@/ui-kit/components/buttons/link/link";
 import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle/plus-circle";
 import SettingsIcon from "@/ui-kit/customized-icons/settings/settings";
 import BellIcon from "@/ui-kit/customized-icons/bell/bell";
 
 import { HeaderTitle, HeaderWrapper, LeftSide, RightSide, Username } from "./styled";
-import Link from "../buttons/link/link";
 
 
 type SelectOption = { value: string | number; label: string | number };
@@ -49,6 +50,11 @@ const Header: FC = memo((): JSX.Element => {
     []
   );
 
+  const onAddDomainHandler = useCallback(
+    () => navigate(ADD_DOMAIN_PAGE),
+    [navigate]
+  );
+
   return (
     <HeaderWrapper>
       <LeftSide>
@@ -57,13 +63,13 @@ const Header: FC = memo((): JSX.Element => {
           options={dropdownData}
           onChange={onChangeSelect}
         />
-        <Link
+        <ButtonLink
           color={"text"}
+          onClick={onAddDomainHandler}
           icon={<PlusCircleIcon size={25}/>}
-          onClick={() => console.log("qwe")}
         >
           Add domains
-        </Link>
+        </ButtonLink>
       </LeftSide>
 
       <RightSide>

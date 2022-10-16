@@ -39,6 +39,8 @@ const getTextareaState = (isHovered: boolean, hasError: boolean) => {
 }
 
 const TextareaWrapper = css<TextareaWrapperProps>` && {
+  width: 100%;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   pointer-events: ${({ disabled }) => disabled ? "none" : "auto"};

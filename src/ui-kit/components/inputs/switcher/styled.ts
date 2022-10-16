@@ -4,14 +4,6 @@ import { css } from "styled-components/macro";
 import { SwitchButtonProps, SwitchLabelProps } from "./types";
 
 
-export const Row = styled.span`
-  ${({ theme }) => css`${theme.components.switcherInput.Row}`}
-`;
-
-export const Label = styled.span`
-  ${({ theme }) => css`${theme.components.switcherInput.Label}`}
-`;
-
 export const SwitchInput = styled.input`
   ${({ theme }) => css`${theme.components.switcherInput.SwitchInput}`}
 `;

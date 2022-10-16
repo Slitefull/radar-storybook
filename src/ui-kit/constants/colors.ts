@@ -21,7 +21,6 @@ export const LAVENDER = '#A081D9';
 export const LAVENDER_BLUE = '#CFBCF2';
 export const LAVENDER_WEB = '#EAE2F8';
 export const MAGNOLIA = '#F7F4FE';
-export const GHOST_WHITE = '#F6F0FF';
 
 export const EERIE_BLACK = '#181818';
 export const RAISIN_BLACK = '#27241D';
@@ -34,6 +33,7 @@ export const BLACK_SHADOWS = '#B8B2A7';
 export const LIGHT_GREY = '#D3CEC4';
 export const PLATINUM = '#E8E6E1';
 export const SNOW = '#FAF9F7';
+export const GHOST_WHITE = '#F6F0FF';
 
 export const MIDNIGHT_GREEN = '#044E54';
 export const TEAL = '#0A6C74';

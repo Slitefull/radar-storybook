@@ -2,21 +2,22 @@ import { css } from "styled-components/macro";
 import { DARK_GREY, PLUMP_PURPLE, SNOW, WHITE } from "@/ui-kit/constants/colors";
 import { SimpleInterpolation } from "styled-components";
 
+import { SLabelProps, SNumberProps, SIndicatorProps } from "../../types";
 import { SNumber as StepperNumber } from '../../styled';
-import { SNumberProps } from "@/ui-kit/components/stepper/types";
 
 
 const SStepper = css`
   height: fit-content;
 `
 
-const SIndicator = css`
+const SIndicator = css<SIndicatorProps>`
   width: 100%;
   display: flex;
   gap: 0 60px;
   flex-direction: row;
   margin: auto;
   justify-content: center;
+  pointer-events: ${({ isClickable }) => isClickable ? "auto" : "none" };
 `
 
 const SInner: ReadonlyArray<SimpleInterpolation> = css`
@@ -42,8 +43,8 @@ const SNumber = css<SNumberProps>`
   height: 25px;
   border-radius: 50%;
   position: relative;
-  background-color: ${({ isActive }) => isActive ? PLUMP_PURPLE : DARK_GREY};
-  color: ${({ isActive }) => isActive ? WHITE : SNOW};
+  background-color: ${({ isPassed }) => isPassed ? PLUMP_PURPLE : DARK_GREY};
+  color: ${({ isPassed }) => isPassed ? WHITE : SNOW};
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
@@ -60,13 +61,13 @@ const SNumber = css<SNumberProps>`
   }
 `
 
-const SLabel = css`
+const SLabel = css<SLabelProps>`
   text-align: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.02em;
-  color: ${PLUMP_PURPLE};
+  color: ${({ isPassed }) => isPassed ? PLUMP_PURPLE : DARK_GREY};
   width: 100%;
 `
 

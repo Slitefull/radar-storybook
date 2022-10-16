@@ -5,7 +5,7 @@ export interface TextInputWrapperProps {
 }
 
 export interface WithIconWrapperProps {
-  iconPosition?: IconPosition;
+  iconPosition: IconPosition;
   isHovered: boolean;
   hasError: boolean;
 }
@@ -16,4 +16,5 @@ export interface LabelProps {
 
 export interface SFormInputProps {
   iconPosition: IconPosition;
+  withIcon: boolean;
 }

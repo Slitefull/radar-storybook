@@ -1,5 +1,6 @@
-import styled, { createGlobalStyle, DefaultTheme } from 'styled-components'
-import fonts from './ui-kit/fonts/fonts';
+import styled, { createGlobalStyle, DefaultTheme } from 'styled-components/macro'
+import { DARK_GREY, DARK_LAVA, SNOW } from "@/ui-kit/constants/colors";
+
 
 interface RowProps {
   gap?: number;
@@ -9,12 +10,12 @@ interface RowProps {
 interface ColumnProps {
   gap?: number;
   align?: "center" | "baseline";
-  justify?: "flex-start" | "space-between";
+  justify?: "flex-start" | "space-between" | "center";
+  width?: string;
+  margin?: string;
 }
 
 export default createGlobalStyle<{ theme: DefaultTheme }>` && {
-  ${fonts};
-  
   * {
     box-sizing: border-box;
     margin: 0;
@@ -23,14 +24,33 @@ export default createGlobalStyle<{ theme: DefaultTheme }>` && {
 
   html, body {
     height: 100%;
+    background: ${SNOW};
   }
 
   body {
     font-family: 'FreightSans Pro', 'Menlo', sans-serif;
   }
-  
+
   #root {
     display: flex;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${DARK_GREY};
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${DARK_LAVA};
   }
 }`
 
@@ -40,7 +60,6 @@ export const BodyWrapper = styled.div` && {
   width: 100%;
   overflow-y: auto;
   padding: 0 0 0 80px;
-  background: #F5F5F5;
 }`
 
 export const Row = styled.div<RowProps>` && {
@@ -53,6 +72,8 @@ export const Row = styled.div<RowProps>` && {
 export const Column = styled.div<ColumnProps>` && {
   display: flex;
   flex-direction: column;
+  margin: ${({ margin = "inherit" }) => margin};
+  width: ${({ width = "auto" }) => width};
   align-items: ${({ align = "baseline" }) => align};
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: ${({ gap = 15 }) => gap}px 0;

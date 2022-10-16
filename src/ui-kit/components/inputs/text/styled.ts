@@ -16,10 +16,6 @@ export const Label = styled.label<LabelProps>` && {
   ${({ theme }) => css`${theme.components.textInput.Label}`}
 }`
 
-export const LabelText = styled.label` && {
-  ${({ theme }) => css`${theme.components.textInput.LabelText}`}
-}`
-
 export const HelperText = styled.span` && {
   ${({ theme }) => css`${theme.components.textInput.HelperText}`}
 }`
