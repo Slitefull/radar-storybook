@@ -1,10 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { mockDropdownData } from "../__mock__/data";
 import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
 
 
 export default {
-  title: 'dropdowns/Default',
+  title: "dropdowns/Default",
   component: Dropdown,
 } as ComponentMeta<typeof Dropdown>;
 
@@ -22,94 +22,113 @@ Default.args = {
   rounded: false,
   defaultValue: { value: "option", label: "option" },
   label: "Label",
+  labelPosition: "top",
+  labelColor: "primary",
+  width: "fit-content",
 };
 
 Default.argTypes = {
   color: {
     name: "color",
     options: ["primary", "secondary", "ghost"],
-    control: { type: 'radio' },
+    control: { type: "radio" },
     table: {
-      type: { summary: 'Dropdown color' },
+      type: { summary: "Dropdown color" },
       defaultValue: {
         summary: "primary"
       },
     },
   },
   options: {
-    name: 'options',
+    name: "options",
     table: {
-      type: { summary: 'Array of options that populate the select menu' },
+      type: { summary: "Array of options that populate the select menu" },
       defaultValue: {
         summary: `[
-          { value: 'purple', label: 'Purple' }
+          { value: "purple", label: "Purple" }
         ]`
       },
     },
   },
   closeMenuOnSelect: {
-    name: 'closeMenuOnSelect',
+    name: "closeMenuOnSelect",
     table: {
-      type: { summary: 'Close the select menu when the user selects an option' },
+      type: { summary: "Close the select menu when the user selects an option" },
       defaultValue: { summary: false },
     },
   },
   placeholder: {
-    name: 'placeholder',
+    name: "placeholder",
     table: {
-      type: { summary: 'Set placeholder for select' },
+      type: { summary: "Set placeholder for select" },
       defaultValue: { summary: "Search" },
     },
   },
   isSearchable: {
-    name: 'isSearchable',
+    name: "isSearchable",
     table: {
-      type: { summary: 'Set is select is searchable' },
+      type: { summary: "Set is select is searchable" },
       defaultValue: { summary: false },
     },
   },
   hideSelectedOptions: {
-    name: 'hideSelectedOptions',
+    name: "hideSelectedOptions",
     table: {
-      type: { summary: 'Hide the selected option from the menu' },
+      type: { summary: "Hide the selected option from the menu" },
       defaultValue: { summary: true },
     },
   },
   rounded: {
-    name: 'rounded',
+    name: "rounded",
     table: {
-      type: { summary: 'Set is select rounded' },
+      type: { summary: "Set is select rounded" },
       defaultValue: { summary: false },
     },
   },
   disabled: {
-    name: 'disabled',
+    name: "disabled",
     table: {
-      type: { summary: 'Set is select disabled' },
+      type: { summary: "Set is select disabled" },
       defaultValue: { summary: false },
     },
   },
   defaultValue: {
-    name: 'defaultValue',
+    name: "defaultValue",
     table: {
-      type: { summary: 'Set default value for the select' },
+      type: { summary: "Set default value for the select" },
       defaultValue: { summary: `{ value: "option", label: "option" }` },
     },
   },
   label: {
-    name: 'label',
+    name: "label",
     table: {
-      type: { summary: 'Set label for the select' },
+      type: { summary: "Set label for the select" },
       defaultValue: { summary: `Label` },
     },
   },
   labelPosition: {
-    name: 'labelPosition',
-    options: ["left", "right"],
-    control: { type: 'radio' },
+    name: "labelPosition",
+    options: ["top", "right", "bottom", "left"],
+    control: { type: "radio" },
     table: {
-      type: { summary: 'Position of the label' },
-      defaultValue: { summary: "left" },
+      type: { summary: "Position of the label" },
+      defaultValue: { summary: "top" },
+    },
+  },
+  labelColor: {
+    name: "labelColor",
+    options: ["primary", "ghost", "subtly"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Color of the label" },
+      defaultValue: { summary: "primary" },
+    },
+  },
+  width: {
+    name: "width",
+    table: {
+      type: { summary: "Width of the dropdown" },
+      defaultValue: { summary: "fit-content" },
     },
   },
 };
@@ -117,7 +136,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Default dropdown with 2 sizes and 3 colors',
+      component: "Default dropdown with 2 sizes and 3 colors",
     },
   },
   design: {

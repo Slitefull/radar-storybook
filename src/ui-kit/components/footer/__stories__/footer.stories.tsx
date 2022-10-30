@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { withRouter } from "storybook-addon-react-router-v6";
 import Footer from "../footer";
 
 export default {
-  title: 'General/Header',
+  title: "General/Header",
   component: Footer,
   decorators: [withRouter],
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as ComponentMeta<typeof Footer>;
 

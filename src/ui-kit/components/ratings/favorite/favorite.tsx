@@ -10,6 +10,6 @@ const FavoriteRating: FC = memo((): JSX.Element => {
       <StarIcon size={15}/>
     </SFavoriteRating>
   );
-})
+});
 
 export default FavoriteRating;

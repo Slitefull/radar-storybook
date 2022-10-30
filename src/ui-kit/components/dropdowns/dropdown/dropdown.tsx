@@ -7,13 +7,12 @@ import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicato
 import Label from "@/ui-kit/components/label/label";
 import { DARK_LAVA, EBONY, PLATINUM, PLUMP_PURPLE, TRANSPARENT, WHITE } from "@/ui-kit/constants/colors";
 
+import { LabelColors, LabelPositions, LabelSizes } from "../../label/types";
 import { WithLabelWrapper } from "./styled";
 
 
 type Option = { value: string | number, label: string | number };
 type Colors = "primary" | "secondary" | "ghost";
-type LabelPosition = "top" | "right" | "bottom" | "left";
-type LabelColors = "primary" | "ghost" | "subtly";
 
 //TODO SEARCHABLE LABEL COLOR
 
@@ -29,25 +28,24 @@ interface SelectProps {
   defaultValue?: Option;
   rounded?: boolean;
   label?: string;
-  labelPosition?: LabelPosition;
+  labelPosition?: LabelPositions;
   labelColor?: LabelColors;
+  labelSize?: LabelSizes;
   width?: string;
 }
-
-const DEFAULT_COLOR = "primary";
 
 const baseControlStyles: CSSObject = {
   minWidth: 130,
   height: 40,
-  transition: '.2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out',
-  padding: '0 12px',
+  transition: ".2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out",
+  padding: "0 12px",
   cursor: "pointer",
-  gap: '0 10px',
+  gap: "0 10px",
   boxShadow: "none",
   borderColor: TRANSPARENT,
 
   "&:hover": {
-    transition: '.2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out',
+    transition: ".2s background ease-in-out, .2s border-radius ease-in-out, .2s border ease-in-out, .2s opacity ease-in-out",
   },
 
   "&:focus": {
@@ -60,37 +58,37 @@ const baseOptionStyles: CSSObject = {
   fontSize: 14,
   fontWeight: 900,
   color: EBONY,
-  cursor: 'pointer',
-  padding: '2px 0',
+  cursor: "pointer",
+  padding: "2px 0",
   background: "none",
-  transition: '.2s opacity ease-in-out',
+  transition: ".2s opacity ease-in-out",
 
   "&:hover": {
     opacity: .7,
-    transition: '.2s opacity ease-in-out',
+    transition: ".2s opacity ease-in-out",
   },
 
   "&:active": {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
   }
 };
 
 const baseValueContainerStyles: CSSObject = {
-  padding: '5px 0',
+  padding: "5px 0",
 };
 
 const basePlaceholderStyles: CSSObject = {
   fontSize: 14,
   fontWeight: 700,
-  lineHeight: '24px',
-  letterSpacing: '-0.02em',
+  lineHeight: "24px",
+  letterSpacing: "-0.02em",
 };
 
 const baseSingleValueStyles: CSSObject = {
   fontSize: 14,
   fontWeight: 700,
-  lineHeight: '24px',
-  letterSpacing: '-0.02em',
+  lineHeight: "24px",
+  letterSpacing: "-0.02em",
 };
 
 const baseMenuStyles: CSSObject = {
@@ -99,13 +97,13 @@ const baseMenuStyles: CSSObject = {
   display: "flex",
   width: "100%",
   flexDirection: "column",
-  gap: '0 10px',
+  gap: "0 10px",
   borderRadius: "0 0 5px 5px",
   boxShadow: "none",
 };
 
 const baseMenuListStyles: CSSObject = {
-  display: 'flex',
+  display: "flex",
   flexDirection: "column",
   gap: "10px 0",
 };
@@ -192,14 +190,14 @@ const ControlColorsRecord: Record<Colors, CSSObject> = {
 };
 
 const OptionColorsRecord: Record<Colors, CSSObject> = {
-  "primary": { ...baseOptionStyles, fontFamily: 'FreightSans Pro' },
-  "secondary": { ...baseOptionStyles, fontFamily: 'FreightSans Pro' },
+  "primary": { ...baseOptionStyles, fontFamily: "FreightSans Pro" },
+  "secondary": { ...baseOptionStyles, fontFamily: "FreightSans Pro" },
   "ghost": {
     ...baseOptionStyles,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
@@ -213,20 +211,20 @@ const SingleValueColorsRecord: Record<Colors, CSSObject> = {
   "primary": {
     ...baseSingleValueStyles,
     color: WHITE,
-    fontFamily: 'FreightSans Pro',
+    fontFamily: "FreightSans Pro",
   },
   "secondary": {
     ...baseSingleValueStyles,
     color: PLUMP_PURPLE,
-    fontFamily: 'FreightSans Pro',
+    fontFamily: "FreightSans Pro",
   },
   "ghost": {
     ...baseSingleValueStyles,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     color: DARK_LAVA,
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
@@ -234,7 +232,7 @@ const PlaceholderColorsRecord: Record<Colors, CSSObject> = {
   "primary": {
     ...basePlaceholderStyles,
     color: WHITE,
-    fontFamily: 'FreightSans Pro',
+    fontFamily: "FreightSans Pro",
 
     "&:hover": {
       color: PLUMP_PURPLE,
@@ -247,15 +245,15 @@ const PlaceholderColorsRecord: Record<Colors, CSSObject> = {
     "&:hover": {
       color: WHITE,
     },
-    fontFamily: 'FreightSans Pro',
+    fontFamily: "FreightSans Pro",
   },
   "ghost": {
     ...basePlaceholderStyles,
     color: DARK_LAVA,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
@@ -297,7 +295,7 @@ const MenuListColorsRecord: Record<Colors, CSSObject> = {
 
 const Dropdown: FC<SelectProps> = memo((
   {
-    color,
+    color = "primary",
     options,
     isSearchable,
     closeMenuOnSelect,
@@ -310,6 +308,7 @@ const Dropdown: FC<SelectProps> = memo((
     label,
     labelPosition = "left",
     labelColor,
+    labelSize = "default",
     width = "fit-content",
   }
 ): JSX.Element => {
@@ -333,38 +332,38 @@ const Dropdown: FC<SelectProps> = memo((
   const customStyles: StylesConfig<Option, true> = {
     control: (provided, { selectProps }) => ({
       ...provided,
-      ...ControlColorsRecord[color || DEFAULT_COLOR],
+      ...ControlColorsRecord[color],
       borderRadius: getControlBR(rounded, selectProps.menuIsOpen),
       opacity: disabled ? .3 : 1,
     }),
     container: (provided) => ({
       ...provided,
-      width: '100%',
+      width: "100%",
     }),
     option: (provided, { isSelected }) => ({
       ...provided,
-      ...OptionColorsRecord[color || DEFAULT_COLOR],
+      ...OptionColorsRecord[color],
       opacity: isSelected ? .7 : 1,
     }),
     singleValue: (provided) => ({
       ...provided,
-      ...SingleValueColorsRecord[color || DEFAULT_COLOR],
+      ...SingleValueColorsRecord[color],
     }),
     valueContainer: (provided) => ({
       ...provided,
-      ...ValueContainerColorsRecord[color || DEFAULT_COLOR],
+      ...ValueContainerColorsRecord[color],
     }),
     placeholder: (provided) => ({
       ...provided,
-      ...PlaceholderColorsRecord[color || DEFAULT_COLOR],
+      ...PlaceholderColorsRecord[color],
     }),
     menu: (provided) => ({
       ...provided,
-      ...MenuColorsRecord[color || DEFAULT_COLOR],
+      ...MenuColorsRecord[color],
     }),
     menuList: (provided) => ({
       ...provided,
-      ...MenuListColorsRecord[color || DEFAULT_COLOR],
+      ...MenuListColorsRecord[color],
     }),
     indicatorSeparator: () => ({ display: "none" }),
   }
@@ -375,7 +374,14 @@ const Dropdown: FC<SelectProps> = memo((
       withLabel={!!label}
       width={width}
     >
-      {label && <Label color={labelColor}>{label}</Label>}
+      {label && (
+        <Label
+          color={labelColor}
+          size={labelSize}
+        >
+          {label}
+        </Label>
+      )}
       <Select
         classNamePrefix={"custom-select"}
         isDisabled={disabled}

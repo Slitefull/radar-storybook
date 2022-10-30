@@ -1,4 +1,4 @@
-import { FC, memo, ReactNode } from 'react';
+import { FC, memo, ReactNode } from "react";
 
 import { SWithBackgroundText } from "./styled";
 

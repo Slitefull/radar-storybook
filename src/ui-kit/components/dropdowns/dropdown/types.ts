@@ -1,4 +1,4 @@
-type LabelPositions = "top" | "right" | "bottom" | "left";
+import { LabelPositions } from "../../label/types";
 
 export interface WithLabelWrapperProps {
   labelPosition: LabelPositions;

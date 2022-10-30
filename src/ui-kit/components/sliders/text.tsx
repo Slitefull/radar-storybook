@@ -1,5 +1,5 @@
-import { FC, memo, ReactNode, useCallback, useState } from 'react';
-import { SwiperSlide } from 'swiper/react';
+import { FC, memo, ReactNode, useCallback, useState } from "react";
+import { SwiperSlide } from "swiper/react";
 import { useSwiperRef } from "@/ui-kit/hooks/useSwiperRef";
 
 import Swiper from "swiper/types/swiper-class";

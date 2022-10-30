@@ -1,4 +1,5 @@
-import { FC, memo, ReactNode } from 'react';
+import { FC, memo, ReactNode } from "react";
+import { DARK_LAVA } from "@/ui-kit/constants/colors";
 
 import { SColoredText } from "./styled";
 
@@ -16,9 +17,9 @@ interface ColoredTextProps {
 const ColoredText: FC<ColoredTextProps> = memo((
   {
     children,
-    color,
-    size,
-    weight,
+    color = DARK_LAVA,
+    size = "default",
+    weight = "default",
   }
 ): JSX.Element => {
   return (

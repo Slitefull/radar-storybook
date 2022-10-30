@@ -1,6 +1,5 @@
-type LabelPositions = "left" | "right";
+import { LabelPositions } from "../../label/types";
 
-export interface LabelProps {
-  disabled?: boolean;
-  labelPosition?: LabelPositions;
+export interface RWrapperProps {
+  labelPosition: LabelPositions;
 }

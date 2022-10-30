@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useSetRecoilState } from "recoil";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { email, password } from "@/ui-kit/helpers/validators";
-import { FormsTextInput } from "@/ui-kit/components/forms/text-input/forms-text-input";
+import FormsTextInput from "@/ui-kit/components/forms/text-input/forms-text-input";
 import { authState } from "@/entity/atoms/auth";
 import { RESET_PASSWORD_PAGE, SIGN_UP_PAGE } from "@/constants/routes";
 import { signInAPI } from "@/api/auth/auth";

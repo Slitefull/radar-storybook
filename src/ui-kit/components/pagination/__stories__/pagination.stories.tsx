@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Pagination from "@/ui-kit/components/pagination/pagination";
 
 
 export default {
-  title: 'ui-kit/Pagination',
+  title: "ui-kit/Pagination",
   component: Pagination,
 } as ComponentMeta<typeof Pagination>;
 
@@ -24,18 +24,18 @@ Default.args = {
 
 Default.argTypes = {
   currentPage: {
-    name: 'currentPage',
+    name: "currentPage",
     table: {
-      type: { summary: 'Current page of pagination' },
+      type: { summary: "Current page of pagination" },
       defaultValue: {
         summary: 1,
       },
     },
   },
   totalCount: {
-    name: 'totalCount',
+    name: "totalCount",
     table: {
-      type: { summary: 'Total count of data elements' },
+      type: { summary: "Total count of data elements" },
       defaultValue: {
         summary: 150,
       },
@@ -43,7 +43,7 @@ Default.argTypes = {
   },
   pageSize: {
     table: {
-      type: { summary: 'Set count of data per page' },
+      type: { summary: "Set count of data per page" },
       defaultValue: {
         summary: 10,
       },
@@ -51,7 +51,7 @@ Default.argTypes = {
   },
   siblingCount: {
     table: {
-      type: { summary: 'Preview pages count before points' },
+      type: { summary: "Preview pages count before points" },
       defaultValue: {
         summary: 1,
       },
@@ -59,31 +59,25 @@ Default.argTypes = {
   },
   onPageChange: {
     table: {
-      type: { summary: 'On page change handler' },
+      type: { summary: "On page change handler" },
       defaultValue: {
-        summary: '(page) => console.log(page)',
+        summary: "(page) => console.log(page)",
       },
     },
   },
   onPrevious: {
     table: {
-      type: { summary: 'On prev page handler' },
-      defaultValue: {
-        summary: '() => console.log("prev click")',
-      },
+      type: { summary: "On prev page handler" },
     },
   },
   onNext: {
     table: {
-      type: { summary: 'On next page handler' },
-      defaultValue: {
-        summary: '() => console.log("next click")',
-      },
+      type: { summary: "On next page handler" },
     },
   },
   canPreviousPage: {
     table: {
-      type: { summary: 'If this field is "false" - previous page button will be disabled' },
+      type: { summary: "If this field is 'false' - previous page button will be disabled" },
       defaultValue: {
         summary: false,
       },
@@ -91,7 +85,7 @@ Default.argTypes = {
   },
   canNextPage: {
     table: {
-      type: { summary: 'If this field is "false" - next page button will be disabled' },
+      type: { summary: "If this field is 'false' - next page button will be disabled" },
       defaultValue: {
         summary: true,
       },
@@ -102,7 +96,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Pagination for table and other components',
+      component: "Pagination for table and other components",
     },
   },
   design: {

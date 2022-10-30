@@ -1,14 +1,14 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { withRouter } from "storybook-addon-react-router-v6";
 import Header from "../header";
 
 
 export default {
-  title: 'General/Header',
+  title: "General/Header",
   component: Header,
   decorators: [withRouter],
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as ComponentMeta<typeof Header>;
 

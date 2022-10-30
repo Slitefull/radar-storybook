@@ -1,17 +1,16 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
 
 import { SwitchButtonProps, SwitchLabelProps } from "./types";
 
 
 export const SwitchInput = styled.input`
-  ${({ theme }) => css`${theme.components.switcherInput.SwitchInput}`}
+  ${({ theme }) => theme.components.controls.switcher.SwitchInput}
 `;
 
 export const SwitchLabel = styled.label<SwitchLabelProps>`
-  ${({ theme }) => css`${theme.components.switcherInput.SwitchLabel}`}
+  ${({ theme }) => theme.components.controls.switcher.SwitchLabel}
 `;
 
 export const SwitchButton = styled.span<SwitchButtonProps>`
-  ${({ theme }) => css`${theme.components.switcherInput.SwitchButton}`}
+  ${({ theme }) => theme.components.controls.switcher.SwitchButton}
 `;

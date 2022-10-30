@@ -1,10 +1,10 @@
-import { FC, Fragment, memo, useMemo } from 'react';
+import { FC, Fragment, memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Column, useBlockLayout, usePagination, useTable } from 'react-table'
+import { Column, useBlockLayout, usePagination, useTable } from "react-table"
 import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
 import Pagination from "@/ui-kit/components/pagination/pagination";
 
-import { DropdownWrapper, STable, TBody, TCell, TFooter, THeader, THeaderElement, THeaderRow, TRow } from './styled';
+import { DropdownWrapper, STable, TBody, TCell, TFooter, THeader, THeaderElement, THeaderRow, TRow } from "./styled";
 
 
 interface TableProps {
@@ -40,7 +40,7 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
     },
     useBlockLayout,
     usePagination,
-  )
+  );
 
   const paginationOptions = useMemo(
     () => [
@@ -59,7 +59,7 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
             <THeaderRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
                 <THeaderElement {...column.getHeaderProps()}>
-                  {column.render('Header')}
+                  {column.render("Header")}
                 </THeaderElement>
               ))}
             </THeaderRow>
@@ -73,7 +73,7 @@ const Table: FC<TableProps> = memo(({ columns, data, withPagination }): JSX.Elem
               <TRow {...row.getRowProps()} key={i}>
                 {row.cells.map((cell) => (
                   <TCell {...cell.getCellProps()}>
-                    {cell.render('Cell')}
+                    {cell.render("Cell")}
                   </TCell>
                 ))}
               </TRow>

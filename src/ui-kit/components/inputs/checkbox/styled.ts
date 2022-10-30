@@ -1,20 +1,12 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-import { CheckboxLabelProps } from "./types";
+import { CWrapperProps } from "./types";
 
 
-export const SCheckbox = styled.input` && {
-  ${({ theme }) => css`${theme.components.checkboxInput.SCheckbox}`}
-}`;
+export const CWrapper = styled.div<CWrapperProps>`
+  ${({ theme }) => theme.components.controls.checkbox.CWrapper}
+`;
 
-export const CheckboxLabel = styled.label<CheckboxLabelProps>` && {
-  ${({ theme }) => css`${theme.components.checkboxInput.CheckboxLabel}`}
-}`;
-
-export const LabelText = styled.span` && {
-  ${({ theme }) => css`${theme.components.checkboxInput.LabelText}`}
-}`
-
-export const Indicator = styled.div` && {
-  ${({ theme }) => css`${theme.components.checkboxInput.Indicator}`}
-}`;
+export const SCheckbox = styled.input`
+  ${({ theme }) => theme.components.controls.checkbox.SCheckbox}
+`;

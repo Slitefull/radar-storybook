@@ -3,7 +3,7 @@ import SidebarFallback from "@/ui-kit/components/sidebar/fallback/fallback";
 
 
 export default {
-  title: 'general/Sidebar',
+  title: "general/Sidebar",
   component: SidebarFallback,
 } as ComponentMeta<typeof SidebarFallback>;
 
@@ -16,7 +16,7 @@ Fallback.args = {};
 Fallback.parameters = {
   docs: {
     description: {
-      component: 'SVG-Powered component to easily create placeholder loadings (like Facebook\'s cards loading).',
+      component: "SVG-Powered component to easily create placeholder loadings (like Facebook\'s cards loading).",
     },
   },
   design: {

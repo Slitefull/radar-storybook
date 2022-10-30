@@ -12,6 +12,6 @@ const FreshRating: FC = memo((): JSX.Element => {
       {t("new")}
     </SFreshRating>
   );
-})
+});
 
 export default FreshRating;

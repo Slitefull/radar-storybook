@@ -1,48 +1,48 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
+
 import { PercentageProps } from "./types";
 
 
-export const CardWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.CardWrapper}`}
-}`
+export const CardWrapper = styled.div`
+  ${({ theme }) => theme.components.cards.monitorChanges.CardWrapper}
+`;
 
-export const LeftSide = styled.div` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.LeftSide}`}
-}`
+export const LeftSide = styled.div`
+  ${({ theme }) => theme.components.cards.monitorChanges.LeftSide}
+`;
 
-export const RightSide = styled.div` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.RightSide}`}
-}`
+export const RightSide = styled.div`
+  ${({ theme }) => theme.components.cards.monitorChanges.RightSide}
+`;
 
-export const CardName = styled.span` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.CardName}`}
-}`
+export const CardName = styled.span`
+  ${({ theme }) => theme.components.cards.monitorChanges.CardName}
+`;
 
-export const TotalText = styled.p` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.TotalText}`}
-}`
+export const TotalText = styled.p`
+  ${({ theme }) => theme.components.cards.monitorChanges.TotalText}
+`;
 
-export const TotalNumbers = styled.span` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.TotalNumbers}`}
-}`
+export const TotalNumbers = styled.span`
+  ${({ theme }) => theme.components.cards.monitorChanges.TotalNumbers}
+`;
 
-export const Percentage = styled.span<PercentageProps>` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.Percentage}`}
-}`
+export const Percentage = styled.span<PercentageProps>`
+  ${({ theme }) => theme.components.cards.monitorChanges.Percentage}
+`;
 
-export const ChartInfoWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.ChartInfoWrapper}`}
-}`
+export const ChartInfoWrapper = styled.div`
+  ${({ theme }) => theme.components.cards.monitorChanges.ChartInfoWrapper}
+`;
 
-export const ChartInfo = styled.div` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.ChartInfo}`}
-}`
+export const ChartInfo = styled.div`
+  ${({ theme }) => theme.components.cards.monitorChanges.ChartInfo}
+`;
 
-export const ChartInfoText = styled.div` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.ChartInfoText}`}
-}`
+export const ChartInfoText = styled.div`
+  ${({ theme }) => theme.components.cards.monitorChanges.ChartInfoText}
+`;
 
-export const HorizontalLine = styled.hr` && {
-  ${({ theme }) => css`${theme.components.monitorChangesCard.HorizontalLine}`}
-}`
+export const HorizontalLine = styled.hr`
+  ${({ theme }) => theme.components.cards.monitorChanges.HorizontalLine}
+`;

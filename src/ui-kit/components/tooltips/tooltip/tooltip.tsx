@@ -1,4 +1,4 @@
-import { FC, Fragment, memo, ReactNode } from 'react';
+import { FC, Fragment, memo, ReactNode } from "react";
 import Question from "@/ui-kit/customized-icons/question/question";
 
 import { IconWrapper, TBox, TCard } from "./styled";

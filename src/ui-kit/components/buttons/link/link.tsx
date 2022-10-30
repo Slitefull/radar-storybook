@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo, ReactNode } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo, ReactNode } from "react";
 
 import { LinkSize } from "./types";
 import { SLink, WithIconWrapper } from "./styled";
@@ -20,7 +20,7 @@ const ButtonLink: FC<LinkProps> = memo((
   {
     onClick,
     children,
-    size,
+    size = "default",
     icon,
     disabled,
   }

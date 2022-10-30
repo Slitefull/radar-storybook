@@ -1,10 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Switcher from "../switcher";
 import { DARK_LAVA, PLATINUM } from "@/ui-kit/constants/colors";
 
 
 export default {
-  title: 'inputs/Switcher',
+  title: "inputs/Switcher",
   component: Switcher,
 } as ComponentMeta<typeof Switcher>;
 
@@ -21,47 +21,47 @@ Default.args = {
 
 Default.argTypes = {
   isChecked: {
-    name: 'isChecked',
+    name: "isChecked",
     table: {
-      type: { summary: 'Set is checkbox checked' },
+      type: { summary: "Set is checkbox checked" },
       defaultValue: {
         summary: false,
       },
     },
   },
   borderColor: {
-    name: 'borderColor',
+    name: "borderColor",
     table: {
-      type: { summary: 'Set border color for switcher' },
+      type: { summary: "Set border color for switcher" },
       defaultValue: {
         summary: DARK_LAVA,
       },
     },
   },
   backgroundColor: {
-    name: 'backgroundColor',
+    name: "backgroundColor",
     table: {
-      type: { summary: 'Set background color for switcher' },
+      type: { summary: "Set background color for switcher" },
       defaultValue: {
         summary: PLATINUM,
       },
     },
   },
   pointColor: {
-    name: 'pointColor',
+    name: "pointColor",
     table: {
-      type: { summary: 'Set color for switcher point' },
+      type: { summary: "Set color for switcher point" },
       defaultValue: {
         summary: DARK_LAVA,
       },
     },
   },
   label: {
-    name: 'label',
+    name: "label",
     table: {
-      type: { summary: 'Switcher label' },
+      type: { summary: "Switcher label" },
       defaultValue: {
-        summary: 'Label',
+        summary: "Label",
       },
     },
   },

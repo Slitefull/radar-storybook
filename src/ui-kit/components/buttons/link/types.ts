@@ -5,5 +5,5 @@ export interface WithIconWrapperProps {
 }
 
 export interface SLinkProps {
-  size?: LinkSize;
+  size: LinkSize;
 }

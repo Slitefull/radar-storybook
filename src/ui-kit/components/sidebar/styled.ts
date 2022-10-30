@@ -1,33 +1,32 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
 
 import { IconContainerProps, LinkTitleProps, SidebarLinkProps } from "./types";
 
 
-export const SSidebar = styled.nav` && {
-  ${({ theme }) => css`${theme.components.sidebar.SSidebar}`}
-}`;
+export const SSidebar = styled.nav`
+  ${({ theme }) => theme.components.generals.sidebar.SSidebar}
+`;
 
-export const SFallback = styled.nav` && {
-  ${({ theme }) => css`${theme.components.sidebar.SFallback}`}
-}`;
+export const SFallback = styled.div`
+  ${({ theme }) => theme.components.generals.sidebar.SFallback}
+`;
 
-export const LogosWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.sidebar.LogosWrapper}`}
-}`
+export const LogosWrapper = styled.div`
+  ${({ theme }) => theme.components.generals.sidebar.LogosWrapper}
+`
 
-export const LinksWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.sidebar.LinksWrapper}`}
-}`;
+export const LinksWrapper = styled.div`
+  ${({ theme }) => theme.components.generals.sidebar.LinksWrapper}
+`;
 
-export const SidebarLink = styled.p<SidebarLinkProps>` && {
-  ${({ theme }) => css`${theme.components.sidebar.SidebarLink}`}
-}`;
+export const SidebarLink = styled.p<SidebarLinkProps>`
+  ${({ theme }) => theme.components.generals.sidebar.SidebarLink}
+`;
 
-export const IconContainer = styled.div<IconContainerProps>` && {
-  ${({ theme }) => css`${theme.components.sidebar.IconContainer}`}
-}`;
+export const IconContainer = styled.div<IconContainerProps>`
+  ${({ theme }) => theme.components.generals.sidebar.IconContainer}
+`;
 
-export const LinkTitle = styled.span<LinkTitleProps>` && {
-  ${({ theme }) => css`${theme.components.sidebar.LinkTitle}`}
-}`;
+export const LinkTitle = styled.span<LinkTitleProps>`
+  ${({ theme }) => theme.components.generals.sidebar.LinkTitle}
+`;

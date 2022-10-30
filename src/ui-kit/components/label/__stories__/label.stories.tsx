@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Label from "../label";
 
 
 export default {
-  title: 'labels/Default',
+  title: "labels/Default",
   component: Label,
 } as ComponentMeta<typeof Label>;
 
@@ -13,15 +13,51 @@ export const Default = Template.bind({});
 
 Default.args = {
   color: "primary",
+  size: "default",
+  cursor: "default",
+  disabled: false,
 };
 
 Default.argTypes = {
   color: {
-    name: 'color',
+    name: "color",
+    options: ["primary", "ghost", "subtly"],
+    control: { type: "radio" },
     table: {
-      type: { summary: 'Set is checkbox disabled' },
+      type: { summary: "Set color for the label" },
+      defaultValue: {
+        summary: "primary",
+      },
+    },
+  },
+  size: {
+    name: "size",
+    options: ["default", "small"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Set size for the label" },
+      defaultValue: {
+        summary: "default",
+      },
+    },
+  },
+  disabled: {
+    name: "disabled",
+    table: {
+      type: { summary: "Set is label disabled" },
       defaultValue: {
         summary: false,
+      },
+    },
+  },
+  cursor: {
+    name: "cursor",
+    options: ["default", "pointer", "not-allowed"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Set cursor for the label" },
+      defaultValue: {
+        summary: "default",
       },
     },
   },
@@ -30,11 +66,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Tabs with any children',
+      component: "Label for control elements with children",
     },
   },
-  design: {
-    type: "figma",
-    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=482%3A475",
-  },
-}
+};

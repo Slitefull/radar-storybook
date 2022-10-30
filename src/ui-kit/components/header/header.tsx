@@ -16,7 +16,7 @@ const UserProfile: FC = memo((): JSX.Element => {
   const navigate = useNavigate();
 
   const onClickUserHandler = useCallback(
-    () => navigate('/'),
+    () => navigate("/"),
     [navigate]
   );
 
@@ -31,22 +31,22 @@ const Header: FC = memo((): JSX.Element => {
   const navigate = useNavigate();
 
   const dropdownData = useMemo(
-    () => [{ value: 'all_domains', label: "All domains" }],
+    () => [{ value: "all_domains", label: "All domains" }],
     []
   );
 
   const onClickSettingsHandler = useCallback(
-    () => navigate('/'),
+    () => navigate("/"),
     [navigate]
   );
 
   const onClickBellHandler = useCallback(
-    () => navigate('/'),
+    () => navigate("/"),
     [navigate]
   );
 
   const onChangeSelect = useCallback(
-    (option: SelectOption) => console.log(option, 'option'),
+    (option: SelectOption) => console.log(option, "option"),
     []
   );
 

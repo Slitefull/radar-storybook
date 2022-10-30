@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
 
 import { STabProps } from "./types";
 
@@ -9,5 +8,5 @@ export const inactiveTab = {
 };
 
 export const STab = styled.button<STabProps>`
-  ${({ theme }) => css`${theme.components.tab.STab}`}
+  ${({ theme }) => theme.components.tabs.tab.STab}
 `;

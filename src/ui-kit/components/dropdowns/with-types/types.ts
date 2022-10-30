@@ -1,4 +1,5 @@
-type LabelPositions = "top" | "right" | "bottom" | "left";
+import { LabelPositions } from "@/ui-kit/components/label/types";
+
 
 export interface WithLabelWrapperProps {
   labelPosition: LabelPositions;

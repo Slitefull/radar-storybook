@@ -3,7 +3,7 @@ import ColoredTextFallback from "@/ui-kit/components/text/colored/fallback/fallb
 
 
 export default {
-  title: 'text/Colored',
+  title: "text/Colored",
   component: ColoredTextFallback,
 } as ComponentMeta<typeof ColoredTextFallback>;
 
@@ -21,44 +21,44 @@ Fallback.args = {
 
 Fallback.argTypes = {
   animate: {
-    name: 'animate',
+    name: "animate",
     table: {
-      type: { summary: 'Opt-out of animations with false' },
+      type: { summary: "Opt-out of animations with false" },
       defaultValue: { summary: false },
     },
   },
   speed: {
-    name: 'speed',
+    name: "speed",
     table: {
-      type: { summary: 'Animation speed in seconds.' },
+      type: { summary: "Animation speed in seconds." },
       defaultValue: { summary: 0 },
     },
   },
   width: {
-    name: 'width',
+    name: "width",
     table: {
       type: { summary: "Width of the skeleton" },
       defaultValue: { summary: 140 },
     },
   },
   height: {
-    name: 'height',
+    name: "height",
     table: {
       type: { summary: "Height of the skeleton" },
       defaultValue: { summary: 20 },
     },
   },
   backgroundColor: {
-    name: 'backgroundColor',
+    name: "backgroundColor",
     table: {
-      type: { summary: 'Used as background of animation.' },
+      type: { summary: "Used as background of animation." },
       defaultValue: { summary: "#f7f7f7" },
     },
   },
   foregroundColor: {
-    name: 'foregroundColor',
+    name: "foregroundColor",
     table: {
-      type: { summary: 'Used as the foreground of animation.' },
+      type: { summary: "Used as the foreground of animation." },
       defaultValue: { summary: "#c6c3c3" },
     },
   },
@@ -67,7 +67,7 @@ Fallback.argTypes = {
 Fallback.parameters = {
   docs: {
     description: {
-      component: 'SVG-Powered component to easily create placeholder loadings (like Facebook\'s cards loading).',
+      component: "SVG-Powered component to easily create placeholder loadings (like Facebook\"s cards loading).",
     },
   },
   design: {

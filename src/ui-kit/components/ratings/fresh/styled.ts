@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
-export const SFreshRating = styled.div` && {
-  ${({ theme }) => css`${theme.components.freshRating.SFreshRating}`}
-}`;
+export const SFreshRating = styled.div`
+  ${({ theme }) => theme.components.ratings.fresh.SFreshRating}
+`;

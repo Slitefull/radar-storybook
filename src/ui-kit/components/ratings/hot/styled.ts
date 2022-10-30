@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
-export const SHotRating = styled.div` && {
-  ${({ theme }) => css`${theme.components.hotRating.SHotRating}`}
-}`;
+export const SHotRating = styled.div`
+  ${({ theme }) => theme.components.ratings.hot.SHotRating}
+`;

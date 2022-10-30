@@ -1,4 +1,4 @@
-import { FC, memo, ReactNode, useCallback, useMemo } from 'react';
+import { FC, memo, ReactNode, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
@@ -38,49 +38,49 @@ const Sidebar: FC = memo((): JSX.Element => {
     () => [
       {
         key: "monitoring",
-        link: '/',
+        link: "/",
         icon: <ActivityIcon size={25} color={currentMenuItem === "monitoring" ? WHITE : ""}/>,
         title: t("monitoring"),
         isChecked: currentMenuItem === "monitoring"
       },
       {
         key: "domains",
-        link: '/domains',
+        link: "/domains",
         icon: <AtSignIcon size={25} color={currentMenuItem === "domains" ? WHITE : ""}/>,
         title: t("domains"),
         isChecked: currentMenuItem === "domains"
       },
       {
         key: "competitions",
-        link: '/competitions',
+        link: "/competitions",
         icon: <TargetIcon size={25} color={currentMenuItem === "competitions" ? WHITE : ""}/>,
         title: t("competitions"),
         isChecked: currentMenuItem === "competitions"
       },
       {
         key: "seoAudit",
-        link: '/seo-audit',
+        link: "/seo-audit",
         icon: <BarChartIcon size={25} color={currentMenuItem === "seoAudit" ? WHITE : ""}/>,
         title: t("seo_audit"),
         isChecked: currentMenuItem === "seoAudit"
       },
       {
         key: "tools",
-        link: '/tools',
+        link: "/tools",
         icon: <ToolIcon size={25} color={currentMenuItem === "tools" ? WHITE : ""}/>,
         title: t("tools"),
         isChecked: currentMenuItem === "tools"
       },
       {
         key: "reports",
-        link: '/reports',
+        link: "/reports",
         icon: <BookOpenIcon size={25} color={currentMenuItem === "reports" ? WHITE : ""}/>,
         title: t("reports"),
         isChecked: currentMenuItem === "reports"
       },
       {
         key: "help",
-        link: '/help',
+        link: "/help",
         icon: <HelpCircleIcon size={25} color={currentMenuItem === "help" ? WHITE : ""}/>,
         title: t("help"),
         isChecked: currentMenuItem === "help"

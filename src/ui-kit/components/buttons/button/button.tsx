@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo, ReactNode } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, memo, ReactNode } from "react";
 import { ButtonColors, ButtonSizes } from "./types";
 
 import { SButton } from "./styled";
@@ -6,8 +6,6 @@ import { SButton } from "./styled";
 
 type DefaultButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-//TODO Add disabled state
-//TODO Add link type button
 interface ButtonProps extends DefaultButtonProps {
   color?: ButtonColors;
   size?: ButtonSizes;
@@ -19,12 +17,12 @@ interface ButtonProps extends DefaultButtonProps {
 
 const Button: FC<ButtonProps> = memo((
   {
-    color,
-    size,
-    children,
-    rounded,
+    color = "primary",
+    size = "default",
+    rounded = false,
     onClick,
     disabled,
+    children,
   }
 ): JSX.Element => {
   return (

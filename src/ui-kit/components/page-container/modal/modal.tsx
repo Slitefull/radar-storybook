@@ -1,7 +1,7 @@
-import { FC, memo, ReactNode } from 'react';
+import { FC, memo, ReactNode } from "react";
 import CloseIcon from "@/ui-kit/customized-icons/close/close";
 
-import { CloseIconWrapper, SModalPageContainer } from "./styled";
+import { CloseIconWrapper, SMPContainer } from "./styled";
 
 
 interface ModalPageContainerProps {
@@ -18,14 +18,14 @@ const ModalPageContainer: FC<ModalPageContainerProps> = memo((
   }
 ): JSX.Element => {
   return (
-    <SModalPageContainer>
+    <SMPContainer>
       {withClose && (
         <CloseIconWrapper>
           <CloseIcon onClick={onClose}/>
         </CloseIconWrapper>
       )}
       {children}
-    </SModalPageContainer>
+    </SMPContainer>
   );
 });
 

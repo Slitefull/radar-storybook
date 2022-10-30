@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Radio from "@/ui-kit/components/inputs/radio/radio";
 
 
 export default {
-  title: 'inputs/Radio',
+  title: "inputs/Radio",
   component: Radio,
 } as ComponentMeta<typeof Radio>;
 
@@ -13,54 +13,69 @@ export const Default = Template.bind({});
 Default.args = {
   checked: false,
   name: "label",
-  label: "List view",
   disabled: false,
+  onChange: () => console.log("change"),
+  label: "List view",
   labelPosition: "left",
+  labelColor: "primary",
 };
 
 Default.argTypes = {
   checked: {
-    name: 'checked',
+    name: "checked",
     table: {
-      type: { summary: 'Set is radio checked' },
+      type: { summary: "Set is radio checked" },
       defaultValue: {
         summary: false,
       },
     },
   },
   name: {
-    name: 'name',
+    name: "name",
     table: {
-      type: { summary: 'Set is name for the radio' },
+      type: { summary: "Set is name for the radio" },
       defaultValue: {
-        summary: 'label',
+        summary: "label",
       },
     },
   },
-  label: {
-    name: 'label',
+  onChange: {
+    name: "onChange",
     table: {
-      type: { summary: 'Set radio label' },
+      type: { summary: "On change radio event" },
+    },
+  },
+  label: {
+    name: "label",
+    table: {
+      type: { summary: "Set radio label" },
       defaultValue: {
-        summary: 'List view',
+        summary: "List view",
       },
     },
   },
   labelPosition: {
-    name: 'labelPosition',
-    options: ["left", "right"],
-    control: { type: 'radio' },
+    name: "labelPosition",
+    options: ["top", "right", "bottom", "left"],
+    control: { type: "radio" },
     table: {
-      type: { summary: 'Set label position' },
-      defaultValue: {
-        summary: 'List view',
-      },
+      type: { summary: "Position of the label" },
+      defaultValue: { summary: "top" },
+    },
+  },
+  labelColor: {
+    name: "labelColor",
+    options: ["primary", "ghost", "subtly"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Color of the label" },
+      defaultValue: { summary: "primary" },
     },
   },
   disabled: {
-    name: 'disabled',
+    name: "disabled",
     table: {
-      type: { summary: 'Set is radio is disabled' },
+      type: { summary: "Set is radio is disabled" },
       defaultValue: {
         summary: false,
       },

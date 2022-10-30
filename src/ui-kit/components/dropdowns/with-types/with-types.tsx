@@ -1,20 +1,25 @@
 import { FC, memo, ReactNode } from "react";
 import { CSSObject } from "styled-components";
-import Select, { InputActionMeta, StylesConfig } from "react-select";
+import Select, { StylesConfig } from "react-select";
 import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicator";
 import Control from "./components/control/control";
 import MultiValueRemove from ".//components/multivalue-remove/multivalue-remove";
-import { DARK_LAVA, EBONY, LIGHT_GREY, PLATINUM, PLUMP_PURPLE, ROYAL_PURPLE } from "@/ui-kit/constants/colors";
+import { DARK_LAVA, EBONY, LIGHT_GREY, PLATINUM, PLUMP_PURPLE, ROYAL_PURPLE, WHITE } from "@/ui-kit/constants/colors";
 import Label from "@/ui-kit/components/label/label";
 
+import { LabelColors, LabelPositions, LabelSizes } from "../../label/types";
 import { WithLabelWrapper } from "./styled";
+import { Column } from "@/global.css";
 
 
 type Option = { value: string | number, label: string | number }
 type SelectOptions = "searchable" | "multi";
 type SelectTypes = "single" | "multi";
-type LabelColors = "primary" | "ghost"
-type LabelPosition = "top" | "right" | "bottom" | "left";
+
+interface Options {
+  value: string;
+  label: string;
+}
 
 interface SelectWithTypesProps {
   options: Option[];
@@ -22,73 +27,76 @@ interface SelectWithTypesProps {
   hideSelectedOptions?: boolean;
   placeholder?: string;
   isDisabled?: boolean;
-  onChange?: (newValue: string, actionMeta: InputActionMeta) => void;
+  onChange?: (option: Options) => void;
   defaultValue?: Option;
-  types: SelectOptions[];
+  types?: SelectOptions[];
   icon?: ReactNode;
   label?: string;
-  labelPosition?: LabelPosition;
+  labelPosition?: LabelPositions;
   labelColor?: LabelColors;
+  labelSize?: LabelSizes;
+  subtitle?: string;
+  subtitleColor?: LabelColors;
+  subtitleSize?: LabelSizes;
   width?: string;
 }
 
 const baseControlStyles: CSSObject = {
-  background: '#FFFFFF',
-  width: 350,
+  background: WHITE,
   minHeight: 40,
-  transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
-  padding: '0 20px 0 10px',
+  transition: ".2s border-radius ease-in-out, .2s opacity ease-in-out",
+  padding: "0 20px 0 10px",
   cursor: "pointer",
-  gap: '0 10px',
+  gap: "0 10px",
   boxShadow: "none",
 
   "&:focus": {
     border: `1px solid ${PLUMP_PURPLE}`,
-    transition: '.2s border-radius ease-in-out, .2s opacity ease-in-out',
+    transition: ".2s border-radius ease-in-out, .2s opacity ease-in-out",
   },
 
   "&:hover": {
     border: `1px solid ${DARK_LAVA}`,
-    transition: '.2s border ease-in-out',
+    transition: ".2s border ease-in-out",
   }
-}
+};
 
 const baseOptionStyles: CSSObject = {
   fontFamily: "Menlo",
   fontSize: 14,
   fontWeight: 500,
-  cursor: 'pointer',
-  padding: '2px 0',
+  cursor: "pointer",
+  padding: "2px 0",
   background: "none",
-  transition: '.2s opacity ease-in-out',
+  transition: ".2s opacity ease-in-out",
 
   "&:hover": {
     opacity: .7,
-    transition: '.2s opacity ease-in-out',
+    transition: ".2s opacity ease-in-out",
   },
 
   "&:active": {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
   }
-}
+};
 
 const baseValueContainerStyles: CSSObject = {
-  padding: '5px 0',
-}
+  padding: "5px 0",
+};
 
 const baseSingleValueStyles: CSSObject = {
   fontSize: 14,
   fontFamily: "Menlo",
-}
+};
 
 const basePlaceholderStyles: CSSObject = {
-  fontFamily: 'Menlo',
+  fontFamily: "Menlo",
   fontWeight: 400,
   fontSize: 14,
-  lineHeight: '16px',
-  letterSpacing: '-0.02em',
-  color: '#423D33',
-}
+  lineHeight: "16px",
+  letterSpacing: "-0.02em",
+  color: DARK_LAVA,
+};
 
 const baseMenuStyles: CSSObject = {
   margin: 0,
@@ -96,35 +104,35 @@ const baseMenuStyles: CSSObject = {
   display: "flex",
   width: "100%",
   flexDirection: "column",
-  gap: '0 10px',
+  gap: "0 10px",
   borderRadius: "0 0 5px 5px",
-}
+};
 
 const baseMenuListStyles: CSSObject = {
-  display: 'flex',
+  display: "flex",
   flexDirection: "column",
   gap: "10px 0",
-}
+};
 
 const baseMultiValueStyles: CSSObject = {
   background: PLATINUM,
   borderRadius: 4,
-  fontFamily: 'Menlo',
+  fontFamily: "Menlo",
   fontWeight: 400,
   fontSize: 10,
-  letterSpacing: '-0.02em',
+  letterSpacing: "-0.02em",
   color: DARK_LAVA,
   alignItems: "center",
-}
+};
 
 const baseMultiValueRemoveStyles: CSSObject = {
-  transition: '.2s background ease-in-out',
+  transition: ".2s background ease-in-out",
 
   "&:hover": {
-    transition: '.2s background ease-in-out',
+    transition: ".2s background ease-in-out",
     background: PLATINUM,
   }
-}
+};
 
 const baseInputStyles: CSSObject = {
   fontWeight: 400,
@@ -140,10 +148,10 @@ const OptionColorsRecord: Record<SelectTypes, CSSObject> = {
   "single": { ...baseOptionStyles },
   "multi": {
     ...baseOptionStyles,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
@@ -156,10 +164,10 @@ const SingleValueRecord: Record<SelectTypes, CSSObject> = {
   "single": { ...baseSingleValueStyles },
   "multi": {
     ...baseSingleValueStyles,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
@@ -167,10 +175,10 @@ const PlaceholderColorsRecord: Record<SelectTypes, CSSObject> = {
   "single": { ...basePlaceholderStyles },
   "multi": {
     ...basePlaceholderStyles,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
@@ -198,16 +206,16 @@ const InputColorsRecord: Record<SelectTypes, CSSObject> = {
   "single": { ...baseInputStyles },
   "multi": {
     ...baseInputStyles,
-    fontFamily: 'Menlo',
+    fontFamily: "Menlo",
     fontWeight: 400,
     fontSize: 12,
-    letterSpacing: '-0.02em',
+    letterSpacing: "-0.02em",
   },
 };
 
 const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
   {
-    types,
+    types = [],
     options,
     closeMenuOnSelect,
     hideSelectedOptions,
@@ -218,8 +226,12 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
     icon,
     label,
     labelPosition = "left",
-    labelColor,
-    width = "fit-content",
+    labelColor = "primary",
+    labelSize = "default",
+    subtitle,
+    subtitleColor = "primary",
+    subtitleSize = "default",
+    width = "350px",
   }
 ): JSX.Element => {
   const getSelectType = (types: SelectOptions[]): SelectTypes => {
@@ -227,14 +239,14 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
       return "multi";
     }
     return "single";
-  }
+  };
 
   const customStyles: StylesConfig<Option, true> = {
     control: (provided, { isFocused, selectProps }) => ({
       ...provided,
       ...ControlColorsRecord[getSelectType(types)],
       border: isFocused ? `1px solid ${PLUMP_PURPLE}` : `1px solid ${LIGHT_GREY}`,
-      borderRadius: selectProps.menuIsOpen ? '8px 8px 0 0' : 8,
+      borderRadius: selectProps.menuIsOpen ? "8px 8px 0 0" : 8,
       opacity: selectProps.isDisabled ? .3 : 1,
       pointerEvents: selectProps.isDisabled ? "none" : "auto",
     }),
@@ -242,6 +254,10 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
       ...provided,
       ...OptionColorsRecord[getSelectType(types)],
       color: isSelected ? ROYAL_PURPLE : EBONY,
+    }),
+    container: (provided) => ({
+      ...provided,
+      width: "100%",
     }),
     valueContainer: (provided) => ({
       ...provided,
@@ -276,12 +292,12 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
       ...InputColorsRecord[getSelectType(types)]
     }),
     indicatorSeparator: () => ({ display: "none" }),
-  }
+  };
 
   const getComponents = (icon: ReactNode | undefined) => {
     if (icon) return { DropdownIndicator, Control, MultiValueRemove };
     return { DropdownIndicator, MultiValueRemove };
-  }
+  };
 
   return (
     <WithLabelWrapper
@@ -289,7 +305,24 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
       withLabel={!!label}
       width={width}
     >
-      {label && <Label color={labelColor}>{label}</Label>}
+      <Column gap={5}>
+        {label && (
+          <Label
+            color={labelColor}
+            size={labelSize}
+          >
+            {label}
+          </Label>
+        )}
+        {subtitle && (
+          <Label
+            color={subtitleColor}
+            size={subtitleSize}
+          >
+            {subtitle}
+          </Label>
+        )}
+      </Column>
       <Select
         // @ts-ignore
         icon={icon}
@@ -302,7 +335,8 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
         options={options}
         styles={customStyles}
         components={getComponents(icon)}
-        onInputChange={onChange}
+        // @ts-ignore
+        onChange={onChange}
         defaultValue={defaultValue}
       />
     </WithLabelWrapper>

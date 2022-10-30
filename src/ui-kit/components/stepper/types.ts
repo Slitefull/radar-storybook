@@ -1,3 +1,7 @@
+export interface SStepperProps {
+  width: string;
+}
+
 export interface SIndicatorProps {
   isClickable: boolean;
 }

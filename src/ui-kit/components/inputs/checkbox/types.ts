@@ -1,3 +1,6 @@
-export interface CheckboxLabelProps {
-  isDisabled?: boolean;
+import { LabelPositions } from "../../label/types";
+
+
+export interface CWrapperProps {
+  labelPosition: LabelPositions;
 }

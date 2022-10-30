@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
-export const SFavoriteRating = styled.div` && {
-  ${({ theme }) => css`${theme.components.favoriteRating.SFavoriteRating}`}
-}`;
+export const SFavoriteRating = styled.div`
+  ${({ theme }) => theme.components.ratings.favorite.SFavoriteRating}
+`;

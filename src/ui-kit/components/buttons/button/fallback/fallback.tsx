@@ -32,7 +32,7 @@ const ButtonFallback: FC<ButtonFallbackProps> = memo((
       foregroundColor={animate ? (foregroundColor || "#c6c3c3") : undefined}
     >
       <rect
-        x='0'
+        x="0"
         y="0"
         rx="4"
         ry="4"

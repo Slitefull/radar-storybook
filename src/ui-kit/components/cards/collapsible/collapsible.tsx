@@ -10,14 +10,16 @@ interface MonitorChangesCardProps {
   open?: boolean;
   title: string | ReactNode;
   subTitle?: string | ReactNode;
+  controlIcon?: ReactNode;
   children: ReactNode;
 }
 
 const Collapsible: FC<MonitorChangesCardProps> = memo((
   {
-    open,
+    open = false,
     title,
     subTitle,
+    controlIcon,
     children,
   }
 ): JSX.Element => {
@@ -55,18 +57,21 @@ const Collapsible: FC<MonitorChangesCardProps> = memo((
           align={"baseline"}
           gap={10}
         >
-          <ArrowIcon
+          {controlIcon || <ArrowIcon
             size={14}
             color={PLUMP_PURPLE}
             rotation={isOpen ? "top" : "bottom"}
-          />
+          />}
           <Column gap={5}>
             <CTitle>{title}</CTitle>
             <CSubtitle>{subTitle}</CSubtitle>
           </Column>
         </Row>
       </CHeader>
-      <Content style={{ height }}>
+      <Content
+        style={{ height }}
+        isOpen={isOpen}
+      >
         <ResizeContainer ref={ref}>
           <ContentContainer>
             {children}

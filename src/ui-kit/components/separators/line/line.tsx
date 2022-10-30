@@ -14,8 +14,8 @@ interface LineSeparatorProps {
 const LineSeparator: FC<LineSeparatorProps> = memo((
   {
     color = PLATINUM,
-    height = '1px',
-    width = '100%',
+    height = "1px",
+    width = "100%",
     radius = 0,
   }
 ): JSX.Element => {
@@ -27,6 +27,6 @@ const LineSeparator: FC<LineSeparatorProps> = memo((
       radius={radius}
     />
   );
-})
+});
 
 export default LineSeparator;

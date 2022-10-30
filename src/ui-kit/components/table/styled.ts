@@ -1,39 +1,38 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
 
 
-export const STable = styled.table` && {
-  ${({ theme }) => css`${theme.components.table.STable}`}
-}`;
+export const STable = styled.table`
+  ${({ theme }) => theme.components.generals.table.STable}
+`;
 
-export const DropdownWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.DropdownWrapper}`}
-}`
+export const DropdownWrapper = styled.div`
+  ${({ theme }) => theme.components.generals.table.DropdownWrapper}
+`;
 
-export const THeader = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.THeader}`}
-}`;
+export const THeader = styled.div`
+  ${({ theme }) => theme.components.generals.table.THeader}
+`;
 
-export const TBody = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.TBody}`}
-}`;
+export const TBody = styled.div`
+  ${({ theme }) => theme.components.generals.table.TBody}
+`;
 
-export const TFooter = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.TFooter}`}
-}`;
+export const TFooter = styled.div`
+  ${({ theme }) => theme.components.generals.table.TFooter}
+`;
 
-export const THeaderRow = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.THeaderRow}`}
-}`;
+export const THeaderRow = styled.div`
+  ${({ theme }) => theme.components.generals.table.THeaderRow}
+`;
 
-export const THeaderElement = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.THeaderElement}`}
-}`;
+export const THeaderElement = styled.div`
+  ${({ theme }) => theme.components.generals.table.THeaderElement}
+`;
 
-export const TRow = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.TRow}`}
-}`;
+export const TRow = styled.div`
+  ${({ theme }) => theme.components.generals.table.TRow}
+`;
 
-export const TCell = styled.div` && {
-  ${({ theme }) => css`${theme.components.table.TCell}`}
-}`;
+export const TCell = styled.div`
+  ${({ theme }) => theme.components.generals.table.TCell}
+`;

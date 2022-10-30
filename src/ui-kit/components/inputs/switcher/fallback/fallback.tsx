@@ -1,8 +1,8 @@
 import { FC, memo } from "react"
 import ContentLoader from "react-content-loader";
 
+import { LabelPositions } from "@/ui-kit/components/label/types";
 
-type LabelPositions = "left" | "right";
 
 interface DropdownFallbackProps {
   animate?: boolean;
@@ -16,11 +16,15 @@ interface DropdownFallbackProps {
 const LabelXRecord: Record<LabelPositions, number> = {
   "left": 0,
   "right": 50,
+  "top": 0,
+  "bottom": 0,
 };
 
 const SwitcherXRecord: Record<LabelPositions, number> = {
   "left": 70,
   "right": 0,
+  "top": 70,
+  "bottom": 70,
 };
 
 const SwitcherFallback: FC<DropdownFallbackProps> = memo((

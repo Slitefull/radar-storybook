@@ -10,7 +10,7 @@ interface FormsTextInputProps
   control?: any;
 }
 
-export const FormsTextInput: FC<FormsTextInputProps> = (
+const FormsTextInput: FC<FormsTextInputProps> = (
   {
     name,
     error,
@@ -31,4 +31,6 @@ export const FormsTextInput: FC<FormsTextInputProps> = (
       )}
     />
   );
-}
+};
+
+export default FormsTextInput;

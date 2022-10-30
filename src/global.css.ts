@@ -4,15 +4,20 @@ import { DARK_GREY, DARK_LAVA, SNOW } from "@/ui-kit/constants/colors";
 
 interface RowProps {
   gap?: number;
-  align?: "center" | "baseline";
+  align?: "center" | "baseline" | "end";
+  justify?: "flex-start" | "space-between" | "center";
+  width?: string;
+  margin?: string;
+  padding?: string;
 }
 
 interface ColumnProps {
   gap?: number;
-  align?: "center" | "baseline";
+  align?: "center" | "baseline" | "end";
   justify?: "flex-start" | "space-between" | "center";
   width?: string;
   margin?: string;
+  padding?: string;
 }
 
 export default createGlobalStyle<{ theme: DefaultTheme }>` && {
@@ -65,13 +70,18 @@ export const BodyWrapper = styled.div` && {
 export const Row = styled.div<RowProps>` && {
   display: flex;
   flex-direction: row;
+  padding: ${({ padding = 0 }) => padding};
+  margin: ${({ margin = "0px" }) => margin};
+  width: ${({ width = "auto" }) => width};
   align-items: ${({ align = "baseline" }) => align};
+  justify-content: ${({ justify = "flex-start" }) => justify};
   gap: 0 ${({ gap = 40 }) => gap}px;
 }`
 
 export const Column = styled.div<ColumnProps>` && {
   display: flex;
   flex-direction: column;
+  padding: ${({ padding = 0 }) => padding};
   margin: ${({ margin = "inherit" }) => margin};
   width: ${({ width = "auto" }) => width};
   align-items: ${({ align = "baseline" }) => align};

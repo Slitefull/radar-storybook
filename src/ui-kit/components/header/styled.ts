@@ -1,23 +1,22 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
 
 
-export const LeftSide = styled.div` && {
-  ${({ theme }) => css`${theme.components.header.LeftSide}`}
-}`;
+export const LeftSide = styled.div`
+  ${({ theme }) => theme.components.generals.header.LeftSide}
+`;
 
-export const RightSide = styled.div` && {
-  ${({ theme }) => css`${theme.components.header.RightSide}`}
-}`;
+export const RightSide = styled.div`
+  ${({ theme }) => theme.components.generals.header.RightSide}
+`;
 
-export const HeaderWrapper = styled.header` && {
-  ${({ theme }) => css`${theme.components.header.HeaderWrapper}`}
-}`;
+export const HeaderWrapper = styled.header`
+  ${({ theme }) => theme.components.generals.header.HeaderWrapper}
+`;
 
-export const HeaderTitle = styled.span` && {
-  ${({ theme }) => css`${theme.components.header.HeaderTitle}`}
-}`;
+export const HeaderTitle = styled.span`
+  ${({ theme }) => theme.components.generals.header.HeaderTitle}
+`;
 
-export const Username = styled.span` && {
-  ${({ theme }) => css`${theme.components.header.Username}`}
-}`;
+export const Username = styled.span`
+  ${({ theme }) => theme.components.generals.header.Username}
+`;

@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 import SliderText from "@/ui-kit/components/sliders/text";
 
 import { SliderElement } from "../../styled";

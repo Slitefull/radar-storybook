@@ -1,5 +1,5 @@
-import { FC, memo } from 'react';
-import ContentLoader from 'react-content-loader';
+import { FC, memo } from "react";
+import ContentLoader from "react-content-loader";
 
 
 interface TableFallbackProps {

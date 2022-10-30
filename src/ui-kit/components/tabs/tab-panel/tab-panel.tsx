@@ -1,6 +1,6 @@
-import { FC, memo, ReactNode } from 'react';
+import { FC, memo, ReactNode } from "react";
 
-import { STabPanel } from './styled';
+import { STabPanel } from "./styled";
 
 
 interface TabPanelProps {

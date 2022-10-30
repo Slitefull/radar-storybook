@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import MonitorChangesCard from "../monitor-changes";
 
 
 export default {
-  title: 'cards/Monitor Changes',
+  title: "cards/Monitor Changes",
   component: MonitorChangesCard,
 } as ComponentMeta<typeof MonitorChangesCard>;
 
@@ -21,18 +21,18 @@ Default.args = {
 
 Default.argTypes = {
   name: {
-    name: 'name',
+    name: "name",
     table: {
-      type: { summary: 'Card name' },
+      type: { summary: "Card name" },
       defaultValue: {
-        summary: 'yahoo',
+        summary: "yahoo",
       },
     },
   },
   total: {
-    name: 'total',
+    name: "total",
     table: {
-      type: { summary: 'Total count with percentage' },
+      type: { summary: "Total count with percentage" },
       defaultValue: {
         summary: `{
           count: 10,
@@ -47,7 +47,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Card for page "Monitor changes" with charts',
+      component: "Card for page 'Monitor changes' with charts",
     },
   },
   design: {

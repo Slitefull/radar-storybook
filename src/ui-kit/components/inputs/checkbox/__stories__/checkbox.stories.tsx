@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Checkbox from "../checkbox";
 
 
 export default {
-  title: 'inputs/Checkbox',
+  title: "inputs/Checkbox",
   component: Checkbox,
 } as ComponentMeta<typeof Checkbox>;
 
@@ -11,48 +11,79 @@ const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} 
 
 export const Default = Template.bind({});
 
+//TODO UPDATE
 Default.args = {
-  isChecked: false,
-  label: "Label",
+  checked: false,
   name: "name",
-  isDisabled: false,
+  disabled: false,
+  label: "Label",
+  labelPosition: "left",
+  labelColor: "primary",
+  subtitle: "Subtitle",
+  subtitleColor: "ghost",
+  subtitleSize: "default",
+  onChange: () => console.log("change")
 };
 
 Default.argTypes = {
-  isChecked: {
-    name: 'isChecked',
+  checked: {
+    name: "checked",
     table: {
-      type: { summary: 'Set is checkbox checked' },
+      type: { summary: "Set is checkbox checked" },
       defaultValue: {
         summary: false,
       },
     },
   },
   label: {
-    name: 'label',
+    name: "label",
     table: {
-      type: { summary: 'Checkbox label' },
+      type: { summary: "Checkbox label" },
       defaultValue: {
-        summary: 'Label',
+        summary: "Label",
       },
+    },
+  },
+  labelPosition: {
+    name: "labelPosition",
+    options: ["top", "right", "bottom", "left"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Position of the label" },
+      defaultValue: { summary: "left" },
+    },
+  },
+  labelColor: {
+    name: "labelColor",
+    options: ["primary", "ghost", "subtly"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Color of the label" },
+      defaultValue: { summary: "primary" },
     },
   },
   name: {
-    name: 'name',
+    name: "name",
     table: {
-      type: { summary: 'Checkbox name' },
+      type: { summary: "Checkbox name" },
       defaultValue: {
-        summary: 'name',
+        summary: "name",
       },
     },
   },
-  isDisabled: {
-    name: 'isDisabled',
+  disabled: {
+    name: "disabled",
     table: {
-      type: { summary: 'Set is checkbox disabled' },
+      type: { summary: "Set is checkbox disabled" },
       defaultValue: {
         summary: false,
       },
+    },
+  },
+  onChange: {
+    name: "onChange",
+    table: {
+      type: { summary: "On change checkbox event" },
     },
   },
 };
@@ -60,7 +91,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Tabs with any children',
+      component: "Default checkbox",
     },
   },
   design: {

@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import RangeDatepicker from "@/ui-kit/components/datepickers/range/range";
 
 
 export default {
-  title: 'datepicker/Range',
+  title: "datepicker/Range",
   component: RangeDatepicker,
 } as ComponentMeta<typeof RangeDatepicker>;
 
@@ -17,27 +17,27 @@ Default.args = {
 
 Default.argTypes = {
   numberOfMonths: {
-    name: 'numberOfMonths',
+    name: "numberOfMonths",
     table: {
-      type: { summary: 'Set calendars count' },
+      type: { summary: "Set calendars count" },
       defaultValue: {
         summary: 3,
       },
     },
   },
   showOutsideDays: {
-    name: 'showOutsideDays',
+    name: "showOutsideDays",
     table: {
-      type: { summary: 'Set is show outside days' },
+      type: { summary: "Set is show outside days" },
       defaultValue: {
         summary: true,
       },
     },
   },
   onSubmit: {
-    name: 'onSubmit',
+    name: "onSubmit",
     table: {
-      type: { summary: 'Submit handler' },
+      type: { summary: "Submit handler" },
       defaultValue: {
         summary: (date: Date) => console.log(date),
       },
@@ -48,7 +48,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Range datepicker with bullets and custom count of calendars',
+      component: "Range datepicker with bullets and custom count of calendars",
     },
   },
   design: {

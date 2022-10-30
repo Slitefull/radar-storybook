@@ -1,10 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import ColoredText from "../colored";
 import { DARK_LAVA } from "@/ui-kit/constants/colors";
 
 
 export default {
-  title: 'text/Colored',
+  title: "text/Colored",
   component: ColoredText,
 } as ComponentMeta<typeof ColoredText>;
 
@@ -17,9 +17,9 @@ Default.args = {
 
 Default.argTypes = {
   color: {
-    name: 'color',
+    name: "color",
     table: {
-      type: { summary: 'Text color' },
+      type: { summary: "Text color" },
       defaultValue: { summary: `${DARK_LAVA}` },
     },
   },
@@ -28,7 +28,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Custom colored text',
+      component: "Custom colored text",
     },
   },
   design: {

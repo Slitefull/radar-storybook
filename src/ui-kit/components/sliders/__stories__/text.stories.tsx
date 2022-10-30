@@ -1,10 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import SliderText from "@/ui-kit/components/sliders/text";
 import "swiper/css";
 
 
 export default {
-  title: 'sliders/Text',
+  title: "sliders/Text",
   component: SliderText,
 } as ComponentMeta<typeof SliderText>;
 
@@ -26,9 +26,9 @@ Default.args = {
 
 Default.argTypes = {
   elements: {
-    name: 'elements',
+    name: "elements",
     table: {
-      type: { summary: 'Elements of the slider' },
+      type: { summary: "Elements of the slider" },
     },
   },
 };
@@ -36,7 +36,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Slider with text or ReactNode',
+      component: "Slider with text or ReactNode",
     },
   },
   design: {

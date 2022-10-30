@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC, useRef } from "react";
 import { DayProps, useDayRender } from "react-day-picker";
 
 import { DayButton } from "../../styled";

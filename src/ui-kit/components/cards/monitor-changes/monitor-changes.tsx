@@ -1,7 +1,7 @@
 import { FC, memo, useMemo, } from "react";
-import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import faker from 'faker';
+import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, } from "chart.js";
+import { Bar } from "react-chartjs-2";
+import faker from "faker";
 import { mockChartsInfo } from "./__mock__/data";
 import WithBackgroundText from "@/ui-kit/components/text/with-background/with-background";
 
@@ -32,7 +32,7 @@ import {
 
 
 type Total = { count: number; percentage: number; isPositive: boolean };
-type Label = 'RED' | 'CRI' | 'HIG' | "MED";
+type Label = "RED" | "CRI" | "HIG" | "MED";
 
 interface MonitorChangesCardProps {
   name: string;
@@ -51,7 +51,7 @@ const BAR_WIDTH = 110;
 
 const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): JSX.Element => {
   const options = {
-    indexAxis: 'y' as const,
+    indexAxis: "y" as const,
     responsive: true,
     categoryPercentage: 0.5,
     barPercentage: 0.5,
@@ -73,7 +73,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
         grid: {
           display: true,
           drawTicks: false,
-          color: 'transparent',
+          color: "transparent",
         },
         ticks: {
           display: false,
@@ -83,7 +83,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
   };
 
   const labels: Label[] = useMemo(
-    () => ['RED', 'CRI', 'HIG', "MED"],
+    () => ["RED", "CRI", "HIG", "MED"],
     []
   );
 
@@ -125,7 +125,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
                 {element.countBullet.count}
               </WithBackgroundText>
               <Percentage isPositive={element.percentage.isPositive}>
-                {element.percentage.isPositive ? '+' : '-'}{element.percentage.count}%
+                {element.percentage.isPositive ? "+" : "-"}{element.percentage.count}%
               </Percentage>
             </ChartInfo>
           ))}
@@ -137,7 +137,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
         <TotalText>
           total: <TotalNumbers>{total.count} </TotalNumbers>
           <Percentage isPositive={total.isPositive}>
-            {total.isPositive ? '+' : '-'}{total.percentage}%
+            {total.isPositive ? "+" : "-"}{total.percentage}%
           </Percentage>
         </TotalText>
         <Bar

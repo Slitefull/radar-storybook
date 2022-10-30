@@ -10,6 +10,6 @@ const HotRating: FC = memo((): JSX.Element => {
       <FireIcon size={13}/>
     </SHotRating>
   );
-})
+});
 
 export default HotRating;

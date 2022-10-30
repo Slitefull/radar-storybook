@@ -1,11 +1,11 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { withRouter } from "storybook-addon-react-router-v6";
 import Sidebar from "../sidebar";
 import { withRecoilFlow } from "storybook-addon-recoil-flow/dist/decorator";
 
 
 export default {
-  title: 'general/Sidebar',
+  title: "general/Sidebar",
   component: Sidebar,
 } as ComponentMeta<typeof Sidebar>;
 
@@ -19,7 +19,7 @@ Default.decorators = [withRouter, withRecoilFlow];
 Default.parameters = {
   docs: {
     description: {
-      component: 'Sidebar with routing and recoil logic',
+      component: "Sidebar with routing and recoil logic",
     },
   },
   design: {

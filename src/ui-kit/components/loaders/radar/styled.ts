@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 
-export const SRadarLoader = styled.div` && {
-  ${({ theme }) => css`${theme.components.radarLoader.SRadarLoader}`}
-}`;
+export const SRadarLoader = styled.div`
+  ${({ theme }) => theme.components.loaders.radar.SRadarLoader}
+`;
 
-export const LogoWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.radarLoader.LogoWrapper}`}
-}`;
+export const LogoWrapper = styled.div`
+  ${({ theme }) => theme.components.loaders.radar.LogoWrapper}
+`;
 
-export const LoaderText = styled.p` && {
-  ${({ theme }) => css`${theme.components.radarLoader.LoaderText}`}
-}`;
+export const LoaderText = styled.p`
+  ${({ theme }) => theme.components.loaders.radar.LoaderText}
+`;

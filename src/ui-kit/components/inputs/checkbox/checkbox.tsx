@@ -1,38 +1,70 @@
 import { FC, memo } from "react";
+import Label from "@/ui-kit/components/label/label";
 
-import { CheckboxLabel, Indicator, LabelText, SCheckbox } from "./styled";
+import { LabelColors, LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
+import { CWrapper, SCheckbox } from "./styled";
+import { Column } from "@/global.css";
 
 
 interface CheckboxProps {
-  isChecked: boolean;
-  onChange?: () => void;
+  checked: boolean;
+  onChange?: VoidFunction;
   name?: string;
+  disabled?: boolean;
   label?: string;
-  isDisabled?: boolean;
+  labelPosition?: LabelPositions;
+  labelColor?: LabelColors;
+  labelSize?: LabelSizes;
+  subtitleColor?: LabelColors;
+  subtitleSize?: LabelSizes;
+  subtitle?: string;
 }
 
 const Checkbox: FC<CheckboxProps> = memo((
   {
-    isChecked,
+    checked,
     onChange,
     name,
+    disabled,
     label,
-    isDisabled
+    labelColor,
+    labelPosition = "left",
+    labelSize = "default",
+    subtitleColor = "secondary",
+    subtitleSize = "default",
+    subtitle,
   }
 ): JSX.Element => {
   return (
-    <CheckboxLabel isDisabled={isDisabled}>
-      {label && <LabelText>{label}</LabelText>}
+    <CWrapper labelPosition={labelPosition}>
+      <Column gap={10}>
+        {label && (
+          <Label
+            color={labelColor}
+            size={labelSize}
+          >
+            {label}
+          </Label>
+        )}
+        {subtitle && (
+          <Label
+            color={subtitleColor}
+            size={subtitleSize}
+            wrap={true}
+          >
+            {subtitle}
+          </Label>
+        )}
+      </Column>
       <SCheckbox
         type="checkbox"
         name={name}
-        disabled={isDisabled}
-        checked={isChecked}
+        disabled={disabled}
+        checked={checked}
         onChange={onChange}
       />
-      <Indicator/>
-    </CheckboxLabel>
+    </CWrapper>
   );
-})
+});
 
 export default Checkbox;

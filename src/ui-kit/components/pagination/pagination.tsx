@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo } from "react";
 import { DOTS, usePagination } from "@/ui-kit/hooks/usePagination";
 import ArrowIcon from "@/ui-kit/customized-icons/arrow/arrow";
 import { RAISIN_BLACK } from "@/ui-kit/constants/colors";

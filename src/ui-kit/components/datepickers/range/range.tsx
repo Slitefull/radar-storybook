@@ -2,7 +2,7 @@ import { FC, Fragment, memo, useCallback, useEffect, useMemo, useState } from "r
 import { useTranslation } from "react-i18next";
 import { CSSObject } from "styled-components";
 import { format, isAfter, isBefore, isValid } from "date-fns";
-import { DateFormatter, DateRange, DayPicker, InternalModifier, SelectRangeEventHandler } from 'react-day-picker';
+import { DateFormatter, DateRange, DayPicker, InternalModifier, SelectRangeEventHandler } from "react-day-picker";
 import { getLastDaysDate } from "@/ui-kit/helpers/getLastDaysDate";
 import { LAVENDER_WEB, PLUMP_PURPLE, RAISIN_BLACK, WHITE } from "@/ui-kit/constants/colors";
 import { getDaysCount } from "@/ui-kit/helpers/getDaysCount";
@@ -17,9 +17,9 @@ import IconLeft from "./components/icon-left/icon-left";
 import IconRight from "./components/icon-right/icon-right";
 import CaptionLabel from "./components/caption-label/caption-label";
 
-import 'react-day-picker/dist/style.css';
-import { CalendarBullet, DatepickerWrapper, SelectedDaysCount, SelectedDaysText, Separator, Weekday } from "./styled";
+import "react-day-picker/dist/style.css";
 import { Column, Row } from "@/global.css";
+import { CalendarBullet, DatepickerWrapper, SelectedDaysCount, SelectedDaysText, Separator, Weekday } from "./styled";
 
 
 interface RangeDatepickerProps {
@@ -49,13 +49,13 @@ const outsideDayStyle: CSSObject = {
 const rangeStartStyle: CSSObject = {
   background: PLUMP_PURPLE,
   color: WHITE,
-  borderRadius: '50% 0 0 50%',
+  borderRadius: "50% 0 0 50%",
 };
 
 const rangeEndStyle: CSSObject = {
   background: PLUMP_PURPLE,
   color: WHITE,
-  borderRadius: '0 50% 50% 0',
+  borderRadius: "0 50% 50% 0",
 };
 
 const rangeMiddleStyle: CSSObject = {
@@ -64,8 +64,8 @@ const rangeMiddleStyle: CSSObject = {
 };
 
 const tableStyles: CSSObject = {
-  borderCollapse: 'inherit',
-  borderSpacing: '0 5px',
+  borderCollapse: "inherit",
+  borderSpacing: "0 5px",
 };
 
 const headCellStyles: CSSObject = {
@@ -108,7 +108,7 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
   const formatWeekdayName: DateFormatter = (date, options) => {
     return (
       <Weekday>
-        {format(date, 'iii', { locale: options?.locale })}
+        {format(date, "iii", { locale: options?.locale })}
       </Weekday>
     );
   };
@@ -225,14 +225,14 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
               type={"date"}
               onChange={(event) => onChangeFromDateHandler(new Date(event.target.value))}
               icon={<CalendarIcon/>}
-              value={selected?.from ? getFormatDate(selected?.from) : ''}
+              value={selected?.from ? getFormatDate(selected?.from) : ""}
               placeholder={t("choose_the_date")}
             />
             <Input
               type={"date"}
               onChange={(event) => onChangeToDateHandler(new Date(event.target.value))}
               icon={<CalendarIcon/>}
-              value={selected?.to ? getFormatDate(selected?.to) : ''}
+              value={selected?.to ? getFormatDate(selected?.to) : ""}
               placeholder={t("choose_the_date")}
             />
           </Row>

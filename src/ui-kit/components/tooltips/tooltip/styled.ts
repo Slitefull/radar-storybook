@@ -1,15 +1,14 @@
 import styled from "styled-components";
-import { css } from "styled-components/macro";
 
 
-export const IconWrapper = styled.div` && {
-  ${({ theme }) => css`${theme.components.tooltip.IconWrapper}`}
-}`
+export const IconWrapper = styled.div`
+  ${({ theme }) => theme.components.generals.tooltip.IconWrapper}
+`;
 
-export const TBox = styled.div` && {
-  ${({ theme }) => css`${theme.components.tooltip.TBox}`}
-}`
+export const TBox = styled.div`
+  ${({ theme }) => theme.components.generals.tooltip.TBox}
+`;
 
-export const TCard = styled.div` && {
-  ${({ theme }) => css`${theme.components.tooltip.TCard}`}
-}`
+export const TCard = styled.div`
+  ${({ theme }) => theme.components.generals.tooltip.TCard}
+`;

@@ -19,6 +19,6 @@ const RadarLoader: FC = memo((): JSX.Element => {
       </LoaderText>
     </SRadarLoader>
   )
-})
+});
 
 export default RadarLoader;

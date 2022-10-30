@@ -1,9 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Hot from "../hot";
 
 
 export default {
-  title: 'ratings/Hot',
+  title: "ratings/Hot",
   component: Hot,
 } as ComponentMeta<typeof Hot>;
 
@@ -14,11 +14,11 @@ export const Default = Template.bind({});
 Default.parameters = {
   docs: {
     description: {
-      component: 'Tabs with any children',
+      component: "Rating 'hot'",
     },
   },
   design: {
     type: "figma",
-    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=482%3A475",
+    url: "https://www.figma.com/file/Mh82FuIXtyc3kicOff4J5V/SEORadar-Design-System?node-id=1448%3A4036",
   },
 }

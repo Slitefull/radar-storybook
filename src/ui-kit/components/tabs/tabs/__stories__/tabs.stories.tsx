@@ -1,20 +1,17 @@
 import { BaseSyntheticEvent, Fragment, useCallback, useState } from "react";
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Tabs from "@/ui-kit/components/tabs/tabs/tabs";
 import styled from "styled-components/macro";
 import TabPanel from "../../tab-panel/tab-panel";
 import Tab from "../../tab/tab";
 
+import { Column } from "@/global.css";
+
 
 export default {
-  title: 'ui-kit/Tabs',
+  title: "ui-kit/Tabs",
   component: Tabs,
 } as ComponentMeta<typeof Tabs>;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 
 const TabsContainer = styled.div`
   display: flex;
@@ -30,7 +27,7 @@ const Template: ComponentStory<typeof Tabs> = () => {
   );
 
   return (
-    <Wrapper>
+    <Column>
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>
           <Tab label="Tab 1" value={0}/>
@@ -53,7 +50,7 @@ const Template: ComponentStory<typeof Tabs> = () => {
           <h1>Tab 4</h1>
         </TabPanel>
       </Fragment>
-    </Wrapper>
+    </Column>
   )
 };
 
@@ -64,9 +61,9 @@ Default.args = {
 
 Default.argTypes = {
   selectedTab: {
-    name: 'selectedTab',
+    name: "selectedTab",
     table: {
-      type: { summary: 'Selected tab' },
+      type: { summary: "Selected tab" },
       defaultValue: {
         summary: 1,
       },
@@ -77,7 +74,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Tabs with any children',
+      component: "Tabs with any children",
     },
   },
   design: {

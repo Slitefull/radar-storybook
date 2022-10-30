@@ -1,8 +1,8 @@
 import { FC, memo } from "react"
 import ContentLoader from "react-content-loader";
 
+import { LabelPositions } from "@/ui-kit/components/label/types";
 
-type LabelPositions = "left" | "right";
 
 interface DropdownFallbackProps {
   animate?: boolean;
@@ -16,11 +16,15 @@ interface DropdownFallbackProps {
 const LabelXRecord: Record<LabelPositions, number> = {
   "left": 25,
   "right": 0,
+  "top": 25,
+  "bottom": 25,
 };
 
 const CheckboxXRecord: Record<LabelPositions, number> = {
   "left": 0,
   "right": 65,
+  "top": 0,
+  "bottom": 0,
 };
 
 const CheckboxFallback: FC<DropdownFallbackProps> = memo((
@@ -62,6 +66,6 @@ const CheckboxFallback: FC<DropdownFallbackProps> = memo((
       )}
     </ContentLoader>
   )
-})
+});
 
 export default CheckboxFallback;

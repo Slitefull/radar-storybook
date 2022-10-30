@@ -1,7 +1,7 @@
-import { FC, ReactNode } from 'react';
-
-import { Container } from "./styled";
+import { FC, ReactNode } from "react";
 import Header from "@/ui-kit/components/header/header";
+
+import { SPContainer } from "./styled";
 
 
 interface PageContainerProps {
@@ -10,10 +10,10 @@ interface PageContainerProps {
 
 const PageContainer: FC<PageContainerProps> = ({ children }): JSX.Element => {
   return (
-    <Container>
+    <SPContainer>
       <Header/>
       {children}
-    </Container>
+    </SPContainer>
   );
 };
 

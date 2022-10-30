@@ -8,4 +8,4 @@ export const light: DefaultTheme = {
   name: Themes.light,
   breakpoints,
   components,
-}
+};

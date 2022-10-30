@@ -1,4 +1,4 @@
-import { FC, Fragment, memo, ReactNode, useCallback, useMemo, useState } from 'react';
+import { FC, Fragment, memo, ReactNode, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import Button from "@/ui-kit/components/buttons/button/button";
@@ -19,6 +19,7 @@ interface StepperProps {
   steps: Step[];
   onFinish: VoidFunction;
   isClickable?: boolean;
+  bodyWidth?: string;
 }
 
 const Stepper: FC<StepperProps> = memo((
@@ -26,6 +27,7 @@ const Stepper: FC<StepperProps> = memo((
     steps,
     onFinish,
     isClickable = false,
+    bodyWidth = "100%",
   }
 ): JSX.Element => {
   const { t } = useTranslation();
@@ -68,7 +70,7 @@ const Stepper: FC<StepperProps> = memo((
   );
 
   return (
-    <SStepper>
+    <SStepper width={bodyWidth}>
       <SIndicator isClickable={isClickable}>
         {stepIndicators}
       </SIndicator>

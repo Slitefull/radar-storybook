@@ -3,7 +3,7 @@ import HeaderFallback from "@/ui-kit/components/header/fallback/fallback";
 
 
 export default {
-  title: 'General/Header',
+  title: "General/Header",
   component: HeaderFallback,
 } as ComponentMeta<typeof HeaderFallback>;
 
@@ -15,7 +15,7 @@ Fallback.args = {};
 Fallback.parameters = {
   docs: {
     description: {
-      component: 'SVG-Powered component to easily create placeholder loadings (like Facebook\'s cards loading).',
+      component: "SVG-Powered component to easily create placeholder loadings (like Facebook\'s cards loading).",
     },
   },
   design: {

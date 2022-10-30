@@ -1,18 +1,10 @@
-import { FC, memo, useEffect } from 'react';
+import { FC, memo, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useRecoilState } from "recoil";
 import { notificationsState } from "@/entity/atoms/notifications";
 
 import { NotificationIconsByType, ToastPosition, ToastTypes } from "./types";
-import {
-  NotificationDescription,
-  NotificationImage,
-  NotificationImageContainer,
-  NotificationTextWrapper,
-  NotificationTitle,
-  SNotification,
-  ToastContainer
-} from './styled';
+import { NDescription, NImage, NImageContainer, NTextWrapper, NTitle, SNotification, ToastContainer } from "./styled";
 
 
 export interface Notification {
@@ -55,7 +47,7 @@ const Notifications: FC<NotificationsProps> = memo((
         return { top: 12, right: 12 }
       }
     }
-  }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -77,26 +69,26 @@ const Notifications: FC<NotificationsProps> = memo((
             key={i}
             type={toast.type || ToastTypes.Success}
           >
-            <NotificationImageContainer>
-              <NotificationImage
+            <NImageContainer>
+              <NImage
                 src={toast.icon || NotificationIconsByType[toast.type || ToastTypes.Success]}
                 alt="Toast"
               />
-            </NotificationImageContainer>
-            <NotificationTextWrapper>
-              <NotificationTitle>
+            </NImageContainer>
+            <NTextWrapper>
+              <NTitle>
                 {toast.title}
-              </NotificationTitle>
+              </NTitle>
               {toast.description && (
-                <NotificationDescription>
+                <NDescription>
                   {toast.description}
-                </NotificationDescription>
+                </NDescription>
               )}
-            </NotificationTextWrapper>
+            </NTextWrapper>
           </SNotification>
         )}
       </ToastContainer>,
-      document.getElementById("notifications") || document.createElement('div'))
+      document.getElementById("notifications") || document.createElement("div"))
   );
 });
 

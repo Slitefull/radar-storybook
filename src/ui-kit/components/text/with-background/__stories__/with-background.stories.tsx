@@ -1,11 +1,11 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import WithBackgroundText from "../with-background";
 import { TART_ORANGE, WHITE } from "@/ui-kit/constants/colors";
 import WithBackgroundTextFallback from "@/ui-kit/components/text/with-background/fallback/fallback";
 
 
 export default {
-  title: 'text/WithBackground',
+  title: "text/WithBackground",
   component: WithBackgroundText,
 } as ComponentMeta<typeof WithBackgroundText>;
 
@@ -15,22 +15,22 @@ const Template: ComponentStory<typeof WithBackgroundText> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  color: '#FFFFFF',
-  background: '#EF4E4E'
+  color: "#FFFFFF",
+  background: "#EF4E4E"
 };
 
 Default.argTypes = {
   color: {
-    name: 'color',
+    name: "color",
     table: {
-      type: { summary: 'Text color' },
+      type: { summary: "Text color" },
       defaultValue: { summary: `${WHITE}` },
     },
   },
   background: {
-    name: 'background',
+    name: "background",
     table: {
-      type: { summary: 'Text background' },
+      type: { summary: "Text background" },
       defaultValue: { summary: `${TART_ORANGE}` },
     },
   },
@@ -39,7 +39,7 @@ Default.argTypes = {
 Default.parameters = {
   docs: {
     description: {
-      component: 'Custom text with background',
+      component: "Custom text with background",
     },
   },
   design: {

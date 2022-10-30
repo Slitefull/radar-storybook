@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from "react";
 import ArrowIcon from "@/ui-kit/customized-icons/arrow/arrow";
 
 

@@ -27,6 +27,7 @@ const CloseIcon: FC<CloseIconProps> = memo((
     <div
       ref={hoverRef}
       onClick={onClick}
+      style={{ display: "flex" }}
     >
       <svg
         style={isHovered ? { ...style, opacity: '.7' } : style}
