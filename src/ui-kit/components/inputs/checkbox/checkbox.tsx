@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import Label from "@/ui-kit/components/label/label";
 
-import { LabelColors, LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
+import { LabelPositions, LabelSizes, LabelWeights } from "@/ui-kit/components/label/types";
 import { CWrapper, SCheckbox } from "./styled";
 import { Column } from "@/global.css";
 
@@ -13,10 +13,12 @@ interface CheckboxProps {
   disabled?: boolean;
   label?: string;
   labelPosition?: LabelPositions;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelSize?: LabelSizes;
-  subtitleColor?: LabelColors;
+  labelWeight?: LabelWeights;
+  subtitleColor?: Color;
   subtitleSize?: LabelSizes;
+  subtitleWeight?: LabelWeights;
   subtitle?: string;
 }
 
@@ -29,10 +31,12 @@ const Checkbox: FC<CheckboxProps> = memo((
     label,
     labelColor,
     labelPosition = "left",
-    labelSize = "default",
-    subtitleColor = "secondary",
-    subtitleSize = "default",
+    labelSize,
+    labelWeight,
     subtitle,
+    subtitleColor,
+    subtitleSize,
+    subtitleWeight,
   }
 ): JSX.Element => {
   return (
@@ -42,6 +46,7 @@ const Checkbox: FC<CheckboxProps> = memo((
           <Label
             color={labelColor}
             size={labelSize}
+            weight={labelWeight}
           >
             {label}
           </Label>
@@ -50,6 +55,7 @@ const Checkbox: FC<CheckboxProps> = memo((
           <Label
             color={subtitleColor}
             size={subtitleSize}
+            weight={subtitleWeight}
             wrap={true}
           >
             {subtitle}

@@ -2,7 +2,7 @@ import { FC, Fragment, memo, ReactNode } from "react";
 import Label from "@/ui-kit/components/label/label";
 import Tooltip from "@/ui-kit/components/tooltips/tooltip/tooltip";
 
-import { LabelColors, LabelSizes } from "../../label/types";
+import { LabelSizes } from "../../label/types";
 import { Row } from "@/global.css";
 import { SwitchButton, SwitchInput, SwitchLabel } from "./styled";
 
@@ -14,7 +14,7 @@ interface SwitcherProps {
   backgroundColor?: Color;
   pointColor?: Color;
   label?: string;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelSize?: LabelSizes;
   tooltip?: ReactNode;
 }
@@ -28,8 +28,8 @@ const Switcher: FC<SwitcherProps> = memo((
     pointColor,
     tooltip,
     label,
-    labelColor = "primary",
-    labelSize = "default",
+    labelColor,
+    labelSize,
   }
 ): JSX.Element => {
   return (

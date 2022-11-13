@@ -1,5 +1,6 @@
 import bullets from "./components/bullets";
 import buttons from "./components/buttons";
+import banners from "./components/banners";
 import cards from "./components/cards";
 import containers from "./components/containers";
 import controls from "./components/controls";
@@ -13,6 +14,7 @@ import separators from "./components/separators";
 import sliders from "./components/sliders";
 import tabs from "./components/tabs";
 import text from "./components/text";
+import layouts from "./components/layouts";
 
 import { Components } from "@/styled";
 
@@ -20,6 +22,7 @@ import { Components } from "@/styled";
 export const components: Components = {
   bullets,
   buttons,
+  banners,
   cards,
   containers,
   controls,
@@ -33,4 +36,5 @@ export const components: Components = {
   sliders,
   tabs,
   text,
+  layouts,
 };

@@ -10,6 +10,7 @@ import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light";
 import { withTypes } from "@/ui-kit/components/dropdowns/with-types/theme/light";
 import { day } from "@/ui-kit/components/inputs/day/theme/light";
 import { formCreator } from "@/ui-kit/components/form-creator/theme/light";
+import { dropzone } from "@/ui-kit/components/inputs/dropzone/theme/light";
 
 
 export default {
@@ -25,4 +26,5 @@ export default {
   withTypes,
   day,
   formCreator,
+  dropzone,
 };

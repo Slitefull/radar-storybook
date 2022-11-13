@@ -3,21 +3,25 @@ import { DARK_GREY, DARK_LAVA, SNOW } from "@/ui-kit/constants/colors";
 
 
 interface RowProps {
+  display?: "flex" | "block";
   gap?: number;
   align?: "center" | "baseline" | "end";
   justify?: "flex-start" | "space-between" | "center";
   width?: string;
   margin?: string;
   padding?: string;
+  cursor?: "pointer" | "default" | "not-allowed";
 }
 
 interface ColumnProps {
+  display?: "flex" | "block";
   gap?: number;
   align?: "center" | "baseline" | "end";
   justify?: "flex-start" | "space-between" | "center";
   width?: string;
   margin?: string;
   padding?: string;
+  cursor?: "pointer" | "default" | "not-allowed";
 }
 
 export default createGlobalStyle<{ theme: DefaultTheme }>` && {
@@ -34,10 +38,6 @@ export default createGlobalStyle<{ theme: DefaultTheme }>` && {
 
   body {
     font-family: 'FreightSans Pro', 'Menlo', sans-serif;
-  }
-
-  #root {
-    display: flex;
   }
 
   ::-webkit-scrollbar {
@@ -59,16 +59,8 @@ export default createGlobalStyle<{ theme: DefaultTheme }>` && {
   }
 }`
 
-export const BodyWrapper = styled.div` && {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow-y: auto;
-  padding: 0 0 0 80px;
-}`
-
 export const Row = styled.div<RowProps>` && {
-  display: flex;
+  display: ${({ display = "flex" }) => display};
   flex-direction: row;
   padding: ${({ padding = 0 }) => padding};
   margin: ${({ margin = "0px" }) => margin};
@@ -76,10 +68,11 @@ export const Row = styled.div<RowProps>` && {
   align-items: ${({ align = "baseline" }) => align};
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: 0 ${({ gap = 40 }) => gap}px;
+  cursor: ${({ cursor }) => cursor};
 }`
 
 export const Column = styled.div<ColumnProps>` && {
-  display: flex;
+  display: ${({ display = "flex" }) => display};
   flex-direction: column;
   padding: ${({ padding = 0 }) => padding};
   margin: ${({ margin = "inherit" }) => margin};
@@ -87,4 +80,5 @@ export const Column = styled.div<ColumnProps>` && {
   align-items: ${({ align = "baseline" }) => align};
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: ${({ gap = 15 }) => gap}px 0;
+  cursor: ${({ cursor }) => cursor};
 }`

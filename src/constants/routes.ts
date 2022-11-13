@@ -1,6 +1,13 @@
-export const ROOT_PAGE = "/";
+export const MONITOR_CHANGES_PAGE = "/";
 export const SIGN_IN_PAGE = "/onboarding/log_in";
 export const SIGN_UP_PAGE = "/onboarding/sign_up";
 export const RESET_PASSWORD_PAGE = "/onboarding/reset_password";
 export const CHANGE_PASSWORD_PAGE = "/onboarding/change_password";
 export const ADD_DOMAIN_PAGE = "/add-domain";
+export const MANAGE_PAGE = "/manage";
+export const MANAGE_DOMAIN_PAGE = "/manage/:id";
+export const COMPETITIONS_PAGE = "/competitions";
+export const SEO_AUDIT_PAGE = "/seo-audit";
+export const TOOLS_PAGE = "/tools";
+export const REPORTS_PAGE = "/reports";
+export const HELP_PAGE = "/help";

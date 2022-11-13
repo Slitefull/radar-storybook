@@ -6,9 +6,16 @@ import Meridian from "@/ui-kit/components/inputs/meridian/meridian";
 import RadioGroup from "@/ui-kit/components/inputs/radio-group/radio-group";
 
 import { Row } from '@/global.css';
+import CloseIcon from "@/ui-kit/customized-icons/close/close";
 
 
-const ScheduleBullet: FC = memo((): JSX.Element => {
+interface ScheduleBulletProps {
+  index: number;
+  onAdd: () => void;
+  onDelete: (index: number) => void;
+}
+
+const ScheduleBullet: FC<ScheduleBulletProps> = memo(({ index, onAdd, onDelete }): JSX.Element => {
   const [time, setTime] = useState<string>("12:00");
 
   return (
@@ -39,7 +46,8 @@ const ScheduleBullet: FC = memo((): JSX.Element => {
           onChange={() => console.log("qwe")}
         />
       </RadioGroup>
-      <PlusCircle size={24}/>
+      <PlusCircle size={24} onClick={onAdd}/>
+      <CloseIcon size={24} onClick={() => onDelete(index)}/>
     </Row>
   );
 });

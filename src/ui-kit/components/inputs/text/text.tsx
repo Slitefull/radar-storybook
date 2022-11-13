@@ -5,7 +5,7 @@ import useHover from "@/ui-kit/hooks/useHover";
 import Tooltip from "@/ui-kit/components/tooltips/tooltip/tooltip";
 import Label from "@/ui-kit/components/label/label";
 
-import { LabelColors, LabelPositions, LabelSizes } from "../../label/types";
+import { LabelPositions, LabelSizes, LabelWeights } from "../../label/types";
 import { Row } from "@/global.css";
 import { HelperText, SFormInput, TextInputWrapper, WithIconWrapper } from "./styled";
 
@@ -25,10 +25,11 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   iconPosition?: IconPosition;
   value?: string;
   label?: string;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelPosition?: LabelPositions;
   labelSize?: LabelSizes;
   labelWrap?: boolean;
+  labelWeight?: LabelWeights;
   tooltip?: ReactNode;
   inputSize?: Size;
   width?: string;
@@ -47,10 +48,11 @@ const Input: FC<TextInputProps> = memo((
     iconPosition = "left",
     value,
     label,
-    labelColor = "primary",
+    labelColor,
     labelPosition = "top",
-    labelSize = "default",
+    labelSize,
     labelWrap = false,
+    labelWeight,
     tooltip,
     inputSize = "default",
     width = "100%",
@@ -78,6 +80,7 @@ const Input: FC<TextInputProps> = memo((
             color={labelColor}
             size={labelSize}
             wrap={labelWrap}
+            weight={labelWeight}
           >
             {label}
           </Label>

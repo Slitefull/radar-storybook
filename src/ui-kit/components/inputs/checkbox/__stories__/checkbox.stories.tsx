@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Checkbox from "../checkbox";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -18,9 +19,9 @@ Default.args = {
   disabled: false,
   label: "Label",
   labelPosition: "left",
-  labelColor: "primary",
+  labelColor: PLUMP_PURPLE,
   subtitle: "Subtitle",
-  subtitleColor: "ghost",
+  subtitleColor: PLUMP_PURPLE,
   subtitleSize: "default",
   onChange: () => console.log("change")
 };

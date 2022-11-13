@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import { isLockedSliderSelector } from "@/entity/selectors/monitor-changes/slider";
-import { MISTY_ROSE } from '@/ui-kit/constants/colors';
+import { DARK_LAVA, MISTY_ROSE } from '@/ui-kit/constants/colors';
 import Switcher from "@/ui-kit/components/inputs/switcher/switcher";
 import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
 import SwiperPrevButton from "@/pages/monitor-changes/components/swiper-prev-button/swiper-prev-button";
@@ -29,7 +29,7 @@ const RedAlertsOnlySwitcher: FC = memo((): JSX.Element => {
       onChange={toggleRedAlertsOnly}
       backgroundColor={MISTY_ROSE}
       label={capitalizeFirstLetter(t("red_alerts_only"))}
-      labelColor={"subtly"}
+      labelColor={DARK_LAVA}
       tooltip={<>Tooltip text</>}
     />
   )
@@ -53,6 +53,7 @@ const LeftSide: FC = memo((): JSX.Element => {
       <Dropdown
         color={"ghost"}
         options={changesSinceElements}
+        labelWeight={"bold"}
         label={capitalizeFirstLetter(t("changes_since"))}
         onChange={onChangeSelect}
       />
@@ -81,7 +82,7 @@ const RightSide: FC = memo((): JSX.Element => {
         color={"ghost"}
         options={sortByElements}
         label={`${capitalizeFirstLetter(t("sort_by"))}:`}
-        labelColor={"subtly"}
+        labelColor={DARK_LAVA}
         onChange={onChangeSelect}
       />
       {!isLockedSlider && (

@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Input from "../text";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 import SearchIcon from "@/ui-kit/customized-icons/search/search";
+import Input from "../text";
 
 
 export default {
@@ -23,7 +24,7 @@ Default.args = {
   iconPosition: "left",
   value: "",
   label: "Label",
-  labelColor: "primary",
+  labelColor: PLUMP_PURPLE,
   labelPosition: "top",
   tooltip: <div>Tooltip text</div>,
   width: "fit-content",

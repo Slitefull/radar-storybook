@@ -7,7 +7,7 @@ import DropdownIndicator from "./components/dropdown-indicator/dropdown-indicato
 import Label from "@/ui-kit/components/label/label";
 import { DARK_LAVA, EBONY, PLATINUM, PLUMP_PURPLE, TRANSPARENT, WHITE } from "@/ui-kit/constants/colors";
 
-import { LabelColors, LabelPositions, LabelSizes } from "../../label/types";
+import { LabelPositions, LabelSizes, LabelTypes, LabelWeights } from "../../label/types";
 import { WithLabelWrapper } from "./styled";
 
 
@@ -29,8 +29,10 @@ interface SelectProps {
   rounded?: boolean;
   label?: string;
   labelPosition?: LabelPositions;
-  labelColor?: LabelColors;
+  labelColor?: Color
   labelSize?: LabelSizes;
+  labelWeight?: LabelWeights;
+  labelType?: LabelTypes;
   width?: string;
 }
 
@@ -308,7 +310,9 @@ const Dropdown: FC<SelectProps> = memo((
     label,
     labelPosition = "left",
     labelColor,
-    labelSize = "default",
+    labelSize,
+    labelType,
+    labelWeight,
     width = "fit-content",
   }
 ): JSX.Element => {
@@ -376,8 +380,10 @@ const Dropdown: FC<SelectProps> = memo((
     >
       {label && (
         <Label
+          type={labelType}
           color={labelColor}
           size={labelSize}
+          weight={labelWeight}
         >
           {label}
         </Label>

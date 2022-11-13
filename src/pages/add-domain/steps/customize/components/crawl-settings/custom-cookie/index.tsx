@@ -4,6 +4,7 @@ import Label from "@/ui-kit/components/label/label";
 import CloseIcon from "@/ui-kit/customized-icons/close/close";
 
 import { Column } from "@/global.css";
+import { EBONY } from "@/ui-kit/constants/colors";
 
 
 interface CustomCookieProps {
@@ -18,11 +19,12 @@ const CustomCookie: FC<CustomCookieProps> = memo(({ index, onDelete }): JSX.Elem
   );
 
   return (
-    <Column width={"50%"}>
+    <Column width={"50%"} align={"end"}>
       <Column width={"100%"}>
         <Input
           label={"Display name"}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
           width={"100%"}
@@ -30,7 +32,8 @@ const CustomCookie: FC<CustomCookieProps> = memo(({ index, onDelete }): JSX.Elem
         />
         <Input
           label={"Cookie name"}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
           width={"100%"}
@@ -38,14 +41,15 @@ const CustomCookie: FC<CustomCookieProps> = memo(({ index, onDelete }): JSX.Elem
         />
         <Input
           label={"Value"}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
           width={"100%"}
           full
         />
       </Column>
-      <Label onClick={() => onDelete(index)}><CloseIcon/> Remove</Label>
+      <Label onClick={() => onDelete(index)} weight={"bold"}><CloseIcon/> Remove</Label>
     </Column>
   )
 });

@@ -32,6 +32,7 @@ const TFooter = css`
 const THeaderRow = css`
   display: flex;
   width: 100% !important;
+  min-height: 30px;
   justify-content: space-between;
 `;
 
@@ -42,6 +43,9 @@ const THeaderElement = css`
   line-height: 16px;
   letter-spacing: -0.02em;
   color: ${RAISIN_BLACK};
+  align-items: center;
+  display: flex !important;
+  gap: 10px;
 `;
 
 const TRow = css`

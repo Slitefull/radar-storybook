@@ -1,12 +1,16 @@
 import { FC, memo, ReactNode } from "react";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
-import { LabelColors, LabelSizes } from "./types";
+import { LabelPositions, LabelSizes, LabelTypes, LabelWeights } from "./types";
 import { SLabel } from "./styled";
 
 
 interface LabelProps {
-  color?: LabelColors;
+  type?: LabelTypes;
+  color?: Color;
   size?: LabelSizes;
+  weight?: LabelWeights;
+  position?: LabelPositions;
   disabled?: boolean;
   cursor?: "default" | "pointer" | "not-allowed";
   margin?: string;
@@ -17,8 +21,11 @@ interface LabelProps {
 
 const Label: FC<LabelProps> = memo((
   {
-    color = "primary",
+    type = "primary",
+    color = PLUMP_PURPLE,
     size = "default",
+    weight = "default",
+    position = "left",
     disabled = false,
     cursor = "default",
     margin = "0",
@@ -29,13 +36,17 @@ const Label: FC<LabelProps> = memo((
 ): JSX.Element => {
   return (
     <SLabel
+      type={type}
       color={color}
       size={size}
+      weight={weight}
+      position={position}
       disabled={disabled}
       cursor={onClick ? "pointer" : cursor}
       margin={margin}
       wrap={wrap}
       onClick={onClick}
+      withHover={!!onClick}
     >
       {children}
     </SLabel>

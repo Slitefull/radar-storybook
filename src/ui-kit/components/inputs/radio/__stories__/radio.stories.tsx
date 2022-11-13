@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Radio from "@/ui-kit/components/inputs/radio/radio";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -17,7 +18,7 @@ Default.args = {
   onChange: () => console.log("change"),
   label: "List view",
   labelPosition: "left",
-  labelColor: "primary",
+  labelColor: PLUMP_PURPLE,
 };
 
 Default.argTypes = {

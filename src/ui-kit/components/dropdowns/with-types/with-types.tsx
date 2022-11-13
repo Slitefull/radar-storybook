@@ -7,7 +7,7 @@ import MultiValueRemove from ".//components/multivalue-remove/multivalue-remove"
 import { DARK_LAVA, EBONY, LIGHT_GREY, PLATINUM, PLUMP_PURPLE, ROYAL_PURPLE, WHITE } from "@/ui-kit/constants/colors";
 import Label from "@/ui-kit/components/label/label";
 
-import { LabelColors, LabelPositions, LabelSizes } from "../../label/types";
+import { LabelPositions, LabelSizes, LabelWeights } from "../../label/types";
 import { WithLabelWrapper } from "./styled";
 import { Column } from "@/global.css";
 
@@ -33,10 +33,11 @@ interface SelectWithTypesProps {
   icon?: ReactNode;
   label?: string;
   labelPosition?: LabelPositions;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelSize?: LabelSizes;
+  labelWeight?: LabelWeights;
   subtitle?: string;
-  subtitleColor?: LabelColors;
+  subtitleColor?: Color;
   subtitleSize?: LabelSizes;
   width?: string;
 }
@@ -226,11 +227,12 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
     icon,
     label,
     labelPosition = "left",
-    labelColor = "primary",
-    labelSize = "default",
+    labelColor,
+    labelSize,
+    labelWeight,
     subtitle,
-    subtitleColor = "primary",
-    subtitleSize = "default",
+    subtitleColor,
+    subtitleSize,
     width = "350px",
   }
 ): JSX.Element => {
@@ -310,6 +312,7 @@ const DropdownWithTypes: FC<SelectWithTypesProps> = memo((
           <Label
             color={labelColor}
             size={labelSize}
+            weight={labelWeight}
           >
             {label}
           </Label>

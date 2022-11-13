@@ -42,6 +42,9 @@ import { simplePage } from "@/ui-kit/components/page-container/simple/theme/ligh
 import { checkboxGroup } from "@/ui-kit/components/inputs/checkbox-group/theme/light";
 import { formCreator } from "@/ui-kit/components/form-creator/theme/light";
 import { radioCollapsible } from "@/ui-kit/components/cards/radio-collapsible/theme/light";
+import { dropzone } from "@/ui-kit/components/inputs/dropzone/theme/light";
+import { rounded } from "@/ui-kit/components/banners/rounded/theme/light";
+import { bordered } from "@/ui-kit/components/layouts/bordered/theme/light";
 
 
 type GComponent<Elements> = { [E in Elements]: ReturnType<typeof E> }
@@ -49,9 +52,11 @@ type GComponent<Elements> = { [E in Elements]: ReturnType<typeof E> }
 export interface Components {
   bullets: GComponent<ranking>
   buttons: GComponent<button, roundedArrow, link>
+  layouts: GComponent<bordered>
+  banners: GComponent<rounded>
   cards: GComponent<monitorChanges, collapsible, radioCollapsible>
   containers: GComponent<simplePage, modalPage>
-  controls: GComponent<text, radio, radioGroup, checkboxGroup, textarea, switcher, checkbox, dropdown, withTypes, meridian, day, formCreator>
+  controls: GComponent<text, radio, radioGroup, checkboxGroup, textarea, switcher, checkbox, dropdown, withTypes, meridian, day, formCreator, dropzone>
   datePickers: GComponent<range>
   generals: GComponent<header, footer, sidebar, pagination, notifications, stepper, table, tooltip>
   icons: GComponent<bell>

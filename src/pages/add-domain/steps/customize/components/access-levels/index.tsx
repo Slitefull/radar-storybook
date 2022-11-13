@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { PLUMP_PURPLE, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
+import { DARK_LAVA, EBONY, PLUMP_PURPLE, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
 import ColoredText from "@/ui-kit/components/text/colored/colored";
 import CheckboxGroup from "@/ui-kit/components/inputs/checkbox-group/checkbox-group";
 import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
@@ -34,32 +34,32 @@ const AccessLevels: FC = memo((): JSX.Element => {
       <CheckboxGroup
         direction={"column"}
         label={"Users that have access to this website :"}
-        labelColor={"ghost"}
+        labelColor={EBONY}
         labelMargin={"0 0 15px"}
         gap={15}
       >
         <Checkbox
           checked={true}
           label={"Konrad Studziński (you)"}
-          labelColor={"subtly"}
+          labelColor={DARK_LAVA}
           labelPosition={"right"}
         />
         <Checkbox
           checked={true}
           label={"Clay Kramer (admin)"}
-          labelColor={"subtly"}
+          labelColor={DARK_LAVA}
           labelPosition={"right"}
         />
         <Checkbox
           checked={false}
           label={"Bob Lopiccola"}
-          labelColor={"subtly"}
+          labelColor={DARK_LAVA}
           labelPosition={"right"}
         />
         <Checkbox
           checked={false}
           label={"Pat Simmons"}
-          labelColor={"subtly"}
+          labelColor={DARK_LAVA}
           labelPosition={"right"}
         />
       </CheckboxGroup>

@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import { useRecoilValue } from "recoil";
-import { ROOT_PAGE } from "@/constants/routes";
 import { getIsLoadingAddDomain } from "@/entity/selectors/add-domain/add-domain-step";
 import ModalPageContainer from "@/ui-kit/components/page-container/modal/modal";
 import Stepper from "@/ui-kit/components/stepper/stepper";
@@ -55,7 +54,7 @@ const AddDomain: FC = (): JSX.Element => {
   );
 
   const onCloseHandler = useCallback(
-    () => navigate(ROOT_PAGE),
+    () => navigate(-1),
     [navigate]
   );
 

@@ -1,7 +1,7 @@
 import { FC, memo, ReactNode, } from "react";
 import Label from "../../label/label";
 
-import { LabelColors, LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
+import { LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
 import { Column, Row } from "@/global.css";
 import { RGWrapper } from "./styled";
 
@@ -13,7 +13,7 @@ export interface RadioGroupProps {
   direction?: Directions;
   gap?: number;
   label?: string;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelPosition?: LabelPositions;
   labelSize?: LabelSizes;
 }
@@ -27,7 +27,7 @@ const RadioGroup: FC<RadioGroupProps> = memo(
       label,
       labelColor,
       labelPosition = "top",
-      labelSize = "default",
+      labelSize,
     }
   ): JSX.Element => {
     let Component = Row;

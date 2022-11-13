@@ -1,7 +1,7 @@
 import { FC, memo, ReactNode, } from "react";
 import Label from "../../label/label";
 
-import { LabelColors, LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
+import { LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
 import { Column, Row } from "@/global.css";
 import { CGWrapper } from "./styled";
 
@@ -13,7 +13,7 @@ export interface RadioGroupProps {
   direction?: Directions;
   gap?: number;
   label?: string;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelPosition?: LabelPositions;
   labelSize?: LabelSizes;
   labelMargin?: string;
@@ -25,9 +25,9 @@ const CheckboxGroup: FC<RadioGroupProps> = memo(
       children,
       direction,
       label,
-      labelColor = "primary",
+      labelColor,
       labelPosition = "top",
-      labelSize = "default",
+      labelSize,
       labelMargin = "0",
       gap = 0,
     }

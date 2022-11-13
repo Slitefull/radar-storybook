@@ -4,7 +4,8 @@ import { DARK_LAVA } from "@/ui-kit/constants/colors";
 import { SColoredText } from "./styled";
 
 
-type Size = "default" | "small";
+type Types = "primary" | "secondary";
+type Size = "default" | "big" | "small";
 type Weight = "default" | "bold";
 
 interface ColoredTextProps {
@@ -12,11 +13,13 @@ interface ColoredTextProps {
   size?: Size;
   weight?: Weight;
   children: ReactNode;
+  type?: Types;
 }
 
 const ColoredText: FC<ColoredTextProps> = memo((
   {
     children,
+    type = "primary",
     color = DARK_LAVA,
     size = "default",
     weight = "default",
@@ -24,6 +27,7 @@ const ColoredText: FC<ColoredTextProps> = memo((
 ): JSX.Element => {
   return (
     <SColoredText
+      type={type}
       color={color}
       size={size}
       weight={weight}

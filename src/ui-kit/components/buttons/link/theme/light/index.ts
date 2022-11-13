@@ -38,6 +38,7 @@ const SLink: FlattenInterpolation<ThemedStyledProps<SLinkProps, DefaultTheme>> =
   font-size: 18px;
   line-height: 24px;
   text-align: center;
+  white-space: nowrap;
   letter-spacing: -0.02em;
   color: ${PLUMP_PURPLE};
   border: none;

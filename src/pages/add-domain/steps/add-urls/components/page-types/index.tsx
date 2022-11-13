@@ -1,0 +1,57 @@
+import { FC, memo, useCallback, useMemo } from 'react';
+import { useRecoilState } from "recoil";
+import { pageTypes } from "@/entity/atoms/add-domain/add-urls/page-types";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import PlusCircle from "@/ui-kit/customized-icons/plus-circle/plus-circle";
+import PageType from "./page-type";
+import ColoredText from "@/ui-kit/components/text/colored/colored";
+import Label from "@/ui-kit/components/label/label";
+import RoundedBanner from "@/ui-kit/components/banners/rounded";
+
+import { Column } from "@/global.css";
+
+
+const PageTypes: FC = memo((): JSX.Element => {
+  const [types, setTypes] = useRecoilState<number[]>(pageTypes);
+
+  const onAddPageTypesElementHandler = useCallback(
+    () => setTypes([...types, types.length]),
+    [types]
+  );
+
+  const onDeleteCustomCookieElementHandler = useCallback(
+    (id: number) => setTypes(types.filter((element) => element !== id)),
+    [types],
+  );
+
+  const pageTypeComponents = useMemo(
+    () => types.map((element) => (
+      <PageType
+        key={element}
+        index={element}
+        onDelete={onDeleteCustomCookieElementHandler}
+      />
+    )), [types]
+  );
+
+  return (
+    <Column
+      gap={40}
+      width={"100%"}
+      justify={"space-between"}
+      align={"center"}
+    >
+      <RoundedBanner maxWidth={"550px"}>
+        In order to ensure the best performance of SEO radar, please provide at least 1 representative link of your
+        website, broken down into specific page types <strong>(minimum 3)</strong>
+      </RoundedBanner>
+      {pageTypeComponents}
+      <Label onClick={onAddPageTypesElementHandler}>
+        <PlusCircle/>
+        <ColoredText color={PLUMP_PURPLE} weight={"bold"}>Add page type</ColoredText>
+      </Label>
+    </Column>
+  );
+});
+
+export default PageTypes;

@@ -37,8 +37,8 @@ const FireIcon: FC<FireIconProps> = memo(({ size = 20 }): JSX.Element => {
           x2="5.49768"
           y2="10.5"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF0000"/>
-          <stop offset="1" stop-color="#FFB500"/>
+          <stop stopColor="#FF0000"/>
+          <stop offset="1" stopColor="#FFB500"/>
         </linearGradient>
       </defs>
     </svg>

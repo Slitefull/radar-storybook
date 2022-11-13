@@ -1,6 +1,6 @@
 {
   "name": "seoradar",
-  "version": "0.4.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "start": "craco start",
@@ -30,6 +30,7 @@
     "eslint-import-resolver-typescript": "^3.3.0",
     "eslint-plugin-import": "^2.26.0",
     "faker": "^5.5.3",
+    "framer-motion": "^7.6.6",
     "i18next": "^21.9.1",
     "i18next-http-backend": "^1.4.1",
     "react": "^18.2.0",
@@ -37,6 +38,7 @@
     "react-content-loader": "^6.2.0",
     "react-day-picker": "^8.2.1",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.33.1",
     "react-i18next": "^11.18.5",
     "react-router-dom": "^6.3.0",

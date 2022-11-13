@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, memo, } from "react";
 import Label from "../../label/label";
 
-import { LabelColors, LabelPositions, LabelSizes } from "../../label/types";
+import { LabelPositions, LabelSizes, LabelWeights } from "../../label/types";
 import { RWrapper, SRadio } from "./styled";
 
 
@@ -12,10 +12,12 @@ export interface RadioProps {
   name: string;
   disabled?: boolean;
   onChange: (e: RadioChangeEvent) => void;
+  value?: string | number;
   label: string;
   labelPosition?: LabelPositions;
-  labelColor?: LabelColors;
+  labelColor?: Color
   labelSize?: LabelSizes;
+  labelWeight?: LabelWeights;
 }
 
 const Radio: FC<RadioProps> = memo((
@@ -25,27 +27,33 @@ const Radio: FC<RadioProps> = memo((
     label,
     onChange,
     disabled,
+    value,
     labelColor,
     labelPosition = "left",
-    labelSize = "default",
+    labelSize,
+    labelWeight,
   }
 ): JSX.Element => {
   return (
-    <RWrapper labelPosition={labelPosition}>
+    <RWrapper>
       <Label
         color={labelColor}
         disabled={disabled}
         size={labelSize}
+        weight={labelWeight}
+        position={labelPosition}
+        cursor={"pointer"}
       >
-        {label}
+        <span>{label}</span>
+        <SRadio
+          type="radio"
+          name={name}
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+          value={value}
+        />
       </Label>
-      <SRadio
-        type="radio"
-        name={name}
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
-      />
     </RWrapper>
   )
 });

@@ -9,6 +9,7 @@ import CustomCookie from './custom-cookie';
 import HTTPHeader from './http-header';
 
 import { Column } from "@/global.css";
+import { DARK_LAVA, EBONY } from "@/ui-kit/constants/colors";
 
 
 const CrawlSettings: FC = memo((): JSX.Element => {
@@ -68,8 +69,9 @@ const CrawlSettings: FC = memo((): JSX.Element => {
       <DropdownWithTypes
         label={"User agent"}
         labelPosition={"top"}
-        labelColor={"ghost"}
-        subtitleColor={"secondary"}
+        labelColor={EBONY}
+        labelWeight={"bold"}
+        subtitleColor={DARK_LAVA}
         subtitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."}
         options={userAgentOptions}
       />
@@ -77,7 +79,8 @@ const CrawlSettings: FC = memo((): JSX.Element => {
 
       <FormCreator
         label={"Custom Cookies"}
-        labelColor={"ghost"}
+        labelColor={DARK_LAVA}
+        labelWeight={"bold"}
         labelSize={"big"}
         tooltip={<div>Tooltip</div>}
         components={customCookiesComponents}
@@ -87,8 +90,9 @@ const CrawlSettings: FC = memo((): JSX.Element => {
 
       <FormCreator
         label={"HTTP Header"}
-        labelColor={"ghost"}
+        labelColor={DARK_LAVA}
         labelSize={"big"}
+        labelWeight={"bold"}
         tooltip={<div>Tooltip</div>}
         components={httpHeaderComponents}
         onAddComponentsHandler={onAddHTTPHeaderElementHandler}

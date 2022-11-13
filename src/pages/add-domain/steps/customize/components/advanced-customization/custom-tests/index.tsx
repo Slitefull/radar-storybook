@@ -1,12 +1,20 @@
 import { FC, memo, useCallback } from "react";
+import { EBONY } from "@/ui-kit/constants/colors";
 import Input from "@/ui-kit/components/inputs/text/text";
 import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
 import Textarea from "@/ui-kit/components/inputs/textarea/textarea";
+import CloseIcon from "@/ui-kit/customized-icons/close/close";
+import Label from "@/ui-kit/components/label/label";
 
 import { Column, Row } from "@/global.css";
 
 
-const CustomTests: FC = memo((): JSX.Element => {
+interface CustomTestsProps {
+  index: number;
+  onDelete: (index: number) => void;
+}
+
+const CustomTests: FC<CustomTestsProps> = memo(({ index, onDelete }): JSX.Element => {
   const userAgentOptions = [
     { value: "my_domain", label: "12AM - 6AM | Mon - Fri" },
     { value: "my_domain_2", label: "12AM - 6AM | Mon, Wed, Fri" },
@@ -20,18 +28,20 @@ const CustomTests: FC = memo((): JSX.Element => {
   );
 
   return (
-    <Column width={"100%"}>
+    <Column width={"100%"} margin={"0 0 20px"} align={"end"}>
       <Input
         label={"Test display name"}
-        labelColor={"ghost"}
+        labelColor={EBONY}
         onChange={onChangeInputHandler}
         placeholder={"Lorem ipsum"}
+        labelWeight={"bold"}
         width={"100%"}
         full
       />
       <Textarea
         label={"String"}
-        labelColor={"ghost"}
+        labelWeight={"bold"}
+        labelColor={EBONY}
         onChange={onChangeInputHandler}
         placeholder={"Lorem ipsum"}
         full
@@ -39,8 +49,8 @@ const CustomTests: FC = memo((): JSX.Element => {
       <DropdownWithTypes
         label={"Treat String As"}
         labelPosition={"top"}
-        labelColor={"ghost"}
-        subtitleColor={"secondary"}
+        labelWeight={"bold"}
+        labelColor={EBONY}
         options={userAgentOptions}
         width={"100%"}
       />
@@ -56,6 +66,8 @@ const CustomTests: FC = memo((): JSX.Element => {
           full
         />
       </Row>
+
+      <Label onClick={() => onDelete(index)} weight={"bold"}><CloseIcon/> Remove</Label>
     </Column>
   )
 });

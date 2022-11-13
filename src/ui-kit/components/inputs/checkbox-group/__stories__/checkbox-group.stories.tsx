@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
 import CheckboxGroup from "../checkbox-group";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -23,7 +24,7 @@ Default.args = {
   gap: 0,
   label: "Label",
   labelPosition: "top",
-  labelColor: "primary",
+  labelColor: PLUMP_PURPLE,
 };
 
 Default.argTypes = {

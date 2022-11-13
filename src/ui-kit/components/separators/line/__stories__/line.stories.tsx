@@ -13,22 +13,12 @@ const Template: ComponentStory<typeof LineSeparator> = (args) => <LineSeparator 
 export const Default = Template.bind({});
 
 Default.args = {
-  height: "1px",
   width: "100%",
   radius: 5,
   color: PLUMP_PURPLE,
 };
 
 Default.argTypes = {
-  height: {
-    name: "height",
-    table: {
-      type: { summary: "Set height for the separator" },
-      defaultValue: {
-        summary: "1px",
-      },
-    },
-  },
   width: {
     name: "width",
     table: {

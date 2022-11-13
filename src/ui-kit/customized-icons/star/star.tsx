@@ -19,8 +19,8 @@ const StarIcon: FC<StarIconProps> = memo(({ color = PLUMP_PURPLE, size = 20 }): 
         d="M7 3L8.236 5.30389L11 5.6756L9 7.46793L9.472 10L7 8.80389L4.528 10L5 7.46793L3 5.6756L5.764 5.30389L7 3Z"
         fill={color}
         stroke={color}
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

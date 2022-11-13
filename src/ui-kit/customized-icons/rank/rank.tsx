@@ -44,7 +44,7 @@ const RankIcon: FC<RankIconProps> = memo((
         d="M4 2L3 3H5L4 2Z"
         fill="#C1F2C7"
         stroke={getColor()}
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   );

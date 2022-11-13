@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { PLUMP_PURPLE } from "../../constants/colors";
+import { ROCKET_METALLIC } from "../../constants/colors";
 import useHover from "../../hooks/useHover";
 
 
@@ -22,6 +22,7 @@ const SettingsIcon: FC<SettingsIconProps> = memo(({ color, size, onClick }): JSX
     <div
       ref={hoverRef}
       onClick={onClick}
+      style={{ display: "flex" }}
     >
       <svg
         width={size || 20}
@@ -33,7 +34,7 @@ const SettingsIcon: FC<SettingsIconProps> = memo(({ color, size, onClick }): JSX
       >
         <path
           d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-          stroke={color || PLUMP_PURPLE}
+          stroke={color || ROCKET_METALLIC}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -74,7 +75,7 @@ const SettingsIcon: FC<SettingsIconProps> = memo(({ color, size, onClick }): JSX
             10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893
              21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042
              19.4 15V15Z"
-          stroke={color || PLUMP_PURPLE}
+          stroke={color || ROCKET_METALLIC}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

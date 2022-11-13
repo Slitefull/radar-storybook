@@ -23,7 +23,7 @@ const HeaderWrapper = css`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 40px 32px 40px 112px;
   gap: 0 25px;
   align-items: center;
 

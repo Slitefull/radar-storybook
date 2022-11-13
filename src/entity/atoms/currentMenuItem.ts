@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 
 
-type MenuElements = "monitoring" | "domains" | "competitions" | "seoAudit" | "tools" | "reports" | "help";
+type MenuElements = "monitoring" | "manage" | "competitions" | "seoAudit" | "tools" | "reports" | "help";
 
 const key = "menu/currentMenuItemState";
 

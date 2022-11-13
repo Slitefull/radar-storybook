@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Label from "../label";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -12,7 +13,7 @@ const Template: ComponentStory<typeof Label> = (args) => <Label {...args}>Label<
 export const Default = Template.bind({});
 
 Default.args = {
-  color: "primary",
+  color: PLUMP_PURPLE,
   size: "default",
   cursor: "default",
   disabled: false,
@@ -21,7 +22,6 @@ Default.args = {
 Default.argTypes = {
   color: {
     name: "color",
-    options: ["primary", "ghost", "subtly"],
     control: { type: "radio" },
     table: {
       type: { summary: "Set color for the label" },

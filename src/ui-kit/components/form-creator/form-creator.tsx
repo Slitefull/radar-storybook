@@ -3,7 +3,7 @@ import Label from "@/ui-kit/components/label/label";
 import PlusCircle from "@/ui-kit/customized-icons/plus-circle/plus-circle";
 import Tooltip from "@/ui-kit/components/tooltips/tooltip/tooltip";
 
-import { LabelColors, LabelSizes } from "@/ui-kit/components/label/types";
+import { LabelSizes, LabelWeights } from "@/ui-kit/components/label/types";
 import { Column, Row } from "@/global.css";
 import { SFormCreator } from "./styled";
 
@@ -12,8 +12,9 @@ type Directions = "row" | "column";
 
 interface FormCreatorProps {
   label: string;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelSize?: LabelSizes;
+  labelWeight?: LabelWeights;
   tooltip?: ReactNode;
   onAddComponentsHandler: VoidFunction;
   components: ReactNode[];
@@ -23,8 +24,9 @@ interface FormCreatorProps {
 const FormCreator: FC<FormCreatorProps> = memo((
   {
     label,
-    labelColor = "primary",
-    labelSize = "default",
+    labelColor,
+    labelSize,
+    labelWeight,
     tooltip,
     onAddComponentsHandler,
     components = [],
@@ -49,6 +51,7 @@ const FormCreator: FC<FormCreatorProps> = memo((
           <Label
             color={labelColor}
             size={labelSize}
+            weight={labelWeight}
           >
             {label}
           </Label>

@@ -1,11 +1,19 @@
 import { FC, memo, useCallback } from "react";
+import { EBONY } from "@/ui-kit/constants/colors";
 import Input from "@/ui-kit/components/inputs/text/text";
 import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
+import Label from "@/ui-kit/components/label/label";
+import CloseIcon from "@/ui-kit/customized-icons/close/close";
 
 import { Column, Row } from "@/global.css";
 
 
-const IgnoreCertain: FC = memo((): JSX.Element => {
+interface IgnoreCertainProps {
+  index: number;
+  onDelete: (index: number) => void;
+}
+
+const IgnoreCertain: FC<IgnoreCertainProps> = memo(({ index, onDelete }): JSX.Element => {
   const userAgentOptions = [
     { value: "my_domain", label: "12AM - 6AM | Mon - Fri" },
     { value: "my_domain_2", label: "12AM - 6AM | Mon, Wed, Fri" },
@@ -19,12 +27,12 @@ const IgnoreCertain: FC = memo((): JSX.Element => {
   );
 
   return (
-    <Column width={"100%"}>
+    <Column width={"100%"} margin={"0 0 20px"} align={"end"}>
       <DropdownWithTypes
         label={"Notification"}
         labelPosition={"top"}
-        labelColor={"ghost"}
-        subtitleColor={"secondary"}
+        labelWeight={"bold"}
+        labelColor={EBONY}
         options={userAgentOptions}
         width={"100%"}
       />
@@ -40,6 +48,8 @@ const IgnoreCertain: FC = memo((): JSX.Element => {
           full
         />
       </Row>
+
+      <Label onClick={() => onDelete(index)} weight={"bold"}><CloseIcon/> Remove</Label>
     </Column>
   )
 });

@@ -1,7 +1,7 @@
 import { FC, memo, ReactNode, useEffect, useRef, useState, } from "react";
 import Radio from "@/ui-kit/components/inputs/radio/radio";
 
-import { LabelColors, LabelPositions, LabelSizes } from "@/ui-kit/components/label/types";
+import { LabelPositions, LabelSizes, LabelWeights } from "@/ui-kit/components/label/types";
 import { Row } from "@/global.css";
 import { CHeader, Content, ContentContainer, ResizeContainer, SCollapsible } from "./styled";
 
@@ -9,8 +9,9 @@ import { CHeader, Content, ContentContainer, ResizeContainer, SCollapsible } fro
 interface MonitorChangesCardProps {
   name: string;
   label: string;
-  labelColor?: LabelColors;
+  labelColor?: Color;
   labelSize?: LabelSizes;
+  labelWeight?: LabelWeights;
   labelPosition?: LabelPositions;
   onChangeRadio: (name: string) => void;
   checked: boolean;
@@ -21,8 +22,9 @@ const RadioCollapsible: FC<MonitorChangesCardProps> = memo((
   {
     name,
     label,
-    labelColor = "primary",
-    labelSize = "default",
+    labelColor,
+    labelSize,
+    labelWeight,
     labelPosition = "right",
     checked,
     onChangeRadio,
@@ -62,6 +64,7 @@ const RadioCollapsible: FC<MonitorChangesCardProps> = memo((
             label={label}
             labelColor={labelColor}
             labelSize={labelSize}
+            labelWeight={labelWeight}
             labelPosition={labelPosition}
             checked={checked}
           />

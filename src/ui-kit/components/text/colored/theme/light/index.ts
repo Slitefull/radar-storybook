@@ -4,12 +4,14 @@ import { css } from "styled-components/macro";
 import { SColoredTextProps } from "../../types";
 
 
-type Size = "default" | "small";
+type Size = "default" | "big" | "small";
 type Weight = "default" | "bold";
+type Types = "primary" | "secondary";
 
 const FontSizeRecord: Record<Size, string> = {
-  "default": "14px",
   "small": "12px",
+  "default": "14px",
+  "big": "18px",
 };
 
 const FontWeightRecord: Record<Weight, number> = {
@@ -17,8 +19,13 @@ const FontWeightRecord: Record<Weight, number> = {
   "bold": 700,
 };
 
+const TypesRecord: Record<Types, string> = {
+  "primary": "FreightSans Pro",
+  "secondary": "Menlo",
+};
+
 const SColoredText: FlattenInterpolation<ThemedStyledProps<SColoredTextProps, DefaultTheme>> = css<SColoredTextProps>`
-  font-family: "Menlo", serif;
+  font-family: ${({ type }) => TypesRecord[type]}, serif;
   font-weight: ${({ weight }) => FontWeightRecord[weight]};
   font-size: ${({ size }) => FontSizeRecord[size]};
   line-height: 14px;

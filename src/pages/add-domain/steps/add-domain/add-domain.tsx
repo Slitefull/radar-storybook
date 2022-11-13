@@ -1,6 +1,7 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
+import { EBONY } from "@/ui-kit/constants/colors";
 import Textarea from "@/ui-kit/components/inputs/textarea/textarea";
 import Input from "@/ui-kit/components/inputs/text/text";
 import AddDomainSlider from "@/pages/add-domain/components/text-slider/text-slider";
@@ -51,7 +52,8 @@ const AddDomain: FC = memo((): JSX.Element => {
         <Dropdown
           types={[]}
           label={capitalizeFirstLetter(t("domain_type"))}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           labelPosition={"top"}
           options={domainTypeOptions}
           onChange={onChangeDomainTypeHandler}
@@ -59,13 +61,15 @@ const AddDomain: FC = memo((): JSX.Element => {
         />
         <Input
           label={capitalizeFirstLetter(t("domain"))}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           placeholder={"e.g. www.example.com"}
           onChange={onChangeDomainHandler}
         />
         <Input
           label={capitalizeFirstLetter(t("display_name"))}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           placeholder={"e.g. Example"}
           onChange={onChangeDisplayNameHandler}
           tooltip={
@@ -77,7 +81,8 @@ const AddDomain: FC = memo((): JSX.Element => {
         />
         <Textarea
           label={capitalizeFirstLetter(t("branded_keywords"))}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           placeholder={t("type_your_keywords_separated_with_comma")}
           onChange={onChangeBrandedKeywordsHandler}
           tooltip={

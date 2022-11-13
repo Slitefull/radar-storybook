@@ -1,16 +1,20 @@
-import { FC, memo, useCallback, useState } from 'react';
+import { FC, memo, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from "react-i18next";
+import { useRecoilState } from "recoil";
+import { scheduleBullets } from "@/entity/atoms/add-domain/schedule/schedule-bullets";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
+import { EBONY } from "@/ui-kit/constants/colors";
 import Dropdown from "@/ui-kit/components/dropdowns/with-types/with-types";
 import AddDomainSlider from "@/pages/add-domain/components/text-slider/text-slider";
 import LineSeparator from "@/ui-kit/components/separators/line/line";
-import ScheduleBullets from "@/pages/add-domain/components/schedule-bullets/schedule-bullets";
+import ScheduleBullet from "@/pages/add-domain/components/schedule-bullet/schedule-bullet";
 
 import { Column } from '@/global.css';
 
 
 const Schedule: FC = memo((): JSX.Element => {
   const { t } = useTranslation();
+  const [scheduleElements, setScheduleElements] = useRecoilState<number[]>(scheduleBullets);
   const [selectedSchedule, setSelectedSchedule] = useState<string>();
 
   const scheduleCrawlsOptions = [
@@ -20,9 +24,30 @@ const Schedule: FC = memo((): JSX.Element => {
     { value: "custom", label: "Custom" },
   ];
 
+  const onAddScheduleElementHandler = useCallback(
+    () => setScheduleElements([...scheduleElements, scheduleElements.length]),
+    [scheduleElements]
+  );
+
+  const onDeleteScheduleElementHandler = useCallback(
+    (id: number) => setScheduleElements(scheduleElements.filter((element) => element !== id)),
+    [scheduleElements],
+  );
+
   const onChangeScheduleCrawlsHandler = useCallback(
     (option: string) => setSelectedSchedule(option),
     []
+  );
+
+  const scheduleComponents = useMemo(
+    () => scheduleElements.map((element) => (
+      <ScheduleBullet
+        key={element}
+        index={element}
+        onAdd={onAddScheduleElementHandler}
+        onDelete={onDeleteScheduleElementHandler}
+      />
+    )), [scheduleElements]
   );
 
   return (
@@ -35,13 +60,18 @@ const Schedule: FC = memo((): JSX.Element => {
       >
         <Dropdown
           label={capitalizeFirstLetter(t("schedule_crawls"))}
-          labelColor={"ghost"}
+          labelColor={EBONY}
           labelPosition={"top"}
+          labelWeight={"bold"}
           options={scheduleCrawlsOptions}
           onChange={(option) => onChangeScheduleCrawlsHandler(option.value)}
         />
 
-        {selectedSchedule === "custom" && <ScheduleBullets/>}
+        {selectedSchedule === "custom" && (
+          <Column>
+            {scheduleComponents}
+          </Column>
+        )}
         <LineSeparator/>
       </Column>
     </Column>

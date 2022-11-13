@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Textarea from "../textarea";
+import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -15,7 +16,7 @@ Default.args = {
   helperText: "Error",
   disabled: false,
   label: "Label",
-  labelColor: "primary",
+  labelColor: PLUMP_PURPLE,
   labelPosition: "top",
   onChange: () => console.log("change"),
   tooltip: <div>Tooltip text</div>,

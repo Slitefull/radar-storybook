@@ -1,4 +1,5 @@
 import { FC, memo, useCallback } from "react";
+import { EBONY } from "@/ui-kit/constants/colors";
 import Input from "@/ui-kit/components/inputs/text/text";
 import CloseIcon from "@/ui-kit/customized-icons/close/close";
 import Label from "@/ui-kit/components/label/label";
@@ -18,11 +19,12 @@ const HTTPHeader: FC<HTTPHeaderProps> = memo(({ index, onDelete }): JSX.Element 
   );
 
   return (
-    <Column width={"50%"}>
+    <Column width={"50%"} align={"end"}>
       <Column width={"100%"}>
         <Input
           label={"Header name"}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
           width={"100%"}
@@ -30,14 +32,15 @@ const HTTPHeader: FC<HTTPHeaderProps> = memo(({ index, onDelete }): JSX.Element 
         />
         <Input
           label={"Header value"}
-          labelColor={"ghost"}
+          labelColor={EBONY}
+          labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
           width={"100%"}
           full
         />
       </Column>
-      <Label onClick={() => onDelete(index)}><CloseIcon/> Remove</Label>
+      <Label onClick={() => onDelete(index)} weight={"bold"}><CloseIcon/> Remove</Label>
     </Column>
   )
 });

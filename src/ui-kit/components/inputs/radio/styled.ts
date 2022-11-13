@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-import { RWrapperProps } from "./types";
-
 
 export const SRadio = styled.input`
   ${({ theme }) => theme.components.controls.radio.SRadio}
 `;
 
-export const RWrapper = styled.div<RWrapperProps>`
+export const RWrapper = styled.div`
   ${({ theme }) => theme.components.controls.radio.RWrapper}
 `;
