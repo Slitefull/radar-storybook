@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ToolIcon from "../tool";
+import ToolIcon from "../index";
 
 
 export default {

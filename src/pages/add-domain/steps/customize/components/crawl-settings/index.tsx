@@ -2,9 +2,9 @@ import { FC, memo, useCallback, useMemo } from 'react';
 import { useRecoilState } from "recoil";
 import { customCookies } from "@/entity/atoms/add-domain/customize/crawl-settings/custom-cookies";
 import { httpHeaders } from "@/entity/atoms/add-domain/customize/crawl-settings/http-headers";
-import LineSeparator from "@/ui-kit/components/separators/line/line";
-import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
-import FormCreator from "@/ui-kit/components/form-creator/form-creator";
+import LineSeparator from "@/ui-kit/components/separators/line";
+import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types";
+import FormCreator from "@/ui-kit/components/form-creator";
 import CustomCookie from './custom-cookie';
 import HTTPHeader from './http-header';
 

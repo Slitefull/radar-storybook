@@ -1,8 +1,8 @@
 import { FC, memo } from 'react';
 import { DARK_LAVA, EBONY, PLUMP_PURPLE, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
-import ColoredText from "@/ui-kit/components/text/colored/colored";
-import CheckboxGroup from "@/ui-kit/components/inputs/checkbox-group/checkbox-group";
-import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
+import ColoredText from "@/ui-kit/components/text/colored";
+import CheckboxGroup from "@/ui-kit/components/inputs/checkbox-group";
+import Checkbox from "@/ui-kit/components/inputs/checkbox";
 
 import { Column, Row } from "@/global.css";
 

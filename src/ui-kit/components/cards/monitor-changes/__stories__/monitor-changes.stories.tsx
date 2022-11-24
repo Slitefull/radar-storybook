@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import MonitorChangesCard from "../monitor-changes";
+import MonitorChangesCard from "../index";
 
 
 export default {

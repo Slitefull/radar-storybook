@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from 'react';
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
-import Label from "@/ui-kit/components/label/label";
-import Input from "@/ui-kit/components/inputs/text/text";
-import Textarea from "@/ui-kit/components/inputs/textarea/textarea";
-import ColoredText from "@/ui-kit/components/text/colored/colored";
+import CloseIcon from "@/ui-kit/customized-icons/close";
+import Label from "@/ui-kit/components/label";
+import Input from "@/ui-kit/components/inputs/text";
+import Textarea from "@/ui-kit/components/inputs/textarea";
+import ColoredText from "@/ui-kit/components/text/colored";
 
 import { Column } from '@/global.css';
 import { DARK_LAVA } from "@/ui-kit/constants/colors";

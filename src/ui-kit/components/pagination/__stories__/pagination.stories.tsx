@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Pagination from "@/ui-kit/components/pagination/pagination";
+import Pagination from "@/ui-kit/components/pagination";
 
 
 export default {

@@ -48,7 +48,7 @@ const ghost: ReadonlyArray<SimpleInterpolation> = css`
 const defaultSize: ReadonlyArray<SimpleInterpolation> = css`
   font-size: 18px;
   line-height: 24px;
-  height: 35px;
+  height: 40px;
 `;
 
 const smallSize: ReadonlyArray<SimpleInterpolation> = css`
@@ -69,6 +69,9 @@ const ButtonColorsRecord: Record<ButtonColors, FlattenSimpleInterpolation> = {
 };
 
 const SButton: FlattenInterpolation<ThemedStyledProps<SButtonProps, DefaultTheme>> = css<SButtonProps>`
+  font-family: "FreightSans Pro", serif;
+  width: 100%;
+  max-width: 325px;
   padding: 5px 25px;
   border-radius: ${({ rounded }) => rounded ? "35px" : "4px"};
   cursor: pointer;
@@ -80,8 +83,8 @@ const SButton: FlattenInterpolation<ThemedStyledProps<SButtonProps, DefaultTheme
   ${({ size }) => css`${ButtonSizesRecord[size]}`};
 
   &:disabled {
-    pointer-events: none;
     opacity: .3;
+    cursor: not-allowed;
   }
 
   &:hover {

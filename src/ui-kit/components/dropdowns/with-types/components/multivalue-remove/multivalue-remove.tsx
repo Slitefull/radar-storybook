@@ -1,5 +1,5 @@
 import { components, MultiValueRemoveProps } from "react-select";
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
+import CloseIcon from "@/ui-kit/customized-icons/close";
 
 type Option = { value: string | number, label: string | number }
 

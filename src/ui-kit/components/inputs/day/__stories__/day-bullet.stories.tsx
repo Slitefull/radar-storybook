@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import DayBullet from "../day";
+import DayBullet from "../index";
 
 
 export default {

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Radio from "@/ui-kit/components/inputs/radio/radio";
+import Radio from "@/ui-kit/components/inputs/radio";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

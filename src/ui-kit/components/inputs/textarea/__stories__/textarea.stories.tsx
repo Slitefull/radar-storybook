@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Textarea from "../textarea";
+import Textarea from "../index";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

@@ -52,10 +52,13 @@ const TRow = css`
   width: 100% !important;
   justify-content: space-between;
   padding: 20px;
+  align-items: center;
   word-break: break-all;
+  transition: 0.2s background-color ease-in;
 
   &:hover {
-    background: ${SNOW};
+    transition: 0.2s background-color ease-in;
+    background-color: ${SNOW};
   }
 `;
 

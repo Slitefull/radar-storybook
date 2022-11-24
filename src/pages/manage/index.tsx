@@ -1,10 +1,16 @@
 import { FC, memo } from 'react';
-import PageContainer from '@/ui-kit/components/page-container/simple/simple';
-import GeneralInfo from "./components/general-info";
-import ManageTable from "@/pages/manage/components/table/table";
+import loadable from "@loadable/component";
+import PageContainer from '@/ui-kit/components/page-container/simple';
+import GeneralInfoFallback from "@/pages/manage/components/general-info/fallback";
 
 import { Column } from '@/global.css';
 
+
+const ManageTable = loadable(() => import("./components/table"));
+
+const GeneralInfo = loadable(() => import("./components/general-info"), {
+  fallback: <GeneralInfoFallback/>
+});
 
 const Manage: FC = memo((): JSX.Element => {
   return (

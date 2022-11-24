@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import IconFallback from "@/ui-kit/customized-icons/fallback/fallback";
+import IconFallback from "@/ui-kit/customized-icons/fallback";
 
 
 export default {

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import SettingsIcon from "../settings";
+import SettingsIcon from "../index";
 
 
 export default {

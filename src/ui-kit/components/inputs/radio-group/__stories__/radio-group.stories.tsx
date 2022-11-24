@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import RadioGroup from "../radio-group";
-import Meridian from "@/ui-kit/components/inputs/meridian/meridian";
+import RadioGroup from "../index";
+import Meridian from "@/ui-kit/components/inputs/meridian";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

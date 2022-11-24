@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Hot from "../hot";
+import Hot from "../index";
 
 
 export default {

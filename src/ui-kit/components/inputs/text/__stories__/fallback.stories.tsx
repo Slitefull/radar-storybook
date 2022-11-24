@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import TextInputFallback from "@/ui-kit/components/inputs/text/fallback/fallback";
+import TextInputFallback from "@/ui-kit/components/inputs/text/fallback";
 
 
 export default {

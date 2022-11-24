@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Tooltip from "../tooltip";
+import Tooltip from "../index";
 
 
 export default {

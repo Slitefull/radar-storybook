@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import CheckmarkIcon from "../checkmark";
+import CheckmarkIcon from "../index";
 
 
 export default {

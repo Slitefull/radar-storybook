@@ -12,6 +12,6 @@ export interface SLabelProps {
   disabled: boolean;
   margin: string;
   cursor?: "default" | "pointer" | "not-allowed";
-  wrap: boolean;
+  $wrap: boolean;
   withHover?: boolean;
 }

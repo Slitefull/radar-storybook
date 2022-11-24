@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import RoundedButtonFallback from "@/ui-kit/components/buttons/rounded-arrow/fallback/fallback";
+import RoundedButtonFallback from "@/ui-kit/components/buttons/rounded-arrow/fallback";
 
 
 export default {

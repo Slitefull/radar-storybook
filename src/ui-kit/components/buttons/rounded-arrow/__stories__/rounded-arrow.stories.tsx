@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import RoundedArrowButton from "../rounded-arrow";
+import RoundedArrowButton from "../index";
 import { PLUMP_PURPLE, SNOW } from "@/ui-kit/constants/colors";
 
 

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import ArrowIcon from "@/ui-kit/customized-icons/arrow/arrow";
+import ArrowIcon from "@/ui-kit/customized-icons/arrow";
 
 
 const DropdownIndicator: FC = ({ selectProps }: any): JSX.Element => {

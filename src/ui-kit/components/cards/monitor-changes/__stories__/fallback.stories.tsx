@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import MonitorChangesCardFallback from "@/ui-kit/components/cards/monitor-changes/fallback/fallback";
+import MonitorChangesCardFallback from "@/ui-kit/components/cards/monitor-changes/fallback";
 
 
 export default {

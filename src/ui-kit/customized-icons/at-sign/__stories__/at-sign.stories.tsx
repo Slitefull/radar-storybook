@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import AtSignIcon from "../at-sign";
+import AtSignIcon from "../index";
 
 
 export default {

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
-import CheckboxGroup from "../checkbox-group";
+import Checkbox from "@/ui-kit/components/inputs/checkbox";
+import CheckboxGroup from "../index";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

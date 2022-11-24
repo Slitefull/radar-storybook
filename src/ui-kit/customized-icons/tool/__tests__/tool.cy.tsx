@@ -1,4 +1,4 @@
-import ToolIcon from "../tool";
+import ToolIcon from "../index";
 
 
 describe('<ToolIcon>', () => {

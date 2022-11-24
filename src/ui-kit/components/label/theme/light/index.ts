@@ -35,7 +35,7 @@ const SLabel = css<SLabelProps>`
   align-items: ${({ position }) => LabelPositionAlignRecord[position]};
   letter-spacing: -0.02em;
   line-height: 18px;
-  white-space: ${({ wrap }) => wrap ? "inherit" : "nowrap"};
+  white-space: ${({ $wrap }) => $wrap ? "inherit" : "nowrap"};
   font-size: ${({ size }) => LabelSizesRecord[size]};
   font-weight: ${({ weight }) => LabelWeightsRecord[weight]};
   margin: ${({ margin }) => margin};

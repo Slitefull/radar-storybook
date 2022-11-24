@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import RadarLoader from "../radar";
+import RadarLoader from "../index";
 
 
 export default {

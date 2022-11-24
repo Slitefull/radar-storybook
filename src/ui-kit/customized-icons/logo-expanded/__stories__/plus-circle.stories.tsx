@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import LogoExpanded from "@/ui-kit/customized-icons/logo-expanded/logo-expanded";
+import LogoExpanded from "@/ui-kit/customized-icons/logo-expanded";
 
 
 export default {

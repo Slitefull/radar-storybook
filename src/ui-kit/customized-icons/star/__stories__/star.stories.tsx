@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import StarIcon from "../star";
+import StarIcon from "../index";
 
 
 export default {

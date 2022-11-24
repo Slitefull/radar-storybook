@@ -1,7 +1,7 @@
 import { FC, Fragment, memo, useCallback } from 'react';
 import { useNavigate } from "react-router-dom";
-import SettingsIcon from "@/ui-kit/customized-icons/settings/settings";
-import BellIcon from "@/ui-kit/customized-icons/bell/bell";
+import SettingsIcon from "@/ui-kit/customized-icons/settings";
+import BellIcon from "@/ui-kit/customized-icons/bell";
 import UserProfile from '../../components/user-profile';
 
 import { HeaderTitle, LeftSide, RightSide } from "@/ui-kit/components/header/styled";

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import WithBackgroundTextFallback from "@/ui-kit/components/text/with-background/fallback/fallback";
+import WithBackgroundTextFallback from "@/ui-kit/components/text/with-background/fallback";
 
 
 export default {

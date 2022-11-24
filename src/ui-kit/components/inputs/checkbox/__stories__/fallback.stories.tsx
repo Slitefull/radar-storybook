@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import CheckboxFallback from "@/ui-kit/components/inputs/checkbox/fallback/fallback";
+import CheckboxFallback from "@/ui-kit/components/inputs/checkbox/fallback";
 
 
 export default {

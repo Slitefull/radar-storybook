@@ -31,6 +31,8 @@ const SColoredText: FlattenInterpolation<ThemedStyledProps<SColoredTextProps, De
   line-height: 14px;
   letter-spacing: -0.02em;
   color: ${({ color }) => color};
+  cursor: ${({ cursor }) => cursor};
+  margin: ${({ margin }) => margin};
 `;
 
 export const colored = {

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import BookOpenIcon from "../book-open";
+import BookOpenIcon from "../index";
 
 
 export default {

@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import LogoPrimary from "../logo-primary";
+import LogoPrimary from "../index";
 
 
 export default {

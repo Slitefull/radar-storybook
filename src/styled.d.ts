@@ -14,6 +14,7 @@ import { monitorChanges } from "@/pages/monitor-changes/theme/light";
 import { table } from "@/ui-kit/components/table/theme/light";
 import { footer } from "@/ui-kit/components/footer/theme/light";
 import { pagination } from "@/ui-kit/components/pagination/theme/light";
+import { text as textInput } from "@/ui-kit/components/inputs/text/theme/light";
 import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light";
 import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light";
 import { radio } from "@/ui-kit/components/inputs/radio/theme/light";
@@ -45,6 +46,9 @@ import { radioCollapsible } from "@/ui-kit/components/cards/radio-collapsible/th
 import { dropzone } from "@/ui-kit/components/inputs/dropzone/theme/light";
 import { rounded } from "@/ui-kit/components/banners/rounded/theme/light";
 import { bordered } from "@/ui-kit/components/layouts/bordered/theme/light";
+import { signIn } from "@/pages/sign-in/theme/light";
+import { resetPassword } from "@/pages/reset-password/theme/light";
+import { signUp } from "@/pages/sign-up/theme/light";
 
 
 type GComponent<Elements> = { [E in Elements]: ReturnType<typeof E> }
@@ -56,12 +60,12 @@ export interface Components {
   banners: GComponent<rounded>
   cards: GComponent<monitorChanges, collapsible, radioCollapsible>
   containers: GComponent<simplePage, modalPage>
-  controls: GComponent<text, radio, radioGroup, checkboxGroup, textarea, switcher, checkbox, dropdown, withTypes, meridian, day, formCreator, dropzone>
+  controls: GComponent<textInput, radio, radioGroup, checkboxGroup, textarea, switcher, checkbox, dropdown, withTypes, meridian, day, formCreator, dropzone>
   datePickers: GComponent<range>
   generals: GComponent<header, footer, sidebar, pagination, notifications, stepper, table, tooltip>
   icons: GComponent<bell>
   loaders: GComponent<radar>
-  pages: GComponent<monitorChanges, addDomain>
+  pages: GComponent<signIn, signUp, resetPassword, monitorChanges, addDomain>
   ratings: GComponent<favorite, hot, fresh>
   separators: GComponent<line>
   sliders: GComponent<text>

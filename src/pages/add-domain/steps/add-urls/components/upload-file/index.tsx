@@ -1,7 +1,7 @@
 import { FC, memo, useCallback, useState } from 'react';
 import { DARK_LAVA } from "@/ui-kit/constants/colors";
-import Dropzone from "@/ui-kit/components/inputs/dropzone/dropzone";
-import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
+import Dropzone from "@/ui-kit/components/inputs/dropzone";
+import Checkbox from "@/ui-kit/components/inputs/checkbox";
 
 import { Column } from '@/global.css';
 

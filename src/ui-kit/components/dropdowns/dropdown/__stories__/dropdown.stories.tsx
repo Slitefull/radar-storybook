@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { mockDropdownData } from "../__mock__/data";
-import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

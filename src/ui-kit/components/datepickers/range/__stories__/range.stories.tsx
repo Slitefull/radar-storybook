@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import RangeDatepicker from "@/ui-kit/components/datepickers/range/range";
+import RangeDatepicker from "@/ui-kit/components/datepickers/range";
 
 
 export default {

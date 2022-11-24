@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import ColoredText from "../colored";
+import ColoredText from "../index";
 import { DARK_LAVA } from "@/ui-kit/constants/colors";
 
 

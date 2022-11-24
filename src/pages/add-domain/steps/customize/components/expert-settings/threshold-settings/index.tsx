@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from 'react';
 import { DARK_LAVA, EBONY } from "@/ui-kit/constants/colors";
-import Input from "@/ui-kit/components/inputs/text/text";
-import Label from "@/ui-kit/components/label/label";
-import Tooltip from "@/ui-kit/components/tooltips/tooltip/tooltip";
-import RadioGroup from "@/ui-kit/components/inputs/radio-group/radio-group";
-import Radio from "@/ui-kit/components/inputs/radio/radio";
+import Input from "@/ui-kit/components/inputs/text";
+import Label from "@/ui-kit/components/label";
+import Tooltip from "@/ui-kit/components/tooltips/tooltip";
+import RadioGroup from "@/ui-kit/components/inputs/radio-group";
+import Radio from "@/ui-kit/components/inputs/radio";
 
 import { Column, Row } from '@/global.css';
 

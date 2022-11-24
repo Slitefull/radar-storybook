@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Favorite from "../favorite";
+import Favorite from "../index";
 
 
 export default {

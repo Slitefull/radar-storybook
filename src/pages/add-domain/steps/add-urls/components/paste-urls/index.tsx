@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from 'react';
 import { DARK_LAVA } from "@/ui-kit/constants/colors";
 import RoundedBanner from "@/ui-kit/components/banners/rounded";
-import Textarea from "@/ui-kit/components/inputs/textarea/textarea";
-import ColoredText from "@/ui-kit/components/text/colored/colored";
-import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
+import Textarea from "@/ui-kit/components/inputs/textarea";
+import ColoredText from "@/ui-kit/components/text/colored";
+import Checkbox from "@/ui-kit/components/inputs/checkbox";
 
 import { Column } from '@/global.css';
 

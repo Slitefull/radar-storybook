@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Meridian from "../meridian";
+import Meridian from "../index";
 
 
 export default {

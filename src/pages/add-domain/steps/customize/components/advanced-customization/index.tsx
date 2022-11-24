@@ -5,8 +5,8 @@ import { excludeCertain } from "@/entity/atoms/add-domain/customize/advanced-cus
 import { customTests } from '@/entity/atoms/add-domain/customize/advanced-customization/custom-tests';
 import { ignoreCertain } from '@/entity/atoms/add-domain/customize/advanced-customization/ignore-certain';
 import { ignoreLinks } from '@/entity/atoms/add-domain/customize/advanced-customization/ignore-links';
-import FormCreator from "@/ui-kit/components/form-creator/form-creator";
-import LineSeparator from "@/ui-kit/components/separators/line/line";
+import FormCreator from "@/ui-kit/components/form-creator";
+import LineSeparator from "@/ui-kit/components/separators/line";
 import ExcludeCertain from './exclude-certain';
 import CustomTests from './custom-tests';
 import IgnoreCertain from "./ignore-certain";

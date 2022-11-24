@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import BarChartIcon from "../bar-chart";
+import BarChartIcon from "../index";
 
 
 export default {

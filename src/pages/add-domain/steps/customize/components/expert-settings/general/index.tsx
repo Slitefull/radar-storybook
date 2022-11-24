@@ -1,8 +1,8 @@
 import { FC, Fragment, memo } from 'react';
 import { DARK_LAVA, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
-import Label from "@/ui-kit/components/label/label";
-import CheckboxGroup from "@/ui-kit/components/inputs/checkbox-group/checkbox-group";
-import Checkbox from "@/ui-kit/components/inputs/checkbox/checkbox";
+import Label from "@/ui-kit/components/label";
+import CheckboxGroup from "@/ui-kit/components/inputs/checkbox-group";
+import Checkbox from "@/ui-kit/components/inputs/checkbox";
 
 import { Row } from "@/global.css";
 

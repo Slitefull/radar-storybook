@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import SwitcherFallback from "@/ui-kit/components/inputs/switcher/fallback/fallback";
+import SwitcherFallback from "@/ui-kit/components/inputs/switcher/fallback";
 
 
 export default {

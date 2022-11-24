@@ -8,6 +8,8 @@ interface RowProps {
   align?: "center" | "baseline" | "end";
   justify?: "flex-start" | "space-between" | "center";
   width?: string;
+  height?: string;
+  minHeight?: string;
   margin?: string;
   padding?: string;
   cursor?: "pointer" | "default" | "not-allowed";
@@ -19,6 +21,8 @@ interface ColumnProps {
   align?: "center" | "baseline" | "end";
   justify?: "flex-start" | "space-between" | "center";
   width?: string;
+  height?: string;
+  minHeight?: string;
   margin?: string;
   padding?: string;
   cursor?: "pointer" | "default" | "not-allowed";
@@ -57,6 +61,13 @@ export default createGlobalStyle<{ theme: DefaultTheme }>` && {
   ::-webkit-scrollbar-thumb:hover {
     background: ${DARK_LAVA};
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
 }`
 
 export const Row = styled.div<RowProps>` && {
@@ -65,6 +76,8 @@ export const Row = styled.div<RowProps>` && {
   padding: ${({ padding = 0 }) => padding};
   margin: ${({ margin = "0px" }) => margin};
   width: ${({ width = "auto" }) => width};
+  height: ${({ height = "auto" }) => height};
+  min-height: ${({ minHeight = "auto" }) => minHeight};
   align-items: ${({ align = "baseline" }) => align};
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: 0 ${({ gap = 40 }) => gap}px;
@@ -77,6 +90,8 @@ export const Column = styled.div<ColumnProps>` && {
   padding: ${({ padding = 0 }) => padding};
   margin: ${({ margin = "inherit" }) => margin};
   width: ${({ width = "auto" }) => width};
+  height: ${({ height = "auto" }) => height};
+  min-height: ${({ minHeight = "auto" }) => minHeight};
   align-items: ${({ align = "baseline" }) => align};
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: ${({ gap = 15 }) => gap}px 0;

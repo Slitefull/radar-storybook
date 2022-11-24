@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import BellIcon from "../bell";
+import BellIcon from "../index";
 
 
 export default {

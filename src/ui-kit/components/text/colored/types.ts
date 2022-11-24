@@ -7,4 +7,6 @@ export interface SColoredTextProps {
   color: Color;
   size: Sizes;
   weight: Weight;
+  cursor: "default" | "pointer" | "not-allowed";
+  margin: string;
 }

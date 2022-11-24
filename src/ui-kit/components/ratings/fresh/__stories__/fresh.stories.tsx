@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Fresh from "../fresh";
+import Fresh from "../index";
 
 
 export default {

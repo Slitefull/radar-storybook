@@ -3,4 +3,6 @@ export interface SBorderedLayoutProps {
   padding: string;
   width: string;
   height: string;
+  shadow: string;
+  minHeight: string;
 }

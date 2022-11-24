@@ -1,7 +1,7 @@
 import { withRouter } from "storybook-addon-react-router-v6";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Link from "../link";
-import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle/plus-circle";
+import Link from "../index";
+import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle";
 
 
 export default {

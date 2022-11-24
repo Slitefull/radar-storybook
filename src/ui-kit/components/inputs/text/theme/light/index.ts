@@ -1,5 +1,6 @@
 import { css } from "styled-components/macro";
 import {
+  CRIMSON,
   DARK_LAVA,
   LIGHT_GREY,
   PLUMP_PURPLE,
@@ -128,9 +129,11 @@ const SFormInput = css<SFormInputProps>`
 `;
 
 const HelperText = css`
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
-  color: ${VENETIAN_RED};
+  color: ${CRIMSON};
+  margin: 0 0 0 auto;
+  height: 15px;
 `;
 
 export const text = {

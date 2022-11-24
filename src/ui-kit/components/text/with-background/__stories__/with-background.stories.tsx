@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import WithBackgroundText from "../with-background";
+import WithBackgroundText from "../index";
 import { TART_ORANGE, WHITE } from "@/ui-kit/constants/colors";
-import WithBackgroundTextFallback from "@/ui-kit/components/text/with-background/fallback/fallback";
+import WithBackgroundTextFallback from "@/ui-kit/components/text/with-background/fallback";
 
 
 export default {

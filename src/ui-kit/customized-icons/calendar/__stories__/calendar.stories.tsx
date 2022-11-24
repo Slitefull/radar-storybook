@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import CalendarIcon from "../calendar";
+import CalendarIcon from "../index";
 
 
 export default {

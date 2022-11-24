@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from "react";
-import Input from "@/ui-kit/components/inputs/text/text";
-import Label from "@/ui-kit/components/label/label";
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
+import Input from "@/ui-kit/components/inputs/text";
+import Label from "@/ui-kit/components/label";
+import CloseIcon from "@/ui-kit/customized-icons/close";
 
 import { Column } from "@/global.css";
 import { EBONY } from "@/ui-kit/constants/colors";

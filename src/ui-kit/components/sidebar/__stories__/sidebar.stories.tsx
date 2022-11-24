@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { withRouter } from "storybook-addon-react-router-v6";
-import Sidebar from "../sidebar";
+import Sidebar from "../index";
 import { withRecoilFlow } from "storybook-addon-recoil-flow/dist/decorator";
 
 

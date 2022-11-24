@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import PageContainer from "../simple";
+import PageContainer from "../index";
 
 
 export default {

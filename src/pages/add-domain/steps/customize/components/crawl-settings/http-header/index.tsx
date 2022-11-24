@@ -1,8 +1,8 @@
 import { FC, memo, useCallback } from "react";
 import { EBONY } from "@/ui-kit/constants/colors";
-import Input from "@/ui-kit/components/inputs/text/text";
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
-import Label from "@/ui-kit/components/label/label";
+import Input from "@/ui-kit/components/inputs/text";
+import CloseIcon from "@/ui-kit/customized-icons/close";
+import Label from "@/ui-kit/components/label";
 
 import { Column } from "@/global.css";
 

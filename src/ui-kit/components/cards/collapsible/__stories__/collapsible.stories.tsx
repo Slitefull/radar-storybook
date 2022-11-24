@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Collapsible from "@/ui-kit/components/cards/collapsible/collapsible";
+import Collapsible from "@/ui-kit/components/cards/collapsible";
 
 
 export default {

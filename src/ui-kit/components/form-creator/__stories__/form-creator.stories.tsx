@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import FormCreator from "../form-creator";
+import FormCreator from "../index";
 
 
 export default {

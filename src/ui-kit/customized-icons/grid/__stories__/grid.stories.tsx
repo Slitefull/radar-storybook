@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ROCKET_METALLIC } from "@/ui-kit/constants/colors";
-import GridIcon from "../grid";
+import GridIcon from "../index";
 
 
 export default {

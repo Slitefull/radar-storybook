@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import SelectWithTypesFallback from "@/ui-kit/components/dropdowns/with-types/fallback/fallback";
+import SelectWithTypesFallback from "@/ui-kit/components/dropdowns/with-types/fallback";
 
 
 export default {

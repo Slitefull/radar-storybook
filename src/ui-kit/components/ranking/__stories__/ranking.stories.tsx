@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Ranking from "../ranking";
-import HotRating from "@/ui-kit/components/ratings/hot/hot";
+import Ranking from "../index";
+import HotRating from "@/ui-kit/components/ratings/hot";
 
 
 export default {

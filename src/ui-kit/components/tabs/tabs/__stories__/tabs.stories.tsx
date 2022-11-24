@@ -1,9 +1,9 @@
 import { BaseSyntheticEvent, Fragment, useCallback, useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Tabs from "@/ui-kit/components/tabs/tabs/tabs";
+import Tabs from "@/ui-kit/components/tabs/tabs";
 import styled from "styled-components/macro";
-import TabPanel from "../../tab-panel/tab-panel";
-import Tab from "../../tab/tab";
+import TabPanel from "../../tab-panel";
+import Tab from "../../tab";
 
 import { Column } from "@/global.css";
 

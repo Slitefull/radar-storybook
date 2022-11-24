@@ -13,6 +13,7 @@ const SDropzone = css`
   font-weight: 700;
   color: ${PLUMP_PURPLE};
   border: 1px solid ${PLUMP_PURPLE};
+  max-width: 200px;
 
   &:disabled {
     pointer-events: none;

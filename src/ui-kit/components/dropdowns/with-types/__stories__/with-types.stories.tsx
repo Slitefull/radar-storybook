@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { mockDropdownData } from "../__mock__/data";
-import CalendarIcon from "@/ui-kit/customized-icons/calendar/calendar";
-import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
+import CalendarIcon from "@/ui-kit/customized-icons/calendar";
+import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

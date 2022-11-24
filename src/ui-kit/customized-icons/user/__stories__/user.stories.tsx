@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import UserIcon from "../user";
+import UserIcon from "../index";
 
 
 export default {

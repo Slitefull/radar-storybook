@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import SidebarFallback from "@/ui-kit/components/sidebar/fallback/fallback";
+import SidebarFallback from "@/ui-kit/components/sidebar/fallback";
 
 
 export default {

@@ -1,6 +1,24 @@
+import { ServiceLevels } from "@/constants/auth/service-levels";
+
+export interface SApiResponse {
+  message: string;
+}
+
+export interface ApiResponse<T> {
+  message: string;
+  data: T;
+}
+
 export interface SignInAPIRequestModel {
   email: string;
   password: string;
+}
+
+export interface SignUpAPIRequestModel {
+  name: string;
+  email: string;
+  password: string;
+  service_level: ServiceLevels;
 }
 
 export interface ChangePasswordAPIRequestModel {
@@ -14,14 +32,9 @@ export interface ResetPasswordAPIRequestModel {
 }
 
 export interface SignInAPIResponseModel {
-  message: string;
   user_id?: number;
 }
 
-export interface CheckIfSessionExistsResponseModel {
-  message: string;
-}
-
-export interface ResetPasswordAPIResponseModel {
-  message: string;
+export interface SignUpAPIResponseModel {
+  allow_subdomain_urls: boolean;
 }

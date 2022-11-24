@@ -20,6 +20,7 @@ const LabelPositionAlignRecord: Record<LabelPositions, string> = {
 
 const RGWrapper = css<RGWrapperProps>`
   display: inline-flex;
+  margin: ${({ margin }) => margin};
   gap: ${({ withLabel }) => withLabel ? "5px" : 0};
   flex-direction: ${({ labelPosition }) => LabelPositionRecord[labelPosition]};
   align-items: ${({ labelPosition }) => LabelPositionAlignRecord[labelPosition]};

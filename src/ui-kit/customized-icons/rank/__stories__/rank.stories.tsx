@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import RankIcon from "../rank";
+import RankIcon from "../index";
 
 
 export default {

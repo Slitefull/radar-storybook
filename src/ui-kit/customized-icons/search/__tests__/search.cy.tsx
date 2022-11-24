@@ -1,4 +1,4 @@
-import SearchIcon from "../../search/search";
+import SearchIcon from "../index";
 
 
 describe('<SearchIcon>', () => {

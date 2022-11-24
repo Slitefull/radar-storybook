@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ListIcon from "../list";
+import ListIcon from "../index";
 import { WHITE } from "@/ui-kit/constants/colors";
 
 

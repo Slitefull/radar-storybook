@@ -1,14 +1,14 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import TextInputFallback from "@/ui-kit/components/inputs/text/fallback/fallback";
+import RadioInputFallback from "../fallback";
 
 
 export default {
-  title: "inputs/Text",
-  component: TextInputFallback,
-} as ComponentMeta<typeof TextInputFallback>;
+  title: "inputs/Radio",
+  component: RadioInputFallback,
+} as ComponentMeta<typeof RadioInputFallback>;
 
 
-const FallbackTemplate: ComponentStory<typeof TextInputFallback> = (args) => <TextInputFallback {...args}/>;
+const FallbackTemplate: ComponentStory<typeof RadioInputFallback> = (args) => <RadioInputFallback {...args}/>;
 
 export const Fallback = FallbackTemplate.bind({});
 Fallback.args = {

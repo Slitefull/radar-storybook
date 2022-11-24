@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Label from "../label";
+import Label from "../index";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 
@@ -13,16 +13,33 @@ const Template: ComponentStory<typeof Label> = (args) => <Label {...args}>Label<
 export const Default = Template.bind({});
 
 Default.args = {
+  type: "primary",
   color: PLUMP_PURPLE,
   size: "default",
-  cursor: "default",
+  weight: "default",
+  position: "left",
   disabled: false,
+  cursor: "default",
+  margin: "0px",
+  $wrap: false,
+  onClick: () => {
+  },
 };
 
 Default.argTypes = {
+  type: {
+    name: "type",
+    options: ["primary", "secondary"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Set type for the label" },
+      defaultValue: {
+        summary: "primary",
+      },
+    },
+  },
   color: {
     name: "color",
-    control: { type: "radio" },
     table: {
       type: { summary: "Set color for the label" },
       defaultValue: {
@@ -38,6 +55,28 @@ Default.argTypes = {
       type: { summary: "Set size for the label" },
       defaultValue: {
         summary: "default",
+      },
+    },
+  },
+  weight: {
+    name: "weight",
+    options: ["default", "bold"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Set weight for the label" },
+      defaultValue: {
+        summary: "default",
+      },
+    },
+  },
+  position: {
+    name: "position",
+    options: ["top", "right", "bottom", "left"],
+    control: { type: "radio" },
+    table: {
+      type: { summary: "Set position of the label" },
+      defaultValue: {
+        summary: "left",
       },
     },
   },
@@ -58,6 +97,24 @@ Default.argTypes = {
       type: { summary: "Set cursor for the label" },
       defaultValue: {
         summary: "default",
+      },
+    },
+  },
+  margin: {
+    name: "margin",
+    table: {
+      type: { summary: "Set margin for the label" },
+      defaultValue: {
+        summary: "0",
+      },
+    },
+  },
+  $wrap: {
+    name: "wrap",
+    table: {
+      type: { summary: "Set is label can wrap text" },
+      defaultValue: {
+        summary: false,
       },
     },
   },

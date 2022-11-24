@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from "react";
 import { EBONY } from "@/ui-kit/constants/colors";
-import Input from "@/ui-kit/components/inputs/text/text";
-import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types/with-types";
-import Label from "@/ui-kit/components/label/label";
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
+import Input from "@/ui-kit/components/inputs/text";
+import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types";
+import Label from "@/ui-kit/components/label";
+import CloseIcon from "@/ui-kit/customized-icons/close";
 
 import { Column, Row } from "@/global.css";
 

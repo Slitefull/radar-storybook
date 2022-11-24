@@ -1,4 +1,4 @@
-import HelpCircleIcon from "../help-circle";
+import HelpCircleIcon from "../index";
 
 
 describe('<HelpCircleIcon>', () => {

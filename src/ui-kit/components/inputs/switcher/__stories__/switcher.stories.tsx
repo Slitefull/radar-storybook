@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Switcher from "../switcher";
+import Switcher from "../index";
 import { DARK_LAVA, PLATINUM } from "@/ui-kit/constants/colors";
 
 

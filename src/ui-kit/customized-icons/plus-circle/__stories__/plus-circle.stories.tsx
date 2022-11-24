@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import PlusCircleIcon from "../plus-circle";
+import PlusCircleIcon from "../index";
 
 
 export default {

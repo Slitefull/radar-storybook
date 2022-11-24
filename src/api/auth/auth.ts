@@ -1,12 +1,14 @@
 import { baseAPI } from "@/infrastructure/api/api";
 
 import {
+  ApiResponse,
   ChangePasswordAPIRequestModel,
-  CheckIfSessionExistsResponseModel,
   ResetPasswordAPIRequestModel,
-  ResetPasswordAPIResponseModel,
+  SApiResponse,
   SignInAPIRequestModel,
-  SignInAPIResponseModel
+  SignInAPIResponseModel,
+  SignUpAPIRequestModel,
+  SignUpAPIResponseModel
 } from "./types";
 
 
@@ -15,7 +17,7 @@ export const signInAPI = (
     email,
     password
   }: SignInAPIRequestModel
-): Promise<SignInAPIResponseModel> => (
+): Promise<ApiResponse<SignInAPIResponseModel>> => (
   baseAPI.url(`/sessions`)
     .post({
       email,
@@ -24,7 +26,25 @@ export const signInAPI = (
     .res()
 );
 
-export const checkIfSessionExistsAPI = (): Promise<CheckIfSessionExistsResponseModel> => (
+export const signUpAPI = (
+  {
+    name,
+    email,
+    password,
+    service_level
+  }: SignUpAPIRequestModel
+): Promise<ApiResponse<SignUpAPIResponseModel>> => (
+  baseAPI.url(`/auth`)
+    .post({
+      name,
+      email,
+      password,
+      service_level
+    })
+    .res()
+);
+
+export const checkIfSessionExistsAPI = (): Promise<SApiResponse> => (
   baseAPI.url('/sessions/check_if_session_exist')
     .get()
     .json()
@@ -36,7 +56,7 @@ export const changePasswordAPI = (
     password_confirmation,
     reset_password_token
   }: ChangePasswordAPIRequestModel
-): Promise<string> => (
+): Promise<SApiResponse> => (
   baseAPI.url(`/auth/password`)
     .patch({
       password,
@@ -46,7 +66,11 @@ export const changePasswordAPI = (
     .res()
 )
 
-export const resetPasswordAPI = ({ email }: ResetPasswordAPIRequestModel): Promise<ResetPasswordAPIResponseModel> => (
+export const resetPasswordAPI = (
+  {
+    email
+  }: ResetPasswordAPIRequestModel
+): Promise<SApiResponse> => (
   baseAPI.url(`/auth/password`)
     .post({ email })
     .res()

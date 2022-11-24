@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import ModalPageContainer from "../modal";
+import ModalPageContainer from "../index";
 
 
 export default {
@@ -13,20 +13,9 @@ const Template: ComponentStory<typeof ModalPageContainer> = (args) => <ModalPage
 
 export const Default = Template.bind({});
 Default.args = {
-  withClose: true,
   onClose: () => console.log("close"),
 };
 
-Default.argTypes = {
-  withClose: {
-    name: "withClose",
-    table: {
-      type: { summary: "Set is with close icon container" },
-      defaultValue: {
-        summary: true,
-      },
-    },
-  },
-};
+Default.argTypes = {};
 
 Default.parameters = {};

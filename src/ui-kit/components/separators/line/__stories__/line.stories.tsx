@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import LineSeparator from "../line";
+import LineSeparator from "../index";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
 
 

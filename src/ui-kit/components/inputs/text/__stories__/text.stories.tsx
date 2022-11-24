@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
-import SearchIcon from "@/ui-kit/customized-icons/search/search";
-import Input from "../text";
+import SearchIcon from "@/ui-kit/customized-icons/search";
+import Input from "../index";
 
 
 export default {

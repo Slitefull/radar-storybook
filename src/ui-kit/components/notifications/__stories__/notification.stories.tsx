@@ -1,6 +1,6 @@
 import { withRecoilFlow } from "storybook-addon-recoil-flow/dist/decorator";
 import { ComponentMeta, Story } from "@storybook/react";
-import Notifications, { Notification } from "../notifications";
+import Notifications, { Notification } from "../index";
 import success from "@/ui-kit/icons/check.svg"
 import error from "@/ui-kit/icons/error.svg"
 import warning from "@/ui-kit/icons/warning.svg"

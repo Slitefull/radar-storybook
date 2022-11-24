@@ -1,12 +1,3 @@
-export interface SidebarLinkProps {
+export interface LogoProps {
   isHovered: boolean;
-  isChecked: boolean;
-}
-
-export interface LinkTitleProps {
-  isHovered: boolean;
-}
-
-export interface IconContainerProps {
-  isChecked: boolean;
 }

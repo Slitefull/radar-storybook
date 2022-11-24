@@ -2,10 +2,10 @@ import { FC, memo, useCallback, useMemo } from 'react';
 import { useRecoilState } from "recoil";
 import { pageTypes } from "@/entity/atoms/add-domain/add-urls/page-types";
 import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
-import PlusCircle from "@/ui-kit/customized-icons/plus-circle/plus-circle";
+import PlusCircle from "@/ui-kit/customized-icons/plus-circle";
 import PageType from "./page-type";
-import ColoredText from "@/ui-kit/components/text/colored/colored";
-import Label from "@/ui-kit/components/label/label";
+import ColoredText from "@/ui-kit/components/text/colored";
+import Label from "@/ui-kit/components/label";
 import RoundedBanner from "@/ui-kit/components/banners/rounded";
 
 import { Column } from "@/global.css";

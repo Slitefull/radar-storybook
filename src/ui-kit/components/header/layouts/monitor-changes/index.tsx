@@ -1,11 +1,11 @@
 import { FC, Fragment, memo, useCallback, useMemo } from 'react';
 import { useNavigate } from "react-router-dom";
 import { ADD_DOMAIN_PAGE } from "@/constants/routes";
-import Dropdown from "@/ui-kit/components/dropdowns/dropdown/dropdown";
-import ButtonLink from "@/ui-kit/components/buttons/link/link";
-import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle/plus-circle";
-import SettingsIcon from "@/ui-kit/customized-icons/settings/settings";
-import BellIcon from "@/ui-kit/customized-icons/bell/bell";
+import Dropdown from "@/ui-kit/components/dropdowns/dropdown";
+import ButtonLink from "@/ui-kit/components/buttons/link";
+import PlusCircleIcon from "@/ui-kit/customized-icons/plus-circle";
+import SettingsIcon from "@/ui-kit/customized-icons/settings";
+import BellIcon from "@/ui-kit/customized-icons/bell";
 import UserProfile from "@/ui-kit/components/header/components/user-profile";
 
 import { HeaderTitle, LeftSide, RightSide } from "@/ui-kit/components/header/styled";

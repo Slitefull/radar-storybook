@@ -16,4 +16,17 @@ const Template: ComponentStory<typeof RoundedBanner> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+
+Default.args = {
+  maxWidth: "450px",
+};
+
+Default.argTypes = {
+  maxWidth: {
+    name: "maxWidth",
+    table: {
+      type: { summary: "Max width of the banner" },
+      defaultValue: { summary: "100%" },
+    },
+  },
+};

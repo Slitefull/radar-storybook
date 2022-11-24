@@ -1,4 +1,4 @@
-import TargetIcon from "../target";
+import TargetIcon from "../index";
 
 
 describe('<TargetIcon>', () => {

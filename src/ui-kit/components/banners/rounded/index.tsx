@@ -8,7 +8,12 @@ interface RoundedBannerProps {
   maxWidth?: string;
 }
 
-const RoundedBanner: FC<RoundedBannerProps> = memo(({ children, maxWidth = "100%" }): JSX.Element => {
+const RoundedBanner: FC<RoundedBannerProps> = memo((
+  {
+    children,
+    maxWidth = "100%"
+  }
+): JSX.Element => {
   return (
     <SRoundedBanner maxWidth={maxWidth}>
       {children}

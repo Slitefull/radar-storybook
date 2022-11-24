@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import SliderText from "@/ui-kit/components/sliders/text";
+import SliderText from "@/ui-kit/components/sliders";
 import "swiper/css";
 
 

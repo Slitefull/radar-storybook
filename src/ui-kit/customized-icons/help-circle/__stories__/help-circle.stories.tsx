@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import HelpCircleIcon from "../help-circle";
+import HelpCircleIcon from "../index";
 
 
 export default {

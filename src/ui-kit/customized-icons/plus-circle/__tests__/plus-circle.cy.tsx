@@ -1,4 +1,4 @@
-import PlusCircleIcon from "../plus-circle";
+import PlusCircleIcon from "../index";
 
 
 describe('<PlusCircleIcon>', () => {

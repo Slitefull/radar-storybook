@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Table from "@/ui-kit/components/table/table";
-import WithBackgroundText from "@/ui-kit/components/text/with-background/with-background";
+import Table from "@/ui-kit/components/table";
+import WithBackgroundText from "@/ui-kit/components/text/with-background";
 import { DARK_GREY, MEDIUM_PURPLE, VIOLET } from "@/ui-kit/constants/colors";
 import { mockData } from "@/ui-kit/components/table/__mocks__/data";
 

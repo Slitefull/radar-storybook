@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import DropdownFallback from "@/ui-kit/components/dropdowns/dropdown/fallback/fallback";
+import DropdownFallback from "@/ui-kit/components/dropdowns/dropdown/fallback";
 
 
 export default {

@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Menlo';
-  src: url("./menlo/Menlo-Regular.woff") format('woff2');
+  src: url("./menlo/Menlo-Regular.ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

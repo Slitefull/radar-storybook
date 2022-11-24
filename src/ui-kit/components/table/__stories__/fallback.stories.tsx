@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import TableFallback from "@/ui-kit/components/table/fallback/fallback";
+import TableFallback from "@/ui-kit/components/table/fallback";
 
 
 export default {

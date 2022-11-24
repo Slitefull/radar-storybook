@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from "react";
-import Textarea from "@/ui-kit/components/inputs/textarea/textarea";
-import Label from "@/ui-kit/components/label/label";
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
+import Textarea from "@/ui-kit/components/inputs/textarea";
+import Label from "@/ui-kit/components/label";
+import CloseIcon from "@/ui-kit/customized-icons/close";
 
 import { Column } from "@/global.css";
 

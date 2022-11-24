@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import FireIcon from "../fire";
+import FireIcon from "../index";
 
 
 export default {

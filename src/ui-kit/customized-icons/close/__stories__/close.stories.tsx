@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import CloseIcon from "@/ui-kit/customized-icons/close/close";
+import CloseIcon from "@/ui-kit/customized-icons/close";
 
 
 export default {

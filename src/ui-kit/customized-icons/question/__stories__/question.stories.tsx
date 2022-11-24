@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import QuestionIcon from "../question";
+import QuestionIcon from "../index";
 
 
 export default {
