@@ -3,8 +3,10 @@ import { hot } from "@/ui-kit/components/ratings/hot/theme/light";
 import { fresh } from "@/ui-kit/components/ratings/fresh/theme/light";
 
 
-export default {
+const ratings = {
   favorite,
   hot,
   fresh,
 };
+
+export default ratings;

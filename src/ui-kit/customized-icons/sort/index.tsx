@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { RAISIN_BLACK } from "@/ui-kit/constants/colors";
+import { NEUTRAL_100 } from "@/ui-kit/constants/colors";
 import { CSSObject } from "styled-components";
 
 
@@ -13,7 +13,7 @@ interface SortIconProps {
 
 const SortIcon: FC<SortIconProps> = memo((
   {
-    color = RAISIN_BLACK,
+    color = NEUTRAL_100,
     size = 20,
     rotation = "right",
   }
@@ -36,7 +36,7 @@ const SortIcon: FC<SortIconProps> = memo((
     <svg
       style={{ ...getRotation(rotation), cursor: "pointer", transition: '.2s ease-in' }}
       width={size}
-      height={size} viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      height="100%" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M7.99951 3.33301V12.6663"
         stroke={color}

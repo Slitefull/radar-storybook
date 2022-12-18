@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { ROCKET_METALLIC } from "../../constants/colors";
+import { NEUTRAL_60 } from "../../constants/colors";
 
 
 interface ActivityIconProps {
@@ -8,18 +8,23 @@ interface ActivityIconProps {
   size?: number;
 }
 
-const ActivityIcon: FC<ActivityIconProps> = memo(({ color, size }): JSX.Element => {
+const ActivityIcon: FC<ActivityIconProps> = memo((
+  {
+    color = NEUTRAL_60,
+    size = 20
+  }
+): JSX.Element => {
   return (
     <svg
-      width={size || 20}
-      height={size || 20}
+      width={size}
+      height="100%"
       viewBox="0 0 22 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M21 10H17L14 19L8 1L5 10H1"
-        stroke={color || ROCKET_METALLIC}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

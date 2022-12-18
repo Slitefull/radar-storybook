@@ -1,17 +1,18 @@
 import { FC, memo } from 'react';
 import { useRoutes } from "react-router-dom";
 import loadable from "@loadable/component";
-import AuthLayout from "@/ui-kit/components/layouts/auth";
+import AuthLayout from "@/router/layouts/auth";
 import MainLayout from "@/ui-kit/components/layouts/main";
 import ModalLayout from "@/ui-kit/components/layouts/modal";
+import MonitoringLayout from "@/router/layouts/monitoring";
 import {
   ADD_DOMAIN_PAGE,
   CHANGE_PASSWORD_PAGE,
   COMPETITORS_PAGE,
   HELP_PAGE,
   MANAGE_DOMAIN_PAGE,
-  MANAGE_PAGE,
-  MONITOR_CHANGES_PAGE,
+  MANAGE_PAGE, MONITORING_DOMAIN_PAGE,
+  MONITORING_PAGE,
   REPORTS_PAGE,
   RESET_PASSWORD_PAGE,
   SEO_AUDIT_PAGE,
@@ -25,7 +26,8 @@ const SignInPageRouter = loadable(() => import("@/pages/sign-in"));
 const SignUpPageRouter = loadable(() => import("@/pages/sign-up"));
 const ChangePasswordPageRouter = loadable(() => import("@/pages/change-password"));
 const ResetPasswordPageRouter = loadable(() => import("@/pages/reset-password"));
-const MonitorChangesPageRouter = loadable(() => import("@/pages/monitor-changes"));
+const MonitoringPageRouter = loadable(() => import("@/pages/monitoring"));
+const MonitoringDomainPageRouter = loadable(() => import("@/pages/monitoring-domain"));
 const AddDomainPageRouter = loadable(() => import("@/pages/add-domain"));
 const ManagePageRouter = loadable(() => import("@/pages/manage"));
 const ManageDomainPageRouter = loadable(() => import("@/pages/manage-domain"));
@@ -53,7 +55,6 @@ const Router: FC = memo(() => {
     {
       element: <MainLayout/>,
       children: [
-        { path: MONITOR_CHANGES_PAGE, element: <MonitorChangesPageRouter/> },
         { path: MANAGE_PAGE, element: <ManagePageRouter/> },
         { path: MANAGE_DOMAIN_PAGE, element: <ManageDomainPageRouter/> },
         { path: COMPETITORS_PAGE, element: <CompetitorsPageRouter/> },
@@ -67,6 +68,13 @@ const Router: FC = memo(() => {
       element: <ModalLayout/>,
       children: [
         { path: ADD_DOMAIN_PAGE, element: <AddDomainPageRouter/> },
+      ],
+    },
+    {
+      element: <MonitoringLayout/>,
+      children: [
+        { path: MONITORING_PAGE, element: <MonitoringPageRouter/> },
+        { path: MONITORING_DOMAIN_PAGE, element: <MonitoringDomainPageRouter/> },
       ],
     },
   ]);

@@ -1,12 +1,12 @@
 import { css } from "styled-components/macro";
-import { PLATINUM, PLUMP_PURPLE, TRANSPARENT } from "@/ui-kit/constants/colors";
+import { NEUTRAL_20, PRIMARY_60, TRANSPARENT } from "@/ui-kit/constants/colors";
 
 import { PaginationBulletProps } from "../../types";
 
 
 const SFieldset = css`
   background: ${TRANSPARENT};
-  border: 1px solid ${PLUMP_PURPLE};
+  border: 1px solid ${PRIMARY_60};
   border-radius: 10px;
   padding: 15px 20px;
   max-width: 400px;
@@ -29,7 +29,7 @@ const PaginationBullet = css<PaginationBulletProps>`
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: ${({ active }) => active ? PLUMP_PURPLE : PLATINUM};
+  background-color: ${({ active }) => active ? PRIMARY_60 : NEUTRAL_20};
   cursor: pointer;
   transition: .2s background-color;
 `;

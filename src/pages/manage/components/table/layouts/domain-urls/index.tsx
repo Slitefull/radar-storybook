@@ -4,13 +4,13 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { createData } from "@/pages/manage/components/table/__mock__";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import { DARK_LAVA, FOREST_GREEN_WEB, RAISIN_BLACK } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90, SUPPORT_4_60, NEUTRAL_100 } from "@/ui-kit/constants/colors";
 import { MANAGE_PAGE } from "@/constants/routes";
-import Table from "@/ui-kit/components/table";
 import faker from "faker";
-import ColoredText from "@/ui-kit/components/text/colored";
-import RadioGroup from "@/ui-kit/components/inputs/radio-group";
-import Meridian from "@/ui-kit/components/inputs/meridian";
+import Table from "@/ui-kit/components/generals/table";
+import Text from "@/ui-kit/components/typography/text";
+import RadioGroup from "@/ui-kit/components/controls/radio-group";
+import Meridian from "@/ui-kit/components/controls/meridian";
 import Button from "@/ui-kit/components/buttons/button";
 
 
@@ -57,13 +57,13 @@ const DomainUrlsTable: FC = memo((): JSX.Element => {
         Header: capitalizeFirstLetter(t("urls")),
         accessor: ({ urls }: TableData) => urls,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
       {
@@ -76,13 +76,13 @@ const DomainUrlsTable: FC = memo((): JSX.Element => {
         Header: capitalizeFirstLetter(t("weekly_crawls")),
         accessor: ({ weekly_crawls }: TableData) => weekly_crawls,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
       {
@@ -90,13 +90,13 @@ const DomainUrlsTable: FC = memo((): JSX.Element => {
         Header: capitalizeFirstLetter(t("credits_used")),
         accessor: ({ credits_used }: TableData) => credits_used,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         )
       },
       {
@@ -106,14 +106,14 @@ const DomainUrlsTable: FC = memo((): JSX.Element => {
         Cell: ({ value }: CellProps<TableData>) => (
           value
             ? (
-              <ColoredText type={"secondary"} weight={"bold"} color={FOREST_GREEN_WEB} size={"small"}>
+              <Text type={"secondary"} weight={"bold"} color={SUPPORT_4_60} size={"small"}>
                 {capitalizeFirstLetter(t("enabled"))}
-              </ColoredText>
+              </Text>
             )
             : (
-              <ColoredText type={"secondary"} weight={"default"} color={DARK_LAVA} size={"small"}>
+              <Text type={"secondary"} weight={"default"} color={NEUTRAL_90} size={"small"}>
                 {capitalizeFirstLetter(t("disabled"))}
-              </ColoredText>
+              </Text>
             )
         ),
         disableSortBy: true,

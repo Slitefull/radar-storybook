@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
-import Textarea from "@/ui-kit/components/inputs/textarea";
-import Label from "@/ui-kit/components/label";
+import Textarea from "@/ui-kit/components/controls/textarea";
+import Label from "@/ui-kit/components/typography/label";
 import CloseIcon from "@/ui-kit/customized-icons/close";
 
 import { Column } from "@/global.css";

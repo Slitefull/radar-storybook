@@ -1,22 +1,18 @@
 import { FC, memo, ReactNode } from 'react';
 import { useRecoilValue } from "recoil";
 import { selectedLayoutSelector } from "@/entity/selectors/manage-domain/layout-type";
-import PageContainer from "@/ui-kit/components/page-container/simple";
-import Breadcrumb from "./components/breadcrumb";
+import PageContainer from "@/ui-kit/components/containers/simple";
+import Options from "./components/options";
 import Settings from "@/pages/manage-domain/layouts/settings";
 import MonitoredUrls from "@/pages/manage-domain/layouts/monitored-urls";
 
+import { LayoutTypes } from '@/entity/types/manage-domain';
 import { Column } from '@/global.css';
 
 
-enum LayoutTypes {
-  settings = "domains",
-  monitoredURLs = "keywords",
-}
-
 const LayoutsRecord: Record<LayoutTypes, ReactNode> = {
-  [LayoutTypes.settings]: <Settings/>,
-  [LayoutTypes.monitoredURLs]: <MonitoredUrls/>,
+  [LayoutTypes.Settings]: <Settings/>,
+  [LayoutTypes.MonitoredURLs]: <MonitoredUrls/>,
 };
 
 const ManageDomain: FC = memo((): JSX.Element => {
@@ -25,7 +21,7 @@ const ManageDomain: FC = memo((): JSX.Element => {
   return (
     <PageContainer>
       <Column width={"100%"}>
-        <Breadcrumb/>
+        <Options/>
         <Column
           margin={"50px 0 0 0"}
           width={"100%"}

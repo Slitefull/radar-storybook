@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { ROCKET_METALLIC } from "@/ui-kit/constants/colors";
+import { NEUTRAL_60 } from "@/ui-kit/constants/colors";
 
 
 interface GridIconProps {
@@ -7,11 +7,11 @@ interface GridIconProps {
   size?: number;
 }
 
-const GridIcon: FC<GridIconProps> = memo(({ color = ROCKET_METALLIC, size = 20 }): JSX.Element => {
+const GridIcon: FC<GridIconProps> = memo(({ color = NEUTRAL_60, size = 20 }): JSX.Element => {
   return (
     <svg
       width={size}
-      height={size}
+      height="100%"
       viewBox="0 0 25 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

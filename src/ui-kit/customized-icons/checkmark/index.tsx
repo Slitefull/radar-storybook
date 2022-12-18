@@ -7,16 +7,16 @@ interface CheckmarkIconProps {
   size?: number;
 }
 
-const CheckmarkIcon: FC<CheckmarkIconProps> = memo(({ color, size }): JSX.Element => {
+const CheckmarkIcon: FC<CheckmarkIconProps> = memo(({ color = BLACK, size = 20 }): JSX.Element => {
   return (
     <svg
-      width={size || 20}
-      height={size || 20}
+      width={size}
+      height="100%"
       viewBox="0 0 12 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M0.396138 5.43688L4.99966 11L10.6358 0.243947" stroke={color || BLACK}/>
+      <path d="M0.396138 5.43688L4.99966 11L10.6358 0.243947" stroke={color}/>
     </svg>
   );
 });

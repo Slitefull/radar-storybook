@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import RoundedArrowButton from "../index";
-import { PLUMP_PURPLE, SNOW } from "@/ui-kit/constants/colors";
+import { PRIMARY_60, NEUTRAL_10 } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -12,8 +12,8 @@ const Template: ComponentStory<typeof RoundedArrowButton> = (args) => <RoundedAr
 
 export const Default = Template.bind({});
 Default.args = {
-  background: PLUMP_PURPLE,
-  arrowColor: SNOW,
+  background: PRIMARY_60,
+  arrowColor: NEUTRAL_10,
   rotation: "right",
   disabled: false,
   onClick: () => console.log("click")
@@ -24,14 +24,14 @@ Default.argTypes = {
     name: "background",
     table: {
       type: { summary: "Button background" },
-      defaultValue: { summary: `${PLUMP_PURPLE}` },
+      defaultValue: { summary: `${PRIMARY_60}` },
     },
   },
   arrowColor: {
     name: "arrowColor",
     table: {
       type: { summary: "Button arrow color" },
-      defaultValue: { summary: `${SNOW}` },
+      defaultValue: { summary: `${NEUTRAL_10}` },
     },
   },
   rotation: {

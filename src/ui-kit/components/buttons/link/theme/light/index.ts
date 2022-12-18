@@ -1,6 +1,6 @@
 import { DefaultTheme, FlattenInterpolation, SimpleInterpolation, ThemedStyledProps } from "styled-components";
 import { css, FlattenSimpleInterpolation } from "styled-components/macro";
-import { LAVENDER, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_30, PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 import { LinkSize, SLinkProps, WithIconWrapperProps } from "../../types";
 
@@ -40,7 +40,7 @@ const SLink: FlattenInterpolation<ThemedStyledProps<SLinkProps, DefaultTheme>> =
   text-align: center;
   white-space: nowrap;
   letter-spacing: -0.02em;
-  color: ${PLUMP_PURPLE};
+  color: ${PRIMARY_60};
   border: none;
   background-color: TRANSPARENT;
   cursor: pointer;
@@ -49,7 +49,7 @@ const SLink: FlattenInterpolation<ThemedStyledProps<SLinkProps, DefaultTheme>> =
   ${({ size }) => css`${LinkSizesRecord[size]}`};
 
   &:hover {
-    color: ${LAVENDER};
+    color: ${PRIMARY_30};
     transition: .2s color, .2s opacity;
   }
   

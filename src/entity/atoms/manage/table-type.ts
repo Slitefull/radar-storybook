@@ -1,15 +1,11 @@
 import { atom } from "recoil";
 
+import { LayoutTypes } from "@/entity/types/manage";
 
-enum TableTypes {
-  domainsUrls = "domainsUrls",
-  keywords = "keywords",
-  redirectTesting = "redirectTesting",
-}
 
 const key = "manage/selectedTableTypeState";
 
-export const selectedTableTypeState = atom<TableTypes>({
+export const selectedTableTypeState = atom<LayoutTypes>({
   key,
-  default: TableTypes.domainsUrls,
+  default: LayoutTypes.DomainsUrls,
 });

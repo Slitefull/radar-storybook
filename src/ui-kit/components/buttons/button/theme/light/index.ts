@@ -1,33 +1,33 @@
 import { DefaultTheme, FlattenInterpolation, SimpleInterpolation, ThemedStyledProps } from "styled-components";
 import { css, FlattenSimpleInterpolation } from "styled-components/macro";
-import { DARK_LAVA, PLATINUM, PLUMP_PURPLE, TRANSPARENT, WHITE } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90, NEUTRAL_20, PRIMARY_60, TRANSPARENT, NEUTRAL_00 } from "@/ui-kit/constants/colors";
 
 import { ButtonColors, ButtonSizes, SButtonProps } from "../../types";
 
 
 const primary: ReadonlyArray<SimpleInterpolation> = css`
-  background: ${PLUMP_PURPLE};
+  background: ${PRIMARY_60};
   font-weight: 700;
-  color: ${WHITE};
+  color: ${NEUTRAL_00};
   border: 1px solid ${TRANSPARENT};
 
   &:hover {
-    background: ${WHITE};
-    border: 1px solid ${PLUMP_PURPLE};
-    color: ${PLUMP_PURPLE};
+    background: ${NEUTRAL_00};
+    border: 1px solid ${PRIMARY_60};
+    color: ${PRIMARY_60};
   }
 `;
 
 const secondary: ReadonlyArray<SimpleInterpolation> = css`
-  background: ${WHITE};
+  background: ${NEUTRAL_00};
   font-weight: 700;
-  color: ${PLUMP_PURPLE};
-  border: 1px solid ${PLUMP_PURPLE};
+  color: ${PRIMARY_60};
+  border: 1px solid ${PRIMARY_60};
 
   &:hover {
-    background: ${PLUMP_PURPLE};
+    background: ${PRIMARY_60};
     border: 1px solid ${TRANSPARENT};
-    color: ${WHITE};
+    color: ${NEUTRAL_00};
   }
 `;
 
@@ -35,13 +35,13 @@ const ghost: ReadonlyArray<SimpleInterpolation> = css`
   font-family: "Menlo", serif;
   background: ${TRANSPARENT};
   font-weight: 400;
-  color: ${DARK_LAVA};
-  border: 1px solid ${PLATINUM};
+  color: ${NEUTRAL_90};
+  border: 1px solid ${NEUTRAL_20};
 
   &:hover {
-    background: ${WHITE};
-    border: 1px solid ${PLUMP_PURPLE};
-    color: ${DARK_LAVA};
+    background: ${NEUTRAL_00};
+    border: 1px solid ${PRIMARY_60};
+    color: ${NEUTRAL_90};
   }
 `;
 

@@ -1,5 +1,5 @@
 import { css } from "styled-components/macro";
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90 } from "@/ui-kit/constants/colors";
 import { keyframes } from "styled-components";
 
 
@@ -31,7 +31,7 @@ const LoaderText = css`
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  color: ${DARK_LAVA};
+  color: ${NEUTRAL_90};
 `;
 
 export const radar = {

@@ -1,5 +1,5 @@
 import { css } from "styled-components/macro";
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90 } from "@/ui-kit/constants/colors";
 
 
 const PageTitle = css`
@@ -9,7 +9,7 @@ const PageTitle = css`
   line-height: 35px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${DARK_LAVA};
+  color: ${NEUTRAL_90};
 `;
 
 const SliderElement = css`
@@ -17,7 +17,7 @@ const SliderElement = css`
   line-height: 19px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${DARK_LAVA};
+  color: ${NEUTRAL_90};
 `;
 
 const TooltipText = css`
@@ -26,7 +26,7 @@ const TooltipText = css`
   font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.02em;
-  color: ${DARK_LAVA};
+  color: ${NEUTRAL_90};
 `;
 
 export const addDomain = {

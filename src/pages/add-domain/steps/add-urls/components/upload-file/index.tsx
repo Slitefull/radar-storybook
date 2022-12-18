@@ -1,7 +1,7 @@
 import { FC, memo, useCallback, useState } from 'react';
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
-import Dropzone from "@/ui-kit/components/inputs/dropzone";
-import Checkbox from "@/ui-kit/components/inputs/checkbox";
+import { NEUTRAL_90 } from "@/ui-kit/constants/colors";
+import Dropzone from "@/ui-kit/components/controls/dropzone";
+import Checkbox from "@/ui-kit/components/controls/checkbox";
 
 import { Column } from '@/global.css';
 
@@ -29,7 +29,7 @@ const UploadFile: FC = memo((): JSX.Element => {
       <Checkbox
         checked={false}
         label={"Allow inaccessible URLs"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelPosition={"right"}
       />
     </Column>

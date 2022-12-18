@@ -1,6 +1,6 @@
 import { css } from "styled-components/macro";
 import { DefaultTheme, FlattenInterpolation, ThemedStyledProps } from "styled-components";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 import { SRoundedArrowButtonProps } from "../../types";
 
@@ -9,7 +9,7 @@ const SRoundedArrowButton: FlattenInterpolation<ThemedStyledProps<SRoundedArrowB
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: ${({ background }) => background || PLUMP_PURPLE};
+  background: ${({ background }) => background || PRIMARY_60};
   border: none;
   display: flex;
   align-items: center;

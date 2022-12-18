@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from 'react';
-import { EBONY } from "@/ui-kit/constants/colors";
-import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types";
-import Input from "@/ui-kit/components/inputs/text";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
+import DropdownWithTypes from "@/ui-kit/components/controls/with-types";
+import Input from "@/ui-kit/components/controls/text";
 import CloseIcon from "@/ui-kit/customized-icons/close";
-import Label from "@/ui-kit/components/label";
+import Label from "@/ui-kit/components/typography/label";
 
 import { Column, Row } from '@/global.css';
 
@@ -36,7 +36,7 @@ const PageLoadError: FC<PageLoadErrorProps> = memo(({ index, onDelete }) => {
           label={"Load error type"}
           labelPosition={"top"}
           labelWeight={"bold"}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           options={userAgentOptions}
           width={"25%"}
         />

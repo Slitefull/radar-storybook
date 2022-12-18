@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { ROCKET_METALLIC } from "../../constants/colors";
+import { NEUTRAL_60 } from "../../constants/colors";
 
 
 interface ToolIconProps {
@@ -8,11 +8,16 @@ interface ToolIconProps {
   size?: number;
 }
 
-const ToolIcon: FC<ToolIconProps> = memo(({ color, size }): JSX.Element => {
+const ToolIcon: FC<ToolIconProps> = memo((
+  {
+    color = NEUTRAL_60,
+    size = 20
+  }
+): JSX.Element => {
   return (
     <svg
-      width={size || 20}
-      height={size || 20}
+      width={size}
+      height="100%"
       viewBox="0 0 22 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +31,7 @@ const ToolIcon: FC<ToolIconProps> = memo(({ color, size }): JSX.Element => {
         13.9064C16.2794 13.6878 17.3842 13.1087 18.2466 12.2463C19.1091 11.3838 19.6882 10.279 19.9068 9.07913C20.1254
          7.87921 19.9732 6.64117 19.4703 5.52998L15.7003 9.29998C15.5134 9.48321 15.2621 9.58584 15.0003 9.58584C14.7386
          9.58584 14.4873 9.48321 14.3003 9.29998L12.7003 7.69998C12.5171 7.51305 12.4145 7.26173 12.4145 6.99998Z"
-        stroke={color || ROCKET_METALLIC}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

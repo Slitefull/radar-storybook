@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { ROCKET_METALLIC } from "../../constants/colors";
+import { NEUTRAL_60 } from "../../constants/colors";
 
 
 interface SearchIconProps {
@@ -8,11 +8,16 @@ interface SearchIconProps {
   size?: number;
 }
 
-const SearchIcon: FC<SearchIconProps> = memo(({ color, size }): JSX.Element => {
+const SearchIcon: FC<SearchIconProps> = memo((
+  {
+    color = NEUTRAL_60,
+    size = 20
+  }
+): JSX.Element => {
   return (
     <svg
-      width={size || 20}
-      height={size || 20}
+      width={size}
+      height="100%"
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -20,14 +25,14 @@ const SearchIcon: FC<SearchIconProps> = memo(({ color, size }): JSX.Element => {
       <path
         d="M7.33333 12.6667C10.2789 12.6667 12.6667 10.2789 12.6667 7.33333C12.6667 4.38781 10.2789 2 7.33333 2C4.38781
         2 2 4.38781 2 7.33333C2 10.2789 4.38781 12.6667 7.33333 12.6667Z"
-        stroke={color || ROCKET_METALLIC}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M14.0001 14L11.1001 11.1"
-        stroke={color || ROCKET_METALLIC}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -1,17 +1,16 @@
 import { css } from "styled-components/macro";
-import { LIME_GREEN, PLATINUM, RAISIN_BLACK, TART_ORANGE, WHITE } from "@/ui-kit/constants/colors";
-
-import { PercentageProps } from "../../types";
+import { NEUTRAL_00, NEUTRAL_100, NEUTRAL_20 } from "@/ui-kit/constants/colors";
 
 
 const CardWrapper = css`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 14px 12px;
-  background: ${WHITE};
-  border: 1px solid ${PLATINUM};
+  background: ${NEUTRAL_00};
+  border: 1px solid ${NEUTRAL_20};
   border-radius: 8px;
-  max-width: 280px;
+  width: 290px;
+  height: 220px;
   grid-gap: 0 30px;
   position: relative;
 `;
@@ -35,17 +34,29 @@ const CardName = css`
   line-height: 16px;
   letter-spacing: -0.02em;
   text-decoration-line: underline;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
   word-break: break-word;
+  cursor: pointer;
+  transition: .2s opacity ease-in;
+
+  &:hover {
+    opacity: .8;
+    transition: .2s opacity ease-in;
+  }
 `;
 
 const TotalText = css`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
   font-family: "Menlo", serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
   white-space: nowrap;
 `;
 
@@ -55,16 +66,7 @@ const TotalNumbers = css`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
-`;
-
-const Percentage = css<PercentageProps>`
-  font-family: "Menlo", serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: -0.02em;
-  color: ${({ isPositive }) => isPositive ? TART_ORANGE : LIME_GREEN};
+  color: ${NEUTRAL_100};
 `;
 
 const ChartInfoWrapper = css`
@@ -86,11 +88,11 @@ const ChartInfoText = css`
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
 `;
 
 const HorizontalLine = css`
-  background: ${PLATINUM};
+  background: ${NEUTRAL_20};
   color: transparent;
   border: none;
   border-radius: 5px;
@@ -108,7 +110,6 @@ export const monitorChanges = {
   CardName,
   TotalText,
   TotalNumbers,
-  Percentage,
   ChartInfo,
   ChartInfoWrapper,
   ChartInfoText,

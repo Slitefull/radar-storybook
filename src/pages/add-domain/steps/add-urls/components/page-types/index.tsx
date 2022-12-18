@@ -1,11 +1,11 @@
 import { FC, memo, useCallback, useMemo } from 'react';
 import { useRecoilState } from "recoil";
 import { pageTypes } from "@/entity/atoms/add-domain/add-urls/page-types";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 import PlusCircle from "@/ui-kit/customized-icons/plus-circle";
 import PageType from "./page-type";
-import ColoredText from "@/ui-kit/components/text/colored";
-import Label from "@/ui-kit/components/label";
+import Text from "@/ui-kit/components/typography/text";
+import Label from "@/ui-kit/components/typography/label";
 import RoundedBanner from "@/ui-kit/components/banners/rounded";
 
 import { Column } from "@/global.css";
@@ -48,7 +48,7 @@ const PageTypes: FC = memo((): JSX.Element => {
       {pageTypeComponents}
       <Label onClick={onAddPageTypesElementHandler}>
         <PlusCircle/>
-        <ColoredText color={PLUMP_PURPLE} weight={"bold"}>Add page type</ColoredText>
+        <Text color={PRIMARY_60} weight={"bold"}>Add page type</Text>
       </Label>
     </Column>
   );

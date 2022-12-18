@@ -1,12 +1,12 @@
 import { FC, memo, useCallback } from 'react';
 import CloseIcon from "@/ui-kit/customized-icons/close";
-import Label from "@/ui-kit/components/label";
-import Input from "@/ui-kit/components/inputs/text";
-import Textarea from "@/ui-kit/components/inputs/textarea";
-import ColoredText from "@/ui-kit/components/text/colored";
+import Label from "@/ui-kit/components/typography/label";
+import Input from "@/ui-kit/components/controls/text";
+import Textarea from "@/ui-kit/components/controls/textarea";
+import Text from "@/ui-kit/components/typography/text";
 
 import { Column } from '@/global.css';
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90 } from "@/ui-kit/constants/colors";
 
 
 interface PageTypeProps {
@@ -55,19 +55,19 @@ const PageType: FC<PageTypeProps> = memo(({ index, onDelete }): JSX.Element => {
         align={"baseline"}
         margin={"0"}
       >
-        <ColoredText
+        <Text
           type={"primary"}
           weight={"bold"}
           size={"big"}
         >
           Homepage
-        </ColoredText>
-        <ColoredText
+        </Text>
+        <Text
           type={"secondary"}
-          color={DARK_LAVA}
+          color={NEUTRAL_90}
         >
           https://upsidelab.io
-        </ColoredText>
+        </Text>
       </Column>
 
       <Column width={"100%"}>

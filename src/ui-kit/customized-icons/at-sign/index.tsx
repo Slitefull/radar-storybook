@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 
-import { ROCKET_METALLIC } from "../../constants/colors";
+import { NEUTRAL_60 } from "../../constants/colors";
 
 
 interface AtSignIconProps {
@@ -8,18 +8,23 @@ interface AtSignIconProps {
   size?: number;
 }
 
-const AtSignIcon: FC<AtSignIconProps> = memo(({ color, size }): JSX.Element => {
+const AtSignIcon: FC<AtSignIconProps> = memo((
+  {
+    color = NEUTRAL_60,
+    size = 20
+  }
+): JSX.Element => {
   return (
     <svg
-      width={size || 20}
-      height={size || 20}
+      width={size}
+      height="100%"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-        stroke={color || ROCKET_METALLIC}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -31,7 +36,7 @@ const AtSignIcon: FC<AtSignIconProps> = memo(({ color, size }): JSX.Element => {
         3.92368 4.03241 5.54995 3.03327 7.57371C2.03413 9.59748 1.74898 11.8997 2.22418 14.1061C2.69938 16.3125 3.90699
         18.2932 5.65064 19.7263C7.39429 21.1593 9.57144 21.9603 11.8281 21.9991C14.0847 22.0379 16.2881 21.3122 18.08
         19.94"
-        stroke={color || ROCKET_METALLIC}
+        stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

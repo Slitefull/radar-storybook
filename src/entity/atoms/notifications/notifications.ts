@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { Notification } from "@/ui-kit/components/notifications";
+import { Notification } from "@/ui-kit/components/generals/notifications";
 
 
 const key = "ui-kit/notificationsState";

@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from "react-i18next";
-import { EBONY, RAISIN_BLACK } from "@/ui-kit/constants/colors";
+import { NEUTRAL_70, NEUTRAL_100 } from "@/ui-kit/constants/colors";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import ColoredText from "@/ui-kit/components/text/colored";
-import Dropdown from "@/ui-kit/components/dropdowns/with-types";
-import Input from "@/ui-kit/components/inputs/text";
+import Text from "@/ui-kit/components/typography/text";
+import Dropdown from "@/ui-kit/components/controls/with-types";
+import Input from "@/ui-kit/components/controls/text";
 import BorderedLayout from "@/ui-kit/components/layouts/bordered";
 
 import { Column, Row } from "@/global.css";
@@ -35,13 +35,13 @@ const Settings: FC = memo((): JSX.Element => {
         width={"80%"}
         margin={"auto"}
       >
-        <ColoredText
-          color={RAISIN_BLACK}
+        <Text
+          color={NEUTRAL_100}
           weight={"bold"}
           size={"big"}
         >
           Settings & customizations
-        </ColoredText>
+        </Text>
 
         <Row
           justify={"space-between"}
@@ -52,7 +52,7 @@ const Settings: FC = memo((): JSX.Element => {
             <Dropdown
               types={[]}
               label={capitalizeFirstLetter(t("domain_type"))}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               labelPosition={"top"}
               options={domainTypeOptions}
               onChange={onChangeDomainTypeHandler}
@@ -60,7 +60,7 @@ const Settings: FC = memo((): JSX.Element => {
             />
             <Input
               label={capitalizeFirstLetter(t("domain"))}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               onChange={onChangeInputHandler}
               placeholder={"e.g. lorem ipsum"}
               width={"100%"}
@@ -69,7 +69,7 @@ const Settings: FC = memo((): JSX.Element => {
             <Dropdown
               types={[]}
               label={capitalizeFirstLetter(t("groups"))}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               labelPosition={"top"}
               options={domainTypeOptions}
               onChange={onChangeDomainTypeHandler}
@@ -81,7 +81,7 @@ const Settings: FC = memo((): JSX.Element => {
             <Dropdown
               types={[]}
               label={capitalizeFirstLetter(t("display_name"))}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               labelPosition={"top"}
               options={domainTypeOptions}
               onChange={onChangeDomainTypeHandler}
@@ -90,7 +90,7 @@ const Settings: FC = memo((): JSX.Element => {
             <Dropdown
               types={["multi"]}
               label={capitalizeFirstLetter(t("branded_keywords"))}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               labelPosition={"top"}
               options={domainTypeOptions}
               onChange={onChangeDomainTypeHandler}

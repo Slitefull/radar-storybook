@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { CSSObject } from "styled-components";
 
-import { SNOW } from "@/ui-kit/constants/colors";
+import { NEUTRAL_10 } from "@/ui-kit/constants/colors";
 
 
 type Rotations = "top" | "right" | "bottom" | "left";
@@ -16,7 +16,7 @@ interface ArrowFullIconProps {
 
 const ArrowFullIcon: FC<ArrowFullIconProps> = memo((
   {
-    color = SNOW,
+    color = NEUTRAL_10,
     size = 20,
     rotation = "right",
     onClick,
@@ -47,7 +47,7 @@ const ArrowFullIcon: FC<ArrowFullIconProps> = memo((
          onClick={onClick}
          style={{ ...getRotation(rotation), cursor: "pointer", transition: '.2s ease-in' }}
          width={size}
-         height={size}
+         height="100%"
          viewBox="0 0 16 16"
          fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M8 3.33301V12.6663" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -1,7 +1,8 @@
 import { FC, memo, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_40, PRIMARY_60 } from "@/ui-kit/constants/colors";
+import Text from "@/ui-kit/components/typography/text";
 import Arrow from "@/ui-kit/customized-icons/arrow";
 
 import { BackIconWrapper, SBorderedLayout } from "./styled";
@@ -48,9 +49,17 @@ const BorderedLayout: FC<BorderedLayoutProps> = memo((
           <Arrow
             size={12}
             rotation={"left"}
-            color={PLUMP_PURPLE}
+            color={PRIMARY_60}
           />
-          {capitalizeFirstLetter(t(backText || "back"))}
+          <Text
+            color={PRIMARY_60}
+            hoverColor={PRIMARY_40}
+            size={"big"}
+            weight={"bold"}
+            cursor={"pointer"}
+          >
+            {capitalizeFirstLetter(t(backText || "back"))}
+          </Text>
         </BackIconWrapper>
       )}
       {children}

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import RadioCollapsible from "../index";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -18,7 +18,7 @@ export const Default = Template.bind({});
 Default.args = {
   name: "test",
   label: "Crawl settings",
-  labelColor: PLUMP_PURPLE,
+  labelColor: PRIMARY_60,
   labelSize: "default",
   labelWeight: "bold",
   labelPosition: "right",

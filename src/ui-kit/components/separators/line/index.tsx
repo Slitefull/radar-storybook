@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { PLATINUM } from "@/ui-kit/constants/colors";
+import { NEUTRAL_20 } from "@/ui-kit/constants/colors";
 
 import { SLineSeparator } from "./styled";
 
@@ -19,7 +19,7 @@ const LineSeparator: FC<LineSeparatorProps> = memo((
   {
     type = "horizontal",
     variant = "solid",
-    color = PLATINUM,
+    color = NEUTRAL_20,
     width = "100%",
     radius = 0,
   }

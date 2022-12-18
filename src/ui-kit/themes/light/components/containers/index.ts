@@ -1,8 +1,10 @@
-import { simplePage } from "@/ui-kit/components/page-container/simple/theme/light";
-import { modalPage } from "@/ui-kit/components/page-container/modal/theme/light";
+import { simplePage } from "@/ui-kit/components/containers/simple/theme/light";
+import { modalPage } from "@/ui-kit/components/containers/modal/theme/light";
 
 
-export default {
+const containers = {
   simplePage,
   modalPage,
 };
+
+export default containers;

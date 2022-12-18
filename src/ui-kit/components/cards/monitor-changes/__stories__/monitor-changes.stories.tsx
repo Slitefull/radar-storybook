@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { createMonitorChangesElement } from "../__mock__";
 import MonitorChangesCard from "../index";
 
 
@@ -8,15 +9,13 @@ export default {
 } as ComponentMeta<typeof MonitorChangesCard>;
 
 const Template: ComponentStory<typeof MonitorChangesCard> = (args) => <MonitorChangesCard {...args}/>;
+const dataElement = createMonitorChangesElement();
 
 export const Default = Template.bind({});
 Default.args = {
-  name: "yahoo",
-  total: {
-    count: 10,
-    percentage: 5,
-    isPositive: true,
-  }
+  name: dataElement.name,
+  total: dataElement.total,
+  data: dataElement.data,
 };
 
 Default.argTypes = {

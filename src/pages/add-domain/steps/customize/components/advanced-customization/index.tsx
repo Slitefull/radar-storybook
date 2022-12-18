@@ -1,11 +1,11 @@
 import { FC, memo, useCallback, useMemo } from 'react';
 import { useRecoilState } from "recoil";
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90 } from "@/ui-kit/constants/colors";
 import { excludeCertain } from "@/entity/atoms/add-domain/customize/advanced-customization/exclude-certain";
 import { customTests } from '@/entity/atoms/add-domain/customize/advanced-customization/custom-tests';
 import { ignoreCertain } from '@/entity/atoms/add-domain/customize/advanced-customization/ignore-certain';
 import { ignoreLinks } from '@/entity/atoms/add-domain/customize/advanced-customization/ignore-links';
-import FormCreator from "@/ui-kit/components/form-creator";
+import FormCreator from "@/ui-kit/components/controls/form-creator";
 import LineSeparator from "@/ui-kit/components/separators/line";
 import ExcludeCertain from './exclude-certain';
 import CustomTests from './custom-tests';
@@ -106,7 +106,7 @@ const AdvancedCustomization: FC = memo((): JSX.Element => {
       <LineSeparator/>
       <FormCreator
         label={"Exclude certain sections of URL"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelWeight={"bold"}
         labelSize={"big"}
         tooltip={<div>Tooltip</div>}
@@ -117,7 +117,7 @@ const AdvancedCustomization: FC = memo((): JSX.Element => {
       <LineSeparator/>
       <FormCreator
         label={"Custom tests"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelWeight={"bold"}
         labelSize={"big"}
         tooltip={<div>Tooltip</div>}
@@ -128,7 +128,7 @@ const AdvancedCustomization: FC = memo((): JSX.Element => {
       <LineSeparator/>
       <FormCreator
         label={"Ignore Certain Types of Changes"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelSize={"big"}
         labelWeight={"bold"}
         tooltip={<div>Tooltip</div>}
@@ -139,7 +139,7 @@ const AdvancedCustomization: FC = memo((): JSX.Element => {
       <LineSeparator/>
       <FormCreator
         label={"Ignore Links"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelSize={"big"}
         labelWeight={"bold"}
         tooltip={<div>Tooltip</div>}

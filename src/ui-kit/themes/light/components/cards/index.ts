@@ -3,8 +3,10 @@ import { collapsible } from "@/ui-kit/components/cards/collapsible/theme/light";
 import { radioCollapsible } from "@/ui-kit/components/cards/radio-collapsible/theme/light";
 
 
-export default {
+const cards = {
   monitorChanges,
   collapsible,
   radioCollapsible,
-}
+};
+
+export default cards;

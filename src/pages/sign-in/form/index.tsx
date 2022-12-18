@@ -8,11 +8,11 @@ import { useAuth } from "@/ui-kit/hooks/useAuth";
 import { email, password } from "@/ui-kit/helpers/validators";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signInAPI } from "@/api/auth/auth";
-import { MONITOR_CHANGES_PAGE, RESET_PASSWORD_PAGE } from "@/constants/routes";
-import { EBONY, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
-import { ToastTypes } from "@/ui-kit/components/notifications/types";
+import { MONITORING_PAGE, RESET_PASSWORD_PAGE } from "@/constants/routes";
+import { NEUTRAL_70, PRIMARY_40, PRIMARY_60 } from "@/ui-kit/constants/colors";
+import { ToastTypes } from "@/ui-kit/components/generals/notifications/types";
 import FormsTextInput from "@/ui-kit/components/forms/text-input";
-import ColoredText from "@/ui-kit/components/text/colored";
+import Text from "@/ui-kit/components/typography/text";
 import Button from "@/ui-kit/components/buttons/button";
 import * as yup from "yup";
 
@@ -54,7 +54,7 @@ const SignInForm: FC = memo((): JSX.Element => {
     await signInAPI({ email, password })
       .then(() => {
         setAuth(true);
-        navigate(MONITOR_CHANGES_PAGE);
+        navigate(MONITORING_PAGE);
       })
       .catch((error) => {
         notify({
@@ -74,7 +74,7 @@ const SignInForm: FC = memo((): JSX.Element => {
         type={"text"}
         control={control}
         label={capitalizeFirstLetter(t("email"))}
-        labelColor={EBONY}
+        labelColor={NEUTRAL_70}
         labelWeight={"bold"}
         error={errors.email?.message}
       />
@@ -83,18 +83,19 @@ const SignInForm: FC = memo((): JSX.Element => {
         type={"password"}
         control={control}
         label={capitalizeFirstLetter(t("password"))}
-        labelColor={EBONY}
+        labelColor={NEUTRAL_70}
         labelWeight={"bold"}
         error={errors.password?.message}
         subText={
-          <ColoredText
+          <Text
             weight={"bold"}
-            color={PLUMP_PURPLE}
+            color={PRIMARY_60}
+            hoverColor={PRIMARY_40}
             margin={"0 0 0 auto"}
             onClick={onForgotPasswordHandler}
           >
             {capitalizeFirstLetter(t("forgot_your_password"))}?
-          </ColoredText>
+          </Text>
         }
       />
       <Button disabled={isSubmitting}>

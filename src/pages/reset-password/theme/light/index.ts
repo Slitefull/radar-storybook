@@ -1,5 +1,5 @@
 import { css } from "styled-components/macro";
-import { DARK_LAVA, PLUMP_PURPLE, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90, PRIMARY_60, NEUTRAL_60 } from "@/ui-kit/constants/colors";
 
 
 const Title = css`
@@ -10,11 +10,11 @@ const Title = css`
   line-height: 35px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${DARK_LAVA};
+  color: ${NEUTRAL_90};
 `;
 
 const ColoredTitle = css`
-  color: ${PLUMP_PURPLE};
+  color: ${PRIMARY_60};
 `;
 
 const SubTitle = css`
@@ -24,7 +24,7 @@ const SubTitle = css`
   font-size: 18px;
   line-height: 23px;
   text-align: center;
-  color: ${ROCKET_METALLIC};
+  color: ${NEUTRAL_60};
 `;
 
 const ResetPasswordForm = css`

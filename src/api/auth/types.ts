@@ -1,4 +1,4 @@
-import { ServiceLevels } from "@/constants/auth/service-levels";
+import { ServiceLevels } from "@/constants/auth";
 
 export interface SApiResponse {
   message: string;

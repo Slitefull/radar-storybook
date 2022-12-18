@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Controller } from "react-hook-form";
-import Input, { TextInputProps } from "@/ui-kit/components/inputs/text";
+import Input, { TextInputProps } from "@/ui-kit/components/controls/text";
 
 
 interface FormsTextInputProps

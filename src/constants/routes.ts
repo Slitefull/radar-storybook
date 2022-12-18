@@ -1,4 +1,5 @@
-export const MONITOR_CHANGES_PAGE = "/";
+export const MONITORING_PAGE = "/monitoring";
+export const MONITORING_DOMAIN_PAGE = "/monitoring/:id";
 export const SIGN_IN_PAGE = "/sign-in";
 export const SIGN_UP_PAGE = "/sign-up";
 export const RESET_PASSWORD_PAGE = "/reset-password";
@@ -13,4 +14,4 @@ export const REPORTS_PAGE = "/reports";
 export const HELP_PAGE = "/help";
 
 export const PUBLIC_ROUTES = [SIGN_IN_PAGE, SIGN_UP_PAGE, RESET_PASSWORD_PAGE, CHANGE_PASSWORD_PAGE];
-export const MATCH_ROUTES = [MANAGE_DOMAIN_PAGE];
+export const MATCH_ROUTES = [MANAGE_DOMAIN_PAGE, MONITORING_DOMAIN_PAGE];

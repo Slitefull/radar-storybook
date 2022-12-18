@@ -10,6 +10,7 @@ type ArrowRotation = "top" | "right" | "bottom" | "left";
 interface RoundedArrowButtonProps extends DefaultButtonProps {
   background?: Color;
   arrowColor?: Color;
+  arrowSize?: number;
   rotation?: ArrowRotation;
   onClick?: VoidFunction;
   disabled?: boolean;
@@ -19,6 +20,7 @@ const RoundedArrowButton: FC<RoundedArrowButtonProps> = memo((
   {
     background,
     arrowColor,
+    arrowSize = 12,
     rotation,
     onClick,
     disabled,
@@ -33,7 +35,7 @@ const RoundedArrowButton: FC<RoundedArrowButtonProps> = memo((
       <ArrowIcon
         color={arrowColor}
         rotation={rotation}
-        size={14}
+        size={arrowSize}
       />
     </SRoundedArrowButton>
   );

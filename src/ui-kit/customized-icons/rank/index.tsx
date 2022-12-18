@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from 'react';
 import { CSSObject } from "styled-components";
 
-import { LIME_GREEN, TART_ORANGE } from "@/ui-kit/constants/colors";
+import { SUPPORT_4_50, SUPPORT_2_50 } from "@/ui-kit/constants/colors";
 
 
 interface RankIconProps {
@@ -25,9 +25,9 @@ const RankIcon: FC<RankIconProps> = memo((
 
   const getColor = useCallback(() => {
     if (isPositive) {
-      return LIME_GREEN;
+      return SUPPORT_4_50;
     } else {
-      return TART_ORANGE;
+      return SUPPORT_2_50;
     }
   }, [isPositive])
 
@@ -35,7 +35,7 @@ const RankIcon: FC<RankIconProps> = memo((
     <svg
       style={{ ...getRotation(), cursor: "pointer", transition: '.2s ease-in' }}
       width={size}
-      height={size}
+      height="100%"
       viewBox="0 0 8 4"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

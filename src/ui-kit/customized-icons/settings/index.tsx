@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { PLUMP_PURPLE, ROCKET_METALLIC } from "../../constants/colors";
+import { PRIMARY_60, NEUTRAL_60 } from "../../constants/colors";
 import useHover from "../../hooks/useHover";
 
 
@@ -12,7 +12,7 @@ interface SettingsIconProps {
 
 const SettingsIcon: FC<SettingsIconProps> = memo((
   {
-    color = ROCKET_METALLIC,
+    color = NEUTRAL_60,
     hoverColor,
     size = 20,
     onClick
@@ -28,7 +28,7 @@ const SettingsIcon: FC<SettingsIconProps> = memo((
     >
       <svg
         width={size}
-        height={size}
+        height="100%"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

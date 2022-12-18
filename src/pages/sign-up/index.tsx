@@ -2,10 +2,10 @@ import { FC, memo, useCallback } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import { PLUMP_PURPLE, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
+import { PRIMARY_40, PRIMARY_60, NEUTRAL_60 } from "@/ui-kit/constants/colors";
 import { SIGN_IN_PAGE } from "@/constants/routes";
 import loadable from "@loadable/component";
-import ColoredText from "@/ui-kit/components/text/colored";
+import Text from "@/ui-kit/components/typography/text";
 import SignUpFormFallback from "@/pages/sign-up/form/fallback";
 
 import { Column, Row } from "@/global.css";
@@ -32,16 +32,17 @@ const SignUpPage: FC = memo((): JSX.Element => {
       </Title>
       <SignUpForm/>
       <Row gap={5}>
-        <ColoredText color={ROCKET_METALLIC}>
+        <Text color={NEUTRAL_60}>
           {capitalizeFirstLetter(t("already_have_an_account"))}?
-        </ColoredText>
-        <ColoredText
+        </Text>
+        <Text
           weight={"bold"}
-          color={PLUMP_PURPLE}
+          color={PRIMARY_60}
+          hoverColor={PRIMARY_40}
           onClick={onSignInHandler}
         >
           {capitalizeFirstLetter(t("login"))}
-        </ColoredText>
+        </Text>
       </Row>
     </Column>
   );

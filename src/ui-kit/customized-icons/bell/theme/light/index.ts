@@ -1,5 +1,5 @@
 import { css } from "styled-components/macro";
-import { CRIMSON, SNOW } from "@/ui-kit/constants/colors";
+import { SUPPORT_2_60, NEUTRAL_10 } from "@/ui-kit/constants/colors";
 
 
 const BellIconWrapper = css`
@@ -8,14 +8,14 @@ const BellIconWrapper = css`
 
 const Count = css`
   padding: 3px;
-  background: ${CRIMSON};
+  background: ${SUPPORT_2_60};
   border-radius: 5px;
   font-family: 'Menlo', serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.02em;
-  color: ${SNOW};
+  color: ${NEUTRAL_10};
   position: absolute;
   top: -10px;
   right: -10px;

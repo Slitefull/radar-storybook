@@ -8,9 +8,9 @@ import { confirmPassword, email, password, requiredString } from "@/ui-kit/helpe
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 import { signUpAPI } from "@/api/auth/auth";
 import { authState } from "@/entity/atoms/auth/auth";
-import { ToastTypes } from "@/ui-kit/components/notifications/types";
-import { ServiceLevels } from "@/constants/auth/service-levels";
-import { EBONY } from "@/ui-kit/constants/colors";
+import { ToastTypes } from "@/ui-kit/components/generals/notifications/types";
+import { ServiceLevels } from "@/constants/auth";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
 import Button from "@/ui-kit/components/buttons/button";
 import FormsTextInput from "@/ui-kit/components/forms/text-input";
 import * as yup from "yup";
@@ -83,7 +83,7 @@ const SignUpForm: FC = (): JSX.Element => {
             type={"text"}
             control={control}
             label={capitalizeFirstLetter(t("name"))}
-            labelColor={EBONY}
+            labelColor={NEUTRAL_70}
             labelWeight={"bold"}
             error={errors.name?.message}
             full
@@ -93,7 +93,7 @@ const SignUpForm: FC = (): JSX.Element => {
             type={"text"}
             control={control}
             label={capitalizeFirstLetter(t("email"))}
-            labelColor={EBONY}
+            labelColor={NEUTRAL_70}
             labelWeight={"bold"}
             error={errors.email?.message}
             full
@@ -108,7 +108,7 @@ const SignUpForm: FC = (): JSX.Element => {
             type={"password"}
             control={control}
             label={capitalizeFirstLetter(t("password"))}
-            labelColor={EBONY}
+            labelColor={NEUTRAL_70}
             labelWeight={"bold"}
             error={errors.password?.message}
             full
@@ -118,7 +118,7 @@ const SignUpForm: FC = (): JSX.Element => {
             type={"password"}
             control={control}
             label={capitalizeFirstLetter(t("confirm_password"))}
-            labelColor={EBONY}
+            labelColor={NEUTRAL_70}
             labelWeight={"bold"}
             error={errors.confirm_password?.message}
             full

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { PercentageProps } from "./types";
-
 
 export const CardWrapper = styled.div`
   ${({ theme }) => theme.components.cards.monitorChanges.CardWrapper}
@@ -25,10 +23,6 @@ export const TotalText = styled.p`
 
 export const TotalNumbers = styled.span`
   ${({ theme }) => theme.components.cards.monitorChanges.TotalNumbers}
-`;
-
-export const Percentage = styled.span<PercentageProps>`
-  ${({ theme }) => theme.components.cards.monitorChanges.Percentage}
 `;
 
 export const ChartInfoWrapper = styled.div`

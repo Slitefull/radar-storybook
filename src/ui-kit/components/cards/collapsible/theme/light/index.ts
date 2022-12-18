@@ -1,5 +1,5 @@
 import { css } from "styled-components/macro";
-import { DARK_LAVA, PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90, PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 import { ContentProps } from "../../types";
 
@@ -26,14 +26,14 @@ const CTitle = css`
   font-size: 18px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  color: ${PLUMP_PURPLE};
+  color: ${PRIMARY_60};
 `;
 
 const CSubtitle = css`
   font-weight: 350;
   font-size: 14px;
   line-height: 18px;
-  color: ${DARK_LAVA};
+  color: ${NEUTRAL_90};
 `;
 
 const Content = css<ContentProps>`

@@ -1,21 +1,24 @@
-import { FC, memo, useMemo, } from "react";
+import { FC, memo, useCallback, } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { MONITORING_PAGE } from "@/constants/routes";
+import Severity from "@/ui-kit/components/typography/severity";
+import Rank from "../../typography/rank";
 import faker from "faker";
-import { mockChartsInfo } from "./__mock__/data";
-import WithBackgroundText from "@/ui-kit/components/text/with-background";
-
 import {
-  CRIMSON,
-  DARK_GREY,
-  LAVENDER,
-  LAVENDER_BLUE,
-  PLATINUM,
-  ROYAL_PURPLE,
-  SALMON_PINK,
-  VIOLET
+  NEUTRAL_20,
+  NEUTRAL_50,
+  PRIMARY_10,
+  PRIMARY_100,
+  PRIMARY_30,
+  PRIMARY_50,
+  SUPPORT_2_30,
+  SUPPORT_2_60
 } from "@/ui-kit/constants/colors";
 
+import { Severities } from "@/ui-kit/types/severities";
 import {
   CardName,
   CardWrapper,
@@ -24,7 +27,6 @@ import {
   ChartInfoWrapper,
   HorizontalLine,
   LeftSide,
-  Percentage,
   RightSide,
   TotalNumbers,
   TotalText
@@ -33,10 +35,18 @@ import {
 
 type Total = { count: number; percentage: number; isPositive: boolean };
 type Label = "RED" | "CRI" | "HIG" | "MED";
+type Percentage = { count: number; isPositive: boolean };
+
+type DataElement = {
+  severity: Severities;
+  count: number;
+  percentage: Percentage;
+}
 
 interface MonitorChangesCardProps {
   name: string;
   total: Total;
+  data: DataElement[];
 }
 
 //TODO Ask about price of the line (scale)
@@ -47,9 +57,18 @@ ChartJS.register(
   BarElement,
 );
 
-const BAR_WIDTH = 110;
+const BAR_WIDTH = 120;
 
-const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): JSX.Element => {
+const MonitorChangesCard: FC<MonitorChangesCardProps> = memo((
+  {
+    name,
+    total,
+    data,
+  }
+): JSX.Element => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
   const options = {
     indexAxis: "y" as const,
     responsive: true,
@@ -65,7 +84,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
         ticks: {
           display: false,
           beginAtZero: false,
-          stepSize: 10,
+          stepSize: 20,
         }
       },
       y: {
@@ -82,51 +101,46 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
     },
   };
 
-  const labels: Label[] = useMemo(
-    () => ["RED", "CRI", "HIG", "MED"],
-    []
-  );
+  const labels: Label[] = ["RED", "CRI", "HIG", "MED"];
 
   //TODO check the colors
-  const data = {
+  const barData = {
     labels,
     datasets: [
       {
         data: labels.map(() => faker.datatype.number({ min: 5, max: 100 })),
-        backgroundColor: [CRIMSON, VIOLET, ROYAL_PURPLE, DARK_GREY],
+        backgroundColor: [SUPPORT_2_60, PRIMARY_100, PRIMARY_50, NEUTRAL_50],
       },
       {
         data: labels.map(() => faker.datatype.number({ min: 5, max: 100 })),
-        backgroundColor: [SALMON_PINK, LAVENDER, LAVENDER_BLUE, PLATINUM],
+        backgroundColor: [SUPPORT_2_30, PRIMARY_30, PRIMARY_10, NEUTRAL_20],
       },
     ],
   };
 
-  const chartsInfo = useMemo(
-    () => mockChartsInfo,
-    []
+  const onClickHandler = useCallback(
+    () => navigate(`${MONITORING_PAGE}/${name}`),
+    [navigate, name]
   );
 
   return (
     <CardWrapper>
       <LeftSide>
-        <CardName>
+        <CardName onClick={onClickHandler}>
           {name}
         </CardName>
 
         <ChartInfoWrapper>
-          {chartsInfo.map((element, index) => (
+          {data.map((element, index) => (
             <ChartInfo key={index}>
-              <ChartInfoText>{element.label}</ChartInfoText>
-              <WithBackgroundText
-                background={element.countBullet.color}
-                rounded
-              >
-                {element.countBullet.count}
-              </WithBackgroundText>
-              <Percentage isPositive={element.percentage.isPositive}>
-                {element.percentage.isPositive ? "+" : "-"}{element.percentage.count}%
-              </Percentage>
+              <ChartInfoText>{element.severity.substr(0, 3)}</ChartInfoText>
+              <Severity severity={element.severity} size={"small"} rounded>
+                {element.count}
+              </Severity>
+              <Rank
+                number={element.percentage.count}
+                isPositive={element.percentage.isPositive}
+              />
             </ChartInfo>
           ))}
         </ChartInfoWrapper>
@@ -135,16 +149,14 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo(({ name, total }): 
 
       <RightSide>
         <TotalText>
-          total: <TotalNumbers>{total.count} </TotalNumbers>
-          <Percentage isPositive={total.isPositive}>
-            {total.isPositive ? "+" : "-"}{total.percentage}%
-          </Percentage>
+          {t("total")}: <TotalNumbers>{total.count}</TotalNumbers>
+          <Rank number={total.percentage} isPositive={total.isPositive}/>
         </TotalText>
         <Bar
           options={options}
-          data={data}
+          data={barData}
           width={BAR_WIDTH}
-          style={{ border: `1px solid ${PLATINUM}` }}
+          style={{ border: `1px solid ${NEUTRAL_20}` }}
         />
       </RightSide>
     </CardWrapper>

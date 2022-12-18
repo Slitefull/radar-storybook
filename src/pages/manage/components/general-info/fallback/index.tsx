@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import ColoredTextFallback from "@/ui-kit/components/text/colored/fallback";
+import TextFallback from "@/ui-kit/components/typography/text/fallback";
 
 import { Column, Row } from "@/global.css";
 
@@ -8,7 +8,7 @@ const GeneralInfoFallback: FC = memo((): JSX.Element => {
   return (
     <Column margin={"0 0 40px"}>
       <Row gap={5} align={"center"}>
-        <ColoredTextFallback
+        <TextFallback
           animate
           speed={1}
           width={300}
@@ -16,7 +16,7 @@ const GeneralInfoFallback: FC = memo((): JSX.Element => {
       </Row>
 
       <Row gap={5}>
-        <ColoredTextFallback
+        <TextFallback
           animate
           speed={1}
           width={200}
@@ -24,7 +24,7 @@ const GeneralInfoFallback: FC = memo((): JSX.Element => {
       </Row>
 
       <Row gap={5}>
-        <ColoredTextFallback
+        <TextFallback
           animate
           speed={1}
           width={250}

@@ -3,13 +3,13 @@ import { useRecoilState } from "recoil";
 import { customCookies } from "@/entity/atoms/add-domain/customize/crawl-settings/custom-cookies";
 import { httpHeaders } from "@/entity/atoms/add-domain/customize/crawl-settings/http-headers";
 import LineSeparator from "@/ui-kit/components/separators/line";
-import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types";
-import FormCreator from "@/ui-kit/components/form-creator";
+import DropdownWithTypes from "@/ui-kit/components/controls/with-types";
+import FormCreator from "@/ui-kit/components/controls/form-creator";
 import CustomCookie from './custom-cookie';
 import HTTPHeader from './http-header';
 
 import { Column } from "@/global.css";
-import { DARK_LAVA, EBONY } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90, NEUTRAL_70 } from "@/ui-kit/constants/colors";
 
 
 const CrawlSettings: FC = memo((): JSX.Element => {
@@ -69,9 +69,9 @@ const CrawlSettings: FC = memo((): JSX.Element => {
       <DropdownWithTypes
         label={"User agent"}
         labelPosition={"top"}
-        labelColor={EBONY}
+        labelColor={NEUTRAL_70}
         labelWeight={"bold"}
-        subtitleColor={DARK_LAVA}
+        subtitleColor={NEUTRAL_90}
         subtitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."}
         options={userAgentOptions}
       />
@@ -79,7 +79,7 @@ const CrawlSettings: FC = memo((): JSX.Element => {
 
       <FormCreator
         label={"Custom Cookies"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelWeight={"bold"}
         labelSize={"big"}
         tooltip={<div>Tooltip</div>}
@@ -90,7 +90,7 @@ const CrawlSettings: FC = memo((): JSX.Element => {
 
       <FormCreator
         label={"HTTP Header"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelSize={"big"}
         labelWeight={"bold"}
         tooltip={<div>Tooltip</div>}

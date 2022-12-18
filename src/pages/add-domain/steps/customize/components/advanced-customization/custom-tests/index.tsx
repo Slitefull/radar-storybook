@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from "react";
-import { EBONY } from "@/ui-kit/constants/colors";
-import Input from "@/ui-kit/components/inputs/text";
-import DropdownWithTypes from "@/ui-kit/components/dropdowns/with-types";
-import Textarea from "@/ui-kit/components/inputs/textarea";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
+import Input from "@/ui-kit/components/controls/text";
+import DropdownWithTypes from "@/ui-kit/components/controls/with-types";
+import Textarea from "@/ui-kit/components/controls/textarea";
 import CloseIcon from "@/ui-kit/customized-icons/close";
-import Label from "@/ui-kit/components/label";
+import Label from "@/ui-kit/components/typography/label";
 
 import { Column, Row } from "@/global.css";
 
@@ -31,7 +31,7 @@ const CustomTests: FC<CustomTestsProps> = memo(({ index, onDelete }): JSX.Elemen
     <Column width={"100%"} margin={"0 0 20px"} align={"end"}>
       <Input
         label={"Test display name"}
-        labelColor={EBONY}
+        labelColor={NEUTRAL_70}
         onChange={onChangeInputHandler}
         placeholder={"Lorem ipsum"}
         labelWeight={"bold"}
@@ -41,7 +41,7 @@ const CustomTests: FC<CustomTestsProps> = memo(({ index, onDelete }): JSX.Elemen
       <Textarea
         label={"String"}
         labelWeight={"bold"}
-        labelColor={EBONY}
+        labelColor={NEUTRAL_70}
         onChange={onChangeInputHandler}
         placeholder={"Lorem ipsum"}
         full
@@ -50,7 +50,7 @@ const CustomTests: FC<CustomTestsProps> = memo(({ index, onDelete }): JSX.Elemen
         label={"Treat String As"}
         labelPosition={"top"}
         labelWeight={"bold"}
-        labelColor={EBONY}
+        labelColor={NEUTRAL_70}
         options={userAgentOptions}
         width={"100%"}
       />

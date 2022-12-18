@@ -1,6 +1,8 @@
 import { line } from "@/ui-kit/components/separators/line/theme/light";
 
 
-export default {
+const separators = {
   line,
-}
+};
+
+export default separators;

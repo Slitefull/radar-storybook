@@ -1,9 +1,9 @@
 import { FC, memo, useState } from 'react';
-import Day from "@/ui-kit/components/inputs/day";
-import Input from "@/ui-kit/components/inputs/text";
+import Day from "@/ui-kit/components/controls/day";
+import Input from "@/ui-kit/components/controls/text";
 import PlusCircle from "@/ui-kit/customized-icons/plus-circle";
-import Meridian from "@/ui-kit/components/inputs/meridian";
-import RadioGroup from "@/ui-kit/components/inputs/radio-group";
+import Meridian from "@/ui-kit/components/controls/meridian";
+import RadioGroup from "@/ui-kit/components/controls/radio-group";
 
 import { Row } from '@/global.css';
 import CloseIcon from "@/ui-kit/customized-icons/close";

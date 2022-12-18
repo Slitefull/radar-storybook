@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from 'react';
-import { DARK_LAVA, EBONY } from "@/ui-kit/constants/colors";
-import Input from "@/ui-kit/components/inputs/text";
-import Label from "@/ui-kit/components/label";
-import Tooltip from "@/ui-kit/components/tooltips/tooltip";
-import RadioGroup from "@/ui-kit/components/inputs/radio-group";
-import Radio from "@/ui-kit/components/inputs/radio";
+import { NEUTRAL_90, NEUTRAL_70 } from "@/ui-kit/constants/colors";
+import Input from "@/ui-kit/components/controls/text";
+import Label from "@/ui-kit/components/typography/label";
+import Tooltip from "@/ui-kit/components/generals/tooltip";
+import RadioGroup from "@/ui-kit/components/controls/radio-group";
+import Radio from "@/ui-kit/components/controls/radio";
 
 import { Column, Row } from '@/global.css';
 
@@ -29,7 +29,7 @@ const ThresholdSettings: FC = memo((): JSX.Element => {
       >
         <Row align={"center"} gap={10}>
           <Label
-            color={DARK_LAVA}
+            color={NEUTRAL_90}
             size={"big"}
           >
             Threshold Settings
@@ -46,19 +46,19 @@ const ThresholdSettings: FC = memo((): JSX.Element => {
           <Row width={"100%"} justify={"space-between"}>
             <Input
               label={"Size of a page threshold (%)"}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               onChange={onInputChangeHandler}
               full
             />
             <Input
               label={"Count of links on a page threshold (%)"}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               onChange={onInputChangeHandler}
               full
             />
             <Input
               label={"Word count threshold (%)"}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               onChange={onInputChangeHandler}
               full
             />
@@ -66,14 +66,14 @@ const ThresholdSettings: FC = memo((): JSX.Element => {
           <Row align={"end"} width={"100%"}>
             <Input
               label={"Branded CTR threshold (%)"}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               onChange={onInputChangeHandler}
               full
             />
             <Input
               label={"Sitemap URLs submitted /\n" +
                 "indexed threshold (%)"}
-              labelColor={EBONY}
+              labelColor={NEUTRAL_70}
               labelWrap={true}
               onChange={onInputChangeHandler}
               full
@@ -85,14 +85,14 @@ const ThresholdSettings: FC = memo((): JSX.Element => {
           <Radio
             name={"sitemap_alerts"}
             label={"Sitemap alerts on totals only"}
-            labelColor={EBONY}
+            labelColor={NEUTRAL_70}
             labelPosition={"right"}
             onChange={onChangeRadioHandler}
           />
           <Radio
             name={"sitemap_alerts"}
             label={"Allow Branded Keywords CTR Alerts"}
-            labelColor={EBONY}
+            labelColor={NEUTRAL_70}
             labelPosition={"right"}
             onChange={onChangeRadioHandler}
           />

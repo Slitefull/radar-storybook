@@ -1,10 +1,10 @@
 import { FC, memo } from 'react';
 import { useTranslation } from "react-i18next";
-import { BLACK_SHADOWS, RAISIN_BLACK } from "@/ui-kit/constants/colors";
+import { NEUTRAL_40, NEUTRAL_100 } from "@/ui-kit/constants/colors";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import ColoredText from "@/ui-kit/components/text/colored";
+import Text from "@/ui-kit/components/typography/text";
 import LineSeparator from "@/ui-kit/components/separators/line";
-import Label from "@/ui-kit/components/label";
+import Label from "@/ui-kit/components/typography/label";
 
 import { Column, Row } from "@/global.css";
 
@@ -15,24 +15,24 @@ const GeneralInfo: FC = memo((): JSX.Element => {
   return (
     <Column margin={"0 0 40px"}>
       <Row gap={5} align={"center"}>
-        <ColoredText
+        <Text
           type={"secondary"}
-          color={RAISIN_BLACK}
+          color={NEUTRAL_100}
         >
           {capitalizeFirstLetter(t("crawl_credits_used_this_month"))}:
-        </ColoredText>
-        <ColoredText
+        </Text>
+        <Text
           type={"secondary"}
-          color={RAISIN_BLACK}
+          color={NEUTRAL_100}
           weight={"bold"}
         >
           18
-        </ColoredText>
+        </Text>
         <LineSeparator
           type={"vertical"}
           variant={"dashed"}
           width={"20px"}
-          color={BLACK_SHADOWS}
+          color={NEUTRAL_40}
         />
         <Label weight={"bold"}>
           {capitalizeFirstLetter(t("account_settings"))}
@@ -40,35 +40,35 @@ const GeneralInfo: FC = memo((): JSX.Element => {
       </Row>
 
       <Row gap={5}>
-        <ColoredText
+        <Text
           type={"secondary"}
-          color={RAISIN_BLACK}
+          color={NEUTRAL_100}
         >
           {capitalizeFirstLetter(t("remaining_crawl_credits"))}:
-        </ColoredText>
-        <ColoredText
+        </Text>
+        <Text
           type={"secondary"}
-          color={RAISIN_BLACK}
+          color={NEUTRAL_100}
           weight={"bold"}
         >
           18
-        </ColoredText>
+        </Text>
       </Row>
 
       <Row gap={5}>
-        <ColoredText
+        <Text
           type={"secondary"}
-          color={RAISIN_BLACK}
+          color={NEUTRAL_100}
         >
           {capitalizeFirstLetter(t("remaining_change_analysis_credits"))}:
-        </ColoredText>
-        <ColoredText
+        </Text>
+        <Text
           type={"secondary"}
-          color={RAISIN_BLACK}
+          color={NEUTRAL_100}
           weight={"bold"}
         >
           18
-        </ColoredText>
+        </Text>
       </Row>
     </Column>
   );

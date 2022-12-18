@@ -1,14 +1,11 @@
 import { atom } from "recoil";
 
+import { LayoutTypes } from "@/entity/types/manage-domain";
 
-enum LayoutTypes {
-  settings = "domains",
-  monitoredURLs = "keywords",
-}
 
-const key = "manageDomain/getSelectedLayout";
+const key = "manageDomain/selectedLayoutState";
 
 export const selectedLayoutState = atom<LayoutTypes>({
   key,
-  default: LayoutTypes.settings,
+  default: LayoutTypes.Settings,
 });

@@ -1,6 +1,8 @@
 import { bell } from "@/ui-kit/customized-icons/bell/theme/light";
 
 
-export default {
+const icons = {
   bell,
 };
+
+export default icons;

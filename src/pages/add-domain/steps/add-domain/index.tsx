@@ -1,11 +1,11 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import { EBONY } from "@/ui-kit/constants/colors";
-import Textarea from "@/ui-kit/components/inputs/textarea";
-import Input from "@/ui-kit/components/inputs/text";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
+import Textarea from "@/ui-kit/components/controls/textarea";
+import Input from "@/ui-kit/components/controls/text";
 import AddDomainSlider from "@/pages/add-domain/components/text-slider";
-import Dropdown from '@/ui-kit/components/dropdowns/with-types';
+import Dropdown from '@/ui-kit/components/controls/with-types';
 import LineSeparator from "@/ui-kit/components/separators/line";
 
 import { Column } from "@/global.css";
@@ -52,7 +52,7 @@ const AddDomain: FC = memo((): JSX.Element => {
         <Dropdown
           types={[]}
           label={capitalizeFirstLetter(t("domain_type"))}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           labelPosition={"top"}
           options={domainTypeOptions}
@@ -61,14 +61,14 @@ const AddDomain: FC = memo((): JSX.Element => {
         />
         <Input
           label={capitalizeFirstLetter(t("domain"))}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           placeholder={"e.g. www.example.com"}
           onChange={onChangeDomainHandler}
         />
         <Input
           label={capitalizeFirstLetter(t("display_name"))}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           placeholder={"e.g. Example"}
           onChange={onChangeDisplayNameHandler}
@@ -81,7 +81,7 @@ const AddDomain: FC = memo((): JSX.Element => {
         />
         <Textarea
           label={capitalizeFirstLetter(t("branded_keywords"))}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           placeholder={t("type_your_keywords_separated_with_comma")}
           onChange={onChangeBrandedKeywordsHandler}

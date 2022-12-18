@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from 'react';
-import { DARK_LAVA } from "@/ui-kit/constants/colors";
+import { NEUTRAL_90 } from "@/ui-kit/constants/colors";
 import RoundedBanner from "@/ui-kit/components/banners/rounded";
-import Textarea from "@/ui-kit/components/inputs/textarea";
-import ColoredText from "@/ui-kit/components/text/colored";
-import Checkbox from "@/ui-kit/components/inputs/checkbox";
+import Textarea from "@/ui-kit/components/controls/textarea";
+import Text from "@/ui-kit/components/typography/text";
+import Checkbox from "@/ui-kit/components/controls/checkbox";
 
 import { Column } from '@/global.css';
 
@@ -16,12 +16,12 @@ const PasteUrls: FC = memo((): JSX.Element => {
 
   return (
     <Column width={"85%"}>
-      <ColoredText
-        color={DARK_LAVA}
+      <Text
+        color={NEUTRAL_90}
         weight={"bold"}
       >
         Type in or copy/paste website URLs one per row
-      </ColoredText>
+      </Text>
 
       <RoundedBanner>
         In order to ensure the best performance of SEO radar, please provide at least 1 representative link of your
@@ -43,7 +43,7 @@ const PasteUrls: FC = memo((): JSX.Element => {
         checked={false}
         label={"Allow inaccessible URLs"}
         labelSize={"small"}
-        labelColor={DARK_LAVA}
+        labelColor={NEUTRAL_90}
         labelPosition={"right"}
       />
     </Column>

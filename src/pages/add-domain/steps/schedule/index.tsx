@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useRecoilState } from "recoil";
 import { scheduleBullets } from "@/entity/atoms/add-domain/schedule/schedule-bullets";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
-import { EBONY } from "@/ui-kit/constants/colors";
-import Dropdown from "@/ui-kit/components/dropdowns/with-types";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
+import Dropdown from "@/ui-kit/components/controls/with-types";
 import AddDomainSlider from "@/pages/add-domain/components/text-slider";
 import LineSeparator from "@/ui-kit/components/separators/line";
 import ScheduleBullet from "@/pages/add-domain/components/schedule-bullet";
@@ -60,7 +60,7 @@ const Schedule: FC = memo((): JSX.Element => {
       >
         <Dropdown
           label={capitalizeFirstLetter(t("schedule_crawls"))}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelPosition={"top"}
           labelWeight={"bold"}
           options={scheduleCrawlsOptions}

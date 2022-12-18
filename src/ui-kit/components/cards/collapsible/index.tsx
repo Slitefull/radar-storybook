@@ -1,6 +1,6 @@
 import { FC, memo, ReactNode, useCallback, useEffect, useRef, useState, } from "react";
 import ArrowIcon from "@/ui-kit/customized-icons/arrow";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 import { CHeader, Content, ContentContainer, CSubtitle, CTitle, ResizeContainer, SCollapsible } from "./styled";
 import { Column, Row } from "@/global.css";
@@ -59,7 +59,7 @@ const Collapsible: FC<MonitorChangesCardProps> = memo((
         >
           {controlIcon || <ArrowIcon
             size={14}
-            color={PLUMP_PURPLE}
+            color={PRIMARY_60}
             rotation={isOpen ? "top" : "bottom"}
           />}
           <Column gap={5}>

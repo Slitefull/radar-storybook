@@ -1,9 +1,11 @@
 import { FC, Fragment, memo, ReactNode } from 'react';
 import { useRecoilValue } from "recoil";
-import loadable from "@loadable/component";
 import { selectedTableTypeSelector } from "@/entity/selectors/manage/table-type";
-import TableFallback from "@/ui-kit/components/table/fallback";
+import loadable from "@loadable/component";
+import TableFallback from "@/ui-kit/components/generals/table/fallback";
 import TableControlFallback from "@/pages/manage/components/table/components/control/fallback";
+
+import { LayoutTypes } from "@/entity/types/manage";
 
 
 const TableControl = loadable(() => import("./components/control"), {
@@ -22,16 +24,10 @@ const RedirectTestingTable = loadable(() => import("./layouts/redirect-testing")
   fallback: <TableFallback animate speed={1}/>
 });
 
-enum TableTypes {
-  domainsUrls = "domainsUrls",
-  keywords = "keywords",
-  redirectTesting = "redirectTesting",
-}
-
-const TableTypesRecord: Record<TableTypes, ReactNode> = {
-  [TableTypes.domainsUrls]: <DomainUrlsTable/>,
-  [TableTypes.keywords]: <KeywordsTable/>,
-  [TableTypes.redirectTesting]: <RedirectTestingTable/>,
+const TableTypesRecord: Record<LayoutTypes, ReactNode> = {
+  [LayoutTypes.DomainsUrls]: <DomainUrlsTable/>,
+  [LayoutTypes.Keywords]: <KeywordsTable/>,
+  [LayoutTypes.RedirectTesting]: <RedirectTestingTable/>,
 };
 
 const ManageTable: FC = memo((): JSX.Element => {

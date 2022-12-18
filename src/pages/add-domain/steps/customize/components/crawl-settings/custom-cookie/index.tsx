@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from "react";
-import Input from "@/ui-kit/components/inputs/text";
-import Label from "@/ui-kit/components/label";
+import Input from "@/ui-kit/components/controls/text";
+import Label from "@/ui-kit/components/typography/label";
 import CloseIcon from "@/ui-kit/customized-icons/close";
 
 import { Column } from "@/global.css";
-import { EBONY } from "@/ui-kit/constants/colors";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
 
 
 interface CustomCookieProps {
@@ -23,7 +23,7 @@ const CustomCookie: FC<CustomCookieProps> = memo(({ index, onDelete }): JSX.Elem
       <Column width={"100%"}>
         <Input
           label={"Display name"}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
@@ -32,7 +32,7 @@ const CustomCookie: FC<CustomCookieProps> = memo(({ index, onDelete }): JSX.Elem
         />
         <Input
           label={"Cookie name"}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
@@ -41,7 +41,7 @@ const CustomCookie: FC<CustomCookieProps> = memo(({ index, onDelete }): JSX.Elem
         />
         <Input
           label={"Value"}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}

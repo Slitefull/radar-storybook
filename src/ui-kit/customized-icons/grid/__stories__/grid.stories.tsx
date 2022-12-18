@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ROCKET_METALLIC } from "@/ui-kit/constants/colors";
+import { NEUTRAL_60 } from "@/ui-kit/constants/colors";
 import GridIcon from "../index";
 
 
@@ -12,6 +12,6 @@ const Template: ComponentStory<typeof GridIcon> = (args) => <GridIcon {...args}/
 
 export const Default = Template.bind({});
 Default.args = {
-  color: ROCKET_METALLIC,
+  color: NEUTRAL_60,
   size: 150
 };

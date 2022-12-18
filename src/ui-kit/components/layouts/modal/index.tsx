@@ -2,13 +2,13 @@ import { FC, Fragment, memo } from 'react';
 import { Outlet } from "react-router-dom";
 import { AnimatePresence, motion } from 'framer-motion';
 import loadable from "@loadable/component";
-import SidebarFallback from "@/ui-kit/components/sidebar/fallback";
+import SidebarFallback from "@/ui-kit/components/generals/sidebar/fallback";
 import PrivateRoute from "@/router/private-route";
 
 import { Column } from '@/global.css';
 
 
-const Sidebar = loadable(() => import("@/ui-kit/components/sidebar"), { fallback: <SidebarFallback/> });
+const Sidebar = loadable(() => import("@/ui-kit/components/generals/sidebar"), { fallback: <SidebarFallback/> });
 
 const AnimationSettings = {
   transition: { duration: 0.5 },

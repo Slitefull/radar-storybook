@@ -1,6 +1,6 @@
 import { useSetRecoilState } from "recoil";
 import { notificationsState } from "../../entity/atoms/notifications/notifications";
-import { Notification } from "../components/notifications";
+import { Notification } from "../components/generals/notifications";
 
 
 interface UseNotificationReturnType {

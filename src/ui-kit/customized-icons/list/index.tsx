@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { WHITE } from "@/ui-kit/constants/colors";
+import { NEUTRAL_00 } from "@/ui-kit/constants/colors";
 
 
 interface ListIconProps {
@@ -7,11 +7,11 @@ interface ListIconProps {
   size?: number;
 }
 
-const ListIcon: FC<ListIconProps> = memo(({ color = WHITE, size = 20 }): JSX.Element => {
+const ListIcon: FC<ListIconProps> = memo(({ color = NEUTRAL_00, size = 20 }): JSX.Element => {
   return (
     <svg
       width={size}
-      height={size}
+      height="100%"
       viewBox="0 0 25 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

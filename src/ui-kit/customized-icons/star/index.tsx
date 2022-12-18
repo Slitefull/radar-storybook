@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 
 interface StarIconProps {
@@ -7,11 +7,11 @@ interface StarIconProps {
   size?: number;
 }
 
-const StarIcon: FC<StarIconProps> = memo(({ color = PLUMP_PURPLE, size = 20 }): JSX.Element => {
+const StarIcon: FC<StarIconProps> = memo(({ color = PRIMARY_60, size = 20 }): JSX.Element => {
   return (
     <svg
       width={size}
-      height={size}
+      height="100%"
       viewBox={`0 0 ${size - 1} ${size - 2}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

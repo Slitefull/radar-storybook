@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { useRecoilState } from "recoil";
 import { selectedUrlsRadio } from "@/entity/atoms/add-domain/add-urls/selected-urls-radio";
-import { PLUMP_PURPLE, ROCKET_METALLIC } from "@/ui-kit/constants/colors";
+import { PRIMARY_60, NEUTRAL_60 } from "@/ui-kit/constants/colors";
 import LineSeparator from "@/ui-kit/components/separators/line";
 import RadioCollapsible from "@/ui-kit/components/cards/radio-collapsible";
 import PageTypes from "@/pages/add-domain/steps/add-urls/components/page-types";
@@ -19,7 +19,7 @@ const AddUrls: FC = memo((): JSX.Element => {
       <RadioCollapsible
         name={"page_types"}
         label={"Add page types (recommended)"}
-        labelColor={selectedRadio === "page_types" ? PLUMP_PURPLE : ROCKET_METALLIC}
+        labelColor={selectedRadio === "page_types" ? PRIMARY_60 : NEUTRAL_60}
         labelSize={"big"}
         labelWeight={"bold"}
         onChangeRadio={(name) => setSelectedRadio(name)}
@@ -32,7 +32,7 @@ const AddUrls: FC = memo((): JSX.Element => {
       <RadioCollapsible
         name={"upload_file"}
         label={"Upload an XLSX file"}
-        labelColor={selectedRadio === "upload_file" ? PLUMP_PURPLE : ROCKET_METALLIC}
+        labelColor={selectedRadio === "upload_file" ? PRIMARY_60 : NEUTRAL_60}
         labelSize={"big"}
         labelWeight={"bold"}
         onChangeRadio={(name) => setSelectedRadio(name)}
@@ -45,7 +45,7 @@ const AddUrls: FC = memo((): JSX.Element => {
       <RadioCollapsible
         name={"paste_urls"}
         label={"Paste your URLs"}
-        labelColor={selectedRadio === "paste_urls" ? PLUMP_PURPLE : ROCKET_METALLIC}
+        labelColor={selectedRadio === "paste_urls" ? PRIMARY_60 : NEUTRAL_60}
         labelSize={"big"}
         labelWeight={"bold"}
         onChangeRadio={(name) => setSelectedRadio(name)}
@@ -58,7 +58,7 @@ const AddUrls: FC = memo((): JSX.Element => {
       <RadioCollapsible
         name={"search_console"}
         label={"Top Pages / Search console"}
-        labelColor={selectedRadio === "search_console" ? PLUMP_PURPLE : ROCKET_METALLIC}
+        labelColor={selectedRadio === "search_console" ? PRIMARY_60 : NEUTRAL_60}
         labelSize={"big"}
         labelWeight={"bold"}
         onChangeRadio={(name) => setSelectedRadio(name)}
@@ -71,7 +71,7 @@ const AddUrls: FC = memo((): JSX.Element => {
       <RadioCollapsible
         name={"sitemaps"}
         label={"Sitemaps"}
-        labelColor={selectedRadio === "sitemaps" ? PLUMP_PURPLE : ROCKET_METALLIC}
+        labelColor={selectedRadio === "sitemaps" ? PRIMARY_60 : NEUTRAL_60}
         labelSize={"big"}
         labelWeight={"bold"}
         onChangeRadio={(name) => setSelectedRadio(name)}

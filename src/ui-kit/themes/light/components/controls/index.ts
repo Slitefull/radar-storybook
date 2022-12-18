@@ -1,19 +1,19 @@
-import { text } from "@/ui-kit/components/inputs/text/theme/light";
-import { radio } from "@/ui-kit/components/inputs/radio/theme/light";
-import { radioGroup } from "@/ui-kit/components/inputs/radio-group/theme/light";
-import { checkboxGroup } from "@/ui-kit/components/inputs/checkbox-group/theme/light";
-import { textarea } from "@/ui-kit/components/inputs/textarea/theme/light";
-import { switcher } from "@/ui-kit/components/inputs/switcher/theme/light";
-import { checkbox } from "@/ui-kit/components/inputs/checkbox/theme/light";
-import { meridian } from "@/ui-kit/components/inputs/meridian/theme/light";
-import { dropdown } from "@/ui-kit/components/dropdowns/dropdown/theme/light";
-import { withTypes } from "@/ui-kit/components/dropdowns/with-types/theme/light";
-import { day } from "@/ui-kit/components/inputs/day/theme/light";
-import { formCreator } from "@/ui-kit/components/form-creator/theme/light";
-import { dropzone } from "@/ui-kit/components/inputs/dropzone/theme/light";
+import { text } from "@/ui-kit/components/controls/text/theme/light";
+import { radio } from "@/ui-kit/components/controls/radio/theme/light";
+import { radioGroup } from "@/ui-kit/components/controls/radio-group/theme/light";
+import { checkboxGroup } from "@/ui-kit/components/controls/checkbox-group/theme/light";
+import { textarea } from "@/ui-kit/components/controls/textarea/theme/light";
+import { switcher } from "@/ui-kit/components/controls/switcher/theme/light";
+import { checkbox } from "@/ui-kit/components/controls/checkbox/theme/light";
+import { meridian } from "@/ui-kit/components/controls/meridian/theme/light";
+import { dropdown } from "@/ui-kit/components/controls/dropdown/theme/light";
+import { withTypes } from "@/ui-kit/components/controls/with-types/theme/light";
+import { day } from "@/ui-kit/components/controls/day/theme/light";
+import { formCreator } from "@/ui-kit/components/controls/form-creator/theme/light";
+import { dropzone } from "@/ui-kit/components/controls/dropzone/theme/light";
 
 
-export default {
+const controls = {
   text,
   radio,
   radioGroup,
@@ -28,3 +28,5 @@ export default {
   formCreator,
   dropzone,
 };
+
+export default controls;

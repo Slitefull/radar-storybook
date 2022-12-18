@@ -1,6 +1,7 @@
 import bullets from "./components/bullets";
 import buttons from "./components/buttons";
 import banners from "./components/banners";
+import breadcrumbs from "./components/breadcrumbs";
 import cards from "./components/cards";
 import containers from "./components/containers";
 import controls from "./components/controls";
@@ -13,8 +14,9 @@ import ratings from "./components/ratings";
 import separators from "./components/separators";
 import sliders from "./components/sliders";
 import tabs from "./components/tabs";
-import text from "./components/text";
+import typography from "./components/typography";
 import layouts from "./components/layouts";
+import monitoring from "./components/monitoring";
 
 import { Components } from "@/styled";
 
@@ -23,6 +25,7 @@ export const components: Components = {
   bullets,
   buttons,
   banners,
+  breadcrumbs,
   cards,
   containers,
   controls,
@@ -35,6 +38,7 @@ export const components: Components = {
   separators,
   sliders,
   tabs,
-  text,
+  typography,
   layouts,
+  monitoring,
 };

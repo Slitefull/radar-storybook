@@ -1,6 +1,6 @@
 import { FC } from "react";
 import ArrowIcon from "@/ui-kit/customized-icons/arrow";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 import { useNavigation } from "react-day-picker";
 
 
@@ -12,8 +12,8 @@ const IconRight: FC = (): JSX.Element => {
       disabled={!nextMonth}
       onClick={() => nextMonth && goToMonth(nextMonth)}
       rotation={"right"}
-      color={PLUMP_PURPLE}
-      size={10}
+      color={PRIMARY_60}
+      size={7}
     />
   );
 };

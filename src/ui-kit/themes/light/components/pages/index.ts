@@ -1,14 +1,18 @@
 import { signIn } from "@/pages/sign-in/theme/light";
 import { resetPassword } from "@/pages/reset-password/theme/light";
 import { addDomain } from "@/pages/add-domain/theme/light";
-import { monitorChanges } from "@/pages/monitor-changes/theme/light";
 import { signUp } from "@/pages/sign-up/theme/light";
+import { changePassword } from "@/pages/change-password/theme/light";
+import { monitoring } from "@/pages/monitoring/theme/light";
 
 
-export default {
+const pages = {
   signIn,
   signUp,
   resetPassword,
+  changePassword,
+  monitoring,
   addDomain,
-  monitorChanges,
 }
+
+export default pages;

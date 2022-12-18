@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import LineSeparator from "../index";
-import { PLUMP_PURPLE } from "@/ui-kit/constants/colors";
+import { PRIMARY_60 } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -15,7 +15,7 @@ export const Default = Template.bind({});
 Default.args = {
   width: "100%",
   radius: 5,
-  color: PLUMP_PURPLE,
+  color: PRIMARY_60,
 };
 
 Default.argTypes = {

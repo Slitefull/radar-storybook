@@ -1,7 +1,7 @@
 import { FC, memo, ReactNode, useEffect, useRef, useState, } from "react";
-import Radio from "@/ui-kit/components/inputs/radio";
+import Radio from "@/ui-kit/components/controls/radio";
 
-import { LabelPositions, LabelSizes, LabelWeights } from "@/ui-kit/components/label/types";
+import { LabelPositions, LabelSizes, LabelWeights } from "@/ui-kit/components/typography/label/types";
 import { Row } from "@/global.css";
 import { CHeader, Content, ContentContainer, ResizeContainer, SCollapsible } from "./styled";
 

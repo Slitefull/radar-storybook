@@ -1,15 +1,16 @@
-import { FC, Fragment, memo, useCallback, useEffect, useMemo, useState } from "react";
+import { FC, Fragment, memo, Ref, useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { CSSObject } from "styled-components";
 import { format, isAfter, isBefore, isValid } from "date-fns";
 import { DateFormatter, DateRange, DayPicker, InternalModifier, SelectRangeEventHandler } from "react-day-picker";
 import { getLastDaysDate } from "@/ui-kit/helpers/getLastDaysDate";
-import { LAVENDER_WEB, PLUMP_PURPLE, RAISIN_BLACK, WHITE } from "@/ui-kit/constants/colors";
+import { NEUTRAL_00, NEUTRAL_100, PRIMARY_10, PRIMARY_60 } from "@/ui-kit/constants/colors";
 import { getDaysCount } from "@/ui-kit/helpers/getDaysCount";
 import { getDaysCountFromDates } from "@/ui-kit/helpers/getDaysCountFromDates";
+import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import { getFormatDate } from "@/ui-kit/helpers/getFormatDate";
 import Day from "./components/day/day";
-import Input from "@/ui-kit/components/inputs/text";
+import Input from "@/ui-kit/components/controls/text";
 import Button from "@/ui-kit/components/buttons/button";
 import ButtonLink from "@/ui-kit/components/buttons/link";
 import CalendarIcon from "@/ui-kit/customized-icons/calendar";
@@ -25,7 +26,9 @@ import { CalendarBullet, DatepickerWrapper, SelectedDaysCount, SelectedDaysText,
 interface RangeDatepickerProps {
   numberOfMonths?: number;
   showOutsideDays?: boolean;
+  onCancel?: VoidFunction;
   onSubmit: (date: DateRange) => void;
+  ref?: Ref<HTMLDivElement>;
 }
 
 enum Bullets {
@@ -37,8 +40,8 @@ enum Bullets {
 }
 
 const selectedDayStyle: CSSObject = {
-  background: PLUMP_PURPLE,
-  color: WHITE,
+  background: PRIMARY_60,
+  color: NEUTRAL_00,
   outline: "none",
 };
 
@@ -47,20 +50,20 @@ const outsideDayStyle: CSSObject = {
 };
 
 const rangeStartStyle: CSSObject = {
-  background: PLUMP_PURPLE,
-  color: WHITE,
+  background: PRIMARY_60,
+  color: NEUTRAL_00,
   borderRadius: "50% 0 0 50%",
 };
 
 const rangeEndStyle: CSSObject = {
-  background: PLUMP_PURPLE,
-  color: WHITE,
+  background: PRIMARY_60,
+  color: NEUTRAL_00,
   borderRadius: "0 50% 50% 0",
 };
 
 const rangeMiddleStyle: CSSObject = {
-  background: LAVENDER_WEB,
-  color: RAISIN_BLACK,
+  background: PRIMARY_10,
+  color: NEUTRAL_100,
 };
 
 const tableStyles: CSSObject = {
@@ -96,7 +99,9 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
   {
     numberOfMonths = 3,
     showOutsideDays,
+    onCancel,
     onSubmit,
+    ref,
   }
 ): JSX.Element => {
   const { t } = useTranslation();
@@ -124,27 +129,27 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
   const bullets = useMemo(
     () => [
       {
-        label: t("last_week"),
+        label: capitalizeFirstLetter(t("last_week")),
         isSelected: selectedBullet === Bullets.LAST_WEEK,
         callback: () => onBulletClickHandler(Bullets.LAST_WEEK),
       },
       {
-        label: t("last_month"),
+        label: capitalizeFirstLetter(t("last_month")),
         isSelected: selectedBullet === Bullets.LAST_MONTH,
         callback: () => onBulletClickHandler(Bullets.LAST_MONTH),
       },
       {
-        label: t("last_days_count", { count: 60 }),
+        label: capitalizeFirstLetter(t("last_days_count", { count: 60 })),
         isSelected: selectedBullet === Bullets.LAST_60_DAYS,
         callback: () => onBulletClickHandler(Bullets.LAST_60_DAYS),
       },
       {
-        label: t("last_days_count", { count: 90 }),
+        label: capitalizeFirstLetter(t("last_days_count", { count: 90 })),
         isSelected: selectedBullet === Bullets.LAST_90_DAYS,
         callback: () => onBulletClickHandler(Bullets.LAST_90_DAYS),
       },
       {
-        label: t("custom_range"),
+        label: capitalizeFirstLetter(t("custom_range")),
         isSelected: selectedBullet === Bullets.CUSTOM_RANGE,
         callback: () => onBulletClickHandler(Bullets.CUSTOM_RANGE),
       },
@@ -192,6 +197,9 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
 
   const onCancelHandler = useCallback(
     () => {
+      if (onCancel) {
+        onCancel();
+      }
       setSelected(undefined);
       setSelectedBullet(null);
       setDaysCount(undefined);
@@ -218,7 +226,7 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
   return (
     <Fragment>
       <style>{global}</style>
-      <DatepickerWrapper>
+      <DatepickerWrapper ref={ref}>
         <Column gap={25}>
           <Row gap={50}>
             <Input
@@ -288,16 +296,16 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
           <Row gap={15}>
             <ButtonLink
               onClick={onCancelHandler}
-              disabled={!selected}
+              // disabled={!selected}
             >
-              {t("cancel")}
+              {capitalizeFirstLetter(t("cancel"))}
             </ButtonLink>
             <Button
               color={"secondary"}
               disabled={!selected}
               onClick={() => onSubmitHandler(selected)}
             >
-              {t("apply")}
+              {capitalizeFirstLetter(t("apply"))}
             </Button>
           </Row>
         </Column>

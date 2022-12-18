@@ -3,19 +3,19 @@ import { CellProps } from "react-table";
 import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import { createData } from "@/pages/manage-domain/layouts/monitored-urls/__mock__";
-import { RAISIN_BLACK } from "@/ui-kit/constants/colors";
+import { NEUTRAL_100 } from "@/ui-kit/constants/colors";
 import faker from "faker";
-import Table from "@/ui-kit/components/table";
-import ColoredText from "@/ui-kit/components/text/colored";
+import Table from "@/ui-kit/components/generals/table";
+import Text from "@/ui-kit/components/typography/text";
 
 
 interface TableData {
   urls: string;
-  http_status: number;
+  httpStatus: number;
   changes: number;
-  response_time: number;
-  page_load: number;
-  page_size: number;
+  responseTime: number;
+  pageLoad: number;
+  pageSize: number;
 }
 
 const paginationOptions = [
@@ -43,16 +43,16 @@ const MonitoredUrls: FC = memo((): JSX.Element => {
       {
         id: "http_status",
         Header: capitalizeFirstLetter(t("http_status")),
-        accessor: ({ http_status }: TableData) => http_status,
+        accessor: ({ httpStatus }: TableData) => httpStatus,
         disableSortBy: true,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
       {
@@ -60,55 +60,55 @@ const MonitoredUrls: FC = memo((): JSX.Element => {
         Header: capitalizeFirstLetter(t("changes")),
         accessor: ({ changes }: TableData) => changes,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
       {
         id: "response_time",
         Header: capitalizeFirstLetter(t("response_time")),
-        accessor: ({ response_time }: TableData) => response_time,
+        accessor: ({ responseTime }: TableData) => responseTime,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
       {
         id: "page_load",
         Header: capitalizeFirstLetter(t("page_load")),
-        accessor: ({ page_load }: TableData) => page_load,
+        accessor: ({ pageLoad }: TableData) => pageLoad,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
       {
         id: "page_size",
         Header: capitalizeFirstLetter(t("page_size")),
-        accessor: ({ page_size }: TableData) => page_size,
+        accessor: ({ pageSize }: TableData) => pageSize,
         Cell: ({ value }: CellProps<TableData>) => (
-          <ColoredText
+          <Text
             type={"secondary"}
             weight={"bold"}
-            color={RAISIN_BLACK}
+            color={NEUTRAL_100}
           >
             {value}
-          </ColoredText>
+          </Text>
         ),
       },
     ],

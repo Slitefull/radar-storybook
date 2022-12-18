@@ -1,8 +1,8 @@
 import { FC, memo, useCallback } from "react";
-import { EBONY } from "@/ui-kit/constants/colors";
-import Input from "@/ui-kit/components/inputs/text";
+import { NEUTRAL_70 } from "@/ui-kit/constants/colors";
+import Input from "@/ui-kit/components/controls/text";
 import CloseIcon from "@/ui-kit/customized-icons/close";
-import Label from "@/ui-kit/components/label";
+import Label from "@/ui-kit/components/typography/label";
 
 import { Column } from "@/global.css";
 
@@ -23,7 +23,7 @@ const HTTPHeader: FC<HTTPHeaderProps> = memo(({ index, onDelete }): JSX.Element 
       <Column width={"100%"}>
         <Input
           label={"Header name"}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}
@@ -32,7 +32,7 @@ const HTTPHeader: FC<HTTPHeaderProps> = memo(({ index, onDelete }): JSX.Element 
         />
         <Input
           label={"Header value"}
-          labelColor={EBONY}
+          labelColor={NEUTRAL_70}
           labelWeight={"bold"}
           onChange={onChangeInputHandler}
           placeholder={"e.g. lorem ipsum"}

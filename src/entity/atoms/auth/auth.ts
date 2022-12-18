@@ -6,4 +6,4 @@ const key = "auth/authState";
 export const authState = atom<boolean>({
   key,
   default: false,
-})
+});

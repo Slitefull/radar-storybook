@@ -1,31 +1,35 @@
 import styled, { createGlobalStyle, DefaultTheme } from 'styled-components/macro'
-import { DARK_GREY, DARK_LAVA, SNOW } from "@/ui-kit/constants/colors";
+import { NEUTRAL_50, NEUTRAL_90, NEUTRAL_10 } from "@/ui-kit/constants/colors";
 
 
 interface RowProps {
-  display?: "flex" | "block";
+  display?: "flex" | "inline-flex" | "block";
   gap?: number;
+  rowGap?: number;
   align?: "center" | "baseline" | "end";
-  justify?: "flex-start" | "space-between" | "center";
+  justify?: "flex-start" | "flex-end" | "space-between" | "center";
   width?: string;
   height?: string;
   minHeight?: string;
   margin?: string;
   padding?: string;
   cursor?: "pointer" | "default" | "not-allowed";
+  wrap?: "inherit" | "wrap";
 }
 
 interface ColumnProps {
-  display?: "flex" | "block";
+  display?: "flex" | "inline-flex" | "block";
   gap?: number;
+  rowGap?: number;
   align?: "center" | "baseline" | "end";
-  justify?: "flex-start" | "space-between" | "center";
+  justify?: "flex-start" | "flex-end" | "space-between" | "center";
   width?: string;
   height?: string;
   minHeight?: string;
   margin?: string;
   padding?: string;
   cursor?: "pointer" | "default" | "not-allowed";
+  wrap?: "inherit" | "wrap";
 }
 
 export default createGlobalStyle<{ theme: DefaultTheme }>` && {
@@ -37,7 +41,7 @@ export default createGlobalStyle<{ theme: DefaultTheme }>` && {
 
   html, body {
     height: 100%;
-    background: ${SNOW};
+    background: ${NEUTRAL_10};
   }
 
   body {
@@ -54,12 +58,12 @@ export default createGlobalStyle<{ theme: DefaultTheme }>` && {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${DARK_GREY};
+    background: ${NEUTRAL_50};
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${DARK_LAVA};
+    background: ${NEUTRAL_90};
   }
 
   input:-webkit-autofill,
@@ -81,7 +85,9 @@ export const Row = styled.div<RowProps>` && {
   align-items: ${({ align = "baseline" }) => align};
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: 0 ${({ gap = 40 }) => gap}px;
+  row-gap: ${({ rowGap = 5 }) => rowGap}px;
   cursor: ${({ cursor }) => cursor};
+  flex-wrap: ${({ wrap = "inherit" }) => wrap};
 }`
 
 export const Column = styled.div<ColumnProps>` && {
@@ -96,4 +102,5 @@ export const Column = styled.div<ColumnProps>` && {
   justify-content: ${({ justify = "flex-start" }) => justify};
   gap: ${({ gap = 15 }) => gap}px 0;
   cursor: ${({ cursor }) => cursor};
+  flex-wrap: ${({ wrap = "inherit" }) => wrap};
 }`

@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import loadable from "@loadable/component";
-import PageContainer from '@/ui-kit/components/page-container/simple';
+import PageContainer from '@/ui-kit/components/containers/simple';
 import GeneralInfoFallback from "@/pages/manage/components/general-info/fallback";
 
 import { Column } from '@/global.css';

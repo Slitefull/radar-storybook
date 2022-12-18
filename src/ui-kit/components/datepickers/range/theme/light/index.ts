@@ -1,12 +1,12 @@
 import { css } from "styled-components/macro"
 import {
-  DARK_LAVA,
-  KSU_PURPLE,
-  LIGHT_GREY,
-  PLATINUM,
-  PLUMP_PURPLE,
-  RAISIN_BLACK,
-  WHITE
+  NEUTRAL_90,
+  PRIMARY_70,
+  NEUTRAL_30,
+  NEUTRAL_20,
+  PRIMARY_60,
+  NEUTRAL_100,
+  NEUTRAL_00
 } from "@/ui-kit/constants/colors";
 
 import { CalendarBulletProps } from "../../types";
@@ -15,8 +15,8 @@ import { CalendarBulletProps } from "../../types";
 const DatepickerWrapper = css`
   display: flex;
   flex-direction: row;
-  background: ${WHITE};
-  border: 1px solid ${LIGHT_GREY};
+  background: ${NEUTRAL_00};
+  border: 1px solid ${NEUTRAL_30};
   box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.14);
   border-radius: 5px;
   width: fit-content;
@@ -38,7 +38,7 @@ const DateDisplay = css`
   line-height: 16px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
 `;
 
 const DayButton = css`
@@ -52,7 +52,7 @@ const DayButton = css`
   line-height: 12px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
   background: none;
   cursor: pointer;
   transition: .2s opacity, .2s border ease-in;
@@ -60,12 +60,12 @@ const DayButton = css`
   &:hover {
     opacity: .8;
     transition: .2s opacity, .2s border ease-in;
-    border: 1px solid ${KSU_PURPLE};
+    border: 1px solid ${PRIMARY_70};
   }
 `;
 
 const Separator = css`
-  border-left: 1px solid ${LIGHT_GREY};
+  border-left: 1px solid ${NEUTRAL_30};
   border-radius: 50%;
 `;
 
@@ -78,20 +78,20 @@ const CalendarBullet = css<CalendarBulletProps>`
   justify-content: center;
   align-items: center;
   padding: 6px 15px;
-  background: ${({ isSelected }) => isSelected ? PLUMP_PURPLE : WHITE};
-  border: 1px solid ${({ isSelected }) => isSelected ? PLUMP_PURPLE : PLATINUM};
+  background: ${({ isSelected }) => isSelected ? PRIMARY_60 : NEUTRAL_00};
+  border: 1px solid ${({ isSelected }) => isSelected ? PRIMARY_60 : NEUTRAL_20};
   border-radius: 34px;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${({ isSelected }) => isSelected ? WHITE : DARK_LAVA};
+  color: ${({ isSelected }) => isSelected ? NEUTRAL_00 : NEUTRAL_90};
   cursor: pointer;
   transition: .2s background ease-in, .2s color ease-in, .2s border ease-in;
 
   &:hover {
-    border: 1px solid ${PLUMP_PURPLE};
+    border: 1px solid ${PRIMARY_60};
   }
 `;
 
@@ -101,7 +101,7 @@ const SelectedDaysText = css`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
   text-align: center;
 `;
 
@@ -111,7 +111,7 @@ const SelectedDaysCount = css`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.02em;
-  color: ${PLUMP_PURPLE};
+  color: ${PRIMARY_60};
 `;
 
 const Weekday = css`
@@ -121,7 +121,7 @@ const Weekday = css`
   line-height: 12px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${RAISIN_BLACK};
+  color: ${NEUTRAL_100};
   text-transform: capitalize;
 `;
 

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Row } from "@/global.css";
-import RadioGroup from "@/ui-kit/components/inputs/radio-group";
-import RadioInputFallback from "@/ui-kit/components/inputs/radio/fallback";
+import RadioGroup from "@/ui-kit/components/controls/radio-group";
+import RadioInputFallback from "@/ui-kit/components/controls/radio/fallback";
 import ButtonFallback from "@/ui-kit/components/buttons/button/fallback";
-import TextInputFallback from "@/ui-kit/components/inputs/text/fallback";
+import TextInputFallback from "@/ui-kit/components/controls/text/fallback";
 
 
 const TableControlFallback: FC = (): JSX.Element => {

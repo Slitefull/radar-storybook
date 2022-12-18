@@ -8,7 +8,7 @@ interface FireIconProps {
 
 const FireIcon: FC<FireIconProps> = memo(({ size = 20 }): JSX.Element => {
   return (
-    <svg width={size} height={size} viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={size} height="100%" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M7.34122 10.0593C7.34122 10.1485 7.34122 10.1948 7.34122 10.2406C7.33557 10.6537 7.12844 10.9538 6.72422
         11.1229C6.547 11.2053 6.34666 11.2356 6.15024 11.2096C5.95382 11.1836 5.77076 11.1026 5.62579 10.9775C5.01882

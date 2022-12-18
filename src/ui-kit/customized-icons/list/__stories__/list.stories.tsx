@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ListIcon from "../index";
-import { WHITE } from "@/ui-kit/constants/colors";
+import { NEUTRAL_00 } from "@/ui-kit/constants/colors";
 
 
 export default {
@@ -12,6 +12,6 @@ const Template: ComponentStory<typeof ListIcon> = (args) => <ListIcon {...args}/
 
 export const Default = Template.bind({});
 Default.args = {
-  color: WHITE,
+  color: NEUTRAL_00,
   size: 150
 };

@@ -10,7 +10,7 @@ import "../infrastructure/i18n";
 import GlobalCSS from "@/global.css";
 
 
-const Notifications = loadable(() => import("@/ui-kit/components/notifications"));
+const Notifications = loadable(() => import("@/ui-kit/components/generals/notifications"));
 
 const themesMap = {
   light,

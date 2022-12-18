@@ -1,5 +1,5 @@
 import { css } from "styled-components/macro";
-import { PLATINUM, PLUMP_PURPLE, WHITE } from "@/ui-kit/constants/colors";
+import { NEUTRAL_20, PRIMARY_60, NEUTRAL_00 } from "@/ui-kit/constants/colors";
 
 import { SBorderedLayoutProps } from "../../types";
 
@@ -13,8 +13,8 @@ const SBorderedLayout = css<SBorderedLayoutProps>`
   height: ${({ height }) => height};
   box-shadow: ${({ shadow }) => shadow};
   min-height: ${({ minHeight = "auto" }) => minHeight};
-  background: ${WHITE};
-  border: 1px solid ${PLATINUM};
+  background: ${NEUTRAL_00};
+  border: 1px solid ${NEUTRAL_20};
   border-radius: 8px;
   position: relative;
 `;
@@ -34,7 +34,7 @@ const BackIconWrapper = css`
   line-height: 24px;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${PLUMP_PURPLE};
+  color: ${PRIMARY_60};
 `;
 
 export const bordered = {

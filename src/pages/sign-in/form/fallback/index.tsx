@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import TextInputFallback from "@/ui-kit/components/inputs/text/fallback";
+import TextInputFallback from "@/ui-kit/components/controls/text/fallback";
 import ButtonFallback from "@/ui-kit/components/buttons/button/fallback";
 
 import { Column } from "@/global.css";
