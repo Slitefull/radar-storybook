@@ -5,6 +5,7 @@ import AuthLayout from "@/router/layouts/auth";
 import MainLayout from "@/ui-kit/components/layouts/main";
 import ModalLayout from "@/ui-kit/components/layouts/modal";
 import MonitoringLayout from "@/router/layouts/monitoring";
+import NotFoundRoute from "@/router/not-found-route";
 import {
   ADD_DOMAIN_PAGE,
   CHANGE_PASSWORD_PAGE,
@@ -41,7 +42,7 @@ const Router: FC = memo(() => {
   return useRoutes([
     {
       path: "/*",
-      element: <p>Path not resolved</p>
+      element: <NotFoundRoute/>
     },
     {
       element: <AuthLayout/>,
