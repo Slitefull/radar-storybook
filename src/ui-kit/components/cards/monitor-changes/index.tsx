@@ -119,7 +119,7 @@ const MonitorChangesCard: FC<MonitorChangesCardProps> = memo((
   };
 
   const onClickHandler = useCallback(
-    () => navigate(`${MONITORING_PAGE}/${name}`),
+    () => navigate(`${MONITORING_PAGE}monitoring/${name}`),
     [navigate, name]
   );
 

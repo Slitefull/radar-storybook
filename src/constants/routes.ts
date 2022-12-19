@@ -1,4 +1,4 @@
-export const MONITORING_PAGE = "/monitoring";
+export const MONITORING_PAGE = "/";
 export const MONITORING_DOMAIN_PAGE = "/monitoring/:id";
 export const SIGN_IN_PAGE = "/sign-in";
 export const SIGN_UP_PAGE = "/sign-up";
