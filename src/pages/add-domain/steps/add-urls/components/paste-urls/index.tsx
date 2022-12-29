@@ -40,11 +40,13 @@ const PasteUrls: FC = memo((): JSX.Element => {
       />
 
       <Checkbox
+        name="allow_urls"
         checked={false}
         label={"Allow inaccessible URLs"}
         labelSize={"small"}
         labelColor={NEUTRAL_90}
         labelPosition={"right"}
+        onChange={() => console.log("checked")}
       />
     </Column>
   );

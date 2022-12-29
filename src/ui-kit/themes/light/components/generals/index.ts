@@ -5,6 +5,7 @@ import { pagination } from "@/ui-kit/components/generals/pagination/theme/light"
 import { stepper } from "@/ui-kit/components/generals/stepper/theme/light";
 import { table } from "@/ui-kit/components/generals/table/theme/light";
 import { tooltip } from "@/ui-kit/components/generals/tooltip/theme/light";
+import { bottomBar } from "@/ui-kit/components/generals/bottom-bar/theme/light";
 
 
 const generals = {
@@ -15,6 +16,7 @@ const generals = {
   stepper,
   table,
   tooltip,
+  bottomBar,
 }
 
 export default generals;

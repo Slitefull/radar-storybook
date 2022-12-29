@@ -27,6 +27,8 @@ const UploadFile: FC = memo((): JSX.Element => {
         onClear={onClearHandler}
       />
       <Checkbox
+        name="file"
+        onChange={() => console.log(1)}
         checked={false}
         label={"Allow inaccessible URLs"}
         labelColor={NEUTRAL_90}

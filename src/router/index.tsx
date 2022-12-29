@@ -6,6 +6,7 @@ import MainLayout from "@/ui-kit/components/layouts/main";
 import ModalLayout from "@/ui-kit/components/layouts/modal";
 import MonitoringLayout from "@/router/layouts/monitoring";
 import NotFoundRoute from "@/router/not-found-route";
+
 import {
   ADD_DOMAIN_PAGE,
   CHANGE_PASSWORD_PAGE,

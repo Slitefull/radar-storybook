@@ -104,7 +104,7 @@ const baseMenuStyles: CSSObject = {
   gap: "0 10px",
   borderRadius: "0 0 5px 5px",
   boxShadow: "none",
-  zIndex: 99999,
+  zIndex: 99999999,
 };
 
 const baseMenuListStyles: CSSObject = {

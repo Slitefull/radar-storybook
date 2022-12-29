@@ -16,12 +16,12 @@ const PageTypes: FC = memo((): JSX.Element => {
 
   const onAddPageTypesElementHandler = useCallback(
     () => setTypes([...types, types.length]),
-    [types]
+    [types, setTypes]
   );
 
   const onDeleteCustomCookieElementHandler = useCallback(
     (id: number) => setTypes(types.filter((element) => element !== id)),
-    [types],
+    [types, setTypes],
   );
 
   const pageTypeComponents = useMemo(

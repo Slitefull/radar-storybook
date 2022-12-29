@@ -3,17 +3,23 @@ import { useTranslation } from "react-i18next";
 import { capitalizeFirstLetter } from "@/ui-kit/helpers/capitalizeFirstLetter";
 import { createData } from "./__mock__/data";
 import faker from "faker";
-import Text from "@/ui-kit/components/typography/text";
 import Dropdown from "@/ui-kit/components/controls/dropdown";
 import Input from "@/ui-kit/components/controls/text";
 import Table from "@/ui-kit/components/generals/table";
 import SearchIcon from "@/ui-kit/customized-icons/search";
 import Severity from "@/ui-kit/components/typography/severity";
+import TargetURL from "./components/target-url";
 
 import { SelectOption } from "@/ui-kit/types/select";
 import { Severities } from '@/ui-kit/types/severities';
 import { Statuses } from '@/ui-kit/types/statuses';
 import { Column, Row } from "@/global.css";
+import { Changes } from "../../styled";
+import RadioGroup from "@/ui-kit/components/controls/radio-group";
+import Meridian from "@/ui-kit/components/controls/meridian";
+import { CellProps } from "react-table";
+import Button from "@/ui-kit/components/buttons/button";
+import { MANAGE_PAGE } from "@/constants/routes";
 
 
 interface SeveritiesCell {
@@ -42,11 +48,20 @@ const MonitorTable: FC = (): JSX.Element => {
     [createData]
   );
 
+  const onChangeSortByHandler = useCallback(() => console.log("qwe"), [])
+
+  const sortByOptions = [
+    { value: "my_domain", label: "my domain" },
+    { value: "my_domain_2", label: "my domain" },
+    { value: "my_domain_3", label: "my domain" },
+  ];
+
   const columns = useMemo(
     () => [
       {
         Header: `${capitalizeFirstLetter(t("target_url"))} (${data.length})`,
         accessor: ({ url }: TableData) => url,
+        Cell: ({ value }: SeveritiesCell) => <TargetURL link={value} name={value} subtext={"Product page"}/>,
         width: TARGET_URL_CELL_WIDTH,
       },
       {
@@ -64,15 +79,38 @@ const MonitorTable: FC = (): JSX.Element => {
         accessor: ({ changes }: TableData) => changes,
         width: CHANGES_CELL_WIDTH,
         Cell: ({ value }: SeveritiesCell) => (
-          <Text type={"secondary"} size={"small"}>
+          <Changes>
             {value}
-          </Text>
+          </Changes>
         ),
       },
       {
         Header: capitalizeFirstLetter(t("status")),
         accessor: ({ status }: TableData) => status,
         width: STATUS_CELL_WIDTH,
+      },
+      {
+        id: "id",
+        Header: (
+          <Dropdown
+            options={sortByOptions}
+            onChange={onChangeSortByHandler}
+            placeholder={capitalizeFirstLetter(t("group_by_date"))}
+            rounded
+            width={"100%"}
+          />
+        ),
+        accessor: ({ id }: TableData) => id,
+        Cell: ({ value }: CellProps<TableData>) => (
+          <Button
+            color={"secondary"}
+            size={"small"}
+          >
+            {capitalizeFirstLetter(t("change_details"))}
+          </Button>
+        ),
+        disableSortBy: true,
+        style: { textAlign: "end" }
       },
     ],
     [t]

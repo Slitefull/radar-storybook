@@ -5,12 +5,11 @@ import { link } from "@/ui-kit/components/buttons/link/theme/light";
 import { button } from "@/ui-kit/components/buttons/button/theme/light";
 import { roundedArrow } from "@/ui-kit/components/buttons/rounded-arrow/theme/light";
 import { switcher } from "@/ui-kit/components/controls/switcher/theme/light";
-import { text as simpleText } from "@/ui-kit/components/text/text/theme/light";
+import { text as simpleText } from "@/ui-kit/components/typography/text/theme/light";
 import { sidebar } from "@/ui-kit/components/generals/sidebar/theme/light";
 import { checkbox } from "@/ui-kit/components/controls/checkbox/theme/light";
 import { bell } from "@/ui-kit/customized-icons/bell/theme/light";
 import { table } from "@/ui-kit/components/generals/table/theme/light";
-import { footer } from "@/ui-kit/components/generals/footer/theme/light";
 import { pagination } from "@/ui-kit/components/generals/pagination/theme/light";
 import { text as textInput } from "@/ui-kit/components/controls/text/theme/light";
 import { textarea } from "@/ui-kit/components/controls/textarea/theme/light";
@@ -31,7 +30,7 @@ import { day } from "@/ui-kit/components/controls/day/theme/light";
 import { ranking } from "@/ui-kit/components/bullets/ranking/theme/light";
 import { modalPage } from "@/ui-kit/components/containers/modal/theme/light";
 import { addDomain } from "@/pages/add-domain/theme/light";
-import { label } from "@/ui-kit/components/text/label/theme/light";
+import { label } from "@/ui-kit/components/typography/label/theme/light";
 import { radar } from "@/ui-kit/components/loaders/radar/theme/light";
 import { withTypes } from "@/ui-kit/components/controls/with-types/theme/light";
 import { tooltip } from "@/ui-kit/components/generals/tooltip/theme/light";
@@ -51,8 +50,10 @@ import { changePassword } from "@/pages/change-password/theme/light";
 import { tag } from "@/ui-kit/components/bullets/tag/theme/light";
 import { monitorChanges } from "@/ui-kit/components/cards/monitor-changes/theme/light";
 import { monitoring } from "@/pages/monitoring/theme/light";
+import { monitoring as monitoringLayout } from "@/router/layouts/monitoring/theme/light";
 import { withArrow as withArrowBreadcrumb } from "@/ui-kit/components/breadcrumbs/with-arrow/theme/light";
 import { listView } from "@/ui-kit/components/monitoring/list-view/theme/light";
+import { bottomBar } from "@/ui-kit/components/generals/bottom-bar/theme/light";
 
 type GComponent<Elements> = { [E in Elements]: ReturnType<typeof E> }
 
@@ -61,12 +62,12 @@ export interface Components {
   buttons: GComponent<button, roundedArrow, link>
   breadcrumbs: GComponent<withArrowBreadcrumb>
   banners: GComponent<rounded>
-  layouts: GComponent<bordered>
+  layouts: GComponent<bordered, monitoringLayout>
   cards: GComponent<monitorChanges, collapsible, radioCollapsible>
   containers: GComponent<simplePage, modalPage>
   controls: GComponent<textInput, radio, radioGroup, checkboxGroup, textarea, switcher, checkbox, dropdown, withTypes, meridian, day, formCreator, dropzone>
   datePickers: GComponent<range>
-  generals: GComponent<header, footer, sidebar, pagination, notifications, stepper, table, tooltip>
+  generals: GComponent<header, bottomBar, sidebar, pagination, notifications, stepper, table, tooltip>
   icons: GComponent<bell>
   loaders: GComponent<radar>
   pages: GComponent<monitoring, signIn, signUp, resetPassword, changePassword, addDomain>

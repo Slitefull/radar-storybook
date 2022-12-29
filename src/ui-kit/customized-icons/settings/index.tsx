@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { PRIMARY_60, NEUTRAL_60 } from "../../constants/colors";
+import { NEUTRAL_60 } from "../../constants/colors";
 import useHover from "../../hooks/useHover";
 
 

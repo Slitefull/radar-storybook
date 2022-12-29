@@ -14,6 +14,8 @@ const General: FC = memo((): JSX.Element => {
       <Row>
         <CheckboxGroup direction={"column"} gap={40}>
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             label={"Ignore URL Query Parameters"}
             labelPosition={"right"}
@@ -23,6 +25,8 @@ const General: FC = memo((): JSX.Element => {
             subtitleColor={NEUTRAL_60}
           />
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Exclude Months from comparisons"}
@@ -32,6 +36,8 @@ const General: FC = memo((): JSX.Element => {
             subtitleColor={NEUTRAL_60}
           />
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Strip Out Numbers Within Text"}
@@ -41,6 +47,8 @@ const General: FC = memo((): JSX.Element => {
             subtitleColor={NEUTRAL_60}
           />
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Consolidate Redirects"}
@@ -52,6 +60,8 @@ const General: FC = memo((): JSX.Element => {
         </CheckboxGroup>
         <CheckboxGroup direction={"column"} gap={40}>
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Inhibit Home Page and Robots.Txt Changes"}
@@ -61,6 +71,8 @@ const General: FC = memo((): JSX.Element => {
             subtitleColor={NEUTRAL_60}
           />
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Inhibit Search Console Winners & Losers Report"}
@@ -70,6 +82,8 @@ const General: FC = memo((): JSX.Element => {
             subtitleColor={NEUTRAL_60}
           />
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Rendered vs Rendered"}
@@ -79,6 +93,8 @@ const General: FC = memo((): JSX.Element => {
             subtitleColor={NEUTRAL_60}
           />
           <Checkbox
+            name="ignore_url"
+            onChange={() => console.log(1)}
             checked={false}
             labelPosition={"right"}
             label={"Disable domain URL redirect"}

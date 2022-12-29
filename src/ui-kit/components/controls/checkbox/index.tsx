@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { ChangeEvent, FC, memo } from "react";
 import Label from "@/ui-kit/components/typography/label";
 
 import { LabelPositions, LabelSizes, LabelWeights } from "@/ui-kit/components/typography/label/types";
@@ -8,8 +8,8 @@ import { Column } from "@/global.css";
 
 interface CheckboxProps {
   checked: boolean;
-  onChange?: VoidFunction;
-  name?: string;
+  onChange: (event: ChangeEvent) => void;
+  name: string;
   disabled?: boolean;
   label?: string;
   labelPosition?: LabelPositions;
@@ -67,7 +67,7 @@ const Checkbox: FC<CheckboxProps> = memo((
         name={name}
         disabled={disabled}
         checked={checked}
-        onChange={onChange}
+        onChange={(event) => onChange(event)}
       />
     </CWrapper>
   );

@@ -35,14 +35,14 @@ type Element = {
   isCritical: boolean;
 }
 
-type Column = {
+type TColumn = {
   info: ColumnInfo;
   data: Element[];
 }
 
 interface MonitoringListViewProps {
   info: Info[];
-  columns: Column[];
+  columns: TColumn[];
 }
 
 //TODO Refactor text SC

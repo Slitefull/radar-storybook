@@ -39,24 +39,32 @@ const AccessLevels: FC = memo((): JSX.Element => {
         gap={15}
       >
         <Checkbox
+          name="name"
+          onChange={() => console.log(1)}
           checked={true}
           label={"Konrad Studziński (you)"}
           labelColor={NEUTRAL_90}
           labelPosition={"right"}
         />
         <Checkbox
+          name="name"
+          onChange={() => console.log(1)}
           checked={true}
           label={"Clay Kramer (admin)"}
           labelColor={NEUTRAL_90}
           labelPosition={"right"}
         />
         <Checkbox
+          name="name"
+          onChange={() => console.log(1)}
           checked={false}
           label={"Bob Lopiccola"}
           labelColor={NEUTRAL_90}
           labelPosition={"right"}
         />
         <Checkbox
+          name="name"
+          onChange={() => console.log(1)}
           checked={false}
           label={"Pat Simmons"}
           labelColor={NEUTRAL_90}

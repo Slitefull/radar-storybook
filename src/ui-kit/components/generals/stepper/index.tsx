@@ -44,7 +44,7 @@ const Stepper: FC<StepperProps> = memo((
         setActiveStep(activeStep + 1)
       }
     },
-    [activeStep]
+    [activeStep, steps.length]
   );
 
   const onPreviousStepHandler = useCallback(
@@ -66,7 +66,7 @@ const Stepper: FC<StepperProps> = memo((
         </SInner>
       )
     ),
-    [activeStep]
+    [activeStep, onSetStepHandler, steps]
   );
 
   return (

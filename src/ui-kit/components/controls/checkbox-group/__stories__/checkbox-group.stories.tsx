@@ -11,10 +11,10 @@ export default {
 
 const Template: ComponentStory<typeof CheckboxGroup> = (args) => (
   <CheckboxGroup {...args}>
-    <Checkbox checked={false}/>
-    <Checkbox checked={true}/>
-    <Checkbox checked={false}/>
-    <Checkbox checked={true}/>
+    <Checkbox name="test1" checked={false} onChange={() => console.log(1)}/>
+    <Checkbox name="test2" checked={true} onChange={() => console.log(2)}/>
+    <Checkbox name="test3" checked={false} onChange={() => console.log(3)}/>
+    <Checkbox name="test4" checked={true} onChange={() => console.log(4)}/>
   </CheckboxGroup>
 );
 

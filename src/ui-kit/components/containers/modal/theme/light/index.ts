@@ -2,7 +2,7 @@ import { css } from "styled-components/macro";
 import { NEUTRAL_00 } from "@/ui-kit/constants/colors";
 
 const SMPContainer = css`
-  margin: 0 32px 40px 112px;
+  margin: 0 32px 100px 112px;
   padding: 20px;
   background: ${NEUTRAL_00};
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.08);

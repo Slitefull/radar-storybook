@@ -123,7 +123,7 @@ const RangeDatepicker: FC<RangeDatepickerProps> = memo((
       setSelectedBullet(bullet);
       setSelected(getLastDaysDate(getDaysCount(bullet)));
     },
-    [selected, daysCount]
+    [setSelectedBullet, setSelected, getLastDaysDate, getDaysCount]
   );
 
   const bullets = useMemo(
