@@ -45,3 +45,14 @@ npm run build:dev
 - Now try to access this URL: `https://customer.seoradar.local/onboarding/sign_up/index.html?service_level=Lite&service_level_id=646`. Provide the ID of package `Lite` as in local database. You should be able to see signup page.
 
 - If yes setup complete!
+
+# Authorization contacts
+- Front-end will send the `bearer token` in every private request. 
+
+- Front-end expect from the backend validation for this `bearer token`. 
+
+- If token is invalid or expired - front-end expects `401 code status`. 
+
+- `401 Unauthorized` - is the status code to return when the client provides no credentials or invalid credentials.
+
+- `403 Forbidden` -  is the status code to return when a client has valid credentials but not enough privileges to perform an action on a resource.
