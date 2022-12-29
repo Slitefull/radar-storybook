@@ -30,7 +30,7 @@ const TargetURL: FC<TargetURLProps> = memo((
 
   const onOpenLinkHandler = useCallback((url: string) => navigate(url), [navigate]);
 
-  const onCheckHandler = useCallback((event: ChangeEvent) => {
+  const onCheckHandler = useCallback((event: any) => {
     if (selectedRows.find((element) => element === event.target.name)) {
       setSelectedRows(selectedRows.filter((element) => element !== event.target.name));
       return;
